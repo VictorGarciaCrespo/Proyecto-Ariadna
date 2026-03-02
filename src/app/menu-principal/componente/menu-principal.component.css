@@ -1,0 +1,114 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background: white;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.logo-container {
+  width: 250px;
+  display: flex;
+  align-items: center;
+}
+
+.logo-placeholder img {
+  max-width: 150px;
+  height: auto;
+  max-height: 80px;
+  object-fit: contain;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 400;
+  color: #111;
+  margin: 0;
+  text-align: center;
+  flex-grow: 1;
+  letter-spacing: 1px;
+}
+
+.actions {
+  width: 250px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-agenda {
+  background-color: #2c2c2c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 16px 45px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-agenda:hover {
+  background-color: #1a1a1a;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  padding: 60px 40px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 50px 70px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid #eaeaea;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+}
+
+.card-top {
+  grid-column: 1 / 3;
+  margin: 0 auto;
+  width: 75%;
+  max-width: 650px;
+}
+
+.card-image-placeholder {
+  height: 220px;
+  background-color: #d9d9d9; /* The light gray color from the design */
+  width: 100%;
+}
+
+.card-title {
+  background-color: #151515;
+  color: white;
+  text-align: center;
+  padding: 22px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}

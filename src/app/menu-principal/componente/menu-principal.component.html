@@ -1,0 +1,37 @@
+<header class="header">
+    <div class="logo-container">
+        <!-- Replace src with actual logo if available, or keep text if not -->
+        <div class="logo-placeholder">
+            <img src="assets/ariadna-logo.png" alt="Ariadna Logo"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+            <span style="display: none; font-weight: bold; font-size: 1.2rem; color: #1e3a8a;">ARIADNA</span>
+        </div>
+    </div>
+
+    <h1 class="title">ARIADNA APP</h1>
+
+    <div class="actions">
+        <button class="btn-agenda" (click)="abrirAgenda()">Agenda</button>
+    </div>
+</header>
+
+<main class="main-content">
+    <div class="cards-grid" *ngIf="opciones.length >= 3">
+        <!-- Fila 1 -->
+        <div class="card card-top" (click)="navegarA(opciones[0].ruta)">
+            <div class="card-image-placeholder"></div>
+            <div class="card-title">{{ opciones[0].titulo }}</div>
+        </div>
+
+        <!-- Fila 2 -->
+        <div class="card card-bottom-left" (click)="navegarA(opciones[1].ruta)">
+            <div class="card-image-placeholder"></div>
+            <div class="card-title">{{ opciones[1].titulo }}</div>
+        </div>
+
+        <div class="card card-bottom-right" (click)="navegarA(opciones[2].ruta)">
+            <div class="card-image-placeholder"></div>
+            <div class="card-title">{{ opciones[2].titulo }}</div>
+        </div>
+    </div>
+</main>
