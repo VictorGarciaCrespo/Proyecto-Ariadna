@@ -15,6 +15,6 @@ export class ActividadesDiarias {
   }
 
   iniciarJuego(): void {
-    this.router.navigate(['/juego-actividad']);
+    this.router.navigate(['/juego1-actividades-diarias']);
   }
 }

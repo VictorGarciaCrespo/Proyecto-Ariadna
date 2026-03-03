@@ -2,16 +2,16 @@ import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-juego-actividad',
+  selector: 'app-juego1-juegos-mente',
   imports: [],
-  templateUrl: './juego-actividad.html',
-  styleUrl: './juego-actividad.css',
+  templateUrl: './juego1-juegos-mente.html',
+  styleUrl: './juego1-juegos-mente.css',
 })
-export class JuegoActividad {
+export class Juego1JuegosMente {
   private router = inject(Router);
 
   volver(): void {
-    this.router.navigate(['/actividades-diarias']);
+    this.router.navigate(['/juegos-mente']);
   }
 
   finalizar(): void {
