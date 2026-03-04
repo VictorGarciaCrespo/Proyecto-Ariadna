@@ -14,7 +14,7 @@ export class Juego1HablarEscribir {
     this.router.navigate(['/hablar-escribir']);
   }
 
-  finalizar(): void {
-    this.router.navigate(['/']);
+  siguiente(): void {
+    this.router.navigate(['/juego2-hablar-escribir']);
   }
 }
