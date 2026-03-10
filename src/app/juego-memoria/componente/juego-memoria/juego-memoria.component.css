@@ -1,0 +1,90 @@
+.juego-memoria-contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 60px;
+    /* More horizontal spacing */
+    max-width: 1100px;
+    width: 100%;
+}
+
+.carta {
+    background-color: transparent;
+    width: 100%;
+    aspect-ratio: 1.15 / 1;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+.carta-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
+}
+
+.carta.volteada .carta-inner {
+    transform: rotateY(180deg);
+}
+
+.carta.emparejada {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.3s, opacity 0.3s linear;
+}
+
+.carta.emparejada .carta-inner {
+    cursor: default;
+}
+
+.carta-frente,
+.carta-dorso {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    background-color: #d9d9d9;
+}
+
+.carta-dorso {
+    transform: rotateY(180deg);
+}
+
+.carta-dorso img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.texto-carta {
+    padding: 0 10px;
+    text-align: center;
+    font-size: 26px;
+    font-weight: 500;
+    color: black;
+    text-transform: uppercase;
+}
+
+@media (max-width: 800px) {
+    .tablero {
+        gap: 15px;
+    }
+
+    .texto-carta {
+        font-size: 18px;
+    }
+}

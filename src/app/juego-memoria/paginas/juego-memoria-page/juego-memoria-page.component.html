@@ -1,0 +1,22 @@
+<div class="pagina-juego">
+    <div class="cabecera">
+        <button class="btn-icono redondo" routerLink="/">
+            <span class="icono-flecha">←</span>
+        </button>
+        <button class="btn-icono redondo">
+            <span class="icono-ayuda">?</span>
+        </button>
+    </div>
+
+    <div *ngIf="juegoTerminado" class="mensaje-victoria">
+        <h2>¡Felicidades! Has encontrado todas las parejas.</h2>
+        <button class="btn-accion" (click)="iniciarJuego()">Jugar de Nuevo</button>
+    </div>
+
+    <app-juego-memoria [cartas]="cartas" (cartaClickeada)="manejarCartaClickeada($event)">
+    </app-juego-memoria>
+
+    <div class="pie-pagina">
+        <button class="btn-accion" routerLink="/">Finalizar</button>
+    </div>
+</div>

@@ -8,6 +8,7 @@ import { Juego1JuegosMentePageComponent } from './juego1-juegos-mente/paginas/ju
 import { Juego1HablarEscribirPageComponent } from './juego1-hablar-escribir/paginas/juego1-hablar-escribir-page/juego1-hablar-escribir-page';
 import { Juego2JuegosMentePageComponent } from './juego2-juegos-mente/paginas/juego2-juegos-mente-page/juego2-juegos-mente-page';
 import { Juego2HablarEscribirPageComponent } from './juego2-hablar-escribir/paginas/juego2-hablar-escribir-page/juego2-hablar-escribir-page';
+import { JuegoMemoriaPageComponent } from './juego-memoria/paginas/juego-memoria-page/juego-memoria-page.component';
 
 export const routes: Routes = [
     { path: '', component: MenuPrincipalPageComponent },
@@ -19,5 +20,6 @@ export const routes: Routes = [
     { path: 'juego1-hablar-escribir', component: Juego1HablarEscribirPageComponent },
     { path: 'juego2-juegos-mente', component: Juego2JuegosMentePageComponent },
     { path: 'juego2-hablar-escribir', component: Juego2HablarEscribirPageComponent },
+    { path: 'juego-memoria', component: JuegoMemoriaPageComponent },
     { path: '**', redirectTo: '' }
 ];

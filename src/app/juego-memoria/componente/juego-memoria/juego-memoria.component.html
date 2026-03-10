@@ -1,0 +1,19 @@
+<div class="juego-memoria-contenedor">
+    <div class="tablero">
+        <div *ngFor="let carta of cartas" class="carta" [class.volteada]="carta.volteada || carta.emparejada"
+            [class.emparejada]="carta.emparejada" (click)="seleccionarCarta(carta)">
+            <div class="carta-inner">
+                <div class="carta-frente">
+                </div>
+                <div class="carta-dorso">
+                    <ng-container *ngIf="carta.tipo === 'imagen'">
+                        <img *ngIf="carta.contenido" [src]="carta.contenido" alt="Imagen memoria">
+                    </ng-container>
+                    <ng-container *ngIf="carta.tipo === 'texto'">
+                        <span class="texto-carta">{{ carta.contenido }}</span>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
