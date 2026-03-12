@@ -9,9 +9,11 @@ import { Juego1HablarEscribirPageComponent } from './juego1-hablar-escribir/pagi
 import { Juego2JuegosMentePageComponent } from './juego2-juegos-mente/paginas/juego2-juegos-mente-page/juego2-juegos-mente-page';
 import { Juego2HablarEscribirPageComponent } from './juego2-hablar-escribir/paginas/juego2-hablar-escribir-page/juego2-hablar-escribir-page';
 import { JuegoMemoriaPageComponent } from './juego-memoria/paginas/juego-memoria-page/juego-memoria-page.component';
+import { PerfilesPageComponent } from './perfiles/paginas/perfiles-page.component';
 
 export const routes: Routes = [
-    { path: '', component: MenuPrincipalPageComponent },
+    { path: '', component: PerfilesPageComponent },
+    { path: 'menu-principal', component: MenuPrincipalPageComponent },
     { path: 'actividades-diarias', component: ActividadesDiariasPageComponent },
     { path: 'juegos-mente', component: JuegosMentePageComponent },
     { path: 'hablar-escribir', component: HablarEscribirPageComponent },
