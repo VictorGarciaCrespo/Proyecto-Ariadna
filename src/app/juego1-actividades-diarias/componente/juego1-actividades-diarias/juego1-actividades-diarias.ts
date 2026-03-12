@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,10 +9,11 @@ import { Router } from '@angular/router';
   styleUrl: './juego1-actividades-diarias.css',
 })
 export class Juego1ActividadesDiarias {
+  private location = inject(Location);
   private router = inject(Router);
 
   volver(): void {
-    this.router.navigate(['/actividades-diarias']);
+    this.location.back();
   }
 
   finalizar(): void {

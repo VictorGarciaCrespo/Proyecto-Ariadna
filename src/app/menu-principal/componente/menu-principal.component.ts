@@ -28,4 +28,8 @@ export class MenuPrincipalComponent implements OnInit {
     abrirAgenda(): void {
         console.log('Abriendo agenda');
     }
+
+    salir(): void {
+        this.router.navigate(['/']);
+    }
 }
