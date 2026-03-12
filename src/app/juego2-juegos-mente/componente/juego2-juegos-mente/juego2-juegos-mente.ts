@@ -17,6 +17,6 @@ export class Juego2JuegosMente {
   }
 
   finalizar(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/menu-principal']);
   }
 }
