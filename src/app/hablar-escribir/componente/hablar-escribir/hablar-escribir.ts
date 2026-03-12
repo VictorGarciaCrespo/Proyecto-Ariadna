@@ -11,7 +11,7 @@ export class HablarEscribir {
   private router = inject(Router);
 
   volver(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/menu-principal']);
   }
 
   iniciarJuego(): void {

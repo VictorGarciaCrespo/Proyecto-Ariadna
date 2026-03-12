@@ -11,10 +11,10 @@ export class Juego2JuegosMente {
   private router = inject(Router);
 
   volver(): void {
-    this.router.navigate(['/juegos-mente']);
+    this.router.navigate(['/juego1-juegos-mente']);
   }
 
   finalizar(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/menu-principal']);
   }
 }

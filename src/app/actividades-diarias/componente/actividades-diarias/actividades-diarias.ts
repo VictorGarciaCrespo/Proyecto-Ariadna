@@ -11,7 +11,7 @@ export class ActividadesDiarias {
   private router = inject(Router);
 
   volver(): void {
-    this.router.navigate(['/']); // or previous page
+    this.router.navigate(['/menu-principal']);
   }
 
   iniciarJuego(): void {

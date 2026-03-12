@@ -11,10 +11,10 @@ export class Juego2HablarEscribir {
   private router = inject(Router);
 
   volver(): void {
-    this.router.navigate(['/hablar-escribir']);
+    this.router.navigate(['/juego1-hablar-escribir']);
   }
 
   finalizar(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/menu-principal']);
   }
 }

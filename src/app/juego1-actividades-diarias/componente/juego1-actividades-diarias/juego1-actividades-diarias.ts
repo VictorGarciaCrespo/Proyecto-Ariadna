@@ -15,6 +15,6 @@ export class Juego1ActividadesDiarias {
   }
 
   finalizar(): void {
-    this.router.navigate(['/']);
+    this.router.navigate(['/menu-principal']);
   }
 }
