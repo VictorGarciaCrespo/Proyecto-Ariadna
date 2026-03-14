@@ -17,6 +17,6 @@ export class Juego1HablarEscribir {
   }
 
   siguiente(): void {
-    this.router.navigate(['/juego2-hablar-escribir']);
+    this.router.navigate(['/menu-principal']);
   }
 }

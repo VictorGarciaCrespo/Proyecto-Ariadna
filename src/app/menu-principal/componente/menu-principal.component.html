@@ -11,6 +11,12 @@
     <h1 class="title">ARIADNA APP</h1>
 
     <div class="actions">
+        <!-- Bloque del perfil seleccionado -->
+        <div class="user-profile" *ngIf="perfilActual">
+            <span class="user-name">{{ perfilActual.nombre }}</span>
+            <img [src]="perfilActual.imagen" alt="Perfil del usuario" class="user-avatar" />
+        </div>
+
         <button class="btn-agenda" (click)="abrirAgenda()">Agenda</button>
         <button class="btn-salir" (click)="salir()">Salir</button>
     </div>

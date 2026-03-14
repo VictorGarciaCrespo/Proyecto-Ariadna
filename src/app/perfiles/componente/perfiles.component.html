@@ -2,8 +2,8 @@
     <h1 class="titulo">Elige tu perfil</h1>
 
     <div class="botones-grid">
-        <button class="btn-perfil" *ngFor="let perfil of perfiles" (click)="seleccionarPerfil(perfil.ruta)">
-            <div class="btn-imagen"></div>
+        <button class="btn-perfil" *ngFor="let perfil of perfiles" (click)="seleccionarPerfil(perfil)">
+            <img [src]="perfil.imagen" alt="Imagen de {{ perfil.nombre }}" class="btn-imagen">
             <span class="btn-nombre">{{ perfil.nombre }}</span>
         </button>
     </div>

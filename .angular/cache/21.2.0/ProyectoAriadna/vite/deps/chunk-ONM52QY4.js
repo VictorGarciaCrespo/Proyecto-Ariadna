@@ -28,12 +28,9 @@ import {
   Renderer2,
   RendererStyleFlags2,
   RuntimeError,
-  Subject,
   TemplateRef,
   Version,
   ViewContainerRef,
-  __spreadProps,
-  __spreadValues,
   booleanAttribute,
   createNgModule,
   findLocaleData,
@@ -62,7 +59,12 @@ import {
   ɵɵinject,
   ɵɵinjectAttribute,
   ɵɵstyleProp
-} from "./chunk-2M4UMX5N.js";
+} from "./chunk-B3NO66XW.js";
+import {
+  Subject,
+  __spreadProps,
+  __spreadValues
+} from "./chunk-PJVWDKLX.js";
 
 // node_modules/@angular/common/fesm2022/_platform_location-chunk.mjs
 var _DOM = null;
@@ -4794,4 +4796,4 @@ export {
   PRECONNECT_CHECK_BLOCKLIST,
   NgOptimizedImage
 };
-//# sourceMappingURL=chunk-LWMYDQKR.js.map
+//# sourceMappingURL=chunk-ONM52QY4.js.map

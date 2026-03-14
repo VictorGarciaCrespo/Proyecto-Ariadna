@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { PerfilService, Perfil } from '../servicio/perfil.service';
 
 @Component({
     selector: 'app-perfiles',
@@ -11,16 +12,18 @@ import { Router } from '@angular/router';
 })
 export class PerfilesComponent {
     private router = inject(Router);
+    private perfilService = inject(PerfilService);
 
-    perfiles = [
-        { nombre: 'Perfil 1', ruta: '/menu-principal' },
-        { nombre: 'Perfil 2', ruta: '/menu-principal' },
-        { nombre: 'Perfil 3', ruta: '/menu-principal' },
-        { nombre: 'Perfil 4', ruta: '/menu-principal' },
+    perfiles: Perfil[] = [
+        { nombre: 'Mateo', imagen: 'Perfiles/chico.png' },
+        { nombre: 'Endrick', imagen: 'Perfiles/chico (1).png' },
+        { nombre: 'Whang', imagen: 'Perfiles/chino.png' },
+        { nombre: 'Marta', imagen: 'Perfiles/niña.png' },
     ];
 
-    seleccionarPerfil(ruta: string): void {
-        console.log('Perfil seleccionado, navegando a:', ruta);
-        this.router.navigate([ruta]);
+    seleccionarPerfil(perfil: Perfil): void {
+        console.log('Perfil seleccionado:', perfil.nombre);
+        this.perfilService.setPerfil(perfil);
+        this.router.navigate(['/menu-principal']);
     }
 }
