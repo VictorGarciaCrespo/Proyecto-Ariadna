@@ -1,29 +1,42 @@
-<div class="juego-layout">
-    <header class="header">
-        <button class="btn-circle" (click)="volver()">
-            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
-                stroke-linecap="round" stroke-linejoin="round" class="icon-back">
-                <line x1="19" y1="12" x2="5" y2="12"></line>
-                <polyline points="12 19 5 12 12 5"></polyline>
-            </svg>
-        </button>
-        <button class="btn-circle btn-help">
-            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
-                class="icon-help">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                <line x1="12" y1="17" x2="12.01" y2="17"></line>
-            </svg>
-        </button>
-    </header>
+<div class="pantalla-juego">
+  <div class="cabecera">
+    <button class="btn-icono redondo" (click)="volver()">
+      <span class="icono-flecha">←</span>
+    </button>
+    <div class="titulo-container">
+      <h1>Palabras que empiecen por {{ vocalSeleccionada }}-</h1>
+    </div>
+    <button class="btn-icono redondo">
+      <span class="icono-ayuda">?</span>
+    </button>
+  </div>
 
-    <main class="main-content">
-        <div class="image-area">
-            <img src="/imagenes/juego1-hablar-escribir.png" alt="Imagen del juego" class="juego-img" />
+  <div class="contenido-juego">
+    <div class="grid-cartas">
+      <div *ngFor="let carta of cartas" class="carta" (click)="seleccionarCarta(carta)">
+        <div class="contenido-carta">
+          <img [src]="carta.rutaImagen" [alt]="carta.palabra">
+
+          <div *ngIf="carta.seleccionada && carta.esCorrecta" class="marca-correcta">
+            <img src="assets/iconos/tick.svg" alt="Correcto"
+              onerror="this.src=''; this.outerHTML='<span class=\'tick-text\'>✅</span>'">
+          </div>
+
+          <div *ngIf="carta.seleccionada && !carta.esCorrecta" class="marca-incorrecta">
+            <img src="assets/iconos/cruz.svg" alt="Incorrecto"
+              onerror="this.src=''; this.outerHTML='<span class=\'cross-text\'>❌</span>'">
+          </div>
         </div>
-    </main>
+      </div>
+    </div>
 
-    <footer class="footer">
-        <button class="btn-finalizar" (click)="siguiente()">Siguiente</button>
-    </footer>
+    <div *ngIf="juegoTerminado" class="mensaje-victoria">
+      <h2>¡Muy bien! Has encontrado todas las palabras con {{ vocalSeleccionada }}</h2>
+      <button class="boton-jugar-de-nuevo" (click)="volverAJugar()">Volver a jugar</button>
+    </div>
+  </div>
+
+  <div class="pie-pagina">
+    <button class="boton-siguiente" (click)="siguiente()">Siguiente</button>
+  </div>
 </div>
