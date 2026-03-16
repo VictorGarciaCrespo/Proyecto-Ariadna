@@ -16,7 +16,7 @@ export class PerfilesComponent {
 
     perfiles: Perfil[] = [
         { nombre: 'Mateo', imagen: 'Perfiles/chico.png' },
-        { nombre: 'Endrick', imagen: 'Perfiles/chico (1).png' },
+        { nombre: 'Endrick', imagen: 'Perfiles/chico_2.png' },
         { nombre: 'Whang', imagen: 'Perfiles/chino.png' },
         { nombre: 'Marta', imagen: 'Perfiles/niña.png' },
     ];
