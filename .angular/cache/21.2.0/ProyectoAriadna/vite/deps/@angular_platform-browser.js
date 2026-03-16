@@ -27,22 +27,12 @@ import {
   withI18nSupport,
   withIncrementalHydration,
   withNoHttpTransferCache
-} from "./chunk-TQHXTTCW.js";
-import {
-  DomEventsPlugin,
-  DomRendererFactory2,
-  EVENT_MANAGER_PLUGINS,
-  EventManager,
-  EventManagerPlugin,
-  REMOVE_STYLES_ON_COMPONENT_DESTROY,
-  SharedStylesHost
-} from "./chunk-5ZGNEAZK.js";
+} from "./chunk-LPJHKK46.js";
 import {
   getDOM
-} from "./chunk-SLCWRNDX.js";
-import "./chunk-JA5E775I.js";
-import "./chunk-RSS3ODKE.js";
-import "./chunk-H2SRQSE4.js";
+} from "./chunk-O3LRLQLC.js";
+import "./chunk-B3NO66XW.js";
+import "./chunk-PJVWDKLX.js";
 export {
   BrowserModule,
   By,

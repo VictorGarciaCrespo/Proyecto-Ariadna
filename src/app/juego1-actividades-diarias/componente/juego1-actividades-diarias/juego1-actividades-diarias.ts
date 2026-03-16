@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-juego1-actividades-diarias',
-  imports: [],
+  imports: [MatIconModule],
   templateUrl: './juego1-actividades-diarias.html',
   styleUrl: './juego1-actividades-diarias.css',
 })

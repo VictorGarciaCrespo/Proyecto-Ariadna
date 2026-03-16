@@ -4,11 +4,12 @@ import { RouterModule } from '@angular/router';
 import { JuegoMemoriaComponent } from '../../componente/juego-memoria/juego-memoria.component';
 import { JuegoMemoriaService } from '../../servicio/juego-memoria.service';
 import { CartaMemoria, ElementoMemoria } from '../../interfaz/juego-memoria.interface';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
     selector: 'app-juego-memoria-page',
     standalone: true,
-    imports: [CommonModule, RouterModule, JuegoMemoriaComponent],
+    imports: [CommonModule, RouterModule, JuegoMemoriaComponent, MatIconModule],
     templateUrl: './juego-memoria-page.component.html',
     styleUrls: ['./juego-memoria-page.component.css']
 })

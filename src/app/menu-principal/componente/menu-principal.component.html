@@ -1,6 +1,5 @@
 <header class="header">
     <div class="logo-container">
-        <!-- Replace src with actual logo if available, or keep text if not -->
         <div class="logo-placeholder">
             <img src="" alt="Ariadna Logo"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
@@ -11,26 +10,28 @@
     <h1 class="title">ARIADNA APP</h1>
 
     <div class="actions">
-        <!-- Bloque del perfil seleccionado -->
         <div class="user-profile" *ngIf="perfilActual">
             <span class="user-name">{{ perfilActual.nombre }}</span>
             <img [src]="perfilActual.imagen" alt="Perfil del usuario" class="user-avatar" />
         </div>
 
-        <button class="btn-agenda" (click)="abrirAgenda()">Agenda</button>
-        <button class="btn-salir" (click)="salir()">Salir</button>
+        <button class="btn-agenda" (click)="abrirAgenda()">
+            <mat-icon>calendar_month</mat-icon>
+            Agenda
+        </button>
+        <button class="btn-salir" (click)="salir()">
+            <mat-icon>exit_to_app</mat-icon>
+            Salir
+        </button>
     </div>
 </header>
 
 <main class="main-content">
     <div class="cards-grid" *ngIf="opciones.length >= 3">
-        <!-- Fila 1 -->
         <div class="card card-top" (click)="navegarA(opciones[0].ruta)">
             <div class="card-image-placeholder"></div>
             <div class="card-title">{{ opciones[0].titulo }}</div>
         </div>
-
-        <!-- Fila 2 -->
         <div class="card card-bottom-left" (click)="navegarA(opciones[1].ruta)">
             <div class="card-image-placeholder"></div>
             <div class="card-title">{{ opciones[1].titulo }}</div>
