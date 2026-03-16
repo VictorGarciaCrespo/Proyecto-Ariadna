@@ -1,31 +1,32 @@
 import {
-  BidiModule
-} from "./chunk-PFTIOHEB.js";
+  trustedHTMLFromString
+} from "./chunk-JUY7YPMF.js";
 import {
   DomSanitizer,
   HttpClient
-} from "./chunk-LPJHKK46.js";
-import "./chunk-O3LRLQLC.js";
+} from "./chunk-SXIJ6XMS.js";
+import "./chunk-5ZGNEAZK.js";
 import {
-  ApplicationRef,
+  BidiModule
+} from "./chunk-5AWH3PKZ.js";
+import "./chunk-7GYIEAXC.js";
+import "./chunk-SLCWRNDX.js";
+import {
   ChangeDetectionStrategy,
   Component,
   DOCUMENT,
   ElementRef,
-  EnvironmentInjector,
   ErrorHandler,
   HostAttributeToken,
   Inject,
   Injectable,
   InjectionToken,
-  Injector,
   Input,
   NgModule,
   Optional,
   SecurityContext,
   ViewEncapsulation,
   booleanAttribute,
-  createComponent,
   inject,
   setClassMetadata,
   ɵɵattribute,
@@ -38,7 +39,7 @@ import {
   ɵɵinject,
   ɵɵprojection,
   ɵɵprojectionDef
-} from "./chunk-B3NO66XW.js";
+} from "./chunk-JA5E775I.js";
 import {
   Subscription,
   catchError,
@@ -50,101 +51,8 @@ import {
   take,
   tap,
   throwError
-} from "./chunk-PJVWDKLX.js";
-
-// node_modules/@angular/cdk/fesm2022/_style-loader-chunk.mjs
-var appsWithLoaders = /* @__PURE__ */ new WeakMap();
-var _CdkPrivateStyleLoader = class __CdkPrivateStyleLoader {
-  _appRef;
-  _injector = inject(Injector);
-  _environmentInjector = inject(EnvironmentInjector);
-  load(loader) {
-    const appRef = this._appRef = this._appRef || this._injector.get(ApplicationRef);
-    let data = appsWithLoaders.get(appRef);
-    if (!data) {
-      data = {
-        loaders: /* @__PURE__ */ new Set(),
-        refs: []
-      };
-      appsWithLoaders.set(appRef, data);
-      appRef.onDestroy(() => {
-        appsWithLoaders.get(appRef)?.refs.forEach((ref) => ref.destroy());
-        appsWithLoaders.delete(appRef);
-      });
-    }
-    if (!data.loaders.has(loader)) {
-      data.loaders.add(loader);
-      data.refs.push(createComponent(loader, {
-        environmentInjector: this._environmentInjector
-      }));
-    }
-  }
-  static ɵfac = function _CdkPrivateStyleLoader_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || __CdkPrivateStyleLoader)();
-  };
-  static ɵprov = ɵɵdefineInjectable({
-    token: __CdkPrivateStyleLoader,
-    factory: __CdkPrivateStyleLoader.ɵfac,
-    providedIn: "root"
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(_CdkPrivateStyleLoader, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
-})();
-
-// node_modules/@angular/cdk/fesm2022/private.mjs
-var _VisuallyHiddenLoader = class __VisuallyHiddenLoader {
-  static ɵfac = function _VisuallyHiddenLoader_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || __VisuallyHiddenLoader)();
-  };
-  static ɵcmp = ɵɵdefineComponent({
-    type: __VisuallyHiddenLoader,
-    selectors: [["ng-component"]],
-    exportAs: ["cdkVisuallyHidden"],
-    decls: 0,
-    vars: 0,
-    template: function _VisuallyHiddenLoader_Template(rf, ctx) {
-    },
-    styles: [".cdk-visually-hidden{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap;outline:0;-webkit-appearance:none;-moz-appearance:none;left:0}[dir=rtl] .cdk-visually-hidden{left:auto;right:0}\n"],
-    encapsulation: 2,
-    changeDetection: 0
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(_VisuallyHiddenLoader, [{
-    type: Component,
-    args: [{
-      exportAs: "cdkVisuallyHidden",
-      encapsulation: ViewEncapsulation.None,
-      template: "",
-      changeDetection: ChangeDetectionStrategy.OnPush,
-      styles: [".cdk-visually-hidden{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap;outline:0;-webkit-appearance:none;-moz-appearance:none;left:0}[dir=rtl] .cdk-visually-hidden{left:auto;right:0}\n"]
-    }]
-  }], null, null);
-})();
-var policy;
-function getPolicy() {
-  if (policy === void 0) {
-    policy = null;
-    if (typeof window !== "undefined") {
-      const ttWindow = window;
-      if (ttWindow.trustedTypes !== void 0) {
-        policy = ttWindow.trustedTypes.createPolicy("angular#components", {
-          createHTML: (s) => s
-        });
-      }
-    }
-  }
-  return policy;
-}
-function trustedHTMLFromString(html) {
-  return getPolicy()?.createHTML(html) || html;
-}
+} from "./chunk-RSS3ODKE.js";
+import "./chunk-H2SRQSE4.js";
 
 // node_modules/@angular/material/fesm2022/_icon-registry-chunk.mjs
 function getMatIconNameNotFoundError(iconName) {

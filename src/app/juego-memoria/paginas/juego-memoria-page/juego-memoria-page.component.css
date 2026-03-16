@@ -15,6 +15,14 @@
     margin-bottom: 40px;
 }
 
+.titulo-juego {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+    text-align: center;
+}
+
 .btn-icono.redondo {
     width: 50px;
     height: 50px;

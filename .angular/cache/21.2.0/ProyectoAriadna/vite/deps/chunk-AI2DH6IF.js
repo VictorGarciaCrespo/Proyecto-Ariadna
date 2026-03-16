@@ -1,20 +1,22 @@
 import {
-  _CdkPrivateStyleLoader
-} from "./chunk-7GYIEAXC.js";
-import {
   Platform,
   coerceElement,
   coerceNumberProperty
-} from "./chunk-SNKOQXPR.js";
+} from "./chunk-KKIBFM4Y.js";
+import {
+  _VisuallyHiddenLoader,
+  _setInnerHtml
+} from "./chunk-JUY7YPMF.js";
 import {
   DomSanitizer
-} from "./chunk-TQHXTTCW.js";
+} from "./chunk-SXIJ6XMS.js";
+import {
+  _CdkPrivateStyleLoader
+} from "./chunk-7GYIEAXC.js";
 import {
   ANIMATION_MODULE_TYPE,
   APP_ID,
   CSP_NONCE,
-  ChangeDetectionStrategy,
-  Component,
   DOCUMENT,
   Directive,
   ElementRef,
@@ -28,14 +30,11 @@ import {
   Output,
   QueryList,
   RendererFactory2,
-  SecurityContext,
-  ViewEncapsulation,
   afterNextRender,
   booleanAttribute,
   inject,
   setClassMetadata,
   ɵɵNgOnChangesFeature,
-  ɵɵdefineComponent,
   ɵɵdefineDirective,
   ɵɵdefineInjectable,
   ɵɵdefineInjector,
@@ -523,62 +522,6 @@ var CdkMonitorFocus = class _CdkMonitorFocus {
     }]
   });
 })();
-
-// node_modules/@angular/cdk/fesm2022/private.mjs
-var _VisuallyHiddenLoader = class __VisuallyHiddenLoader {
-  static ɵfac = function _VisuallyHiddenLoader_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || __VisuallyHiddenLoader)();
-  };
-  static ɵcmp = ɵɵdefineComponent({
-    type: __VisuallyHiddenLoader,
-    selectors: [["ng-component"]],
-    exportAs: ["cdkVisuallyHidden"],
-    decls: 0,
-    vars: 0,
-    template: function _VisuallyHiddenLoader_Template(rf, ctx) {
-    },
-    styles: [".cdk-visually-hidden{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap;outline:0;-webkit-appearance:none;-moz-appearance:none;left:0}[dir=rtl] .cdk-visually-hidden{left:auto;right:0}\n"],
-    encapsulation: 2,
-    changeDetection: 0
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(_VisuallyHiddenLoader, [{
-    type: Component,
-    args: [{
-      exportAs: "cdkVisuallyHidden",
-      encapsulation: ViewEncapsulation.None,
-      template: "",
-      changeDetection: ChangeDetectionStrategy.OnPush,
-      styles: [".cdk-visually-hidden{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;white-space:nowrap;outline:0;-webkit-appearance:none;-moz-appearance:none;left:0}[dir=rtl] .cdk-visually-hidden{left:auto;right:0}\n"]
-    }]
-  }], null, null);
-})();
-var policy;
-function getPolicy() {
-  if (policy === void 0) {
-    policy = null;
-    if (typeof window !== "undefined") {
-      const ttWindow = window;
-      if (ttWindow.trustedTypes !== void 0) {
-        policy = ttWindow.trustedTypes.createPolicy("angular#components", {
-          createHTML: (s) => s
-        });
-      }
-    }
-  }
-  return policy;
-}
-function trustedHTMLFromString(html) {
-  return getPolicy()?.createHTML(html) || html;
-}
-function _setInnerHtml(element, html, sanitizer) {
-  const cleanHtml = sanitizer.sanitize(SecurityContext.HTML, html);
-  if (cleanHtml === null && (typeof ngDevMode === "undefined" || ngDevMode)) {
-    throw new Error(`Could not sanitize HTML: ${html}`);
-  }
-  element.innerHTML = trustedHTMLFromString(cleanHtml || "");
-}
 
 // node_modules/@angular/cdk/fesm2022/observers.mjs
 function shouldIgnoreRecord(record) {
@@ -2375,32 +2318,6 @@ var ConfigurableFocusTrapFactory = class _ConfigurableFocusTrapFactory {
   }], () => [], null);
 })();
 
-// node_modules/@angular/cdk/fesm2022/_css-pixel-value-chunk.mjs
-function coerceCssPixelValue(value) {
-  if (value == null) {
-    return "";
-  }
-  return typeof value === "string" ? value : `${value}px`;
-}
-
-// node_modules/@angular/cdk/fesm2022/coercion.mjs
-function coerceBooleanProperty(value) {
-  return value != null && `${value}` !== "false";
-}
-function coerceStringArray(value, separator = /\s+/) {
-  const result = [];
-  if (value != null) {
-    const sourceValues = Array.isArray(value) ? value : `${value}`.split(separator);
-    for (const sourceValue of sourceValues) {
-      const trimmedString = `${sourceValue}`.trim();
-      if (trimmedString) {
-        result.push(trimmedString);
-      }
-    }
-  }
-  return result;
-}
-
 // node_modules/@angular/cdk/fesm2022/layout.mjs
 var LayoutModule = class _LayoutModule {
   static ɵfac = function LayoutModule_Factory(__ngFactoryType__) {
@@ -2436,6 +2353,32 @@ function _animationsDisabled() {
   return _getAnimationsState() !== "enabled";
 }
 
+// node_modules/@angular/cdk/fesm2022/_css-pixel-value-chunk.mjs
+function coerceCssPixelValue(value) {
+  if (value == null) {
+    return "";
+  }
+  return typeof value === "string" ? value : `${value}px`;
+}
+
+// node_modules/@angular/cdk/fesm2022/coercion.mjs
+function coerceBooleanProperty(value) {
+  return value != null && `${value}` !== "false";
+}
+function coerceStringArray(value, separator = /\s+/) {
+  const result = [];
+  if (value != null) {
+    const sourceValues = Array.isArray(value) ? value : `${value}`.split(separator);
+    for (const sourceValue of sourceValues) {
+      const trimmedString = `${sourceValue}`.trim();
+      if (trimmedString) {
+        result.push(trimmedString);
+      }
+    }
+  }
+  return result;
+}
+
 // node_modules/@angular/cdk/fesm2022/_test-environment-chunk.mjs
 function _isTestEnvironment() {
   return typeof __karma__ !== "undefined" && !!__karma__ || typeof jasmine !== "undefined" && !!jasmine || typeof jest !== "undefined" && !!jest || typeof Mocha !== "undefined" && !!Mocha;
@@ -2461,7 +2404,6 @@ export {
   normalizePassiveListenerOptions,
   FocusMonitor,
   CdkMonitorFocus,
-  _VisuallyHiddenLoader,
   coerceArray,
   MediaMatcher,
   ObserversModule,
@@ -2473,11 +2415,11 @@ export {
   hasModifierKey,
   AriaDescriber,
   _isTestEnvironment,
-  coerceCssPixelValue,
-  coerceBooleanProperty,
-  coerceStringArray,
   MATERIAL_ANIMATIONS,
   _getAnimationsState,
-  _animationsDisabled
+  _animationsDisabled,
+  coerceCssPixelValue,
+  coerceBooleanProperty,
+  coerceStringArray
 };
-//# sourceMappingURL=chunk-TXQPAAFE.js.map
+//# sourceMappingURL=chunk-AI2DH6IF.js.map
