@@ -1,19 +1,10 @@
 <div class="juego-layout">
     <header class="header">
         <button class="btn-circle" (click)="volver()">
-            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
-                stroke-linecap="round" stroke-linejoin="round" class="icon-back">
-                <line x1="19" y1="12" x2="5" y2="12"></line>
-                <polyline points="12 19 5 12 12 5"></polyline>
-            </svg>
+            <mat-icon>arrow_back</mat-icon>
         </button>
         <button class="btn-circle btn-help">
-            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
-                class="icon-help">
-                <circle cx="12" cy="12" r="10"></circle>
-                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
-                <line x1="12" y1="17" x2="12.01" y2="17"></line>
-            </svg>
+            <mat-icon>help</mat-icon>
         </button>
     </header>
 
@@ -25,7 +16,8 @@
 
     <footer class="footer">
         <button class="btn-finalizar" (click)="finalizar()">
-            Finalizar
+            Siguiente
+            <mat-icon>arrow_forward</mat-icon>
         </button>
     </footer>
 </div>

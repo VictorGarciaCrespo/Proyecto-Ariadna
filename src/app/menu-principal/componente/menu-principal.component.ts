@@ -5,11 +5,12 @@ import { MenuPrincipalService } from '../servicio/menu-principal.service';
 import { OpcionMenu } from '../interfaz/opcion-menu.interface';
 import { PerfilService, Perfil } from '../../perfiles/servicio/perfil.service';
 import { Subscription } from 'rxjs';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
     selector: 'app-menu-principal',
     standalone: true,
-    imports: [CommonModule],
+    imports: [CommonModule, MatIconModule],
     templateUrl: './menu-principal.component.html',
     styleUrl: './menu-principal.component.css'
 })

@@ -1,13 +1,13 @@
 <div class="pantalla-juego">
   <div class="cabecera">
     <button class="btn-icono redondo" (click)="volver()">
-      <span class="icono-flecha">←</span>
+      <mat-icon>arrow_back</mat-icon>
     </button>
     <div class="titulo-container">
       <h1>Palabras que empiecen por {{ vocalSeleccionada }}-</h1>
     </div>
     <button class="btn-icono redondo">
-      <span class="icono-ayuda">?</span>
+      <mat-icon>help</mat-icon>
     </button>
   </div>
 
@@ -37,6 +37,9 @@
   </div>
 
   <div class="pie-pagina">
-    <button class="boton-siguiente" (click)="siguiente()">Siguiente</button>
+    <button class="boton-siguiente" (click)="siguiente()">
+      Siguiente
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
   </div>
 </div>

@@ -3,11 +3,12 @@ import { Location, CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { VocalJuegoService } from '../../servicio/vocal-juego.service';
 import { CartaVocal } from '../../interfaz/vocal-juego.interface';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-juego1-hablar-escribir',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatIconModule],
   templateUrl: './juego1-hablar-escribir.html',
   styleUrl: './juego1-hablar-escribir.css',
 })
