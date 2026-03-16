@@ -9,6 +9,7 @@ import { Juego1HablarEscribirPageComponent } from './juego1-hablar-escribir/pagi
 
 import { JuegoMemoriaPageComponent } from './juego-memoria/paginas/juego-memoria-page/juego-memoria-page.component';
 import { PerfilesPageComponent } from './perfiles/paginas/perfiles-page.component';
+import { AdministradorPageComponent } from './administrador/paginas/administrador-page.component';
 
 export const routes: Routes = [
     { path: '', component: PerfilesPageComponent },
@@ -19,5 +20,6 @@ export const routes: Routes = [
     { path: 'juego1-actividades-diarias', component: Juego1ActividadesDiariasPageComponent },
     { path: 'juego1-hablar-escribir', component: Juego1HablarEscribirPageComponent },
     { path: 'juego-memoria', component: JuegoMemoriaPageComponent },
+    { path: 'administrador', component: AdministradorPageComponent },
     { path: '**', redirectTo: '' }
 ];

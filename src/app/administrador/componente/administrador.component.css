@@ -1,0 +1,11 @@
+.administrador-container {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.actions-section {
+    display: flex;
+    gap: 16px;
+}
