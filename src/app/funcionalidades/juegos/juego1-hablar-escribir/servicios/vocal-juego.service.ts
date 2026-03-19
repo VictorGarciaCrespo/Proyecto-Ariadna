@@ -52,23 +52,18 @@ export class VocalJuegoService {
     constructor() { }
 
     generarPartida(vocalObjetivo: string): CartaVocal[] {
-        // Filtrar palabras de la vocal objetivo
+
         let palabrasObjetivo = this.bancoPalabras.filter(p => p.vocalInicial === vocalObjetivo);
-        // Mezclar y coger 5
+
         palabrasObjetivo = this.mezclarArreglo(palabrasObjetivo).slice(0, 5);
 
-        // Marcar como correctas
         palabrasObjetivo = palabrasObjetivo.map(p => ({ ...p, esCorrecta: true, seleccionada: false }));
 
-        // Filtrar palabras de otras vocales
         let otrasPalabras = this.bancoPalabras.filter(p => p.vocalInicial !== vocalObjetivo);
-        // Mezclar y coger 3
         otrasPalabras = this.mezclarArreglo(otrasPalabras).slice(0, 3);
 
-        // Marcar como incorrectas
         otrasPalabras = otrasPalabras.map(p => ({ ...p, esCorrecta: false, seleccionada: false }));
 
-        // Juntar y mezclar de nuevo
         let partida = [...palabrasObjetivo, ...otrasPalabras];
         return this.mezclarArreglo(partida);
     }
