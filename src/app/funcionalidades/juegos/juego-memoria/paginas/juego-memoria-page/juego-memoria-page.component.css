@@ -1,0 +1,80 @@
+.pagina-juego {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px 40px;
+}
+
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.titulo-juego {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: #333;
+    margin: 0;
+    text-align: center;
+}
+
+.btn-icono.redondo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 24px;
+    color: black;
+    transition: background-color 0.2s;
+}
+
+.btn-icono.redondo:hover {
+    background-color: #f0f0f0;
+}
+
+.mensaje-victoria {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mensaje-victoria h2 {
+    color: #333;
+}
+
+.pie-pagina {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 40px;
+}
+
+.btn-accion {
+    padding: 12px 30px;
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 2px;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto;
+    width: fit-content;
+}
+
+.btn-accion:hover {
+    background-color: #c0c0c0;
+}

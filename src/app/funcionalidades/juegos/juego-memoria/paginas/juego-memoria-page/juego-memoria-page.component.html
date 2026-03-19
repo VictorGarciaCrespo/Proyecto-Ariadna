@@ -1,0 +1,29 @@
+<div class="pagina-juego">
+    <div class="cabecera">
+        <button class="btn-icono redondo" routerLink="/juegos-mente">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <h1 class="titulo-juego">Encuentra las Parejas</h1>
+        <button class="btn-icono redondo">
+            <mat-icon>help</mat-icon>
+        </button>
+    </div>
+
+    <div *ngIf="juegoTerminado" class="mensaje-victoria">
+        <h2>¡Felicidades! Has encontrado todas las parejas.</h2>
+        <button class="btn-accion" (click)="iniciarJuego()">
+            <mat-icon>refresh</mat-icon>
+            Jugar de Nuevo
+        </button>
+    </div>
+
+    <app-juego-memoria [cartas]="cartas" (cartaClickeada)="manejarCartaClickeada($event)">
+    </app-juego-memoria>
+
+    <div class="pie-pagina">
+        <button class="btn-accion" routerLink="/menu-principal">
+            Siguiente
+            <mat-icon>arrow_forward</mat-icon>
+        </button>
+    </div>
+</div>
