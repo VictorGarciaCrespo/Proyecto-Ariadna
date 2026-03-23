@@ -21,9 +21,21 @@ export class PerfilesComponent {
         { nombre: 'Marta', imagen: 'Perfiles/chica.png' },
     ];
 
+    get disposicionClase(): string {
+        const num = this.perfiles.length;
+        if (num >= 1 && num <= 3) return 'disposicion-fila';
+        if (num >= 4 && num <= 6) return 'disposicion-dos-filas';
+        return 'disposicion-rejilla';
+    }
+
     seleccionarPerfil(perfil: Perfil): void {
         console.log('Perfil seleccionado:', perfil.nombre);
         this.perfilService.setPerfil(perfil);
         this.router.navigate(['/menu-principal']);
+    }
+
+    anadirPerfil(): void {
+        console.log('Navegando a administrador para añadir nuevo perfil');
+        this.router.navigate(['/administrador']);
     }
 }

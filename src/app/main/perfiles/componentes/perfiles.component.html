@@ -1,10 +1,15 @@
 <main class="perfiles-container">
     <h1 class="titulo">Elige tu perfil</h1>
 
-    <div class="botones-grid">
+    <div class="botones-grid" [ngClass]="disposicionClase">
         <button class="btn-perfil" *ngFor="let perfil of perfiles" (click)="seleccionarPerfil(perfil)">
             <img [src]="perfil.imagen" alt="Imagen de {{ perfil.nombre }}" class="btn-imagen">
             <span class="btn-nombre">{{ perfil.nombre }}</span>
+        </button>
+
+        <button class="btn-perfil btn-anadir" (click)="anadirPerfil()">
+            <div class="btn-imagen btn-imagen-add">+</div>
+            <span class="btn-nombre">Añadir</span>
         </button>
     </div>
 </main>
