@@ -24,7 +24,7 @@ export class AdministradorComponent {
       console.log('El diálogo se ha cerrado');
       if (result) {
         console.log('Datos del alumno form:', result);
-        // Aquí puedes hacer la llamada a un servicio para guardar al alumno
+        //para añadir alumno
       }
     });
   }
