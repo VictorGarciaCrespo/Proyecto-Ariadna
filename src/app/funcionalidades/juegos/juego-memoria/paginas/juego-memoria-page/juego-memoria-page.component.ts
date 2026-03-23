@@ -99,7 +99,7 @@ export class JuegoMemoriaPageComponent implements OnInit {
             this.bloquearTablero = true;
             setTimeout(() => {
                 this.deshabilitarCartas(carta1, carta2);
-            }, 400); // reduced delay for match
+            }, 400); 
         } else {
             this.desvoltearCartas(carta1, carta2);
         }
@@ -110,7 +110,7 @@ export class JuegoMemoriaPageComponent implements OnInit {
         carta2.emparejada = true;
 
         if (this.cartas.every(carta => carta.emparejada)) {
-            // Juego terminado, no resetear el tablero para que no se pueda interactuar
+           
             this.verificarVictoria();
         } else {
             this.resetearTablero();
@@ -123,7 +123,7 @@ export class JuegoMemoriaPageComponent implements OnInit {
             carta1.volteada = false;
             carta2.volteada = false;
             this.resetearTablero();
-        }, 600); // reduced delay for mismatch
+        }, 600);
     }
 
     resetearTablero(): void {
@@ -134,7 +134,7 @@ export class JuegoMemoriaPageComponent implements OnInit {
     verificarVictoria(): void {
         setTimeout(() => {
             this.juegoTerminado = true;
-            this.cdRef.detectChanges(); // Force angular to update the view
-        }, 1000); // Wait until cards fully disappear
+            this.cdRef.detectChanges();
+        }, 1000);
     }
 }
