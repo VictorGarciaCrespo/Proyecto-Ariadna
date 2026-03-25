@@ -14,12 +14,11 @@ export class PerfilesComponent {
     private router = inject(Router);
     private perfilService = inject(PerfilService);
 
-    perfiles: Perfil[] = [
-        { nombre: 'Mateo', imagen: 'Perfiles/chico.png' },
-        { nombre: 'Endrick', imagen: 'Perfiles/chico_2.png' },
-        { nombre: 'Whang', imagen: 'Perfiles/chino.png' },
-        { nombre: 'Marta', imagen: 'Perfiles/chica.png' },
-    ];
+    perfiles: Perfil[] = [];
+
+    constructor() {
+        this.perfiles = this.perfilService.obtenerPerfiles();
+    }
 
     get disposicionClase(): string {
         const num = this.perfiles.length;
@@ -34,8 +33,5 @@ export class PerfilesComponent {
         this.router.navigate(['/menu-principal']);
     }
 
-    anadirPerfil(): void {
-        console.log('Navegando a administrador para añadir nuevo perfil');
-        this.router.navigate(['/administrador']);
-    }
+
 }

@@ -41,13 +41,17 @@ export class AlumnoDialogComponent {
     nombre: ['', Validators.required],
     apellidos: ['', Validators.required],
     fechaNacimiento: ['', Validators.required],
-    imagen: [null as File | null] // fixed type for image
+    imagen: [null as string | null] 
   });
 
   onFileSelected(event: any) {
     const file: File = event.target.files[0];
     if (file) {
-      this.alumnoForm.patchValue({ imagen: file });
+      const reader = new FileReader();
+      reader.onload = () => {
+        this.alumnoForm.patchValue({ imagen: reader.result as string });
+      };
+      reader.readAsDataURL(file);
     }
   }
 

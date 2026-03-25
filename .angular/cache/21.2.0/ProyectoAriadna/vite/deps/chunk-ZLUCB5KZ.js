@@ -3,11 +3,11 @@ import {
   MatRipple,
   RippleRenderer,
   defaultRippleAnimationConfig
-} from "./chunk-BRT5J2EZ.js";
+} from "./chunk-KA6I3NCJ.js";
 import {
   _animationsDisabled,
   _getEventTarget
-} from "./chunk-NRFGBT4Y.js";
+} from "./chunk-PVJBLW6F.js";
 import {
   BidiModule
 } from "./chunk-PFTIOHEB.js";
@@ -181,4 +181,4 @@ export {
   MatRippleLoader,
   MatRippleModule
 };
-//# sourceMappingURL=chunk-DYCLICAS.js.map
+//# sourceMappingURL=chunk-ZLUCB5KZ.js.map

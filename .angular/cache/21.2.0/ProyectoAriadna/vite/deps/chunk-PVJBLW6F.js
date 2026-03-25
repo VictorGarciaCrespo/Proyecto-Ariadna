@@ -2412,12 +2412,12 @@ export {
   _IdGenerator,
   hasModifierKey,
   AriaDescriber,
+  _isTestEnvironment,
   MATERIAL_ANIMATIONS,
   _getAnimationsState,
   _animationsDisabled,
-  _isTestEnvironment,
   coerceCssPixelValue,
   coerceBooleanProperty,
   coerceStringArray
 };
-//# sourceMappingURL=chunk-NRFGBT4Y.js.map
+//# sourceMappingURL=chunk-PVJBLW6F.js.map
