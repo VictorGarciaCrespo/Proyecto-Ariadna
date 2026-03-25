@@ -1,0 +1,54 @@
+<h2 mat-dialog-title>Actualizar Alumno</h2>
+<mat-dialog-content>
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Selecciona un alumno para actualizar</mat-label>
+    <mat-select [(ngModel)]="selectedIndex" (selectionChange)="onProfileSelect()">
+      <mat-option *ngFor="let per of data.perfiles; let i = index" [value]="i">
+        {{ per.nombre }} {{ per.apellidos }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <form [formGroup]="alumnoForm" class="alumno-form" *ngIf="selectedIndex !== null">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nombre" placeholder="Ej. Juan">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Apellidos</mat-label>
+      <input matInput formControlName="apellidos" placeholder="Ej. Pérez Gómez">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Fecha de nacimiento</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="fechaNacimiento">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <div class="file-input-container">
+      <label>Imagen del perfil:</label>
+      <input type="file" accept="image/*" (change)="onFileSelected($event)">
+      <div *ngIf="alumnoForm.get('imagen')?.value">
+        <img [src]="alumnoForm.get('imagen')?.value" width="50" height="50" style="object-fit:cover; border-radius:50%; margin-top:5px;">
+      </div>
+    </div>
+
+    <div class="capacidades-section">
+      <label>Capacidades del alumno:</label>
+      <div class="capacidades-list">
+        <mat-checkbox *ngFor="let cap of capacidades; let i = index" 
+                      [checked]="cap.selected" 
+                      (change)="onCapacidadChange($event, i)">
+          {{cap.label}}
+        </mat-checkbox>
+      </div>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-flat-button color="primary" [disabled]="!alumnoForm.valid || selectedIndex === null" (click)="onSubmit()">Actualizar</button>
+</mat-dialog-actions>

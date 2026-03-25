@@ -13,6 +13,7 @@
   min-height: 100vh;
   padding: 40px;
   gap: 60px;
+  position: relative;
 }
 
 .titulo {
@@ -123,4 +124,27 @@
 .btn-perfil.btn-anadir:hover {
   border-color: #aaa;
   background-color: #fdfdfd;
+}
+
+.header-actions {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+
+.btn-invitado {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #333;
+}
+
+.btn-invitado:hover {
+  background-color: #e0e0e0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }

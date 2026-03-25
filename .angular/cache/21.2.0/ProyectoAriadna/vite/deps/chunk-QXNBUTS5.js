@@ -1,31 +1,24 @@
 import {
   MAT_RIPPLE_GLOBAL_OPTIONS,
-  MatRipple,
   RippleRenderer,
   defaultRippleAnimationConfig
-} from "./chunk-KA6I3NCJ.js";
+} from "./chunk-TXNFSIC5.js";
 import {
   _animationsDisabled,
   _getEventTarget
-} from "./chunk-PVJBLW6F.js";
-import {
-  BidiModule
-} from "./chunk-PFTIOHEB.js";
+} from "./chunk-6BPHRDLS.js";
 import {
   Platform
-} from "./chunk-HNWGUBSM.js";
+} from "./chunk-XC6KUXWZ.js";
 import {
   DOCUMENT,
   Injectable,
   Injector,
-  NgModule,
   NgZone,
   RendererFactory2,
   inject,
   setClassMetadata,
-  ɵɵdefineInjectable,
-  ɵɵdefineInjector,
-  ɵɵdefineNgModule
+  ɵɵdefineInjectable
 } from "./chunk-B3NO66XW.js";
 
 // node_modules/@angular/material/fesm2022/_ripple-loader-chunk.mjs
@@ -153,32 +146,7 @@ var MatRippleLoader = class _MatRippleLoader {
   }], () => [], null);
 })();
 
-// node_modules/@angular/material/fesm2022/_ripple-module-chunk.mjs
-var MatRippleModule = class _MatRippleModule {
-  static ɵfac = function MatRippleModule_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _MatRippleModule)();
-  };
-  static ɵmod = ɵɵdefineNgModule({
-    type: _MatRippleModule,
-    imports: [MatRipple],
-    exports: [MatRipple, BidiModule]
-  });
-  static ɵinj = ɵɵdefineInjector({
-    imports: [BidiModule]
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatRippleModule, [{
-    type: NgModule,
-    args: [{
-      imports: [MatRipple],
-      exports: [MatRipple, BidiModule]
-    }]
-  }], null, null);
-})();
-
 export {
-  MatRippleLoader,
-  MatRippleModule
+  MatRippleLoader
 };
-//# sourceMappingURL=chunk-ZLUCB5KZ.js.map
+//# sourceMappingURL=chunk-QXNBUTS5.js.map

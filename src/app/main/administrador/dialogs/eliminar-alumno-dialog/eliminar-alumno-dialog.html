@@ -1,0 +1,15 @@
+<h2 mat-dialog-title>Eliminar Alumno</h2>
+<mat-dialog-content>
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Selecciona un alumno</mat-label>
+    <mat-select [(ngModel)]="selectedIndex">
+      <mat-option *ngFor="let per of data.perfiles; let i = index" [value]="i">
+        {{ per.nombre }} {{ per.apellidos }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-flat-button color="warn" [disabled]="selectedIndex === null" (click)="onSubmit()">Eliminar</button>
+</mat-dialog-actions>

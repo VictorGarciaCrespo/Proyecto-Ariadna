@@ -6,10 +6,10 @@ import {
   HttpClient
 } from "./chunk-4F3KI6SQ.js";
 import "./chunk-QM5E4GJP.js";
+import "./chunk-DVB2VQS3.js";
 import {
   BidiModule
 } from "./chunk-PFTIOHEB.js";
-import "./chunk-DVB2VQS3.js";
 import "./chunk-ONM52QY4.js";
 import {
   ChangeDetectionStrategy,

@@ -40,11 +40,27 @@ export class PerfilService {
       this.guardarPerfiles(perfiles);
   }
 
+  eliminarPerfil(index: number): void {
+      const perfiles = this.obtenerPerfiles();
+      if (index >= 0 && index < perfiles.length) {
+          perfiles.splice(index, 1);
+          this.guardarPerfiles(perfiles);
+      }
+  }
+
+  actualizarPerfil(index: number, perfil: Perfil): void {
+      const perfiles = this.obtenerPerfiles();
+      if (index >= 0 && index < perfiles.length) {
+          perfiles[index] = perfil;
+          this.guardarPerfiles(perfiles);
+      }
+  }
+
   private guardarPerfiles(perfiles: Perfil[]): void {
       localStorage.setItem(this.perfilesKey, JSON.stringify(perfiles));
   }
 
-    setPerfil(perfil: Perfil): void {
+    setPerfil(perfil: Perfil | null): void {
         this.perfilActualSubject.next(perfil);
     }
     

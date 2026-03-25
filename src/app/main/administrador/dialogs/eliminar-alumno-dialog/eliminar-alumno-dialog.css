@@ -1,0 +1,6 @@
+.full-width {
+  width: 100%;
+}
+.mat-mdc-dialog-content {
+  padding-top: 20px !important;
+}

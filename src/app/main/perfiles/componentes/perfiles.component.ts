@@ -33,5 +33,11 @@ export class PerfilesComponent {
         this.router.navigate(['/menu-principal']);
     }
 
+    entrarComoInvitado(): void {
+        console.log('Entrando como invitado');
+        this.perfilService.setPerfil(null);
+        this.router.navigate(['/menu-principal']);
+    }
+
 
 }
