@@ -18,7 +18,7 @@ export class JuegosMente {
   }
 
   iniciarJuego(): void {
-    this.router.navigate(['/juego-memoria']);
+    this.router.navigate(['/juegos-mente/juego-memoria']);
   }
   finalizar(): void {
     this.router.navigate(['/menu-principal']);

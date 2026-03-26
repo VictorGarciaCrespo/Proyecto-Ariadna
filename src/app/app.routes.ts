@@ -17,9 +17,9 @@ export const routes: Routes = [
     { path: 'actividades-diarias', component: ActividadesDiariasPageComponent },
     { path: 'juegos-mente', component: JuegosMentePageComponent },
     { path: 'hablar-escribir', component: HablarEscribirPageComponent },
-    { path: 'juego1-actividades-diarias', component: Juego1ActividadesDiariasPageComponent },
-    { path: 'juego1-hablar-escribir', component: Juego1HablarEscribirPageComponent },
-    { path: 'juego-memoria', component: JuegoMemoriaPageComponent },
+    { path: 'actividades-diarias/juego1-actividades-diarias', component: Juego1ActividadesDiariasPageComponent },
+    { path: 'hablar-escribir/juego1-hablar-escribir', component: Juego1HablarEscribirPageComponent },
+    { path: 'juegos-mente/juego-memoria', component: JuegoMemoriaPageComponent },
     { path: 'administrador', component: AdministradorPageComponent },
     { path: '**', redirectTo: '' }
 ];

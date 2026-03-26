@@ -18,6 +18,6 @@ export class HablarEscribir {
   }
 
   iniciarJuego(): void {
-    this.router.navigate(['/juego1-hablar-escribir']);
+    this.router.navigate(['/hablar-escribir/juego1-hablar-escribir']);
   }
 }
