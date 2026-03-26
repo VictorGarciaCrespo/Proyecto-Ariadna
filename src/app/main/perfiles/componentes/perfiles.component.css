@@ -99,6 +99,7 @@
 .disposicion-rejilla::-webkit-scrollbar {
   width: 8px;
 }
+
 .disposicion-rejilla::-webkit-scrollbar-thumb {
   background-color: #ccc;
   border-radius: 4px;
@@ -146,5 +147,5 @@
 
 .btn-invitado:hover {
   background-color: #e0e0e0;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }

@@ -5,10 +5,10 @@ export interface ElementoMemoria {
 }
 
 export interface CartaMemoria {
-    id: string; 
-    elementoId: string; 
-    tipo: 'imagen' | 'texto'; 
-    contenido: string; 
+    id: string;
+    elementoId: string;
+    tipo: 'imagen' | 'texto';
+    contenido: string;
     volteada: boolean;
     emparejada: boolean;
 }

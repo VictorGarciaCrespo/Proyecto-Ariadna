@@ -80,7 +80,7 @@
   font-size: 1.3rem;
   cursor: pointer;
   transition: background-color 0.2s;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -99,7 +99,7 @@
   font-size: 1.3rem;
   cursor: pointer;
   transition: background-color 0.2s;
-  box-shadow: 0 4px 6px rgba(192,57,43,0.25);
+  box-shadow: 0 4px 6px rgba(192, 57, 43, 0.25);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -130,14 +130,14 @@
   cursor: pointer;
   border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.2s, box-shadow 0.2s;
   border: 1px solid #eaeaea;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
 }
 
 .card-top {
@@ -149,7 +149,7 @@
 
 .card-image-placeholder {
   height: 220px;
-  background-color: #d9d9d9; /* The light gray color from the design */
+  background-color: #d9d9d9;
   width: 100%;
 }
 

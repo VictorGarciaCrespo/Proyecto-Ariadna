@@ -47,7 +47,6 @@ export class JuegoMemoriaPageComponent implements OnInit {
         let cartasGeneradas: CartaMemoria[] = [];
 
         elementos.forEach((elemento, index) => {
-            // Create image card
             cartasGeneradas.push({
                 id: `img-${index}`,
                 elementoId: elemento.id,
@@ -56,8 +55,6 @@ export class JuegoMemoriaPageComponent implements OnInit {
                 volteada: false,
                 emparejada: false
             });
-
-            // Create text card
             cartasGeneradas.push({
                 id: `txt-${index}`,
                 elementoId: elemento.id,
@@ -68,7 +65,6 @@ export class JuegoMemoriaPageComponent implements OnInit {
             });
         });
 
-        // Shuffle array (Fisher-Yates)
         for (let i = cartasGeneradas.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [cartasGeneradas[i], cartasGeneradas[j]] = [cartasGeneradas[j], cartasGeneradas[i]];
@@ -99,7 +95,7 @@ export class JuegoMemoriaPageComponent implements OnInit {
             this.bloquearTablero = true;
             setTimeout(() => {
                 this.deshabilitarCartas(carta1, carta2);
-            }, 400); 
+            }, 400);
         } else {
             this.desvoltearCartas(carta1, carta2);
         }
@@ -110,7 +106,7 @@ export class JuegoMemoriaPageComponent implements OnInit {
         carta2.emparejada = true;
 
         if (this.cartas.every(carta => carta.emparejada)) {
-           
+
             this.verificarVictoria();
         } else {
             this.resetearTablero();

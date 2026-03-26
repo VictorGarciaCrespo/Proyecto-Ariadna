@@ -32,16 +32,16 @@
       <label>Imagen del perfil:</label>
       <input type="file" accept="image/*" (change)="onFileSelected($event)">
       <div *ngIf="alumnoForm.get('imagen')?.value">
-        <img [src]="alumnoForm.get('imagen')?.value" width="50" height="50" style="object-fit:cover; border-radius:50%; margin-top:5px;">
+        <img [src]="alumnoForm.get('imagen')?.value" width="50" height="50"
+          style="object-fit:cover; border-radius:50%; margin-top:5px;">
       </div>
     </div>
 
     <div class="capacidades-section">
       <label>Capacidades del alumno:</label>
       <div class="capacidades-list">
-        <mat-checkbox *ngFor="let cap of capacidades; let i = index" 
-                      [checked]="cap.selected" 
-                      (change)="onCapacidadChange($event, i)">
+        <mat-checkbox *ngFor="let cap of capacidades; let i = index" [checked]="cap.selected"
+          (change)="onCapacidadChange($event, i)">
           {{cap.label}}
         </mat-checkbox>
       </div>
@@ -50,5 +50,6 @@
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button (click)="onCancel()">Cancelar</button>
-  <button mat-flat-button color="primary" [disabled]="!alumnoForm.valid || selectedIndex === null" (click)="onSubmit()">Actualizar</button>
+  <button mat-flat-button color="primary" [disabled]="!alumnoForm.valid || selectedIndex === null"
+    (click)="onSubmit()">Actualizar</button>
 </mat-dialog-actions>

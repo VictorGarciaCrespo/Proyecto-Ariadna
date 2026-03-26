@@ -18,7 +18,7 @@ export class MenuPrincipalComponent implements OnInit, OnDestroy {
     opciones: OpcionMenu[] = [];
     perfilActual: Perfil | null = null;
     private perfilSub?: Subscription;
-    
+
     private menuService = inject(MenuPrincipalService);
     private router = inject(Router);
     private perfilService = inject(PerfilService);

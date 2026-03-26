@@ -47,25 +47,25 @@ export class ActualizarAlumnoDialog {
     { label: 'Sonido', value: 'sonido', selected: false },
     { label: 'Texto explicativo', value: 'texto_explicativo', selected: false }
   ];
-  
+
   capacidades = JSON.parse(JSON.stringify(this.capacidadesTemplate));
 
   onProfileSelect() {
     if (this.selectedIndex !== null) {
       const per = this.data.perfiles[this.selectedIndex];
-      
+
       let dob = per.fechaNacimiento;
       if (typeof dob === 'string') {
         dob = new Date(dob);
       }
-      
+
       this.alumnoForm.patchValue({
         nombre: per.nombre,
         apellidos: per.apellidos,
         fechaNacimiento: dob,
         imagen: per.imagen
       });
-      
+
       this.capacidades = JSON.parse(JSON.stringify(this.capacidadesTemplate));
       if (per.capacidades) {
         this.capacidades.forEach((c: any) => {
@@ -96,7 +96,7 @@ export class ActualizarAlumnoDialog {
         index: this.selectedIndex,
         perfil: {
           ...this.alumnoForm.value,
-          capacidades: this.capacidades.filter((c:any) => c.selected).map((c:any) => c.value)
+          capacidades: this.capacidades.filter((c: any) => c.selected).map((c: any) => c.value)
         }
       };
       this.dialogRef.close(result);
