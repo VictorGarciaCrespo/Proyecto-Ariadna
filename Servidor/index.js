@@ -16,3 +16,7 @@ perfilesAPI(app)
 elementosMemoriaAPI(app)
 palabrasVocalesAPI(app)
 
+// Iniciar servidor
+app.listen(PORT, () => {
+    console.log(`Servidor de node corriendo en http://localhost:${PORT}`);
+});

@@ -1,8 +1,7 @@
 const { MongoClient, ObjectId } = require('mongodb');
-
-const MONGO_URI = '';
-const DB_NAME = 'mongodb+srv://Aarongomezve:123Ariadna@cluster0.han3f1i.mongodb.net/?appName=Cluster0';
-
+// Apuntamos a la base de datos en la nube (Atlas) en lugar de localhost:3000
+const MONGO_URI = 'mongodb+srv://Aarongomezve:123Ariadna@cluster0.han3f1i.mongodb.net/?appName=Cluster0';
+const DB_NAME = 'Ariadna';
 class MongoLib {
     async connect() {
         if (MongoLib.connection != null) {
