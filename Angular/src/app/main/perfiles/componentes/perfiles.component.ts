@@ -17,7 +17,14 @@ export class PerfilesComponent {
     perfiles: Perfil[] = [];
 
     constructor() {
-        this.perfiles = this.perfilService.obtenerPerfiles();
+        this.perfilService.obtenerPerfiles().subscribe({
+            next: (datos) => {
+                this.perfiles = datos;
+            },
+            error: (err) => {
+                console.error('Error al cargar perfiles:', err);
+            }
+        });
     }
 
     get disposicionClase(): string {

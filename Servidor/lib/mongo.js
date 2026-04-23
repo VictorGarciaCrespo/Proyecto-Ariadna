@@ -60,6 +60,23 @@ class MongoLib {
             return e;
         }
     }
+
+    async updateDocumento(collection, id, data) {
+        try {
+            let db = await this.connect();
+            // Evitamos modificar el _id internamente si viene en data
+            const { _id, ...updateData } = data;
+            
+            let result = await db.collection(collection).updateOne(
+                { _id: ObjectId.createFromHexString(id) },
+                { $set: updateData }
+            );
+            return result;
+        } catch (e) {
+            console.log(e);
+            return e;
+        }
+    }
 }
 
 module.exports = MongoLib;

@@ -2,7 +2,7 @@ const MongoLib = require('../lib/mongo');
 
 class PerfilesService {
     constructor() {
-        this.coleccion = 'perfiles';
+        this.coleccion = 'Perfiles';
         this.mongoDB = new MongoLib();
     }
 
@@ -32,6 +32,16 @@ class PerfilesService {
             return resultado;
         } catch (error) {
             console.log(`error ${error} en el servicio de borrado`);
+            throw error;
+        }
+    }
+
+    async updatePerfil(idPerfil, perfilData) {
+        try {
+            const resultado = await this.mongoDB.updateDocumento(this.coleccion, idPerfil, perfilData);
+            return resultado;
+        } catch (error) {
+            console.log(`error ${error} en el servicio de actualización`);
             throw error;
         }
     }

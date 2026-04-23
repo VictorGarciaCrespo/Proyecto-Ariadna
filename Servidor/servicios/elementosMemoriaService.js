@@ -2,7 +2,7 @@ const MongoLib = require('../lib/mongo');
 
 class ElementosMemoriaService {
     constructor() {
-        this.coleccion = 'elementos_memoria';
+        this.coleccion = 'Elementos_memoria';
         this.mongoDB = new MongoLib();
     }
 

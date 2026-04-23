@@ -47,6 +47,21 @@ function perfilesAPI(app) {
             res.status(500).json({ error: `se produjo un error ${err} al borrar el perfil` });
         }
     });
+
+    router.put('/:idPerfil', async function (req, res, next) {
+        try {
+            const idPerfil = req.params.idPerfil;
+            const perfilData = req.body;
+            const resultado = await perfilesService.updatePerfil(idPerfil, perfilData);
+            res.status(200).json({
+                data: resultado,
+                message: 'perfil actualizado con éxito'
+            });
+        } catch (err) {
+            console.log(`se produjo un error ${err} al actualizar el perfil`);
+            res.status(500).json({ error: `se produjo un error ${err} al actualizar el perfil` });
+        }
+    });
 }
 
 module.exports = perfilesAPI;

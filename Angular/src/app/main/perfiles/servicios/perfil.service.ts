@@ -1,7 +1,10 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable, inject } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 export interface Perfil {
+    _id?: string; // IMPORTANTE: Agregado el ID de Mongo
     nombre: string;
     apellidos: string;
     fechaNacimiento: Date | string;
@@ -13,51 +16,28 @@ export interface Perfil {
     providedIn: 'root'
 })
 export class PerfilService {
+    private http = inject(HttpClient);
+    private apiUrl = 'http://localhost:3000/api/perfiles';
+
     private perfilActualSubject = new BehaviorSubject<Perfil | null>(null);
     perfilActual$ = this.perfilActualSubject.asObservable();
 
-    private perfilesKey = 'ariadna_perfiles';
-
-    private defaultPerfiles: Perfil[] = [
-        { nombre: 'Mateo', apellidos: 'Pérez', fechaNacimiento: '2010-05-12', imagen: 'Perfiles/chico.png', capacidades: ['pictogramas'] },
-        { nombre: 'Endrick', apellidos: 'García', fechaNacimiento: '2011-08-20', imagen: 'Perfiles/chico_2.png', capacidades: ['sonido'] },
-        { nombre: 'Whang', apellidos: 'Li', fechaNacimiento: '2012-01-15', imagen: 'Perfiles/chino.png', capacidades: ['texto_explicativo'] },
-        { nombre: 'Marta', apellidos: 'López', fechaNacimiento: '2010-11-30', imagen: 'Perfiles/chica.png', capacidades: ['pictogramas', 'sonido'] },
-    ];
-
-    obtenerPerfiles(): Perfil[] {
-        const saved = localStorage.getItem(this.perfilesKey);
-        if (saved) {
-            return JSON.parse(saved);
-        }
-        this.guardarPerfiles(this.defaultPerfiles);
-        return this.defaultPerfiles;
+    obtenerPerfiles(): Observable<Perfil[]> {
+        return this.http.get<{data: Perfil[], message: string}>(this.apiUrl).pipe(
+            map(response => response.data)
+        );
     }
 
-    agregarPerfil(perfil: Perfil): void {
-        const perfiles = this.obtenerPerfiles();
-        perfiles.push(perfil);
-        this.guardarPerfiles(perfiles);
+    agregarPerfil(perfil: Perfil): Observable<any> {
+        return this.http.post(this.apiUrl, perfil);
     }
 
-    eliminarPerfil(index: number): void {
-        const perfiles = this.obtenerPerfiles();
-        if (index >= 0 && index < perfiles.length) {
-            perfiles.splice(index, 1);
-            this.guardarPerfiles(perfiles);
-        }
+    eliminarPerfil(id: string): Observable<any> {
+        return this.http.delete(`${this.apiUrl}/${id}`);
     }
 
-    actualizarPerfil(index: number, perfil: Perfil): void {
-        const perfiles = this.obtenerPerfiles();
-        if (index >= 0 && index < perfiles.length) {
-            perfiles[index] = perfil;
-            this.guardarPerfiles(perfiles);
-        }
-    }
-
-    private guardarPerfiles(perfiles: Perfil[]): void {
-        localStorage.setItem(this.perfilesKey, JSON.stringify(perfiles));
+    actualizarPerfil(id: string, perfil: Perfil): Observable<any> {
+        return this.http.put(`${this.apiUrl}/${id}`, perfil);
     }
 
     setPerfil(perfil: Perfil | null): void {

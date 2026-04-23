@@ -2,7 +2,7 @@ const MongoLib = require('../lib/mongo');
 
 class PalabrasVocalesService {
     constructor() {
-        this.coleccion = 'palabras_vocales';
+        this.coleccion = 'Palabras_vocales';
         this.mongoDB = new MongoLib();
     }
 
