@@ -7,12 +7,12 @@ import {
   SharedStylesHost
 } from "./chunk-4RBBJS5W.js";
 import {
+  withHttpTransferCache
+} from "./chunk-BMLCO7J4.js";
+import {
   CommonModule,
   PLATFORM_BROWSER_ID
 } from "./chunk-WG2FERVC.js";
-import {
-  withHttpTransferCache
-} from "./chunk-BMLCO7J4.js";
 import {
   DomAdapter,
   XhrFactory,
@@ -1055,4 +1055,4 @@ export {
   provideClientHydration,
   VERSION
 };
-//# sourceMappingURL=chunk-S4GZQI75.js.map
+//# sourceMappingURL=chunk-DMHKI4GP.js.map

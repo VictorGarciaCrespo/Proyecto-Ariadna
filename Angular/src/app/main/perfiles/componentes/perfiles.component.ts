@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { PerfilService, Perfil } from '../servicios/perfil.service';
@@ -10,19 +10,23 @@ import { PerfilService, Perfil } from '../servicios/perfil.service';
     templateUrl: './perfiles.component.html',
     styleUrl: './perfiles.component.css'
 })
-export class PerfilesComponent {
+export class PerfilesComponent implements OnInit {
     private router = inject(Router);
     private perfilService = inject(PerfilService);
 
     perfiles: Perfil[] = [];
 
-    constructor() {
+    private cdr = inject(ChangeDetectorRef);
+
+    ngOnInit(): void {
         this.perfilService.obtenerPerfiles().subscribe({
             next: (datos) => {
+                console.log('Perfiles recibidos en Angular:', datos);
                 this.perfiles = datos;
+                this.cdr.detectChanges(); // Forzar actualización de la vista
             },
             error: (err) => {
-                console.error('Error al cargar perfiles:', err);
+                console.error('Error al cargar perfiles en Angular:', err);
             }
         });
     }
