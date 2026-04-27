@@ -1,9 +1,5 @@
 
-// Include theming for Angular Material with `mat.theme()`.
-// This Sass mixin will define CSS variables that are used for styling Angular Material
-// components according to the Material 3 design spec.
-// Learn more about theming and how to use it for your application's
-// custom components at https://material.angular.dev/guide/theming
+// Include theming for Angular Material with `mat.theme()`
 @use '@angular/material' as mat;
 
 html {
@@ -11,7 +7,7 @@ html {
   @include mat.theme((
     color: (
       primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
+      tertiary: mat.$cyan-palette,
     ),
     typography: Roboto,
     density: 0,
@@ -19,19 +15,64 @@ html {
 }
 
 body {
-  // Default the application to a light color theme. This can be changed to
-  // `dark` to enable the dark color theme, or to `light dark` to defer to the
-  // user's system settings.
   color-scheme: light;
-
-  // Set a default background, font and text colors for the application using
-  // Angular Material's system-level CSS variables. Learn more about these
-  // variables at https://material.angular.dev/guide/system-variables
-  background-color: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
-  font: var(--mat-sys-body-medium);
-
-  // Reset the user agent margin.
+  background-color: var(--ariadna-bg);
+  color: var(--ariadna-text);
+  font-family: 'Nunito', 'Segoe UI', sans-serif;
   margin: 0;
   height: 100%;
+}
+
+// ============================================================
+// ARIADNA - Sistema de diseño para personas con TEA
+// Paleta calmada, bajo ruido visual, alta legibilidad
+// ============================================================
+:root {
+  // Fondo principal - crema muy suave, no blanco puro (reduce el deslumbramiento)
+  --ariadna-bg:            #F5F3EF;
+  // Fondo de tarjetas / superficies
+  --ariadna-surface:       #FFFFFF;
+  // Color de texto principal
+  --ariadna-text:          #2D2D2D;
+  // Color de texto secundario / etiquetas
+  --ariadna-text-muted:    #6B6B6B;
+  // Borde suave
+  --ariadna-border:        #DDD8D0;
+
+  // Color de acento principal - azul índigo calmado
+  --ariadna-primary:       #4A78A8;
+  --ariadna-primary-light: #EBF1F8;
+  --ariadna-primary-dark:  #315A82;
+
+  // Color de acento secundario - verde salvia suave
+  --ariadna-secondary:     #5A8A6A;
+  --ariadna-secondary-light: #EBF5EE;
+
+  // Color de alerta / peligro - terracota suave (no rojo brillante)
+  --ariadna-danger:        #C0614F;
+  --ariadna-danger-light:  #FAEDEA;
+
+  // Color de advertencia - ámbar suave
+  --ariadna-warning:       #B8860B;
+  --ariadna-warning-light: #FDF5DC;
+
+  // Radio de borde consistente
+  --ariadna-radius-sm:     8px;
+  --ariadna-radius-md:     12px;
+  --ariadna-radius-lg:     20px;
+
+  // Sombra muy sutil
+  --ariadna-shadow:        0 2px 8px rgba(0, 0, 0, 0.07);
+  --ariadna-shadow-hover:  0 4px 16px rgba(0, 0, 0, 0.11);
+
+  // Espaciado consistente
+  --ariadna-spacing-xs:    8px;
+  --ariadna-spacing-sm:    16px;
+  --ariadna-spacing-md:    24px;
+  --ariadna-spacing-lg:    40px;
+  --ariadna-spacing-xl:    64px;
+
+  // Alturas de componentes
+  --ariadna-header-height: 72px;
+  --ariadna-btn-height:    52px;
 }

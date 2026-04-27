@@ -1,0 +1,35 @@
+<div class="agenda-layout">
+  <header class="header">
+    <button class="btn-circle" (click)="volver()" aria-label="Volver">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <button class="btn-nueva" (click)="nuevaRutina()">
+      Nueva Rutina
+    </button>
+  </header>
+
+  <main class="main-content">
+    <div class="rutinas-container">
+      <h1 class="title">Rutinas</h1>
+      
+      <div class="grid-rutinas" *ngIf="rutinas.length > 0; else noRutinas">
+        <div class="rutina-card" *ngFor="let rutina of rutinas">
+          <span class="rutina-nombre">{{ rutina.nombre }}</span>
+          <!-- Opcional: mostrar miniaturas de los pictogramas de la rutina -->
+          <div class="rutina-preview" *ngIf="rutina.pasos && rutina.pasos.length > 0">
+            <div class="preview-step" *ngFor="let paso of rutina.pasos | slice:0:3">
+              <img [src]="paso.url" [alt]="paso.nombre">
+            </div>
+            <span *ngIf="rutina.pasos.length > 3">...</span>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #noRutinas>
+        <div class="no-data">
+          <p>No hay rutinas creadas. Pulsa "Nueva Rutina" para empezar.</p>
+        </div>
+      </ng-template>
+    </div>
+  </main>
+</div>

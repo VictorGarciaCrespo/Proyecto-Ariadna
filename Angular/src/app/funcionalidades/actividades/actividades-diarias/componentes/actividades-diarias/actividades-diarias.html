@@ -1,18 +1,18 @@
+<!-- Actividades Diarias — Patrón Ariadna TEA -->
 <div class="actividades-container">
-    <header class="header">
-        <button class="btn-back" (click)="volver()">
-            <mat-icon>arrow_back</mat-icon>
-        </button>
-    </header>
+  <header class="header">
+    <button class="btn-back" (click)="volver()" aria-label="Volver">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+  </header>
 
+  <main class="main-content">
+    <h1 class="title">Actividades Diarias</h1>
 
-    <main class="main-content">
-        <h1 class="title">Actividades Diarias</h1>
-
-        <div class="juego-container">
-            <button class="btn-juego" (click)="iniciarJuego()">
-                Iniciar juegos
-            </button>
-        </div>
-    </main>
+    <div class="juego-container">
+      <button class="btn-juego" (click)="iniciarJuego()">
+        Iniciar juego
+      </button>
+    </div>
+  </main>
 </div>

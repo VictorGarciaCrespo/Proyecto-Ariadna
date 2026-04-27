@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/main/administrador/dialogs/eliminar-alumno-dialog/eliminar-alumno-dialog.css"],
+  "sourcesContent": ["/* ============================================================\n   Eliminar Alumno Dialog \u2014 Patr\u00F3n Ariadna TEA\n   ============================================================ */\n\n.eliminar-form {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  min-width: 360px;\n  padding-top: 12px;\n  font-family: 'Nunito', sans-serif;\n}\n\n.full-width {\n  width: 100%;\n}\n"],
+  "mappings": ";AAIA,CAAC;AACC,WAAS;AACT,kBAAgB;AAChB,OAAK;AACL,aAAW;AACX,eAAa;AACb,eAAa,QAAQ,EAAE;AACzB;AAEA,CAAC;AACC,SAAO;AACT;",
+  "names": []
+}

@@ -1,23 +1,24 @@
+<!-- Juego 1 - Actividades Diarias — Patrón Ariadna TEA -->
 <div class="juego-layout">
-    <header class="header">
-        <button class="btn-circle" (click)="volver()">
-            <mat-icon>arrow_back</mat-icon>
-        </button>
-        <button class="btn-circle btn-help">
-            <mat-icon>help</mat-icon>
-        </button>
-    </header>
+  <header class="header">
+    <button class="btn-circle" (click)="volver()" aria-label="Volver">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <button class="btn-circle btn-help" aria-label="Ayuda">
+      <mat-icon>help_outline</mat-icon>
+    </button>
+  </header>
 
-    <main class="main-content">
-        <div class="image-area">
-            <img src="/imagenes/juego1-actividades-diarias.png" alt="Imagen del juego" class="juego-img" />
-        </div>
-    </main>
+  <main class="main-content">
+    <div class="image-area">
+      <img src="/imagenes/juego1-actividades-diarias.png" alt="Imagen del juego" class="juego-img" />
+    </div>
+  </main>
 
-    <footer class="footer">
-        <button class="btn-finalizar" (click)="finalizar()">
-            Siguiente
-            <mat-icon>arrow_forward</mat-icon>
-        </button>
-    </footer>
+  <footer class="footer">
+    <button class="btn-finalizar" (click)="finalizar()">
+      Siguiente
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+  </footer>
 </div>

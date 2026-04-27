@@ -1,108 +1,136 @@
+/* ============================================================
+   Juego 1 - Hablar y Escribir (selección de vocales/cartas)
+   Patrón Ariadna TEA: cabecera + grid de cartas + pie de página
+   ============================================================ */
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: var(--ariadna-bg);
+  font-family: 'Nunito', 'Segoe UI', sans-serif;
+}
+
 .pantalla-juego {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   box-sizing: border-box;
-  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: #ffffff;
+  background-color: var(--ariadna-bg);
 }
 
+/* --- Cabecera --- */
 .cabecera {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  border-bottom: 2px solid #f0f0f0;
+  padding: 0 32px;
+  height: var(--ariadna-header-height);
+  background: var(--ariadna-surface);
+  border-bottom: 2px solid var(--ariadna-border);
 }
 
 .titulo-container h1 {
-  font-size: 2rem;
-  color: #333;
+  font-size: 1.7rem;
+  color: var(--ariadna-text);
   margin: 0;
-  font-weight: 500;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
 }
 
+/* --- Botones icono circulares --- */
 .btn-icono {
-  background: transparent;
-  border: 1px solid #333;
+  background: var(--ariadna-surface);
+  border: 2px solid var(--ariadna-border);
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+  color: var(--ariadna-text);
 }
 
 .btn-icono.redondo {
   border-radius: 50%;
-  width: 45px;
-  height: 45px;
+  width: 48px;
+  height: 48px;
 }
 
-.icono-flecha,
-.icono-ayuda {
-  font-size: 1.5rem;
-  color: #333;
-  line-height: 1;
+.btn-icono:hover {
+  background-color: var(--ariadna-primary-light);
+  border-color: var(--ariadna-primary);
+  color: var(--ariadna-primary);
 }
 
+/* --- Contenido del juego --- */
 .contenido-juego {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: var(--ariadna-spacing-md) var(--ariadna-spacing-lg);
+  gap: var(--ariadna-spacing-md);
 }
 
+/* --- Selección de vocal --- */
 .seleccion-vocal {
   display: flex;
-  gap: 2rem;
+  gap: 24px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .boton-vocal {
-  font-size: 4rem;
-  font-weight: bold;
-  width: 150px;
-  height: 150px;
-  border-radius: 20px;
-  border: none;
-  background-color: #d1d1d1;
-  color: #333;
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  width: 130px;
+  height: 130px;
+  border-radius: var(--ariadna-radius-md);
+  border: 2px solid var(--ariadna-border);
+  background-color: var(--ariadna-surface);
+  color: var(--ariadna-primary);
   cursor: pointer;
-  transition: transform 0.2s, background-color 0.2s;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.15s;
+  box-shadow: var(--ariadna-shadow);
 }
 
 .boton-vocal:hover {
-  transform: scale(1.05);
-  background-color: #bbbbbb;
+  background-color: var(--ariadna-primary-light);
+  border-color: var(--ariadna-primary);
+  transform: translateY(-2px);
 }
 
+/* --- Grid de cartas --- */
 .grid-cartas {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  max-width: 1000px;
+  max-width: 960px;
   width: 100%;
 }
 
 .carta {
-  background-color: #d8d8d8;
-  border-radius: 10px;
+  background-color: var(--ariadna-surface);
+  border: 2px solid var(--ariadna-border);
+  border-radius: var(--ariadna-radius-sm);
   aspect-ratio: 4 / 3;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  padding: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.1s;
+  padding: 12px;
+  box-shadow: var(--ariadna-shadow);
+  transition: transform 0.12s, border-color 0.15s;
 }
 
 .carta:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
+}
+
+.carta:hover {
+  border-color: var(--ariadna-primary);
 }
 
 .contenido-carta {
@@ -120,6 +148,7 @@
   object-fit: contain;
 }
 
+/* --- Marcas de correcto / incorrecto --- */
 .marca-correcta,
 .marca-incorrecta {
   position: absolute;
@@ -135,36 +164,41 @@
 }
 
 .tick-text {
-  font-size: 5rem;
-  filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
+  font-size: 4rem;
 }
 
 .cross-text {
-  font-size: 5rem;
-  filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
+  font-size: 4rem;
 }
 
+/* --- Mensaje de victoria --- */
 .mensaje-victoria {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
-  animation: fadeIn 0.5s ease-in;
+  margin-top: var(--ariadna-spacing-md);
+  animation: fadeIn 0.4s ease-in;
+  gap: var(--ariadna-spacing-sm);
 }
 
 .mensaje-victoria h2 {
-  color: black;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
+  color: var(--ariadna-secondary);
+  font-size: 1.7rem;
+  margin: 0;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
 }
 
 .boton-jugar-de-nuevo {
-  padding: 10px 20px;
-  font-size: 1.2rem;
-  background-color: #d9d9d9;
-  color: black;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--ariadna-secondary);
+  color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--ariadna-radius-sm);
   cursor: pointer;
   transition: background-color 0.2s;
   display: flex;
@@ -174,22 +208,27 @@
 }
 
 .boton-jugar-de-nuevo:hover {
-  background-color: #c0c0c0;
+  background-color: #487258;
 }
 
+/* --- Pie de página --- */
 .pie-pagina {
   display: flex;
   justify-content: flex-end;
-  padding: 1rem 2rem;
+  padding: var(--ariadna-spacing-xs) var(--ariadna-spacing-lg) var(--ariadna-spacing-md);
+  background: var(--ariadna-surface);
+  border-top: 2px solid var(--ariadna-border);
 }
 
 .boton-siguiente {
-  padding: 10px 20px;
+  padding: 12px 28px;
   font-size: 1.1rem;
-  background-color: #e0e0e0;
-  color: #333;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--ariadna-primary);
+  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: var(--ariadna-radius-sm);
   cursor: pointer;
   transition: background-color 0.2s;
   display: flex;
@@ -198,17 +237,13 @@
 }
 
 .boton-siguiente:hover {
-  background-color: #d0d0d0;
+  background-color: var(--ariadna-primary-dark);
 }
 
+/* --- Animación de entrada suave --- */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 768px) {

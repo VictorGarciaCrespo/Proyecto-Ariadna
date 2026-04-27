@@ -29,16 +29,22 @@
 <main class="main-content">
     <div class="cards-grid" *ngIf="opciones.length >= 3">
         <div class="card card-top" (click)="navegarA(opciones[0].ruta)">
-            <div class="card-image-placeholder"></div>
+            <div class="card-image-placeholder">
+                <img src="/menu-principal/actividades-diarias.png" alt="Actividades Diarias" class="card-img" />
+            </div>
             <div class="card-title">{{ opciones[0].titulo }}</div>
         </div>
         <div class="card card-bottom-left" (click)="navegarA(opciones[1].ruta)">
-            <div class="card-image-placeholder"></div>
+            <div class="card-image-placeholder">
+                <img src="/menu-principal/juegos-mente.png" alt="Juegos de la Mente" class="card-img" />
+            </div>
             <div class="card-title">{{ opciones[1].titulo }}</div>
         </div>
 
         <div class="card card-bottom-right" (click)="navegarA(opciones[2].ruta)">
-            <div class="card-image-placeholder"></div>
+            <div class="card-image-placeholder">
+                <img src="/menu-principal/hablar-escribir.png" alt="Hablar y Escribir" class="card-img" />
+            </div>
             <div class="card-title">{{ opciones[2].titulo }}</div>
         </div>
     </div>

@@ -1,27 +1,52 @@
-.full-width {
-  width: 100%;
-}
+/* ============================================================
+   Actualizar Alumno Dialog — Patrón Ariadna TEA
+   ============================================================ */
 
 .alumno-form {
   display: flex;
   flex-direction: column;
+  gap: 20px;
+  min-width: 420px;
+  padding-top: 12px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.full-width {
+  width: 100%;
 }
 
 .file-input-container {
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.file-input-container label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ariadna-text);
 }
 
 .capacidades-section {
-  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: 'Nunito', sans-serif;
+}
+
+.capacidades-section > label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ariadna-text);
 }
 
 .capacidades-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.mat-mdc-dialog-content {
-  padding-top: 20px !important;
+  gap: 6px;
+  background-color: var(--ariadna-bg);
+  border: 2px solid var(--ariadna-border);
+  border-radius: var(--ariadna-radius-sm);
+  padding: 12px 16px;
 }

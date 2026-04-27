@@ -44,7 +44,7 @@ export class MenuPrincipalComponent implements OnInit, OnDestroy {
     }
 
     abrirAgenda(): void {
-        console.log('Abriendo agenda');
+        this.router.navigate(['/agenda']);
     }
 
     salir(): void {

@@ -1,84 +1,103 @@
+/* ============================================================
+   Actividades Diarias - Pantalla de actividad
+   Patrón: botón volver + título centrado + botón de acción grande
+   ============================================================ */
+
 :host {
-    display: block;
-    min-height: 100vh;
-    background-color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: block;
+  min-height: 100vh;
+  background-color: var(--ariadna-bg);
+  font-family: 'Nunito', 'Segoe UI', sans-serif;
 }
 
 .actividades-container {
-    min-height: 100vh;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
-    /* trigger recompilation */
+  min-height: 100vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--ariadna-bg);
 }
 
+/* --- Cabecera con botón volver --- */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 40px;
-    background: transparent;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 32px;
+  background: var(--ariadna-surface);
+  border-bottom: 2px solid var(--ariadna-border);
+  height: var(--ariadna-header-height);
 }
 
 .btn-back {
-    background: transparent;
-    border: 2px solid #000;
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    color: #000;
-    padding: 0;
+  background: var(--ariadna-surface);
+  border: 2px solid var(--ariadna-border);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--ariadna-text);
+  padding: 0;
+  transition: background-color 0.2s, border-color 0.2s;
 }
 
-/* No hover animation based on previous user conversation */
-
-.header-right {
-    display: flex;
-    align-items: center;
+.btn-back:hover {
+  background-color: var(--ariadna-primary-light);
+  border-color: var(--ariadna-primary);
+  color: var(--ariadna-primary);
 }
 
-.nivel-text {
-    font-size: 1.25rem;
-    color: #000;
-}
-
+/* --- Contenido principal --- */
 .main-content {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 20px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ariadna-spacing-lg);
+  gap: var(--ariadna-spacing-lg);
 }
 
+/* --- Título --- */
 .title {
-    font-size: 2.2rem;
-    font-weight: 500;
-    color: #000;
-    margin: 0 0 80px 0;
-    text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ariadna-text);
+  margin: 0;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
 }
 
+/* --- Contenedor del botón de acción --- */
 .juego-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
+/* --- Botón principal de acción (grande, visible, claro) --- */
 .btn-juego {
-    background-color: #d9d9d9;
-    color: #000;
-    border: none;
-    width: 350px;
-    height: 200px;
-    font-size: 1.4rem;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: var(--ariadna-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--ariadna-radius-md);
+  width: 320px;
+  height: 120px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: var(--ariadna-shadow);
+  transition: background-color 0.2s, transform 0.18s;
+}
+
+.btn-juego:hover {
+  background-color: var(--ariadna-primary-dark);
+  transform: translateY(-2px);
 }

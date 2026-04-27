@@ -1,20 +1,21 @@
+<!-- Hablar y Escribir — Patrón Ariadna TEA -->
 <div class="actividades-container">
-    <div class="cabecera">
-        <button class="btn-icono redondo" (click)="volver()">
-            <mat-icon>arrow_back</mat-icon>
-        </button>
-        <div class="titulo-container"></div>
-        <button class="btn-icono redondo">
-            <mat-icon>help</mat-icon>
-        </button>
-    </div>
+  <div class="cabecera">
+    <button class="btn-icono redondo" (click)="volver()" aria-label="Volver">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <div class="titulo-container"></div>
+    <button class="btn-icono redondo" aria-label="Ayuda">
+      <mat-icon>help_outline</mat-icon>
+    </button>
+  </div>
 
-    <main class="main-content">
-        <h1 class="title">Hablar y Escribir</h1>
-        <div class="juego-container">
-            <button class="btn-juego" (click)="iniciarJuego()">
-                Iniciar juegos
-            </button>
-        </div>
-    </main>
+  <main class="main-content">
+    <h1 class="title">Hablar y Escribir</h1>
+    <div class="juego-container">
+      <button class="btn-juego" (click)="iniciarJuego()">
+        Iniciar juego
+      </button>
+    </div>
+  </main>
 </div>

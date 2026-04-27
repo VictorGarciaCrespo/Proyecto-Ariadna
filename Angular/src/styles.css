@@ -1,10 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+/* Ariadna - Estilos globales para personas con TEA */
+/* Bajo ruido visual · Alta legibilidad · Paleta calmada */
+
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 @import 'https://fonts.googleapis.com/icon?family=Material+Icons';
 
+* {
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Nunito', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--ariadna-bg, #F5F3EF);
+  color: var(--ariadna-text, #2D2D2D);
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reducir animaciones para accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Foco visible para accesibilidad */
+:focus-visible {
+  outline: 3px solid var(--ariadna-primary, #4A78A8);
+  outline-offset: 3px;
 }

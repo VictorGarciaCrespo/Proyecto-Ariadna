@@ -1,11 +1,52 @@
-.administrador-container {
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+/* ============================================================
+   Administrador - Panel de gestión de alumnos
+   Patrón: contenedor centrado + botones de acción grandes y claros
+   ============================================================ */
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: var(--ariadna-bg);
+  font-family: 'Nunito', 'Segoe UI', sans-serif;
 }
 
+.administrador-container {
+  min-height: 100vh;
+  padding: var(--ariadna-spacing-xl) var(--ariadna-spacing-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--ariadna-spacing-lg);
+}
+
+/* --- Título del panel --- */
+.administrador-container h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--ariadna-text);
+  margin: 0;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* --- Área de acciones --- */
 .actions-section {
-    display: flex;
-    gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ariadna-spacing-sm);
+  width: 100%;
+  max-width: 420px;
+}
+
+/* --- Botones de acción del administrador ---
+   Sobreescriben los estilos de Material para que queden
+   coherentes con el resto del diseño Ariadna.           */
+.actions-section button[mat-raised-button] {
+  width: 100% !important;
+  height: var(--ariadna-btn-height) !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  font-family: 'Nunito', sans-serif !important;
+  border-radius: var(--ariadna-radius-sm) !important;
+  letter-spacing: 0.2px !important;
 }
