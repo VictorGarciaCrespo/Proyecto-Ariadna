@@ -2298,6 +2298,14 @@ function timer(dueTime = 0, intervalOrScheduler, scheduler = async) {
   });
 }
 
+// node_modules/rxjs/dist/esm/internal/observable/interval.js
+function interval(period = 0, scheduler = asyncScheduler) {
+  if (period < 0) {
+    period = 0;
+  }
+  return timer(period, period, scheduler);
+}
+
 // node_modules/rxjs/dist/esm/internal/observable/merge.js
 function merge(...args) {
   const scheduler = popScheduler(args);
@@ -24214,6 +24222,7 @@ export {
   concat,
   defer,
   forkJoin,
+  interval,
   merge,
   filter,
   auditTime,
@@ -24444,4 +24453,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-O6RWMZFI.js.map
+//# sourceMappingURL=chunk-74BSORVW.js.map

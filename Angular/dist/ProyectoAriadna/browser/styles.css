@@ -2574,6 +2574,29 @@ html {
   outline: 3px solid var(--ariadna-primary, #4A78A8);
   outline-offset: 3px;
 }
+.credito-arasaac {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 20px 14px;
+  background-color: transparent;
+}
+.credito-arasaac__logo {
+  height: 28px;
+  width: auto;
+  opacity: 0.45;
+  filter: grayscale(30%);
+}
+.credito-arasaac__texto {
+  font-size: 0.75rem;
+  color: #b0b0b0;
+  font-family:
+    "Nunito",
+    "Segoe UI",
+    sans-serif;
+  letter-spacing: 0.02em;
+}
 
 /* angular:styles/global:styles */
 /*# sourceMappingURL=styles.css.map */
