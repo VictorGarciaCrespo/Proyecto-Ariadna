@@ -1,29 +1,108 @@
 <!-- Juego 1 - Actividades Diarias — Patrón Ariadna TEA -->
 <div class="juego-layout">
+
+  <!-- Cabecera -->
   <header class="header">
     <button class="btn-circle" (click)="volver()" aria-label="Volver">
       <mat-icon>arrow_back</mat-icon>
     </button>
-    <button class="btn-circle btn-help" aria-label="Ayuda">
-      <mat-icon>help_outline</mat-icon>
-    </button>
+    <span class="header-titulo">¿Qué necesitas para esta actividad?</span>
+    <div class="header-acertados">
+      <mat-icon class="icono-check">check_circle</mat-icon>
+      <span>{{ acertados() }} / 3</span>
+    </div>
   </header>
 
-  <main class="main-content">
-    <div class="image-area">
-      <img src="/imagenes/juego1-actividades-diarias.png" alt="Imagen del juego" class="juego-img" />
+  <!-- Estado: cargando -->
+  <main class="main-content" *ngIf="cargando()">
+    <div class="estado-mensaje">
+      <mat-icon class="icono-carga">hourglass_top</mat-icon>
+      <p>Cargando actividad...</p>
     </div>
   </main>
 
-  <footer class="footer">
-    <button class="btn-finalizar" (click)="finalizar()">
-      Siguiente
-      <mat-icon>arrow_forward</mat-icon>
-    </button>
-  </footer>
+  <!-- Estado: error -->
+  <main class="main-content" *ngIf="error() && !cargando()">
+    <div class="estado-mensaje estado-error">
+      <mat-icon>error_outline</mat-icon>
+      <p>No se pudo conectar con el servidor.</p>
+    </div>
+  </main>
 
+  <!-- Juego activo -->
+  <main class="main-content" *ngIf="!cargando() && !error() && actividadActual() && !juegoTerminado()">
+
+    <div class="zona-juego">
+      <!-- Columna izquierda: 3 primeros -->
+      <div class="columna-opciones">
+        <div
+          *ngFor="let pic of pictogramasJuego().slice(0, 3); let i = index"
+          class="pictograma-opcion"
+          [ngClass]="{
+            'estado-correcto':  pic.estado === 'correcto',
+            'estado-incorrecto': pic.estado === 'incorrecto'
+          }"
+          (click)="seleccionar(i)"
+        >
+          <img [src]="pic.ruta" [alt]="'Opción ' + (i + 1)" />
+          <div class="overlay-feedback" *ngIf="pic.estado !== 'neutro'">
+            <mat-icon *ngIf="pic.estado === 'correcto'">check</mat-icon>
+            <mat-icon *ngIf="pic.estado === 'incorrecto'">close</mat-icon>
+          </div>
+        </div>
+      </div>
+
+      <!-- Centro: Pictograma principal y nombre -->
+      <div class="zona-central">
+        <div class="pictograma-principal-wrapper">
+          <img
+            class="pictograma-principal"
+            [src]="actividadActual()!.pictogramaPrincipal + '.png'"
+            [alt]="actividadActual()!.actividad"
+          />
+          <span class="etiqueta-actividad">{{ actividadActual()!.actividad }}</span>
+        </div>
+      </div>
+
+      <!-- Columna derecha: 3 últimos -->
+      <div class="columna-opciones">
+        <div
+          *ngFor="let pic of pictogramasJuego().slice(3, 6); let i = index"
+          class="pictograma-opcion"
+          [ngClass]="{
+            'estado-correcto':  pic.estado === 'correcto',
+            'estado-incorrecto': pic.estado === 'incorrecto'
+          }"
+          (click)="seleccionar(i + 3)"
+        >
+          <img [src]="pic.ruta" [alt]="'Opción ' + (i + 4)" />
+          <div class="overlay-feedback" *ngIf="pic.estado !== 'neutro'">
+            <mat-icon *ngIf="pic.estado === 'correcto'">check</mat-icon>
+            <mat-icon *ngIf="pic.estado === 'incorrecto'">close</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Pantalla de victoria -->
+  <main class="main-content pantalla-fin" *ngIf="juegoTerminado()">
+    <div class="fin-card">
+      <div class="fin-icono">🎉</div>
+      <h2 class="fin-titulo">¡Lo has conseguido!</h2>
+      <p class="fin-subtitulo">Has encontrado los 3 objetos correctos</p>
+      <button class="btn-reiniciar" (click)="reiniciar()">
+        <mat-icon>replay</mat-icon>
+        Volver a jugar
+      </button>
+    </div>
+  </main>
+
+  <!-- Crédito ARASAAC -->
   <div class="credito-arasaac">
     <img src="/imagenes/arasaac-logo.png" alt="Logo ARASAAC" class="credito-arasaac__logo">
     <span class="credito-arasaac__texto">Pictogramas propiedad de Arasaac</span>
   </div>
+
 </div>

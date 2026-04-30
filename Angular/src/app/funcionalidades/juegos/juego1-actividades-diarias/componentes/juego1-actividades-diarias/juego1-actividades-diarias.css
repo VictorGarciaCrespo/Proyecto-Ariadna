@@ -1,6 +1,6 @@
 /* ============================================================
-   Juego 1 - Actividades Diarias (pantalla con imagen)
-   Patrón Ariadna TEA: cabecera + contenido + pie
+   Juego 1 - Actividades Diarias
+   Layout: cabecera | zona-principal (pictograma grande) | zona-opciones (izq + centro + der)
    ============================================================ */
 
 :host {
@@ -12,24 +12,45 @@
 
 .juego-layout {
   min-height: 100vh;
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   background-color: var(--ariadna-bg);
 }
 
-/* --- Cabecera con botones de control --- */
+/* ---- Cabecera ---- */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 32px;
-  height: var(--ariadna-header-height);
+  padding: 0 24px;
+  height: var(--ariadna-header-height, 64px);
   background: var(--ariadna-surface);
   border-bottom: 2px solid var(--ariadna-border);
+  gap: 12px;
 }
 
-/* --- Botones circulares del header --- */
+.header-titulo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ariadna-text);
+  flex: 1;
+  text-align: center;
+}
+
+.header-acertados {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ariadna-primary);
+}
+
+.icono-check {
+  color: #22c55e;
+}
+
+/* ---- Botón circular ---- */
 .btn-circle {
   background: var(--ariadna-surface);
   border: 2px solid var(--ariadna-border);
@@ -42,6 +63,7 @@
   cursor: pointer;
   color: var(--ariadna-text);
   padding: 0;
+  flex-shrink: 0;
   transition: background-color 0.2s, border-color 0.2s, color 0.2s;
 }
 
@@ -51,57 +73,243 @@
   color: var(--ariadna-primary);
 }
 
-/* --- Contenido principal --- */
+/* ---- Contenido principal ---- */
 .main-content {
-  flex-grow: 1;
+  flex: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: var(--ariadna-spacing-md) var(--ariadna-spacing-lg);
+  padding: 16px 24px;
+  gap: 24px;
 }
 
-.image-area {
-  background-color: var(--ariadna-surface);
-  border: 2px solid var(--ariadna-border);
-  border-radius: var(--ariadna-radius-md);
+/* ---- Estado cargando / error ---- */
+.estado-mensaje {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--ariadna-text-muted, #888);
+  font-size: 1.1rem;
+}
+
+.estado-mensaje mat-icon {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+}
+
+.estado-error {
+  color: #ef4444;
+}
+
+/* ---- Layout del Juego en Fila (Izq - Centro - Der) ---- */
+.zona-juego {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
   width: 100%;
-  height: 55vh;
+  max-width: 1000px;
+}
+
+/* ---- Centro: Pictograma principal ---- */
+.zona-central {
   display: flex;
   justify-content: center;
-  align-items: center;
-  overflow: hidden;
+  flex: 0 0 auto;
 }
 
-.juego-img {
-  width: 100%;
-  height: 100%;
+.pictograma-principal-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: var(--ariadna-surface);
+  border: 4px solid var(--ariadna-primary);
+  border-radius: 24px;
+  padding: 24px 32px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.pictograma-principal {
+  width: 220px;
+  height: 220px;
   object-fit: contain;
-  padding: var(--ariadna-spacing-sm);
 }
 
-/* --- Pie de página con botón siguiente --- */
-.footer {
+.etiqueta-actividad {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--ariadna-primary);
+  text-transform: capitalize;
+}
+
+/* ---- Columnas de opciones ---- */
+.columna-opciones {
   display: flex;
-  justify-content: flex-end;
-  padding: var(--ariadna-spacing-sm) var(--ariadna-spacing-lg) var(--ariadna-spacing-md);
+  flex-direction: column;
+  gap: 16px;
 }
 
-.btn-finalizar {
+/* ---- Cada pictograma opción ---- */
+.pictograma-opcion {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  background: var(--ariadna-surface);
+  border: 3px solid var(--ariadna-border);
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.15s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.pictograma-opcion img {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+}
+
+.pictograma-opcion:hover {
+  transform: scale(1.06);
+  border-color: var(--ariadna-primary);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* ---- Feedback correcto ---- */
+.pictograma-opcion.estado-correcto {
+  border-color: #22c55e;
+  background: #f0fdf4;
+  cursor: default;
+}
+
+/* ---- Feedback incorrecto ---- */
+.pictograma-opcion.estado-incorrecto {
+  border-color: #ef4444;
+  background: #fff1f2;
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-6px); }
+  40%       { transform: translateX(6px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+
+/* ---- Overlay con ✓ o ✗ ---- */
+.overlay-feedback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 13px;
+}
+
+.estado-correcto .overlay-feedback mat-icon {
+  font-size: 52px;
+  width: 52px;
+  height: 52px;
+  color: #16a34a;
+  font-weight: 900;
+}
+
+.estado-incorrecto .overlay-feedback mat-icon {
+  font-size: 52px;
+  width: 52px;
+  height: 52px;
+  color: #dc2626;
+}
+
+
+
+/* ---- Pantalla de victoria ---- */
+.pantalla-fin {
+  justify-content: center;
+}
+
+.fin-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: var(--ariadna-surface);
+  border: 3px solid #22c55e;
+  border-radius: 24px;
+  padding: 40px 48px;
+  box-shadow: 0 8px 32px rgba(34, 197, 94, 0.15);
+  animation: pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes pop-in {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+.fin-icono {
+  font-size: 72px;
+  line-height: 1;
+}
+
+.fin-titulo {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #16a34a;
+  margin: 0;
+}
+
+.fin-subtitulo {
+  font-size: 1.1rem;
+  color: var(--ariadna-text);
+  margin: 0;
+}
+
+.btn-reiniciar {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   background-color: var(--ariadna-primary);
-  color: #ffffff;
+  color: #fff;
   border: none;
-  border-radius: var(--ariadna-radius-sm);
+  border-radius: 12px;
   padding: 14px 32px;
   font-size: 1.1rem;
   font-weight: 700;
   font-family: 'Nunito', sans-serif;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, transform 0.15s;
 }
 
-.btn-finalizar:hover {
+.btn-reiniciar:hover {
   background-color: var(--ariadna-primary-dark);
+  transform: scale(1.03);
+}
+
+/* ---- Crédito ARASAAC ---- */
+.credito-arasaac {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-top: 1px solid var(--ariadna-border);
+}
+
+.credito-arasaac__logo {
+  height: 24px;
+  object-fit: contain;
+}
+
+.credito-arasaac__texto {
+  font-size: 0.75rem;
+  color: var(--ariadna-text-muted, #888);
 }
