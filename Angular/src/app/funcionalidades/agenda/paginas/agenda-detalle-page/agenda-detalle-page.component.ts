@@ -1,5 +1,5 @@
 import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, AsyncPipe } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { DragDropModule, CdkDragDrop } from '@angular/cdk/drag-drop';
@@ -8,11 +8,12 @@ import { RutinasService } from '../../servicios/rutinas.service';
 import { PerfilService } from '../../../../main/perfiles/servicios/perfil.service';
 import { AgendaItem } from '../../interfaces/agenda.interface';
 import { Rutina } from '../../interfaces/rutina.interface';
+import { SonidoService } from '../../../../shared/servicios/sonido.service';
 
 @Component({
   selector: 'app-agenda-detalle-page',
   standalone: true,
-  imports: [CommonModule, MatIconModule, DragDropModule],
+  imports: [CommonModule, MatIconModule, DragDropModule, AsyncPipe],
   templateUrl: './agenda-detalle-page.component.html',
   styleUrl: './agenda-detalle-page.component.css'
 })
@@ -31,6 +32,7 @@ export class AgendaDetallePageComponent implements OnInit {
   private router = inject(Router);
   private route = inject(ActivatedRoute);
   private cdr = inject(ChangeDetectorRef);
+  sonidoService = inject(SonidoService);
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');

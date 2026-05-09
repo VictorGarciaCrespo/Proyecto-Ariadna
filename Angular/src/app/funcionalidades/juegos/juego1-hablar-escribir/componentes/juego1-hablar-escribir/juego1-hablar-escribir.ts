@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { VocalJuegoService } from '../../servicios/vocal-juego.service';
 import { CartaVocal } from '../../interfaces/vocal-juego.interface';
 import { MatIconModule } from '@angular/material/icon';
+import { SonidoService } from '../../../../../shared/servicios/sonido.service';
 
 @Component({
   selector: 'app-juego1-hablar-escribir',
@@ -16,6 +17,7 @@ export class Juego1HablarEscribir implements OnInit {
   private location = inject(Location);
   private router = inject(Router);
   private vocalService = inject(VocalJuegoService);
+  sonidoService = inject(SonidoService);
 
   vocalSeleccionada: string | null = null;
   vocales: string[] = ['A', 'E', 'I', 'O', 'U'];
@@ -47,6 +49,7 @@ export class Juego1HablarEscribir implements OnInit {
   seleccionarCarta(carta: CartaVocal) {
     if (this.juegoTerminado || carta.seleccionada) return;
 
+    this.sonidoService.hablar(carta.palabra);
     carta.seleccionada = true;
 
     if (carta.esCorrecta) {

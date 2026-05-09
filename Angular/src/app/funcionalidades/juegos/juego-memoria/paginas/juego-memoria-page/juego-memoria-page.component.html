@@ -4,9 +4,14 @@
             <mat-icon>arrow_back</mat-icon>
         </button>
         <h1 class="titulo-juego">Encuentra las Parejas</h1>
-        <button class="btn-icono redondo">
-            <mat-icon>help</mat-icon>
-        </button>
+        <div style="display:flex; gap:8px;">
+            <button class="btn-icono redondo" (click)="sonidoService.toggle()" [title]="(sonidoService.activo$ | async) ? 'Desactivar sonido' : 'Activar sonido'">
+                <mat-icon>{{ (sonidoService.activo$ | async) ? 'volume_up' : 'volume_off' }}</mat-icon>
+            </button>
+            <button class="btn-icono redondo">
+                <mat-icon>help</mat-icon>
+            </button>
+        </div>
     </div>
 
     <div *ngIf="juegoTerminado" class="mensaje-victoria">

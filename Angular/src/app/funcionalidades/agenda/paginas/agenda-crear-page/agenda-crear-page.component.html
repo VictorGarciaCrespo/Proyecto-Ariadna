@@ -4,10 +4,15 @@
       <mat-icon>arrow_back</mat-icon>
     </button>
     <h1 class="title">Agenda</h1>
-    <button class="btn-inicio" (click)="irInicio()" aria-label="Inicio">
-      <mat-icon class="icon-large">home</mat-icon>
-      <span>INICIO</span>
-    </button>
+    <div style="display:flex; gap:16px; align-items:center;">
+      <button class="btn-circle" (click)="sonidoService.toggle()" [title]="(sonidoService.activo$ | async) ? 'Desactivar sonido' : 'Activar sonido'">
+        <mat-icon>{{ (sonidoService.activo$ | async) ? 'volume_up' : 'volume_off' }}</mat-icon>
+      </button>
+      <button class="btn-inicio" (click)="irInicio()" aria-label="Inicio">
+        <mat-icon class="icon-large">home</mat-icon>
+        <span>INICIO</span>
+      </button>
+    </div>
   </header>
 
   <main class="main-content">
@@ -29,7 +34,7 @@
         </div>
 
         <!-- ESPACIO LLENO -->
-        <div class="slot-filled" *ngIf="paso" cdkDrag [cdkDragData]="paso">
+        <div class="slot-filled" *ngIf="paso" cdkDrag [cdkDragData]="paso" (mousedown)="sonidoService.hablar(paso.nombre)">
           <div *cdkDragPreview class="drag-preview-img">
             <img [src]="paso?.url" [alt]="paso?.nombre">
           </div>
@@ -66,7 +71,8 @@
         <div class="item-card" *ngFor="let item of itemsDisponibles" 
              cdkDrag 
              [cdkDragData]="item"
-             (click)="agregarPasoClick(item)">
+             (click)="agregarPasoClick(item)"
+             (mousedown)="sonidoService.hablar(item.nombre)">
              
           <div *cdkDragPreview class="drag-preview-img">
             <img [src]="item.url" [alt]="item.nombre">
@@ -86,7 +92,7 @@
     <!-- Botón resultado -->
     <div class="footer">
       <button class="btn-resultado" (click)="guardarResultado()">
-        Resultado
+        Guardar Rutina
       </button>
     </div>
   </main>

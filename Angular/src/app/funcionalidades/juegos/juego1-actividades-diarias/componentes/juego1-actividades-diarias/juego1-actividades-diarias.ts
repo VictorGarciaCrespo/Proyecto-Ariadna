@@ -1,13 +1,14 @@
 import { Component, inject, OnInit, signal, computed } from '@angular/core';
-import { Location, NgClass, NgIf, NgFor } from '@angular/common';
+import { Location, NgClass, NgIf, NgFor, AsyncPipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { Juego1ActividadesDiariasService } from '../../servicios/juego1-actividades-diarias.service';
 import { ActividadDiaria, PictogramaJuego } from '../../interfaces/juego1-actividades-diarias.interface';
+import { SonidoService } from '../../../../../shared/servicios/sonido.service';
 
 @Component({
   selector: 'app-juego1-actividades-diarias',
-  imports: [MatIconModule, NgClass, NgIf, NgFor],
+  imports: [MatIconModule, NgClass, NgIf, NgFor, AsyncPipe],
   templateUrl: './juego1-actividades-diarias.html',
   styleUrl: './juego1-actividades-diarias.css',
 })
@@ -15,6 +16,7 @@ export class Juego1ActividadesDiarias implements OnInit {
   private location = inject(Location);
   private router = inject(Router);
   private service = inject(Juego1ActividadesDiariasService);
+  sonidoService = inject(SonidoService);
 
   // Estado del juego
   actividades: ActividadDiaria[] = [];
@@ -68,6 +70,10 @@ export class Juego1ActividadesDiarias implements OnInit {
 
     // Ignorar si ya fue seleccionado
     if (item.estado !== 'neutro') return;
+
+    // Extraer nombre de la ruta y pronunciarlo
+    const nombreArchivo = item.ruta.split('/').pop()?.replace('.png', '').replace(/_/g, ' ') ?? '';
+    this.sonidoService.hablar(nombreArchivo);
 
     if (item.correcto) {
       lista[index] = { ...item, estado: 'correcto' };

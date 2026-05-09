@@ -1,15 +1,16 @@
 import { Component, OnInit, ChangeDetectorRef, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, AsyncPipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { JuegoMemoriaComponent } from '../../componentes/juego-memoria/juego-memoria.component';
 import { JuegoMemoriaService } from '../../servicios/juego-memoria.service';
 import { CartaMemoria, ElementoMemoria } from '../../interfaces/juego-memoria.interface';
 import { MatIconModule } from '@angular/material/icon';
+import { SonidoService } from '../../../../../shared/servicios/sonido.service';
 
 @Component({
     selector: 'app-juego-memoria-page',
     standalone: true,
-    imports: [CommonModule, RouterModule, JuegoMemoriaComponent, MatIconModule],
+    imports: [CommonModule, RouterModule, JuegoMemoriaComponent, MatIconModule, AsyncPipe],
     templateUrl: './juego-memoria-page.component.html',
     styleUrls: ['./juego-memoria-page.component.css']
 })
@@ -21,6 +22,7 @@ export class JuegoMemoriaPageComponent implements OnInit {
 
     private juegoMemoriaService = inject(JuegoMemoriaService);
     private cdRef = inject(ChangeDetectorRef);
+    sonidoService = inject(SonidoService);
 
     ngOnInit(): void {
         this.iniciarJuego();
@@ -79,6 +81,12 @@ export class JuegoMemoriaPageComponent implements OnInit {
         }
 
         carta.volteada = true;
+
+        // Pronunciar el nombre (siempre usamos el contenido de texto del elemento)
+        const nombre = carta.tipo === 'texto'
+            ? carta.contenido
+            : (this.cartas.find(c => c.elementoId === carta.elementoId && c.tipo === 'texto')?.contenido ?? '');
+        this.sonidoService.hablar(nombre);
 
         if (!this.primeraCarta) {
             this.primeraCarta = carta;

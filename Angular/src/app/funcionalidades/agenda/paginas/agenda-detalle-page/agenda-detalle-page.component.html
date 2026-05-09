@@ -5,6 +5,9 @@
     </button>
     <h1 class="title">{{ rutina?.nombre ?? 'Cargando...' }}</h1>
     <div class="header-actions">
+      <button class="btn-circle" (click)="sonidoService.toggle()" [title]="(sonidoService.activo$ | async) ? 'Desactivar sonido' : 'Activar sonido'">
+        <mat-icon>{{ (sonidoService.activo$ | async) ? 'volume_up' : 'volume_off' }}</mat-icon>
+      </button>
       <button class="btn-eliminar" (click)="eliminarRutina()">
         <mat-icon>delete</mat-icon>
         Eliminar
@@ -31,7 +34,7 @@
         <div class="slot-empty" *ngIf="!paso"></div>
 
         <!-- ESPACIO LLENO -->
-        <div class="slot-filled" *ngIf="paso" cdkDrag [cdkDragData]="paso">
+        <div class="slot-filled" *ngIf="paso" cdkDrag [cdkDragData]="paso" (mousedown)="sonidoService.hablar(paso.nombre)">
           <div *cdkDragPreview class="drag-preview-img">
             <img [src]="paso?.url" [alt]="paso?.nombre">
           </div>
@@ -62,7 +65,8 @@
         <div class="item-card" *ngFor="let item of itemsDisponibles"
              cdkDrag
              [cdkDragData]="item"
-             (click)="agregarPasoClick(item)">
+             (click)="agregarPasoClick(item)"
+             (mousedown)="sonidoService.hablar(item.nombre)">
           <div *cdkDragPreview class="drag-preview-img">
             <img [src]="item.url" [alt]="item.nombre">
           </div>

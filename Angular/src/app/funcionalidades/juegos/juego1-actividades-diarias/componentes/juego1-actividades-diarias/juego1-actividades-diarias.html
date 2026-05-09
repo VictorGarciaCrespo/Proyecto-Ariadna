@@ -8,6 +8,9 @@
     </button>
     <span class="header-titulo">¿Qué necesitas para esta actividad?</span>
     <div class="header-acertados">
+      <button class="btn-sonido" (click)="sonidoService.toggle()" [title]="(sonidoService.activo$ | async) ? 'Desactivar sonido' : 'Activar sonido'">
+        <mat-icon>{{ (sonidoService.activo$ | async) ? 'volume_up' : 'volume_off' }}</mat-icon>
+      </button>
       <mat-icon class="icono-check">check_circle</mat-icon>
       <span>{{ acertados() }} / 3</span>
     </div>

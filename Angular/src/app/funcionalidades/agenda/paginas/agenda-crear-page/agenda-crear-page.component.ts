@@ -1,5 +1,5 @@
 import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, AsyncPipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { DragDropModule, CdkDragDrop } from '@angular/cdk/drag-drop';
@@ -8,11 +8,12 @@ import { RutinasService } from '../../servicios/rutinas.service';
 import { PerfilService, Perfil } from '../../../../main/perfiles/servicios/perfil.service';
 import { AgendaItem } from '../../interfaces/agenda.interface';
 import { Subscription } from 'rxjs';
+import { SonidoService } from '../../../../shared/servicios/sonido.service';
 
 @Component({
   selector: 'app-agenda-crear-page',
   standalone: true,
-  imports: [CommonModule, MatIconModule, DragDropModule],
+  imports: [CommonModule, MatIconModule, DragDropModule, AsyncPipe],
   templateUrl: './agenda-crear-page.component.html',
   styleUrl: './agenda-crear-page.component.css'
 })
@@ -31,6 +32,7 @@ export class AgendaCrearPageComponent implements OnInit {
   private perfilService = inject(PerfilService);
   private router = inject(Router);
   private cdr = inject(ChangeDetectorRef); // <-- Para forzar la actualización de la pantalla
+  sonidoService = inject(SonidoService);
 
   ngOnInit(): void {
     this.perfilSub = this.perfilService.perfilActual$.subscribe(perfil => {
