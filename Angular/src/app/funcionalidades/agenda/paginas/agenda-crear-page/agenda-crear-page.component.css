@@ -81,12 +81,13 @@
   justify-content: space-around;
   gap: 16px;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 /* Cada DropList es un contenedor del tamaño exacto de la tarjeta */
 .slot-wrapper {
-  width: 160px;
-  height: 160px;
+  width: 220px;
+  height: 220px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -279,4 +280,42 @@
 
 .cdk-drag-placeholder {
   opacity: 0; /* Oculta el hueco original mientras arrastras */
+}
+
+/* ====== TOAST DE NOTIFICACIÓN ====== */
+.toast {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 16px 36px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  animation: slideUp 0.3s ease;
+  white-space: nowrap;
+}
+
+.toast.exito {
+  background-color: #2e7d32;
+  color: #ffffff;
+}
+
+.toast.error {
+  background-color: #c62828;
+  color: #ffffff;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }

@@ -14,6 +14,18 @@ export class RutinasService {
     return this.http.get<{ data: Rutina[], message: string }>(this.apiUrl);
   }
 
+  getRutinasByPerfil(idPerfil: string): Observable<{ data: Rutina[], message: string }> {
+    return this.http.get<{ data: Rutina[], message: string }>(`${this.apiUrl}?idPerfil=${idPerfil}`);
+  }
+
+  contRutinasByPerfil(idPerfil: string): Observable<{ count: number }> {
+    return this.http.get<{ count: number }>(`${this.apiUrl}/count/${idPerfil}`);
+  }
+
+  getRutinaById(id: string): Observable<{ data: Rutina, message: string }> {
+    return this.http.get<{ data: Rutina, message: string }>(`${this.apiUrl}/${id}`);
+  }
+
   addRutina(rutina: Rutina): Observable<{ data: Rutina, message: string }> {
     return this.http.post<{ data: Rutina, message: string }>(this.apiUrl, rutina);
   }

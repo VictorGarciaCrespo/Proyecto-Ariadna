@@ -12,6 +12,7 @@ import { PerfilesPageComponent } from './main/perfiles/paginas/perfiles-page.com
 import { AdministradorPageComponent } from './main/administrador/paginas/administrador-page.component';
 import { AgendaPageComponent } from './funcionalidades/agenda/paginas/agenda-page/agenda-page.component';
 import { AgendaCrearPageComponent } from './funcionalidades/agenda/paginas/agenda-crear-page/agenda-crear-page.component';
+import { AgendaDetallePageComponent } from './funcionalidades/agenda/paginas/agenda-detalle-page/agenda-detalle-page.component';
 
 export const routes: Routes = [
     { path: '', component: PerfilesPageComponent },
@@ -25,5 +26,6 @@ export const routes: Routes = [
     { path: 'administrador', component: AdministradorPageComponent },
     { path: 'agenda', component: AgendaPageComponent },
     { path: 'agenda/crear', component: AgendaCrearPageComponent },
+    { path: 'agenda/detalle/:id', component: AgendaDetallePageComponent },
     { path: '**', redirectTo: '' }
 ];

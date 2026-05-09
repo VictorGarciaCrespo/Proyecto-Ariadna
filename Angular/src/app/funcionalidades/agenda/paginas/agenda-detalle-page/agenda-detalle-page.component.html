@@ -1,0 +1,89 @@
+<div class="agenda-detalle-layout">
+  <header class="header">
+    <button class="btn-circle" (click)="volver()" aria-label="Volver">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <h1 class="title">{{ rutina?.nombre ?? 'Cargando...' }}</h1>
+    <div class="header-actions">
+      <button class="btn-eliminar" (click)="eliminarRutina()">
+        <mat-icon>delete</mat-icon>
+        Eliminar
+      </button>
+      <button class="btn-guardar" (click)="guardarCambios()">
+        <mat-icon>save</mat-icon>
+        Guardar
+      </button>
+    </div>
+  </header>
+
+  <main class="main-content" *ngIf="rutina; else cargando">
+
+    <!-- Zona de slots de la rutina -->
+    <div class="slots-container">
+      <div class="slot-wrapper" *ngFor="let paso of pasosRutina; let i = index"
+           cdkDropList
+           [id]="'slot-' + i"
+           [cdkDropListData]="i"
+           [cdkDropListConnectedTo]="allSlotIds"
+           (cdkDropListDropped)="dropInSlot($event)">
+
+        <!-- ESPACIO VACÍO -->
+        <div class="slot-empty" *ngIf="!paso"></div>
+
+        <!-- ESPACIO LLENO -->
+        <div class="slot-filled" *ngIf="paso" cdkDrag [cdkDragData]="paso">
+          <div *cdkDragPreview class="drag-preview-img">
+            <img [src]="paso?.url" [alt]="paso?.nombre">
+          </div>
+          <button class="btn-remove" (click)="quitarPaso(i)" title="Quitar">
+            <mat-icon>close</mat-icon>
+          </button>
+          <img [src]="paso?.url" [alt]="paso?.nombre" class="slot-img">
+        </div>
+      </div>
+    </div>
+
+    <!-- Flecha decorativa -->
+    <div class="arrow-divider">
+      <mat-icon>keyboard_double_arrow_up</mat-icon>
+    </div>
+
+    <!-- Pictogramas disponibles -->
+    <div class="cosas-hacer-container">
+      <h2>Cosas para Hacer</h2>
+      <div class="items-grid"
+           cdkDropList
+           id="listaDisponibles"
+           [cdkDropListData]="'disponibles'"
+           [cdkDropListConnectedTo]="allSlotIds"
+           [cdkDropListSortingDisabled]="true"
+           *ngIf="itemsDisponibles.length > 0; else noItems">
+
+        <div class="item-card" *ngFor="let item of itemsDisponibles"
+             cdkDrag
+             [cdkDragData]="item"
+             (click)="agregarPasoClick(item)">
+          <div *cdkDragPreview class="drag-preview-img">
+            <img [src]="item.url" [alt]="item.nombre">
+          </div>
+          <img [src]="item.url" [alt]="item.nombre">
+          <span class="item-nombre">{{ item.nombre }}</span>
+        </div>
+      </div>
+
+      <ng-template #noItems>
+        <p class="no-data">Cargando pictogramas...</p>
+      </ng-template>
+    </div>
+
+  </main>
+
+  <ng-template #cargando>
+    <div class="loading">Cargando rutina...</div>
+  </ng-template>
+
+  <!-- Toast de notificación -->
+  <div class="toast" *ngIf="toast" [ngClass]="toast.tipo">
+    {{ toast.mensaje }}
+  </div>
+</div>

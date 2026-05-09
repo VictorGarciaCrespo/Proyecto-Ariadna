@@ -9,8 +9,13 @@ function rutinasAPI(app) {
 
     router.get('/', async function (req, res, next) {
         try {
-            const rutinas = await rutinasService.getRutinas();
-            // Optional: filter by user profile ID if provided in query params, or fetch all and filter in frontend
+            const { idPerfil } = req.query;
+            let rutinas;
+            if (idPerfil) {
+                rutinas = await rutinasService.getRutinasByPerfil(idPerfil);
+            } else {
+                rutinas = await rutinasService.getRutinas();
+            }
             res.status(200).json({
                 data: rutinas,
                 message: 'rutinas recuperadas con éxito'
@@ -18,6 +23,16 @@ function rutinasAPI(app) {
         } catch (err) {
             console.log(`se produjo un error ${err}`);
             res.status(500).json({ error: `se produjo un error ${err} al obtener las rutinas` });
+        }
+    });
+
+    router.get('/count/:idPerfil', async function (req, res, next) {
+        try {
+            const { idPerfil } = req.params;
+            const count = await rutinasService.contRutinasByPerfil(idPerfil);
+            res.status(200).json({ count });
+        } catch (err) {
+            res.status(500).json({ error: `error contando rutinas: ${err}` });
         }
     });
 
@@ -32,6 +47,20 @@ function rutinasAPI(app) {
         } catch (err) {
             console.log(`se produjo un error ${err}`);
             res.status(500).json({ error: `se produjo el error ${err} al añadir la rutina` });
+        }
+    });
+
+    router.get('/:idRutina', async function (req, res, next) {
+        try {
+            const { idRutina } = req.params;
+            const db = await rutinasService.mongoDB.connect();
+            const { ObjectId } = require('mongodb');
+            const rutina = await db.collection('Rutinas').findOne({ _id: ObjectId.createFromHexString(idRutina) });
+            if (!rutina) return res.status(404).json({ error: 'Rutina no encontrada' });
+            rutina._id = rutina._id.toString();
+            res.status(200).json({ data: rutina, message: 'rutina recuperada con éxito' });
+        } catch (err) {
+            res.status(500).json({ error: `error obteniendo rutina: ${err}` });
         }
     });
 

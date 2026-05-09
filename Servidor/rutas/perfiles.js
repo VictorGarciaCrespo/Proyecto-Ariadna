@@ -10,8 +10,13 @@ function perfilesAPI(app) {
     router.get('/', async function (req, res, next) {
         try {
             const perfiles = await perfilesService.getPerfiles();
+            // Normalizar _id a string para que el frontend siempre reciba un string plano
+            const perfilesNormalizados = perfiles.map(p => ({
+                ...p,
+                _id: p._id ? p._id.toString() : p._id
+            }));
             res.status(200).json({
-                data: perfiles,
+                data: perfilesNormalizados,
                 message: 'perfiles recuperados con éxito'
             });
         } catch (err) {

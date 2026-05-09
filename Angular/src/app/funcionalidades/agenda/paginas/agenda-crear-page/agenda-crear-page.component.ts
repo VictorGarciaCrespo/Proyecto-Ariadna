@@ -22,6 +22,10 @@ export class AgendaCrearPageComponent implements OnInit {
   perfilActual: Perfil | null = null;
   private perfilSub?: Subscription;
 
+  // Toast de notificación
+  toast: { mensaje: string; tipo: 'exito' | 'error' } | null = null;
+  private toastTimeout: any;
+
   private agendaService = inject(AgendaService);
   private rutinasService = inject(RutinasService);
   private perfilService = inject(PerfilService);
@@ -97,30 +101,59 @@ export class AgendaCrearPageComponent implements OnInit {
     this.cdr.detectChanges();
   }
 
+  mostrarToast(mensaje: string, tipo: 'exito' | 'error') {
+    clearTimeout(this.toastTimeout);
+    this.toast = { mensaje, tipo };
+    this.cdr.detectChanges();
+  }
+
+  ocultarToast() {
+    this.toast = null;
+    this.cdr.detectChanges();
+  }
+
   guardarResultado() {
     // Filtra los espacios vacíos
     const pasosLlenos = this.pasosRutina.filter(p => p !== null) as AgendaItem[];
-    
+
     if (pasosLlenos.length === 0) {
-      alert('Añade al menos un pictograma a la rutina.');
+      this.mostrarToast('Añade al menos un pictograma a la rutina.', 'error');
+      this.toastTimeout = setTimeout(() => this.ocultarToast(), 3000);
       return;
     }
 
-    const nombre = prompt('Introduce un nombre para la rutina:');
-    if (nombre && nombre.trim() !== '') {
-      const nuevaRutina = {
-        nombre: nombre.trim(),
-        idPerfil: this.perfilActual!._id!,
-        pasos: pasosLlenos
-      };
+    const idPerfil = this.perfilActual!._id!;
 
-      this.rutinasService.addRutina(nuevaRutina).subscribe({
-        next: () => {
-          alert('Rutina creada con éxito');
-          this.router.navigate(['/agenda']);
-        },
-        error: (err) => console.error('Error guardando rutina', err)
-      });
-    }
+    // Consulta cuántas rutinas tiene ya el perfil para generar el nombre
+    this.rutinasService.contRutinasByPerfil(idPerfil).subscribe({
+      next: ({ count }) => {
+        const nombreAuto = `Rutina ${count + 1}`;
+        const nuevaRutina = {
+          nombre: nombreAuto,
+          idPerfil,
+          pasos: pasosLlenos
+        };
+
+        this.rutinasService.addRutina(nuevaRutina).subscribe({
+          next: () => {
+            this.mostrarToast(`✓ ${nombreAuto} creada con éxito`, 'exito');
+            this.toastTimeout = setTimeout(() => {
+              this.ocultarToast();
+              this.router.navigate(['/agenda']);
+            }, 1500);
+          },
+          error: (err) => {
+            console.error('Error guardando rutina', err);
+            this.mostrarToast('Error al guardar la rutina', 'error');
+            this.toastTimeout = setTimeout(() => this.ocultarToast(), 3000);
+          }
+        });
+      },
+      error: (err) => {
+        console.error('Error contando rutinas', err);
+        this.mostrarToast('Error al conectar con el servidor', 'error');
+        this.toastTimeout = setTimeout(() => this.ocultarToast(), 3000);
+      }
+    });
   }
 }

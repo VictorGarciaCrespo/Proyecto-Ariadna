@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
@@ -22,6 +22,7 @@ export class AgendaPageComponent implements OnInit {
   private rutinasService = inject(RutinasService);
   private perfilService = inject(PerfilService);
   private router = inject(Router);
+  private cdr = inject(ChangeDetectorRef);
 
   ngOnInit(): void {
     this.perfilSub = this.perfilService.perfilActual$.subscribe(perfil => {
@@ -36,10 +37,14 @@ export class AgendaPageComponent implements OnInit {
   }
 
   cargarRutinas() {
-    this.rutinasService.getRutinas().subscribe({
+    const idPerfil = this.perfilActual?._id;
+
+    if (!idPerfil) return;
+
+    this.rutinasService.getRutinasByPerfil(idPerfil).subscribe({
       next: (response) => {
-        // Filtrar por perfil actual
-        this.rutinas = response.data.filter(r => r.idPerfil === this.perfilActual?._id);
+        this.rutinas = [...response.data];
+        this.cdr.detectChanges();
       },
       error: (err) => console.error('Error cargando rutinas', err)
     });
@@ -51,5 +56,9 @@ export class AgendaPageComponent implements OnInit {
 
   nuevaRutina() {
     this.router.navigate(['/agenda/crear']);
+  }
+
+  verRutina(id: string) {
+    this.router.navigate(['/agenda/detalle', id]);
   }
 }

@@ -90,4 +90,10 @@
       </button>
     </div>
   </main>
+
+  <!-- Toast de notificación -->
+  <div class="toast" *ngIf="toast" [ngClass]="toast.tipo">
+    {{ toast.mensaje }}
+  </div>
+
 </div>
