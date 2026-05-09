@@ -33,7 +33,6 @@ export class AlumnoDialogComponent {
 
   capacidades = [
     { label: 'Pictogramas', value: 'pictogramas', selected: false },
-    { label: 'Sonido', value: 'sonido', selected: false },
     { label: 'Texto explicativo', value: 'texto_explicativo', selected: false }
   ];
 
