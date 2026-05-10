@@ -14,6 +14,27 @@ export class SonidoService {
     this.activoSubject.next(!this.activoSubject.value);
   }
 
+  // Diccionario de correcciones: nombre de archivo normalizado → texto correcto para pronunciar
+  private readonly correcciones: Record<string, string> = {
+    'cumpleanos':  'cumpleaños',
+    'cana':        'caña',
+    'muneca':      'muñeca',
+    'ensenanza':   'enseñanza',
+    'manana':      'mañana',
+    'nino':        'niño',
+    'nina':        'niña',
+    'companero':   'compañero',
+    'bano':        'baño',
+  };
+
+  /** Reemplaza palabras cuya ñ fue eliminada en el nombre de archivo */
+  private normalizarTexto(texto: string): string {
+    return texto
+      .split(' ')
+      .map(palabra => this.correcciones[palabra.toLowerCase()] ?? palabra)
+      .join(' ');
+  }
+
   hablar(texto: string): void {
     if (!this.activo || !texto) return;
     if (!('speechSynthesis' in window)) return;
@@ -27,7 +48,8 @@ export class SonidoService {
     }
 
     setTimeout(() => {
-      const utterance = new SpeechSynthesisUtterance(texto);
+      const textoCorregido = this.normalizarTexto(texto);
+      const utterance = new SpeechSynthesisUtterance(textoCorregido);
       utterance.lang = 'es-ES';
       utterance.rate = 0.9;
       utterance.pitch = 1.1;

@@ -1,0 +1,125 @@
+<!-- Juego Acción-Objeto — columna izquierda | columna derecha -->
+<div class="juego-layout">
+
+  <!-- Cabecera -->
+  <header class="header">
+    <button class="btn-circle" (click)="volver()" aria-label="Volver">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="header-titulo">Une cada acción con su objeto</span>
+    <div class="header-acertados">
+      <button class="btn-sonido" (click)="sonidoService.toggle()"
+        [title]="sonidoService.activo ? 'Desactivar sonido' : 'Activar sonido'">
+        <mat-icon>{{ sonidoService.activo ? 'volume_up' : 'volume_off' }}</mat-icon>
+      </button>
+      <mat-icon class="icono-check">check_circle</mat-icon>
+      <span>{{ parejasCorrectas() }} / {{ TOTAL_PAREJAS }}</span>
+    </div>
+  </header>
+
+  <!-- Estado: cargando -->
+  <main class="main-content" *ngIf="cargando()">
+    <div class="estado-mensaje">
+      <mat-icon class="icono-carga">hourglass_top</mat-icon>
+      <p>Cargando juego...</p>
+    </div>
+  </main>
+
+  <!-- Estado: error -->
+  <main class="main-content" *ngIf="error() && !cargando()">
+    <div class="estado-mensaje estado-error">
+      <mat-icon>error_outline</mat-icon>
+      <p>No se pudo conectar con el servidor.</p>
+    </div>
+  </main>
+
+  <!-- Juego activo -->
+  <main class="main-content" *ngIf="!cargando() && !error() && !juegoTerminado()">
+
+    <p class="instruccion">
+      <span *ngIf="!seleccionadaAccion">Toca una imagen de la izquierda</span>
+      <span *ngIf="seleccionadaAccion" class="instruccion-activa">Ahora toca el objeto de la derecha</span>
+    </p>
+
+    <div class="zona-juego">
+
+      <!-- Columna IZQUIERDA: Acciones -->
+      <div class="columna">
+        <div
+          *ngFor="let tarjeta of acciones()"
+          class="tarjeta"
+          [ngClass]="{
+            'seleccionada':  tarjeta.estado === 'seleccionada',
+            'correcta':      tarjeta.estado === 'correcta',
+            'incorrecta':    tarjeta.estado === 'incorrecta'
+          }"
+          (click)="seleccionarAccion(tarjeta)"
+        >
+          <img [src]="'/acciones-objeto/' + tarjeta.imagen"
+               [alt]="tarjeta.imagen.replace('.png','')" />
+          <div class="overlay-feedback" *ngIf="tarjeta.estado === 'correcta' || tarjeta.estado === 'incorrecta'">
+            <mat-icon *ngIf="tarjeta.estado === 'correcta'">check</mat-icon>
+            <mat-icon *ngIf="tarjeta.estado === 'incorrecta'">close</mat-icon>
+          </div>
+          <!-- Flecha indicadora de que está seleccionada -->
+          <div class="flecha-seleccion" *ngIf="tarjeta.estado === 'seleccionada'">
+            <mat-icon>arrow_forward</mat-icon>
+          </div>
+        </div>
+      </div>
+
+      <!-- Separador visual -->
+      <div class="separador">
+        <div class="linea-vertical"></div>
+      </div>
+
+      <!-- Columna DERECHA: Objetos -->
+      <div class="columna">
+        <div
+          *ngFor="let tarjeta of objetos()"
+          class="tarjeta"
+          [ngClass]="{
+            'correcta':    tarjeta.estado === 'correcta',
+            'incorrecta':  tarjeta.estado === 'incorrecta',
+            'destacada':   !!seleccionadaAccion && tarjeta.estado === 'neutro'
+          }"
+          (click)="seleccionarObjeto(tarjeta)"
+        >
+          <img [src]="'/acciones-objeto/' + tarjeta.imagen"
+               [alt]="tarjeta.imagen.replace('.png','')" />
+          <div class="overlay-feedback" *ngIf="tarjeta.estado === 'correcta' || tarjeta.estado === 'incorrecta'">
+            <mat-icon *ngIf="tarjeta.estado === 'correcta'">check</mat-icon>
+            <mat-icon *ngIf="tarjeta.estado === 'incorrecta'">close</mat-icon>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Pantalla de victoria -->
+  <main class="main-content pantalla-fin" *ngIf="juegoTerminado()">
+    <div class="fin-card">
+      <div class="fin-icono">🎉</div>
+      <h2 class="fin-titulo">¡Muy bien!</h2>
+      <p class="fin-subtitulo">Has unido todas las parejas correctamente</p>
+      <div class="fin-botones">
+        <button class="btn-accion btn-reiniciar" (click)="iniciarRonda()">
+          <mat-icon>replay</mat-icon>
+          Volver a jugar
+        </button>
+        <button class="btn-accion btn-otro-juego" (click)="irAJuegoActividades()">
+          <mat-icon>swap_horiz</mat-icon>
+          Otro juego
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Crédito ARASAAC -->
+  <div class="credito-arasaac">
+    <img src="/imagenes/arasaac-logo.png" alt="Logo ARASAAC" class="credito-arasaac__logo">
+    <span class="credito-arasaac__texto">Pictogramas propiedad de Arasaac</span>
+  </div>
+
+</div>
