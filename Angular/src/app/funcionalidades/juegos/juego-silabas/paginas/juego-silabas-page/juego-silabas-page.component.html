@@ -1,0 +1,110 @@
+<div class="juego-layout">
+
+  <!-- CABECERA -->
+  <header class="header">
+    <button class="btn-circle" routerLink="/hablar-escribir" aria-label="Volver">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="header-titulo">Completa las palabras eligiendo una sílaba</span>
+    <div class="header-acertados">
+      <button class="btn-sonido" (click)="sonidoService.toggle()"
+        [title]="(sonidoService.activo$ | async) ? 'Desactivar sonido' : 'Activar sonido'">
+        <mat-icon>{{ (sonidoService.activo$ | async) ? 'volume_up' : 'volume_off' }}</mat-icon>
+      </button>
+      <mat-icon class="icono-check">check_circle</mat-icon>
+      <span>{{ aciertos }} / {{ TOTAL_POR_RONDA }}</span>
+    </div>
+  </header>
+
+  <!-- JUEGO ACTIVO -->
+  <main class="main-content" *ngIf="!juegoTerminado">
+
+    <p class="instruccion">
+      <span *ngIf="!silabaSeleccionada">Toca una sílaba de la izquierda</span>
+      <span *ngIf="silabaSeleccionada" class="instruccion-activa">Ahora toca el instrumento de la derecha</span>
+    </p>
+
+    <div class="zona-juego">
+
+      <!-- COLUMNA IZQUIERDA: Sílabas -->
+      <div class="columna columna-silabas">
+        <div
+          *ngFor="let s of silabasRonda"
+          class="tarjeta tarjeta-silaba"
+          [ngClass]="{
+            'seleccionada': getEstadoTarjeta(s.id) === 'seleccionada',
+            'correcta':     getEstadoTarjeta(s.id) === 'correcta',
+            'incorrecta':   getEstadoTarjeta(s.id) === 'incorrecta'
+          }"
+          (click)="seleccionarSilaba(s)">
+
+          <span class="texto-silaba">{{ s.silaba }}</span>
+
+          <!-- Flecha animada cuando está seleccionada -->
+          <div class="flecha-seleccion" *ngIf="getEstadoTarjeta(s.id) === 'seleccionada'">
+            <mat-icon>arrow_forward</mat-icon>
+          </div>
+
+          <!-- Feedback overlay -->
+          <div class="overlay-feedback" *ngIf="getEstadoTarjeta(s.id) === 'correcta' || getEstadoTarjeta(s.id) === 'incorrecta'">
+            <mat-icon *ngIf="getEstadoTarjeta(s.id) === 'correcta'">check</mat-icon>
+            <mat-icon *ngIf="getEstadoTarjeta(s.id) === 'incorrecta'">close</mat-icon>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEPARADOR CENTRAL -->
+      <div class="separador">
+        <div class="linea-vertical"></div>
+      </div>
+
+      <!-- COLUMNA DERECHA: Imágenes -->
+      <div class="columna columna-imagenes">
+        <div
+          *ngFor="let p of palabrasRonda"
+          class="tarjeta tarjeta-imagen"
+          [ngClass]="{
+            'correcta':   getEstadoImagen(p.id) === 'correcta',
+            'incorrecta': getEstadoImagen(p.id) === 'incorrecta',
+            'destacada':  getEstadoImagen(p.id) === 'destacada'
+          }"
+          (click)="seleccionarImagen(p)">
+
+          <img [src]="p.imagen" [alt]="p.palabra" />
+
+          <!-- Feedback overlay -->
+          <div class="overlay-feedback" *ngIf="getEstadoImagen(p.id) === 'correcta' || getEstadoImagen(p.id) === 'incorrecta'">
+            <mat-icon *ngIf="getEstadoImagen(p.id) === 'correcta'">check</mat-icon>
+            <mat-icon *ngIf="getEstadoImagen(p.id) === 'incorrecta'">close</mat-icon>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- PANTALLA DE VICTORIA -->
+  <main class="main-content pantalla-fin" *ngIf="juegoTerminado">
+    <div class="fin-card">
+      <div class="fin-icono">🎉</div>
+      <h2 class="fin-titulo">¡Muy bien!</h2>
+      <p class="fin-subtitulo">Has completado todas las palabras correctamente</p>
+      <div class="fin-botones">
+        <button class="btn-accion btn-reiniciar" (click)="volverAJugar()">
+          <mat-icon>replay</mat-icon>
+          Volver a jugar
+        </button>
+        <button class="btn-accion btn-finalizar" (click)="finalizar()">
+          <mat-icon>home</mat-icon>
+          Finalizar
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- CRÉDITO -->
+  <div class="credito-soyvisual">
+    <span>Pictogramas propiedad de Soy Visual</span>
+  </div>
+
+</div>

@@ -74,6 +74,6 @@ export class Juego1HablarEscribir implements OnInit {
   }
 
   siguiente(): void {
-    this.router.navigate(['/menu-principal']);
+    this.router.navigate(['/hablar-escribir/juego-silabas']);
   }
 }
