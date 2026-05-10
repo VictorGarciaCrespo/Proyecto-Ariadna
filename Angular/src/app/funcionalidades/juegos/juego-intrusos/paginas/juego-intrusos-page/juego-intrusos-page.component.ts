@@ -14,6 +14,7 @@ export interface RondaIntruso {
   ronda: number;
   titulo: string;
   imagenes: ImagenIntruso[];
+  nivel?: number;
 }
 
 @Component({
@@ -28,45 +29,90 @@ export class JuegoIntrusosPageComponent implements OnInit {
   private cdRef = inject(ChangeDetectorRef);
   sonidoService = inject(SonidoService);
 
-  rondas: RondaIntruso[] = [
+  rondasNivel3: RondaIntruso[] = [
     {
       ronda: 1,
       titulo: 'Vehículos',
       imagenes: [
-        { nombre: 'Grúa', ruta: '/intrusos/grua.jpg', esIntrusa: false },
-        { nombre: 'Remolques', ruta: '/intrusos/Remolques.jpg', esIntrusa: false },
-        { nombre: 'Plátano', ruta: '/intrusos/platano.jpg', esIntrusa: true }
+        { nombre: 'Grúa', ruta: '/intrusos/3/grua.jpg', esIntrusa: false },
+        { nombre: 'Remolques', ruta: '/intrusos/3/Remolques.jpg', esIntrusa: false },
+        { nombre: 'Plátano', ruta: '/intrusos/3/platano.jpg', esIntrusa: true }
       ]
     },
     {
       ronda: 2,
       titulo: 'Insectos',
       imagenes: [
-        { nombre: 'Mariposas', ruta: '/intrusos/Mariposas.jpg', esIntrusa: false },
-        { nombre: 'Polillas', ruta: '/intrusos/Polillas.jpg', esIntrusa: false },
-        { nombre: 'Maíz', ruta: '/intrusos/maiz.jpg', esIntrusa: true }
+        { nombre: 'Mariposas', ruta: '/intrusos/3/Mariposas.jpg', esIntrusa: false },
+        { nombre: 'Polillas', ruta: '/intrusos/3/Polillas.jpg', esIntrusa: false },
+        { nombre: 'Maíz', ruta: '/intrusos/3/maiz.jpg', esIntrusa: true }
       ]
     },
     {
       ronda: 3,
       titulo: 'Camping',
       imagenes: [
-        { nombre: 'Saco de dormir', ruta: '/intrusos/saco_dormir.jpg', esIntrusa: false },
-        { nombre: 'Tienda de campaña', ruta: '/intrusos/tienda_campana.jpg', esIntrusa: false },
-        { nombre: 'Dátil', ruta: '/intrusos/datil.jpg', esIntrusa: true }
+        { nombre: 'Saco de dormir', ruta: '/intrusos/3/saco_dormir.jpg', esIntrusa: false },
+        { nombre: 'Tienda de campaña', ruta: '/intrusos/3/tienda_campana.jpg', esIntrusa: false },
+        { nombre: 'Dátil', ruta: '/intrusos/3/datil.jpg', esIntrusa: true }
       ]
     },
     {
       ronda: 4,
       titulo: 'Frutas y Verduras',
       imagenes: [
-        { nombre: 'Lechugas', ruta: '/intrusos/Lechugas.jpg', esIntrusa: true },
-        { nombre: 'Fresas', ruta: '/intrusos/Fresas.jpg', esIntrusa: false },
-        { nombre: 'Cerezas', ruta: '/intrusos/Cerezas.jpg', esIntrusa: false }
+        { nombre: 'Lechugas', ruta: '/intrusos/3/Lechugas.jpg', esIntrusa: true },
+        { nombre: 'Fresas', ruta: '/intrusos/3/Fresas.jpg', esIntrusa: false },
+        { nombre: 'Cerezas', ruta: '/intrusos/3/Cerezas.jpg', esIntrusa: false }
       ]
     }
   ];
 
+  rondasNivel4: RondaIntruso[] = [
+    {
+      ronda: 1,
+      titulo: 'Bolsos',
+      imagenes: [
+        { nombre: 'Bolso', ruta: '/intrusos/4/bolso.jpg', esIntrusa: false },
+        { nombre: 'Mochila', ruta: '/intrusos/4/Mochila.jpg', esIntrusa: false },
+        { nombre: 'Bolsa de tela', ruta: '/intrusos/4/bolsa_tela.jpg', esIntrusa: false },
+        { nombre: 'Bote de cristal', ruta: '/intrusos/4/bote_cristal.jpg', esIntrusa: true }
+      ]
+    },
+    {
+      ronda: 2,
+      titulo: 'Jerseys',
+      imagenes: [
+        { nombre: 'Jersey', ruta: '/intrusos/4/Jersey.jpg', esIntrusa: false },
+        { nombre: 'Sudadera', ruta: '/intrusos/4/Sudadera.jpg', esIntrusa: false },
+        { nombre: 'Polo de manga larga', ruta: '/intrusos/4/polo_manga_larga.jpg', esIntrusa: false },
+        { nombre: 'Gafas', ruta: '/intrusos/4/Gafas.jpg', esIntrusa: true }
+      ]
+    },
+    {
+      ronda: 3,
+      titulo: 'Bebidas',
+      imagenes: [
+        { nombre: 'Horchata', ruta: '/intrusos/4/Horchata.jpg', esIntrusa: false },
+        { nombre: 'Limonada', ruta: '/intrusos/4/Limonadas.jpg', esIntrusa: false },
+        { nombre: 'Naranjada', ruta: '/intrusos/4/Naranjada.jpg', esIntrusa: false },
+        { nombre: 'Café con leche', ruta: '/intrusos/4/cafe_con_leche.jpg', esIntrusa: true }
+      ]
+    },
+    {
+      ronda: 4,
+      titulo: 'Camiones',
+      imagenes: [
+        { nombre: 'Camiones', ruta: '/intrusos/4/Camiones.jpg', esIntrusa: false },
+        { nombre: 'Camión de basura', ruta: '/intrusos/4/camion_basura.jpg', esIntrusa: false },
+        { nombre: 'Camión de butano', ruta: '/intrusos/4/camion_butano.jpg', esIntrusa: false },
+        { nombre: 'Submarino', ruta: '/intrusos/4/Submarinos.jpg', esIntrusa: true }
+      ]
+    }
+  ];
+
+  rondas: RondaIntruso[] = [];
+  nivelActual: number = 3;
   rondaActualIndex: number = 0;
   juegoTerminado: boolean = false;
   imagenSeleccionadaIndex: number | null = null;
@@ -82,8 +128,21 @@ export class JuegoIntrusosPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.seleccionarNivel();
     this.mezclarRondas();
     this.reiniciarEstado();
+  }
+
+  seleccionarNivel(): void {
+    // Escoger aleatoriamente entre nivel 3 (3 imágenes) y nivel 4 (4 imágenes)
+    this.nivelActual = Math.random() < 0.5 ? 3 : 4;
+    // Hacemos una copia profunda (o al menos un map) para no mutar los originales al barajar
+    const rondasFuente = this.nivelActual === 3 ? this.rondasNivel3 : this.rondasNivel4;
+    
+    this.rondas = rondasFuente.map(ronda => ({
+      ...ronda,
+      imagenes: [...ronda.imagenes]
+    }));
   }
 
   mezclarRondas(): void {
@@ -118,18 +177,18 @@ export class JuegoIntrusosPageComponent implements OnInit {
       // Correcto: mostrar ✅ 500ms y avanzar
       this.estadoSeleccion = 'correcto';
       this.bloqueado = true;
-      this.cdRef.detectChanges(); // forzar pintado del ✅ antes del timeout
+      this.cdRef.detectChanges();
       setTimeout(() => {
         this.avanzarRonda();
-        this.cdRef.detectChanges(); // Asegurar actualización visual tras avanzar
+        this.cdRef.detectChanges();
       }, 500);
     } else {
       // Incorrecto: mostrar ❌ 500ms y dejar reintentar
       this.estadoSeleccion = 'incorrecto';
-      this.cdRef.detectChanges(); // forzar pintado del ❌ antes del timeout
+      this.cdRef.detectChanges();
       setTimeout(() => {
         this.reiniciarEstado();
-        this.cdRef.detectChanges(); // Asegurar borrado de la X
+        this.cdRef.detectChanges();
       }, 500);
     }
   }
@@ -146,6 +205,7 @@ export class JuegoIntrusosPageComponent implements OnInit {
   reiniciarJuego(): void {
     this.rondaActualIndex = 0;
     this.juegoTerminado = false;
+    this.seleccionarNivel();
     this.mezclarRondas();
     this.reiniciarEstado();
   }

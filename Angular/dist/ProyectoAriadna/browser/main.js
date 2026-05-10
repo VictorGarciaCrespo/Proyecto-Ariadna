@@ -217,6 +217,7 @@ import {
   ɵɵprojectionDef,
   ɵɵproperty,
   ɵɵpureFunction2,
+  ɵɵpureFunction3,
   ɵɵqueryAdvance,
   ɵɵqueryRefresh,
   ɵɵreference,
@@ -238,7 +239,7 @@ import {
   ɵɵtwoWayProperty,
   ɵɵviewQuery,
   ɵɵviewQuerySignal
-} from "./chunk-IZ5Y46QR.js";
+} from "./chunk-H43FEPYM.js";
 
 // node_modules/@angular/common/fesm2022/_platform_location-chunk.mjs
 var _DOM = null;
@@ -14118,7 +14119,7 @@ var AsyncAnimationRendererFactory = class _AsyncAnimationRendererFactory {
     this._engine?.flush();
   }
   loadImpl() {
-    const loadFn = () => this.moduleImpl ?? import("./chunk-QYWWBSBD.js").then((m) => m);
+    const loadFn = () => this.moduleImpl ?? import("./chunk-OVYF5TVS.js").then((m) => m);
     let moduleImplPromise;
     if (this.loadingSchedulerFn) {
       moduleImplPromise = this.loadingSchedulerFn(loadFn);
@@ -14311,7 +14312,7 @@ var MenuPrincipalService = class _MenuPrincipalService {
   obtenerOpcionesPrincipales() {
     return [
       { titulo: "Actividades Diarias", ruta: "/actividades-diarias" },
-      { titulo: "Juegos de la Mente", ruta: "/juegos-mente" },
+      { titulo: "Estimulaci\xF3n Cognitiva", ruta: "/juegos-mente" },
       { titulo: "Hablar y Escribir", ruta: "/hablar-escribir" }
     ];
   }
@@ -15379,7 +15380,7 @@ var MenuPrincipalComponent = class _MenuPrincipalComponent {
   static \u0275fac = function MenuPrincipalComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _MenuPrincipalComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _MenuPrincipalComponent, selectors: [["app-menu-principal"]], decls: 20, vars: 2, consts: [[1, "header"], [1, "logo-container"], [1, "logo-placeholder"], ["src", "", "alt", "Ariadna Logo", "onerror", "this.style.display='none'; this.nextElementSibling.style.display='block';"], [2, "display", "none", "font-weight", "bold", "font-size", "1.2rem", "color", "#1e3a8a"], [1, "title"], [1, "actions"], ["class", "user-profile", 4, "ngIf"], [1, "btn-agenda", 3, "click"], [1, "btn-salir", 3, "click"], [1, "main-content"], ["class", "cards-grid", 4, "ngIf"], [1, "user-profile"], [1, "user-name"], ["alt", "Perfil del usuario", 1, "user-avatar", 3, "src"], [1, "cards-grid"], [1, "card", "card-top", 3, "click"], [1, "card-image-placeholder"], ["src", "/menu-principal/actividades-diarias.png", "alt", "Actividades Diarias", 1, "card-img"], [1, "card-title"], [1, "card", "card-bottom-left", 3, "click"], ["src", "/menu-principal/juegos-mente.png", "alt", "Juegos de la Mente", 1, "card-img"], [1, "card", "card-bottom-right", 3, "click"], ["src", "/menu-principal/hablar-escribir.png", "alt", "Hablar y Escribir", 1, "card-img"]], template: function MenuPrincipalComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _MenuPrincipalComponent, selectors: [["app-menu-principal"]], decls: 20, vars: 2, consts: [[1, "header"], [1, "logo-container"], [1, "logo-placeholder"], ["src", "", "alt", "Ariadna Logo", "onerror", "this.style.display='none'; this.nextElementSibling.style.display='block';"], [2, "display", "none", "font-weight", "bold", "font-size", "1.2rem", "color", "#1e3a8a"], [1, "title"], [1, "actions"], ["class", "user-profile", 4, "ngIf"], [1, "btn-agenda", 3, "click"], [1, "btn-salir", 3, "click"], [1, "main-content"], ["class", "cards-grid", 4, "ngIf"], [1, "user-profile"], [1, "user-name"], ["alt", "Perfil del usuario", 1, "user-avatar", 3, "src"], [1, "cards-grid"], [1, "card", "card-top", 3, "click"], [1, "card-image-placeholder"], ["src", "/menu-principal/actividades-diarias.png", "alt", "Actividades Diarias", 1, "card-img"], [1, "card-title"], [1, "card", "card-bottom-left", 3, "click"], ["src", "/menu-principal/juegos-mente.png", "alt", "Estimulaci\xF3n Cognitiva", 1, "card-img"], [1, "card", "card-bottom-right", 3, "click"], ["src", "/menu-principal/hablar-escribir.png", "alt", "Hablar y Escribir", 1, "card-img"]], template: function MenuPrincipalComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "header", 0)(1, "div", 1)(2, "div", 2);
       \u0275\u0275element(3, "img", 3);
@@ -15462,7 +15463,7 @@ var MenuPrincipalComponent = class _MenuPrincipalComponent {
         </div>
         <div class="card card-bottom-left" (click)="navegarA(opciones[1].ruta)">
             <div class="card-image-placeholder">
-                <img src="/menu-principal/juegos-mente.png" alt="Juegos de la Mente" class="card-img" />
+                <img src="/menu-principal/juegos-mente.png" alt="Estimulaci\xF3n Cognitiva" class="card-img" />
             </div>
             <div class="card-title">{{ opciones[1].titulo }}</div>
         </div>
@@ -15510,7 +15511,12 @@ var ActividadesDiarias = class _ActividadesDiarias {
     this.location.back();
   }
   iniciarJuego() {
-    this.router.navigate(["/actividades-diarias/juego1-actividades-diarias"]);
+    const juegos = [
+      "/actividades-diarias/juego1-actividades-diarias",
+      "/actividades-diarias/juego-accion-objeto"
+    ];
+    const ruta = juegos[Math.floor(Math.random() * juegos.length)];
+    this.router.navigate([ruta]);
   }
   static \u0275fac = function ActividadesDiarias_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _ActividadesDiarias)();
@@ -15598,6 +15604,22 @@ var SonidoService = class _SonidoService {
   toggle() {
     this.activoSubject.next(!this.activoSubject.value);
   }
+  // Diccionario de correcciones: nombre de archivo normalizado → texto correcto para pronunciar
+  correcciones = {
+    "cumpleanos": "cumplea\xF1os",
+    "cana": "ca\xF1a",
+    "muneca": "mu\xF1eca",
+    "ensenanza": "ense\xF1anza",
+    "manana": "ma\xF1ana",
+    "nino": "ni\xF1o",
+    "nina": "ni\xF1a",
+    "companero": "compa\xF1ero",
+    "bano": "ba\xF1o"
+  };
+  /** Reemplaza palabras cuya ñ fue eliminada en el nombre de archivo */
+  normalizarTexto(texto) {
+    return texto.split(" ").map((palabra) => this.correcciones[palabra.toLowerCase()] ?? palabra).join(" ");
+  }
   hablar(texto) {
     if (!this.activo || !texto)
       return;
@@ -15608,7 +15630,8 @@ var SonidoService = class _SonidoService {
       window.speechSynthesis.cancel();
     }
     setTimeout(() => {
-      const utterance = new SpeechSynthesisUtterance(texto);
+      const textoCorregido = this.normalizarTexto(texto);
+      const utterance = new SpeechSynthesisUtterance(textoCorregido);
       utterance.lang = "es-ES";
       utterance.rate = 0.9;
       utterance.pitch = 1.1;
@@ -16961,14 +16984,14 @@ var JuegoMemoriaPageComponent = class _JuegoMemoriaPageComponent {
 // src/app/funcionalidades/juegos/juego-intrusos/paginas/juego-intrusos-page/juego-intrusos-page.component.ts
 function JuegoIntrusosPageComponent_div_16_div_12_div_3_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 24)(1, "span", 25);
+    \u0275\u0275elementStart(0, "div", 23)(1, "span", 24);
     \u0275\u0275text(2, "\u2705");
     \u0275\u0275elementEnd()();
   }
 }
 function JuegoIntrusosPageComponent_div_16_div_12_div_4_Template(rf, ctx) {
   if (rf & 1) {
-    \u0275\u0275elementStart(0, "div", 26)(1, "span", 27);
+    \u0275\u0275elementStart(0, "div", 25)(1, "span", 26);
     \u0275\u0275text(2, "\u274C");
     \u0275\u0275elementEnd()();
   }
@@ -16987,9 +17010,6 @@ function JuegoIntrusosPageComponent_div_16_div_12_Template(rf, ctx) {
     \u0275\u0275elementStart(1, "div", 19);
     \u0275\u0275element(2, "img", 20);
     \u0275\u0275template(3, JuegoIntrusosPageComponent_div_16_div_12_div_3_Template, 3, 0, "div", 21)(4, JuegoIntrusosPageComponent_div_16_div_12_div_4_Template, 3, 0, "div", 22);
-    \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(5, "span", 23);
-    \u0275\u0275text(6);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -17003,8 +17023,6 @@ function JuegoIntrusosPageComponent_div_16_div_12_Template(rf, ctx) {
     \u0275\u0275property("ngIf", ctx_r4.imagenSeleccionadaIndex === i_r4 && ctx_r4.estadoSeleccion === "correcto");
     \u0275\u0275advance();
     \u0275\u0275property("ngIf", ctx_r4.imagenSeleccionadaIndex === i_r4 && ctx_r4.estadoSeleccion === "incorrecto");
-    \u0275\u0275advance(2);
-    \u0275\u0275textInterpolate(imagen_r3.nombre);
   }
 }
 function JuegoIntrusosPageComponent_div_16_Template(rf, ctx) {
@@ -17023,7 +17041,7 @@ function JuegoIntrusosPageComponent_div_16_Template(rf, ctx) {
     \u0275\u0275text(10, " al grupo?");
     \u0275\u0275elementEnd();
     \u0275\u0275elementStart(11, "div", 16);
-    \u0275\u0275template(12, JuegoIntrusosPageComponent_div_16_div_12_Template, 7, 6, "div", 17);
+    \u0275\u0275template(12, JuegoIntrusosPageComponent_div_16_div_12_Template, 5, 5, "div", 17);
     \u0275\u0275elementEnd()();
   }
   if (rf & 2) {
@@ -17039,7 +17057,7 @@ function JuegoIntrusosPageComponent_div_16_Template(rf, ctx) {
 function JuegoIntrusosPageComponent_div_17_Template(rf, ctx) {
   if (rf & 1) {
     const _r6 = \u0275\u0275getCurrentView();
-    \u0275\u0275elementStart(0, "div", 28)(1, "div", 29)(2, "mat-icon");
+    \u0275\u0275elementStart(0, "div", 27)(1, "div", 28)(2, "mat-icon");
     \u0275\u0275text(3, "emoji_events");
     \u0275\u0275elementEnd()();
     \u0275\u0275elementStart(4, "h2");
@@ -17048,7 +17066,7 @@ function JuegoIntrusosPageComponent_div_17_Template(rf, ctx) {
     \u0275\u0275elementStart(6, "p");
     \u0275\u0275text(7, "Has encontrado todos los intrusos correctamente.");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(8, "div", 30)(9, "button", 31);
+    \u0275\u0275elementStart(8, "div", 29)(9, "button", 30);
     \u0275\u0275listener("click", function JuegoIntrusosPageComponent_div_17_Template_button_click_9_listener() {
       \u0275\u0275restoreView(_r6);
       const ctx_r4 = \u0275\u0275nextContext();
@@ -17059,7 +17077,7 @@ function JuegoIntrusosPageComponent_div_17_Template(rf, ctx) {
     \u0275\u0275elementEnd();
     \u0275\u0275text(12, " Jugar de Nuevo ");
     \u0275\u0275elementEnd();
-    \u0275\u0275elementStart(13, "button", 32);
+    \u0275\u0275elementStart(13, "button", 31);
     \u0275\u0275text(14, " Terminar ");
     \u0275\u0275elementStart(15, "mat-icon");
     \u0275\u0275text(16, "arrow_forward");
@@ -17069,44 +17087,88 @@ function JuegoIntrusosPageComponent_div_17_Template(rf, ctx) {
 var JuegoIntrusosPageComponent = class _JuegoIntrusosPageComponent {
   cdRef = inject(ChangeDetectorRef);
   sonidoService = inject(SonidoService);
-  rondas = [
+  rondasNivel3 = [
     {
       ronda: 1,
       titulo: "Veh\xEDculos",
       imagenes: [
-        { nombre: "Gr\xFAa", ruta: "/intrusos/grua.jpg", esIntrusa: false },
-        { nombre: "Remolques", ruta: "/intrusos/Remolques.jpg", esIntrusa: false },
-        { nombre: "Pl\xE1tano", ruta: "/intrusos/platano.jpg", esIntrusa: true }
+        { nombre: "Gr\xFAa", ruta: "/intrusos/3/grua.jpg", esIntrusa: false },
+        { nombre: "Remolques", ruta: "/intrusos/3/Remolques.jpg", esIntrusa: false },
+        { nombre: "Pl\xE1tano", ruta: "/intrusos/3/platano.jpg", esIntrusa: true }
       ]
     },
     {
       ronda: 2,
       titulo: "Insectos",
       imagenes: [
-        { nombre: "Mariposas", ruta: "/intrusos/Mariposas.jpg", esIntrusa: false },
-        { nombre: "Polillas", ruta: "/intrusos/Polillas.jpg", esIntrusa: false },
-        { nombre: "Ma\xEDz", ruta: "/intrusos/maiz.jpg", esIntrusa: true }
+        { nombre: "Mariposas", ruta: "/intrusos/3/Mariposas.jpg", esIntrusa: false },
+        { nombre: "Polillas", ruta: "/intrusos/3/Polillas.jpg", esIntrusa: false },
+        { nombre: "Ma\xEDz", ruta: "/intrusos/3/maiz.jpg", esIntrusa: true }
       ]
     },
     {
       ronda: 3,
       titulo: "Camping",
       imagenes: [
-        { nombre: "Saco de dormir", ruta: "/intrusos/saco_dormir.jpg", esIntrusa: false },
-        { nombre: "Tienda de campa\xF1a", ruta: "/intrusos/tienda_campana.jpg", esIntrusa: false },
-        { nombre: "D\xE1til", ruta: "/intrusos/datil.jpg", esIntrusa: true }
+        { nombre: "Saco de dormir", ruta: "/intrusos/3/saco_dormir.jpg", esIntrusa: false },
+        { nombre: "Tienda de campa\xF1a", ruta: "/intrusos/3/tienda_campana.jpg", esIntrusa: false },
+        { nombre: "D\xE1til", ruta: "/intrusos/3/datil.jpg", esIntrusa: true }
       ]
     },
     {
       ronda: 4,
       titulo: "Frutas y Verduras",
       imagenes: [
-        { nombre: "Lechugas", ruta: "/intrusos/Lechugas.jpg", esIntrusa: true },
-        { nombre: "Fresas", ruta: "/intrusos/Fresas.jpg", esIntrusa: false },
-        { nombre: "Cerezas", ruta: "/intrusos/Cerezas.jpg", esIntrusa: false }
+        { nombre: "Lechugas", ruta: "/intrusos/3/Lechugas.jpg", esIntrusa: true },
+        { nombre: "Fresas", ruta: "/intrusos/3/Fresas.jpg", esIntrusa: false },
+        { nombre: "Cerezas", ruta: "/intrusos/3/Cerezas.jpg", esIntrusa: false }
       ]
     }
   ];
+  rondasNivel4 = [
+    {
+      ronda: 1,
+      titulo: "Bolsos",
+      imagenes: [
+        { nombre: "Bolso", ruta: "/intrusos/4/bolso.jpg", esIntrusa: false },
+        { nombre: "Mochila", ruta: "/intrusos/4/Mochila.jpg", esIntrusa: false },
+        { nombre: "Bolsa de tela", ruta: "/intrusos/4/bolsa_tela.jpg", esIntrusa: false },
+        { nombre: "Bote de cristal", ruta: "/intrusos/4/bote_cristal.jpg", esIntrusa: true }
+      ]
+    },
+    {
+      ronda: 2,
+      titulo: "Jerseys",
+      imagenes: [
+        { nombre: "Jersey", ruta: "/intrusos/4/Jersey.jpg", esIntrusa: false },
+        { nombre: "Sudadera", ruta: "/intrusos/4/Sudadera.jpg", esIntrusa: false },
+        { nombre: "Polo de manga larga", ruta: "/intrusos/4/polo_manga_larga.jpg", esIntrusa: false },
+        { nombre: "Gafas", ruta: "/intrusos/4/Gafas.jpg", esIntrusa: true }
+      ]
+    },
+    {
+      ronda: 3,
+      titulo: "Bebidas",
+      imagenes: [
+        { nombre: "Horchata", ruta: "/intrusos/4/Horchata.jpg", esIntrusa: false },
+        { nombre: "Limonada", ruta: "/intrusos/4/Limonadas.jpg", esIntrusa: false },
+        { nombre: "Naranjada", ruta: "/intrusos/4/Naranjada.jpg", esIntrusa: false },
+        { nombre: "Caf\xE9 con leche", ruta: "/intrusos/4/cafe_con_leche.jpg", esIntrusa: true }
+      ]
+    },
+    {
+      ronda: 4,
+      titulo: "Camiones",
+      imagenes: [
+        { nombre: "Camiones", ruta: "/intrusos/4/Camiones.jpg", esIntrusa: false },
+        { nombre: "Cami\xF3n de basura", ruta: "/intrusos/4/camion_basura.jpg", esIntrusa: false },
+        { nombre: "Cami\xF3n de butano", ruta: "/intrusos/4/camion_butano.jpg", esIntrusa: false },
+        { nombre: "Submarino", ruta: "/intrusos/4/Submarinos.jpg", esIntrusa: true }
+      ]
+    }
+  ];
+  rondas = [];
+  nivelActual = 3;
   rondaActualIndex = 0;
   juegoTerminado = false;
   imagenSeleccionadaIndex = null;
@@ -17119,8 +17181,16 @@ var JuegoIntrusosPageComponent = class _JuegoIntrusosPageComponent {
     return this.rondas.length;
   }
   ngOnInit() {
+    this.seleccionarNivel();
     this.mezclarRondas();
     this.reiniciarEstado();
+  }
+  seleccionarNivel() {
+    this.nivelActual = Math.random() < 0.5 ? 3 : 4;
+    const rondasFuente = this.nivelActual === 3 ? this.rondasNivel3 : this.rondasNivel4;
+    this.rondas = rondasFuente.map((ronda) => __spreadProps(__spreadValues({}, ronda), {
+      imagenes: [...ronda.imagenes]
+    }));
   }
   mezclarRondas() {
     for (let i = this.rondas.length - 1; i > 0; i--) {
@@ -17172,6 +17242,7 @@ var JuegoIntrusosPageComponent = class _JuegoIntrusosPageComponent {
   reiniciarJuego() {
     this.rondaActualIndex = 0;
     this.juegoTerminado = false;
+    this.seleccionarNivel();
     this.mezclarRondas();
     this.reiniciarEstado();
   }
@@ -17184,13 +17255,13 @@ var JuegoIntrusosPageComponent = class _JuegoIntrusosPageComponent {
   static \u0275fac = function JuegoIntrusosPageComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _JuegoIntrusosPageComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _JuegoIntrusosPageComponent, selectors: [["app-juego-intrusos-page"]], decls: 21, vars: 8, consts: [[1, "pagina-juego"], [1, "cabecera"], ["routerLink", "/juegos-mente", 1, "btn-icono", "redondo"], [1, "titulo-juego"], [2, "display", "flex", "gap", "8px"], [1, "btn-icono", "redondo", 3, "click", "title"], [1, "btn-icono", "redondo"], ["class", "contenedor-juego", 4, "ngIf"], ["class", "mensaje-victoria", 4, "ngIf"], [1, "credito-soyvisual"], [1, "contenedor-juego"], [1, "progreso"], [1, "progreso-texto"], [1, "barra-progreso"], [1, "barra-progreso__relleno"], [1, "instruccion"], [1, "grid-imagenes"], ["class", "carta-imagen", 3, "ngClass", "click", 4, "ngFor", "ngForOf"], [1, "carta-imagen", 3, "click", "ngClass"], [1, "carta-imagen__marco"], [1, "carta-imagen__img", 3, "src", "alt"], ["class", "marca-correcta", 4, "ngIf"], ["class", "marca-incorrecta", 4, "ngIf"], [1, "carta-imagen__nombre"], [1, "marca-correcta"], [1, "tick-text"], [1, "marca-incorrecta"], [1, "cross-text"], [1, "mensaje-victoria"], [1, "victoria-icono"], [1, "victoria-acciones"], [1, "btn-accion", "btn-secundario", 3, "click"], ["routerLink", "/menu-principal", 1, "btn-accion"]], template: function JuegoIntrusosPageComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _JuegoIntrusosPageComponent, selectors: [["app-juego-intrusos-page"]], decls: 21, vars: 8, consts: [[1, "pagina-juego"], [1, "cabecera"], ["routerLink", "/juegos-mente", 1, "btn-icono", "redondo"], [1, "titulo-juego"], [2, "display", "flex", "gap", "8px"], [1, "btn-icono", "redondo", 3, "click", "title"], [1, "btn-icono", "redondo"], ["class", "contenedor-juego", 4, "ngIf"], ["class", "mensaje-victoria", 4, "ngIf"], [1, "credito-soyvisual"], [1, "contenedor-juego"], [1, "progreso"], [1, "progreso-texto"], [1, "barra-progreso"], [1, "barra-progreso__relleno"], [1, "instruccion"], [1, "grid-imagenes"], ["class", "carta-imagen", 3, "ngClass", "click", 4, "ngFor", "ngForOf"], [1, "carta-imagen", 3, "click", "ngClass"], [1, "carta-imagen__marco"], [1, "carta-imagen__img", 3, "src", "alt"], ["class", "marca-correcta", 4, "ngIf"], ["class", "marca-incorrecta", 4, "ngIf"], [1, "marca-correcta"], [1, "tick-text"], [1, "marca-incorrecta"], [1, "cross-text"], [1, "mensaje-victoria"], [1, "victoria-icono"], [1, "victoria-acciones"], [1, "btn-accion", "btn-secundario", 3, "click"], ["routerLink", "/menu-principal", 1, "btn-accion"]], template: function JuegoIntrusosPageComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "button", 2)(3, "mat-icon");
       \u0275\u0275text(4, "arrow_back");
       \u0275\u0275elementEnd()();
       \u0275\u0275elementStart(5, "h1", 3);
-      \u0275\u0275text(6, "Encuentra el Intruso");
+      \u0275\u0275text(6, "Encuentra el intruso");
       \u0275\u0275elementEnd();
       \u0275\u0275elementStart(7, "div", 4)(8, "button", 5);
       \u0275\u0275pipe(9, "async");
@@ -17219,7 +17290,7 @@ var JuegoIntrusosPageComponent = class _JuegoIntrusosPageComponent {
       \u0275\u0275advance();
       \u0275\u0275property("ngIf", ctx.juegoTerminado);
     }
-  }, dependencies: [CommonModule, NgClass, NgForOf, NgIf, RouterModule, RouterLink, MatIconModule, MatIcon, AsyncPipe], styles: ['\n\n.pagina-juego[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n  background-color: white;\n  font-family: Arial, sans-serif;\n  padding: 20px 40px;\n}\n.cabecera[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  margin-bottom: 30px;\n}\n.titulo-juego[_ngcontent-%COMP%] {\n  font-size: 2.2rem;\n  font-weight: 500;\n  color: #333;\n  margin: 0;\n  text-align: center;\n}\n.btn-icono.redondo[_ngcontent-%COMP%] {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  border: 2px solid black;\n  background-color: white;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  font-size: 24px;\n  color: black;\n  transition: background-color 0.2s;\n}\n.btn-icono.redondo[_ngcontent-%COMP%]:hover {\n  background-color: #f0f0f0;\n}\n.contenedor-juego[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  flex: 1;\n  gap: 24px;\n}\n.progreso[_ngcontent-%COMP%] {\n  width: 100%;\n  max-width: 600px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 8px;\n}\n.progreso-texto[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  color: #666;\n  font-weight: 500;\n}\n.barra-progreso[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 10px;\n  background-color: #e0e0e0;\n  border-radius: 5px;\n  overflow: hidden;\n}\n.barra-progreso__relleno[_ngcontent-%COMP%] {\n  height: 100%;\n  background-color: #4caf50;\n  border-radius: 5px;\n  transition: width 0.5s ease;\n}\n.instruccion[_ngcontent-%COMP%] {\n  font-size: 1.2rem;\n  color: #444;\n  text-align: center;\n  margin: 0;\n}\n.grid-imagenes[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  gap: 30px;\n  padding: 10px 0 30px;\n}\n.carta-imagen[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 10px;\n  cursor: pointer;\n  padding: 0;\n  transition: transform 0.2s ease;\n}\n.carta-imagen[_ngcontent-%COMP%]:hover {\n  transform: translateY(-6px);\n}\n.carta-imagen[_ngcontent-%COMP%]:hover   .carta-imagen__marco[_ngcontent-%COMP%] {\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);\n  border-color: #555;\n}\n.carta-imagen__marco[_ngcontent-%COMP%] {\n  width: 200px;\n  height: 200px;\n  border: 3px solid #d0d0d0;\n  border-radius: 16px;\n  overflow: hidden;\n  background-color: #fafafa;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: box-shadow 0.2s ease, border-color 0.2s ease;\n  position: relative;\n}\n.carta-imagen__marco[_ngcontent-%COMP%]::after {\n  content: "";\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 32px;\n  height: 32px;\n  background-color: #fafafa;\n  z-index: 1;\n}\n.carta-imagen__img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  z-index: 0;\n}\n.carta-imagen__nombre[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  font-weight: 500;\n  color: #333;\n  text-align: center;\n}\n.imagen-correcta[_ngcontent-%COMP%]   .carta-imagen__marco[_ngcontent-%COMP%] {\n  border-color: #4caf50;\n  box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);\n  animation: _ngcontent-%COMP%_pulso-correcto 0.4s ease;\n}\n.imagen-incorrecta[_ngcontent-%COMP%]   .carta-imagen__marco[_ngcontent-%COMP%] {\n  border-color: #f44336;\n  box-shadow: 0 0 16px rgba(244, 67, 54, 0.4);\n  animation: _ngcontent-%COMP%_shake 0.5s ease;\n}\n@keyframes _ngcontent-%COMP%_pulso-correcto {\n  0% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.05);\n  }\n  100% {\n    transform: scale(1);\n  }\n}\n@keyframes _ngcontent-%COMP%_shake {\n  0%, 100% {\n    transform: translateX(0);\n  }\n  20% {\n    transform: translateX(-8px);\n  }\n  40% {\n    transform: translateX(8px);\n  }\n  60% {\n    transform: translateX(-6px);\n  }\n  80% {\n    transform: translateX(6px);\n  }\n}\n.marca-correcta[_ngcontent-%COMP%], \n.marca-incorrecta[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 100%;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  pointer-events: none;\n  z-index: 2;\n}\n.tick-text[_ngcontent-%COMP%] {\n  font-size: 5rem;\n}\n.cross-text[_ngcontent-%COMP%] {\n  font-size: 5rem;\n}\n.mensaje-victoria[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  flex: 1;\n  gap: 16px;\n  text-align: center;\n  padding: 40px 0;\n}\n.victoria-icono[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 72px !important;\n  width: 72px !important;\n  height: 72px !important;\n  color: #FFC107;\n}\n.mensaje-victoria[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 2rem;\n  color: #333;\n  margin: 0;\n}\n.mensaje-victoria[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 1.1rem;\n  color: #666;\n  margin: 0;\n}\n.victoria-acciones[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 16px;\n  margin-top: 16px;\n}\n.btn-accion[_ngcontent-%COMP%] {\n  padding: 12px 30px;\n  background-color: #d9d9d9;\n  border: none;\n  border-radius: 2px;\n  color: black;\n  font-size: 16px;\n  cursor: pointer;\n  transition: background-color 0.2s;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n}\n.btn-accion[_ngcontent-%COMP%]:hover {\n  background-color: #c0c0c0;\n}\n.btn-secundario[_ngcontent-%COMP%] {\n  background-color: white;\n  border: 2px solid #d9d9d9;\n}\n.btn-secundario[_ngcontent-%COMP%]:hover {\n  background-color: #f5f5f5;\n}\n.credito-arasaac[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  margin-top: auto;\n  padding-top: 20px;\n  opacity: 0.5;\n}\n.credito-arasaac__logo[_ngcontent-%COMP%] {\n  height: 24px;\n}\n.credito-arasaac__texto[_ngcontent-%COMP%] {\n  font-size: 0.8rem;\n  color: #999;\n}\n/*# sourceMappingURL=juego-intrusos-page.component.css.map */'] });
+  }, dependencies: [CommonModule, NgClass, NgForOf, NgIf, RouterModule, RouterLink, MatIconModule, MatIcon, AsyncPipe], styles: ['\n\n.pagina-juego[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n  background-color: white;\n  font-family: Arial, sans-serif;\n  padding: 20px 40px;\n}\n.cabecera[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  margin-bottom: 30px;\n}\n.titulo-juego[_ngcontent-%COMP%] {\n  font-size: 2.2rem;\n  font-weight: 500;\n  color: #333;\n  margin: 0;\n  text-align: center;\n}\n.btn-icono.redondo[_ngcontent-%COMP%] {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  border: 2px solid black;\n  background-color: white;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  font-size: 24px;\n  color: black;\n  transition: background-color 0.2s;\n}\n.btn-icono.redondo[_ngcontent-%COMP%]:hover {\n  background-color: #f0f0f0;\n}\n.contenedor-juego[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  flex: 1;\n  gap: 24px;\n}\n.progreso[_ngcontent-%COMP%] {\n  width: 100%;\n  max-width: 600px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 8px;\n}\n.progreso-texto[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  color: #666;\n  font-weight: 500;\n}\n.barra-progreso[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 10px;\n  background-color: #e0e0e0;\n  border-radius: 5px;\n  overflow: hidden;\n}\n.barra-progreso__relleno[_ngcontent-%COMP%] {\n  height: 100%;\n  background-color: #4caf50;\n  border-radius: 5px;\n  transition: width 0.5s ease;\n}\n.instruccion[_ngcontent-%COMP%] {\n  font-size: 1.2rem;\n  color: #444;\n  text-align: center;\n  margin: 0;\n}\n.grid-imagenes[_ngcontent-%COMP%] {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  gap: 30px;\n  padding: 10px 0 30px;\n}\n.carta-imagen[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 10px;\n  cursor: pointer;\n  padding: 0;\n  transition: transform 0.2s ease;\n}\n.carta-imagen[_ngcontent-%COMP%]:hover {\n  transform: translateY(-6px);\n}\n.carta-imagen[_ngcontent-%COMP%]:hover   .carta-imagen__marco[_ngcontent-%COMP%] {\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);\n  border-color: #555;\n}\n.carta-imagen__marco[_ngcontent-%COMP%] {\n  width: 200px;\n  height: 200px;\n  border: 3px solid #d0d0d0;\n  border-radius: 16px;\n  overflow: hidden;\n  background-color: #fafafa;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: box-shadow 0.2s ease, border-color 0.2s ease;\n  position: relative;\n}\n.carta-imagen__marco[_ngcontent-%COMP%]::after {\n  content: "";\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 32px;\n  height: 32px;\n  background-color: #fafafa;\n  z-index: 1;\n}\n.carta-imagen__img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  z-index: 0;\n}\n.carta-imagen__nombre[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  font-weight: 500;\n  color: #333;\n  text-align: center;\n}\n.imagen-correcta[_ngcontent-%COMP%]   .carta-imagen__marco[_ngcontent-%COMP%] {\n  border-color: #4caf50;\n  box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);\n  animation: _ngcontent-%COMP%_pulso-correcto 0.4s ease;\n}\n.imagen-incorrecta[_ngcontent-%COMP%]   .carta-imagen__marco[_ngcontent-%COMP%] {\n  border-color: #f44336;\n  box-shadow: 0 0 16px rgba(244, 67, 54, 0.4);\n  animation: _ngcontent-%COMP%_shake 0.5s ease;\n}\n@keyframes _ngcontent-%COMP%_pulso-correcto {\n  0% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.05);\n  }\n  100% {\n    transform: scale(1);\n  }\n}\n@keyframes _ngcontent-%COMP%_shake {\n  0%, 100% {\n    transform: translateX(0);\n  }\n  20% {\n    transform: translateX(-8px);\n  }\n  40% {\n    transform: translateX(8px);\n  }\n  60% {\n    transform: translateX(-6px);\n  }\n  80% {\n    transform: translateX(6px);\n  }\n}\n.marca-correcta[_ngcontent-%COMP%], \n.marca-incorrecta[_ngcontent-%COMP%] {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 100%;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  pointer-events: none;\n  z-index: 2;\n}\n.tick-text[_ngcontent-%COMP%] {\n  font-size: 5rem;\n}\n.cross-text[_ngcontent-%COMP%] {\n  font-size: 5rem;\n}\n.mensaje-victoria[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  flex: 1;\n  gap: 16px;\n  text-align: center;\n  padding: 40px 0;\n}\n.victoria-icono[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 72px !important;\n  width: 72px !important;\n  height: 72px !important;\n  color: #FFC107;\n}\n.mensaje-victoria[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 2rem;\n  color: #333;\n  margin: 0;\n}\n.mensaje-victoria[_ngcontent-%COMP%]   p[_ngcontent-%COMP%] {\n  font-size: 1.1rem;\n  color: #666;\n  margin: 0;\n}\n.victoria-acciones[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 16px;\n  margin-top: 16px;\n}\n.btn-accion[_ngcontent-%COMP%] {\n  padding: 12px 30px;\n  background-color: #d9d9d9;\n  border: none;\n  border-radius: 2px;\n  color: black;\n  font-size: 16px;\n  cursor: pointer;\n  transition: background-color 0.2s;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n}\n.btn-accion[_ngcontent-%COMP%]:hover {\n  background-color: #c0c0c0;\n}\n.btn-secundario[_ngcontent-%COMP%] {\n  background-color: white;\n  border: 2px solid #d9d9d9;\n}\n.btn-secundario[_ngcontent-%COMP%]:hover {\n  background-color: #f5f5f5;\n}\n.credito-soyvisual[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: auto;\n  padding-top: 20px;\n  font-size: 0.8rem;\n  color: #999;\n}\n/*# sourceMappingURL=juego-intrusos-page.component.css.map */'] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(JuegoIntrusosPageComponent, [{
@@ -17230,7 +17301,7 @@ var JuegoIntrusosPageComponent = class _JuegoIntrusosPageComponent {
     <button class="btn-icono redondo" routerLink="/juegos-mente">
       <mat-icon>arrow_back</mat-icon>
     </button>
-    <h1 class="titulo-juego">Encuentra el Intruso</h1>
+    <h1 class="titulo-juego">Encuentra el intruso</h1>
     <div style="display:flex; gap:8px;">
       <button class="btn-icono redondo" (click)="sonidoService.toggle()"
         [title]="(sonidoService.activo$ | async) ? 'Desactivar sonido' : 'Activar sonido'">
@@ -17279,7 +17350,6 @@ var JuegoIntrusosPageComponent = class _JuegoIntrusosPageComponent {
           </div>
         </div>
 
-        <span class="carta-imagen__nombre">{{ imagen.nombre }}</span>
       </div>
     </div>
 
@@ -17309,11 +17379,578 @@ var JuegoIntrusosPageComponent = class _JuegoIntrusosPageComponent {
     <span class="credito-soyvisual">Pictogramas propiedad de Soy Visual</span>
   </div>
 </div>
-`, styles: ['/* src/app/funcionalidades/juegos/juego-intrusos/paginas/juego-intrusos-page/juego-intrusos-page.component.css */\n.pagina-juego {\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n  background-color: white;\n  font-family: Arial, sans-serif;\n  padding: 20px 40px;\n}\n.cabecera {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  margin-bottom: 30px;\n}\n.titulo-juego {\n  font-size: 2.2rem;\n  font-weight: 500;\n  color: #333;\n  margin: 0;\n  text-align: center;\n}\n.btn-icono.redondo {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  border: 2px solid black;\n  background-color: white;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  font-size: 24px;\n  color: black;\n  transition: background-color 0.2s;\n}\n.btn-icono.redondo:hover {\n  background-color: #f0f0f0;\n}\n.contenedor-juego {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  flex: 1;\n  gap: 24px;\n}\n.progreso {\n  width: 100%;\n  max-width: 600px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 8px;\n}\n.progreso-texto {\n  font-size: 1rem;\n  color: #666;\n  font-weight: 500;\n}\n.barra-progreso {\n  width: 100%;\n  height: 10px;\n  background-color: #e0e0e0;\n  border-radius: 5px;\n  overflow: hidden;\n}\n.barra-progreso__relleno {\n  height: 100%;\n  background-color: #4caf50;\n  border-radius: 5px;\n  transition: width 0.5s ease;\n}\n.instruccion {\n  font-size: 1.2rem;\n  color: #444;\n  text-align: center;\n  margin: 0;\n}\n.grid-imagenes {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  gap: 30px;\n  padding: 10px 0 30px;\n}\n.carta-imagen {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 10px;\n  cursor: pointer;\n  padding: 0;\n  transition: transform 0.2s ease;\n}\n.carta-imagen:hover {\n  transform: translateY(-6px);\n}\n.carta-imagen:hover .carta-imagen__marco {\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);\n  border-color: #555;\n}\n.carta-imagen__marco {\n  width: 200px;\n  height: 200px;\n  border: 3px solid #d0d0d0;\n  border-radius: 16px;\n  overflow: hidden;\n  background-color: #fafafa;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: box-shadow 0.2s ease, border-color 0.2s ease;\n  position: relative;\n}\n.carta-imagen__marco::after {\n  content: "";\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 32px;\n  height: 32px;\n  background-color: #fafafa;\n  z-index: 1;\n}\n.carta-imagen__img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  z-index: 0;\n}\n.carta-imagen__nombre {\n  font-size: 1rem;\n  font-weight: 500;\n  color: #333;\n  text-align: center;\n}\n.imagen-correcta .carta-imagen__marco {\n  border-color: #4caf50;\n  box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);\n  animation: pulso-correcto 0.4s ease;\n}\n.imagen-incorrecta .carta-imagen__marco {\n  border-color: #f44336;\n  box-shadow: 0 0 16px rgba(244, 67, 54, 0.4);\n  animation: shake 0.5s ease;\n}\n@keyframes pulso-correcto {\n  0% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.05);\n  }\n  100% {\n    transform: scale(1);\n  }\n}\n@keyframes shake {\n  0%, 100% {\n    transform: translateX(0);\n  }\n  20% {\n    transform: translateX(-8px);\n  }\n  40% {\n    transform: translateX(8px);\n  }\n  60% {\n    transform: translateX(-6px);\n  }\n  80% {\n    transform: translateX(6px);\n  }\n}\n.marca-correcta,\n.marca-incorrecta {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 100%;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  pointer-events: none;\n  z-index: 2;\n}\n.tick-text {\n  font-size: 5rem;\n}\n.cross-text {\n  font-size: 5rem;\n}\n.mensaje-victoria {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  flex: 1;\n  gap: 16px;\n  text-align: center;\n  padding: 40px 0;\n}\n.victoria-icono mat-icon {\n  font-size: 72px !important;\n  width: 72px !important;\n  height: 72px !important;\n  color: #FFC107;\n}\n.mensaje-victoria h2 {\n  font-size: 2rem;\n  color: #333;\n  margin: 0;\n}\n.mensaje-victoria p {\n  font-size: 1.1rem;\n  color: #666;\n  margin: 0;\n}\n.victoria-acciones {\n  display: flex;\n  gap: 16px;\n  margin-top: 16px;\n}\n.btn-accion {\n  padding: 12px 30px;\n  background-color: #d9d9d9;\n  border: none;\n  border-radius: 2px;\n  color: black;\n  font-size: 16px;\n  cursor: pointer;\n  transition: background-color 0.2s;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n}\n.btn-accion:hover {\n  background-color: #c0c0c0;\n}\n.btn-secundario {\n  background-color: white;\n  border: 2px solid #d9d9d9;\n}\n.btn-secundario:hover {\n  background-color: #f5f5f5;\n}\n.credito-arasaac {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  margin-top: auto;\n  padding-top: 20px;\n  opacity: 0.5;\n}\n.credito-arasaac__logo {\n  height: 24px;\n}\n.credito-arasaac__texto {\n  font-size: 0.8rem;\n  color: #999;\n}\n/*# sourceMappingURL=juego-intrusos-page.component.css.map */\n'] }]
+`, styles: ['/* src/app/funcionalidades/juegos/juego-intrusos/paginas/juego-intrusos-page/juego-intrusos-page.component.css */\n.pagina-juego {\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n  background-color: white;\n  font-family: Arial, sans-serif;\n  padding: 20px 40px;\n}\n.cabecera {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  margin-bottom: 30px;\n}\n.titulo-juego {\n  font-size: 2.2rem;\n  font-weight: 500;\n  color: #333;\n  margin: 0;\n  text-align: center;\n}\n.btn-icono.redondo {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n  border: 2px solid black;\n  background-color: white;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  font-size: 24px;\n  color: black;\n  transition: background-color 0.2s;\n}\n.btn-icono.redondo:hover {\n  background-color: #f0f0f0;\n}\n.contenedor-juego {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  flex: 1;\n  gap: 24px;\n}\n.progreso {\n  width: 100%;\n  max-width: 600px;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 8px;\n}\n.progreso-texto {\n  font-size: 1rem;\n  color: #666;\n  font-weight: 500;\n}\n.barra-progreso {\n  width: 100%;\n  height: 10px;\n  background-color: #e0e0e0;\n  border-radius: 5px;\n  overflow: hidden;\n}\n.barra-progreso__relleno {\n  height: 100%;\n  background-color: #4caf50;\n  border-radius: 5px;\n  transition: width 0.5s ease;\n}\n.instruccion {\n  font-size: 1.2rem;\n  color: #444;\n  text-align: center;\n  margin: 0;\n}\n.grid-imagenes {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  gap: 30px;\n  padding: 10px 0 30px;\n}\n.carta-imagen {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 10px;\n  cursor: pointer;\n  padding: 0;\n  transition: transform 0.2s ease;\n}\n.carta-imagen:hover {\n  transform: translateY(-6px);\n}\n.carta-imagen:hover .carta-imagen__marco {\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);\n  border-color: #555;\n}\n.carta-imagen__marco {\n  width: 200px;\n  height: 200px;\n  border: 3px solid #d0d0d0;\n  border-radius: 16px;\n  overflow: hidden;\n  background-color: #fafafa;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  transition: box-shadow 0.2s ease, border-color 0.2s ease;\n  position: relative;\n}\n.carta-imagen__marco::after {\n  content: "";\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 32px;\n  height: 32px;\n  background-color: #fafafa;\n  z-index: 1;\n}\n.carta-imagen__img {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  z-index: 0;\n}\n.carta-imagen__nombre {\n  font-size: 1rem;\n  font-weight: 500;\n  color: #333;\n  text-align: center;\n}\n.imagen-correcta .carta-imagen__marco {\n  border-color: #4caf50;\n  box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);\n  animation: pulso-correcto 0.4s ease;\n}\n.imagen-incorrecta .carta-imagen__marco {\n  border-color: #f44336;\n  box-shadow: 0 0 16px rgba(244, 67, 54, 0.4);\n  animation: shake 0.5s ease;\n}\n@keyframes pulso-correcto {\n  0% {\n    transform: scale(1);\n  }\n  50% {\n    transform: scale(1.05);\n  }\n  100% {\n    transform: scale(1);\n  }\n}\n@keyframes shake {\n  0%, 100% {\n    transform: translateX(0);\n  }\n  20% {\n    transform: translateX(-8px);\n  }\n  40% {\n    transform: translateX(8px);\n  }\n  60% {\n    transform: translateX(-6px);\n  }\n  80% {\n    transform: translateX(6px);\n  }\n}\n.marca-correcta,\n.marca-incorrecta {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  width: 100%;\n  height: 100%;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  pointer-events: none;\n  z-index: 2;\n}\n.tick-text {\n  font-size: 5rem;\n}\n.cross-text {\n  font-size: 5rem;\n}\n.mensaje-victoria {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  flex: 1;\n  gap: 16px;\n  text-align: center;\n  padding: 40px 0;\n}\n.victoria-icono mat-icon {\n  font-size: 72px !important;\n  width: 72px !important;\n  height: 72px !important;\n  color: #FFC107;\n}\n.mensaje-victoria h2 {\n  font-size: 2rem;\n  color: #333;\n  margin: 0;\n}\n.mensaje-victoria p {\n  font-size: 1.1rem;\n  color: #666;\n  margin: 0;\n}\n.victoria-acciones {\n  display: flex;\n  gap: 16px;\n  margin-top: 16px;\n}\n.btn-accion {\n  padding: 12px 30px;\n  background-color: #d9d9d9;\n  border: none;\n  border-radius: 2px;\n  color: black;\n  font-size: 16px;\n  cursor: pointer;\n  transition: background-color 0.2s;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 8px;\n}\n.btn-accion:hover {\n  background-color: #c0c0c0;\n}\n.btn-secundario {\n  background-color: white;\n  border: 2px solid #d9d9d9;\n}\n.btn-secundario:hover {\n  background-color: #f5f5f5;\n}\n.credito-soyvisual {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-top: auto;\n  padding-top: 20px;\n  font-size: 0.8rem;\n  color: #999;\n}\n/*# sourceMappingURL=juego-intrusos-page.component.css.map */\n'] }]
   }], null, null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(JuegoIntrusosPageComponent, { className: "JuegoIntrusosPageComponent", filePath: "src/app/funcionalidades/juegos/juego-intrusos/paginas/juego-intrusos-page/juego-intrusos-page.component.ts", lineNumber: 26 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(JuegoIntrusosPageComponent, { className: "JuegoIntrusosPageComponent", filePath: "src/app/funcionalidades/juegos/juego-intrusos/paginas/juego-intrusos-page/juego-intrusos-page.component.ts", lineNumber: 27 });
+})();
+
+// src/app/funcionalidades/juegos/juego-accion-objeto/servicios/juego-accion-objeto.service.ts
+var JuegoAccionObjetoService = class _JuegoAccionObjetoService {
+  http = inject(HttpClient);
+  apiUrl = "http://localhost:3000/api/acciones-objetos";
+  getParejas() {
+    return this.http.get(this.apiUrl).pipe(map((res) => res.data));
+  }
+  static \u0275fac = function JuegoAccionObjetoService_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _JuegoAccionObjetoService)();
+  };
+  static \u0275prov = /* @__PURE__ */ \u0275\u0275defineInjectable({ token: _JuegoAccionObjetoService, factory: _JuegoAccionObjetoService.\u0275fac, providedIn: "root" });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(JuegoAccionObjetoService, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root"
+    }]
+  }], null, null);
+})();
+
+// src/app/funcionalidades/juegos/juego-accion-objeto/componentes/juego-accion-objeto/juego-accion-objeto.ts
+var _c03 = (a0, a1, a2) => ({ "seleccionada": a0, "correcta": a1, "incorrecta": a2 });
+var _c1 = (a0, a1, a2) => ({ "correcta": a0, "incorrecta": a1, "destacada": a2 });
+function JuegoAccionObjetoComponent_main_15_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "main", 12)(1, "div", 13)(2, "mat-icon", 14);
+    \u0275\u0275text(3, "hourglass_top");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "p");
+    \u0275\u0275text(5, "Cargando juego...");
+    \u0275\u0275elementEnd()()();
+  }
+}
+function JuegoAccionObjetoComponent_main_16_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "main", 12)(1, "div", 15)(2, "mat-icon");
+    \u0275\u0275text(3, "error_outline");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "p");
+    \u0275\u0275text(5, "No se pudo conectar con el servidor.");
+    \u0275\u0275elementEnd()()();
+  }
+}
+function JuegoAccionObjetoComponent_main_17_span_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span");
+    \u0275\u0275text(1, "Toca una imagen de la izquierda");
+    \u0275\u0275elementEnd();
+  }
+}
+function JuegoAccionObjetoComponent_main_17_span_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 24);
+    \u0275\u0275text(1, "Ahora toca el objeto de la derecha");
+    \u0275\u0275elementEnd();
+  }
+}
+function JuegoAccionObjetoComponent_main_17_div_6_div_2_mat_icon_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-icon");
+    \u0275\u0275text(1, "check");
+    \u0275\u0275elementEnd();
+  }
+}
+function JuegoAccionObjetoComponent_main_17_div_6_div_2_mat_icon_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-icon");
+    \u0275\u0275text(1, "close");
+    \u0275\u0275elementEnd();
+  }
+}
+function JuegoAccionObjetoComponent_main_17_div_6_div_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 29);
+    \u0275\u0275template(1, JuegoAccionObjetoComponent_main_17_div_6_div_2_mat_icon_1_Template, 2, 0, "mat-icon", 17)(2, JuegoAccionObjetoComponent_main_17_div_6_div_2_mat_icon_2_Template, 2, 0, "mat-icon", 17);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const tarjeta_r2 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", tarjeta_r2.estado === "correcta");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", tarjeta_r2.estado === "incorrecta");
+  }
+}
+function JuegoAccionObjetoComponent_main_17_div_6_div_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 30)(1, "mat-icon");
+    \u0275\u0275text(2, "arrow_forward");
+    \u0275\u0275elementEnd()();
+  }
+}
+function JuegoAccionObjetoComponent_main_17_div_6_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 25);
+    \u0275\u0275listener("click", function JuegoAccionObjetoComponent_main_17_div_6_Template_div_click_0_listener() {
+      const tarjeta_r2 = \u0275\u0275restoreView(_r1).$implicit;
+      const ctx_r2 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r2.seleccionarAccion(tarjeta_r2));
+    });
+    \u0275\u0275element(1, "img", 26);
+    \u0275\u0275template(2, JuegoAccionObjetoComponent_main_17_div_6_div_2_Template, 3, 2, "div", 27)(3, JuegoAccionObjetoComponent_main_17_div_6_div_3_Template, 3, 0, "div", 28);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const tarjeta_r2 = ctx.$implicit;
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction3(5, _c03, tarjeta_r2.estado === "seleccionada", tarjeta_r2.estado === "correcta", tarjeta_r2.estado === "incorrecta"));
+    \u0275\u0275advance();
+    \u0275\u0275property("src", "/acciones-objeto/" + tarjeta_r2.imagen, \u0275\u0275sanitizeUrl)("alt", tarjeta_r2.imagen.replace(".png", ""));
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", tarjeta_r2.estado === "correcta" || tarjeta_r2.estado === "incorrecta");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", tarjeta_r2.estado === "seleccionada");
+  }
+}
+function JuegoAccionObjetoComponent_main_17_div_10_div_2_mat_icon_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-icon");
+    \u0275\u0275text(1, "check");
+    \u0275\u0275elementEnd();
+  }
+}
+function JuegoAccionObjetoComponent_main_17_div_10_div_2_mat_icon_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-icon");
+    \u0275\u0275text(1, "close");
+    \u0275\u0275elementEnd();
+  }
+}
+function JuegoAccionObjetoComponent_main_17_div_10_div_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 29);
+    \u0275\u0275template(1, JuegoAccionObjetoComponent_main_17_div_10_div_2_mat_icon_1_Template, 2, 0, "mat-icon", 17)(2, JuegoAccionObjetoComponent_main_17_div_10_div_2_mat_icon_2_Template, 2, 0, "mat-icon", 17);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const tarjeta_r5 = \u0275\u0275nextContext().$implicit;
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", tarjeta_r5.estado === "correcta");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", tarjeta_r5.estado === "incorrecta");
+  }
+}
+function JuegoAccionObjetoComponent_main_17_div_10_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r4 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 25);
+    \u0275\u0275listener("click", function JuegoAccionObjetoComponent_main_17_div_10_Template_div_click_0_listener() {
+      const tarjeta_r5 = \u0275\u0275restoreView(_r4).$implicit;
+      const ctx_r2 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r2.seleccionarObjeto(tarjeta_r5));
+    });
+    \u0275\u0275element(1, "img", 26);
+    \u0275\u0275template(2, JuegoAccionObjetoComponent_main_17_div_10_div_2_Template, 3, 2, "div", 27);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const tarjeta_r5 = ctx.$implicit;
+    const ctx_r2 = \u0275\u0275nextContext(2);
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction3(4, _c1, tarjeta_r5.estado === "correcta", tarjeta_r5.estado === "incorrecta", !!ctx_r2.seleccionadaAccion && tarjeta_r5.estado === "neutro"));
+    \u0275\u0275advance();
+    \u0275\u0275property("src", "/acciones-objeto/" + tarjeta_r5.imagen, \u0275\u0275sanitizeUrl)("alt", tarjeta_r5.imagen.replace(".png", ""));
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", tarjeta_r5.estado === "correcta" || tarjeta_r5.estado === "incorrecta");
+  }
+}
+function JuegoAccionObjetoComponent_main_17_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "main", 12)(1, "p", 16);
+    \u0275\u0275template(2, JuegoAccionObjetoComponent_main_17_span_2_Template, 2, 0, "span", 17)(3, JuegoAccionObjetoComponent_main_17_span_3_Template, 2, 0, "span", 18);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "div", 19)(5, "div", 20);
+    \u0275\u0275template(6, JuegoAccionObjetoComponent_main_17_div_6_Template, 4, 9, "div", 21);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(7, "div", 22);
+    \u0275\u0275element(8, "div", 23);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(9, "div", 20);
+    \u0275\u0275template(10, JuegoAccionObjetoComponent_main_17_div_10_Template, 3, 8, "div", 21);
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const ctx_r2 = \u0275\u0275nextContext();
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngIf", !ctx_r2.seleccionadaAccion);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r2.seleccionadaAccion);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngForOf", ctx_r2.acciones());
+    \u0275\u0275advance(4);
+    \u0275\u0275property("ngForOf", ctx_r2.objetos());
+  }
+}
+function JuegoAccionObjetoComponent_main_18_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r6 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "main", 31)(1, "div", 32)(2, "div", 33);
+    \u0275\u0275text(3, "\u{1F389}");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "h2", 34);
+    \u0275\u0275text(5, "\xA1Muy bien!");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "p", 35);
+    \u0275\u0275text(7, "Has unido todas las parejas correctamente");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(8, "div", 36)(9, "button", 37);
+    \u0275\u0275listener("click", function JuegoAccionObjetoComponent_main_18_Template_button_click_9_listener() {
+      \u0275\u0275restoreView(_r6);
+      const ctx_r2 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r2.iniciarRonda());
+    });
+    \u0275\u0275elementStart(10, "mat-icon");
+    \u0275\u0275text(11, "replay");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(12, " Volver a jugar ");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(13, "button", 38);
+    \u0275\u0275listener("click", function JuegoAccionObjetoComponent_main_18_Template_button_click_13_listener() {
+      \u0275\u0275restoreView(_r6);
+      const ctx_r2 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r2.irAJuegoActividades());
+    });
+    \u0275\u0275elementStart(14, "mat-icon");
+    \u0275\u0275text(15, "swap_horiz");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(16, " Otro juego ");
+    \u0275\u0275elementEnd()()()();
+  }
+}
+var JuegoAccionObjetoComponent = class _JuegoAccionObjetoComponent {
+  location = inject(Location);
+  router = inject(Router);
+  service = inject(JuegoAccionObjetoService);
+  sonidoService = inject(SonidoService);
+  // Estado
+  cargando = signal(true, ...ngDevMode ? [{ debugName: "cargando" }] : []);
+  error = signal(false, ...ngDevMode ? [{ debugName: "error" }] : []);
+  juegoTerminado = signal(false, ...ngDevMode ? [{ debugName: "juegoTerminado" }] : []);
+  acciones = signal([], ...ngDevMode ? [{ debugName: "acciones" }] : []);
+  objetos = signal([], ...ngDevMode ? [{ debugName: "objetos" }] : []);
+  parejasCorrectas = signal(0, ...ngDevMode ? [{ debugName: "parejasCorrectas" }] : []);
+  TOTAL_PAREJAS = 4;
+  // Conexiones confirmadas: { accionId -> objetoId }
+  conexiones = signal(/* @__PURE__ */ new Map(), ...ngDevMode ? [{ debugName: "conexiones" }] : []);
+  seleccionadaAccion = null;
+  procesando = false;
+  todasLasParejas = [];
+  ngOnInit() {
+    this.service.getParejas().subscribe({
+      next: (parejas) => {
+        this.todasLasParejas = parejas;
+        this.cargando.set(false);
+        this.iniciarRonda();
+      },
+      error: () => {
+        this.cargando.set(false);
+        this.error.set(true);
+      }
+    });
+  }
+  iniciarRonda() {
+    const seleccionadas = this.mezclar([...this.todasLasParejas]).slice(0, this.TOTAL_PAREJAS);
+    const acc = [];
+    const obj = [];
+    seleccionadas.forEach((pareja, parejaId) => {
+      acc.push({ id: parejaId * 2, imagen: pareja.accion, tipo: "accion", parejaId, estado: "neutro" });
+      obj.push({ id: parejaId * 2 + 1, imagen: pareja.objeto, tipo: "objeto", parejaId, estado: "neutro" });
+    });
+    this.acciones.set(this.mezclar(acc));
+    this.objetos.set(this.mezclar(obj));
+    this.conexiones.set(/* @__PURE__ */ new Map());
+    this.parejasCorrectas.set(0);
+    this.juegoTerminado.set(false);
+    this.seleccionadaAccion = null;
+    this.procesando = false;
+  }
+  /** El usuario toca una tarjeta de la columna IZQUIERDA (acción) */
+  seleccionarAccion(tarjeta) {
+    if (tarjeta.estado === "correcta")
+      return;
+    const nombre = tarjeta.imagen.replace(".png", "").replace(/-/g, " ");
+    this.sonidoService.hablar(nombre);
+    if (this.seleccionadaAccion?.id === tarjeta.id) {
+      this.actualizarAccion(tarjeta.id, "neutro");
+      this.seleccionadaAccion = null;
+      return;
+    }
+    if (this.seleccionadaAccion) {
+      this.actualizarAccion(this.seleccionadaAccion.id, "neutro");
+    }
+    this.actualizarAccion(tarjeta.id, "seleccionada");
+    this.seleccionadaAccion = tarjeta;
+  }
+  /** El usuario toca una tarjeta de la columna DERECHA (objeto) */
+  seleccionarObjeto(tarjeta) {
+    if (!this.seleccionadaAccion || this.procesando)
+      return;
+    if (tarjeta.estado === "correcta")
+      return;
+    const nombre = tarjeta.imagen.replace(".png", "").replace(/-/g, " ");
+    this.sonidoService.hablar(nombre);
+    this.procesando = true;
+    const accion = this.seleccionadaAccion;
+    if (accion.parejaId === tarjeta.parejaId) {
+      setTimeout(() => {
+        this.actualizarAccion(accion.id, "correcta");
+        this.actualizarObjeto(tarjeta.id, "correcta");
+        const mapa = new Map(this.conexiones());
+        mapa.set(accion.id, tarjeta.id);
+        this.conexiones.set(mapa);
+        const nuevas = this.parejasCorrectas() + 1;
+        this.parejasCorrectas.set(nuevas);
+        this.seleccionadaAccion = null;
+        this.procesando = false;
+        if (nuevas >= this.TOTAL_PAREJAS) {
+          setTimeout(() => this.juegoTerminado.set(true), 500);
+        }
+      }, 300);
+    } else {
+      this.actualizarAccion(accion.id, "incorrecta");
+      this.actualizarObjeto(tarjeta.id, "incorrecta");
+      setTimeout(() => {
+        this.actualizarAccion(accion.id, "neutro");
+        this.actualizarObjeto(tarjeta.id, "neutro");
+        this.seleccionadaAccion = null;
+        this.procesando = false;
+      }, 900);
+    }
+  }
+  estaConectadaAccion(accionId) {
+    return this.conexiones().has(accionId);
+  }
+  irAJuegoActividades() {
+    this.router.navigate(["/actividades-diarias/juego1-actividades-diarias"]);
+  }
+  volver() {
+    this.location.back();
+  }
+  actualizarAccion(id, estado) {
+    this.acciones.set(this.acciones().map((t) => t.id === id ? __spreadProps(__spreadValues({}, t), { estado }) : t));
+  }
+  actualizarObjeto(id, estado) {
+    this.objetos.set(this.objetos().map((t) => t.id === id ? __spreadProps(__spreadValues({}, t), { estado }) : t));
+  }
+  mezclar(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+  static \u0275fac = function JuegoAccionObjetoComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _JuegoAccionObjetoComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _JuegoAccionObjetoComponent, selectors: [["app-juego-accion-objeto"]], decls: 23, vars: 8, consts: [[1, "juego-layout"], [1, "header"], ["aria-label", "Volver", 1, "btn-circle", 3, "click"], [1, "header-titulo"], [1, "header-acertados"], [1, "btn-sonido", 3, "click", "title"], [1, "icono-check"], ["class", "main-content", 4, "ngIf"], ["class", "main-content pantalla-fin", 4, "ngIf"], [1, "credito-arasaac"], ["src", "/imagenes/arasaac-logo.png", "alt", "Logo ARASAAC", 1, "credito-arasaac__logo"], [1, "credito-arasaac__texto"], [1, "main-content"], [1, "estado-mensaje"], [1, "icono-carga"], [1, "estado-mensaje", "estado-error"], [1, "instruccion"], [4, "ngIf"], ["class", "instruccion-activa", 4, "ngIf"], [1, "zona-juego"], [1, "columna"], ["class", "tarjeta", 3, "ngClass", "click", 4, "ngFor", "ngForOf"], [1, "separador"], [1, "linea-vertical"], [1, "instruccion-activa"], [1, "tarjeta", 3, "click", "ngClass"], [3, "src", "alt"], ["class", "overlay-feedback", 4, "ngIf"], ["class", "flecha-seleccion", 4, "ngIf"], [1, "overlay-feedback"], [1, "flecha-seleccion"], [1, "main-content", "pantalla-fin"], [1, "fin-card"], [1, "fin-icono"], [1, "fin-titulo"], [1, "fin-subtitulo"], [1, "fin-botones"], [1, "btn-accion", "btn-reiniciar", 3, "click"], [1, "btn-accion", "btn-otro-juego", 3, "click"]], template: function JuegoAccionObjetoComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      \u0275\u0275elementStart(0, "div", 0)(1, "header", 1)(2, "button", 2);
+      \u0275\u0275listener("click", function JuegoAccionObjetoComponent_Template_button_click_2_listener() {
+        return ctx.volver();
+      });
+      \u0275\u0275elementStart(3, "mat-icon");
+      \u0275\u0275text(4, "arrow_back");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(5, "span", 3);
+      \u0275\u0275text(6, "Une cada acci\xF3n con su objeto");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(7, "div", 4)(8, "button", 5);
+      \u0275\u0275listener("click", function JuegoAccionObjetoComponent_Template_button_click_8_listener() {
+        return ctx.sonidoService.toggle();
+      });
+      \u0275\u0275elementStart(9, "mat-icon");
+      \u0275\u0275text(10);
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(11, "mat-icon", 6);
+      \u0275\u0275text(12, "check_circle");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(13, "span");
+      \u0275\u0275text(14);
+      \u0275\u0275elementEnd()()();
+      \u0275\u0275template(15, JuegoAccionObjetoComponent_main_15_Template, 6, 0, "main", 7)(16, JuegoAccionObjetoComponent_main_16_Template, 6, 0, "main", 7)(17, JuegoAccionObjetoComponent_main_17_Template, 11, 4, "main", 7)(18, JuegoAccionObjetoComponent_main_18_Template, 17, 0, "main", 8);
+      \u0275\u0275elementStart(19, "div", 9);
+      \u0275\u0275element(20, "img", 10);
+      \u0275\u0275elementStart(21, "span", 11);
+      \u0275\u0275text(22, "Pictogramas propiedad de Arasaac");
+      \u0275\u0275elementEnd()()();
+    }
+    if (rf & 2) {
+      \u0275\u0275advance(8);
+      \u0275\u0275property("title", ctx.sonidoService.activo ? "Desactivar sonido" : "Activar sonido");
+      \u0275\u0275advance(2);
+      \u0275\u0275textInterpolate(ctx.sonidoService.activo ? "volume_up" : "volume_off");
+      \u0275\u0275advance(4);
+      \u0275\u0275textInterpolate2("", ctx.parejasCorrectas(), " / ", ctx.TOTAL_PAREJAS);
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", ctx.cargando());
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", ctx.error() && !ctx.cargando());
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", !ctx.cargando() && !ctx.error() && !ctx.juegoTerminado());
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", ctx.juegoTerminado());
+    }
+  }, dependencies: [MatIconModule, MatIcon, NgClass, NgIf, NgForOf], styles: ['\n\n[_nghost-%COMP%] {\n  display: block;\n  min-height: 100vh;\n  background-color: var(--ariadna-bg);\n  font-family:\n    "Nunito",\n    "Segoe UI",\n    sans-serif;\n}\n.juego-layout[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  display: flex;\n  flex-direction: column;\n  background-color: var(--ariadna-bg);\n}\n.header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0 24px;\n  height: var(--ariadna-header-height, 64px);\n  background: var(--ariadna-surface);\n  border-bottom: 2px solid var(--ariadna-border);\n  gap: 12px;\n}\n.header-titulo[_ngcontent-%COMP%] {\n  font-size: 1.15rem;\n  font-weight: 700;\n  color: var(--ariadna-text);\n  flex: 1;\n  text-align: center;\n}\n.header-acertados[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 1.1rem;\n  font-weight: 700;\n  color: var(--ariadna-primary);\n}\n.icono-check[_ngcontent-%COMP%] {\n  color: #22c55e;\n}\n.btn-circle[_ngcontent-%COMP%], \n.btn-sonido[_ngcontent-%COMP%] {\n  background: var(--ariadna-surface);\n  border: 2px solid var(--ariadna-border);\n  border-radius: 50%;\n  width: 48px;\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  color: var(--ariadna-text);\n  padding: 0;\n  flex-shrink: 0;\n  transition:\n    background-color 0.2s,\n    border-color 0.2s,\n    color 0.2s;\n}\n.btn-circle[_ngcontent-%COMP%]:hover, \n.btn-sonido[_ngcontent-%COMP%]:hover {\n  background-color: var(--ariadna-primary-light);\n  border-color: var(--ariadna-primary);\n  color: var(--ariadna-primary);\n}\n.main-content[_ngcontent-%COMP%] {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 16px 24px;\n  gap: 16px;\n}\n.instruccion[_ngcontent-%COMP%] {\n  font-size: 1.05rem;\n  font-weight: 600;\n  color: var(--ariadna-text-muted, #666);\n  margin: 0;\n  text-align: center;\n  min-height: 1.5em;\n}\n.instruccion-activa[_ngcontent-%COMP%] {\n  color: var(--ariadna-primary);\n  font-weight: 700;\n}\n.estado-mensaje[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n  color: var(--ariadna-text-muted, #888);\n  font-size: 1.1rem;\n}\n.estado-mensaje[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 48px;\n  width: 48px;\n  height: 48px;\n}\n.estado-error[_ngcontent-%COMP%] {\n  color: #ef4444;\n}\n.zona-juego[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0;\n  width: 100%;\n  max-width: 740px;\n}\n.columna[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  flex: 1;\n  align-items: center;\n}\n.separador[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0 24px;\n  align-self: stretch;\n}\n.linea-vertical[_ngcontent-%COMP%] {\n  width: 3px;\n  height: 100%;\n  min-height: 300px;\n  background:\n    linear-gradient(\n      to bottom,\n      transparent 0%,\n      var(--ariadna-border) 15%,\n      var(--ariadna-border) 85%,\n      transparent 100%);\n  border-radius: 2px;\n}\n.tarjeta[_ngcontent-%COMP%] {\n  position: relative;\n  width: 140px;\n  height: 140px;\n  background: var(--ariadna-surface);\n  border: 3px solid var(--ariadna-border);\n  border-radius: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  overflow: hidden;\n  transition:\n    transform 0.15s,\n    border-color 0.2s,\n    box-shadow 0.2s;\n}\n.tarjeta[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 78%;\n  height: 78%;\n  object-fit: contain;\n}\n.tarjeta[_ngcontent-%COMP%]:hover:not(.correcta) {\n  transform: scale(1.06);\n  border-color: var(--ariadna-primary);\n  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);\n}\n.tarjeta.seleccionada[_ngcontent-%COMP%] {\n  border-color: var(--ariadna-primary);\n  background: var(--ariadna-primary-light, #ede9fe);\n  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.25);\n  transform: scale(1.08);\n}\n.tarjeta.destacada[_ngcontent-%COMP%] {\n  border-color: #f59e0b;\n  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);\n  animation: _ngcontent-%COMP%_pulse-disponible 1.2s ease-in-out infinite;\n}\n@keyframes _ngcontent-%COMP%_pulse-disponible {\n  0%, 100% {\n    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);\n  }\n  50% {\n    box-shadow: 0 0 0 6px rgba(245, 158, 11, 0.35);\n  }\n}\n.tarjeta.correcta[_ngcontent-%COMP%] {\n  border-color: #22c55e;\n  background: #f0fdf4;\n  cursor: default;\n}\n.tarjeta.correcta[_ngcontent-%COMP%]:hover {\n  transform: none;\n  box-shadow: none;\n}\n.tarjeta.incorrecta[_ngcontent-%COMP%] {\n  border-color: #ef4444;\n  background: #fff1f2;\n  animation: _ngcontent-%COMP%_shake 0.45s ease;\n}\n@keyframes _ngcontent-%COMP%_shake {\n  0%, 100% {\n    transform: translateX(0);\n  }\n  20% {\n    transform: translateX(-7px);\n  }\n  40% {\n    transform: translateX(7px);\n  }\n  60% {\n    transform: translateX(-4px);\n  }\n  80% {\n    transform: translateX(4px);\n  }\n}\n.flecha-seleccion[_ngcontent-%COMP%] {\n  position: absolute;\n  right: -4px;\n  top: 50%;\n  transform: translateY(-50%);\n  background: var(--ariadna-primary);\n  border-radius: 50%;\n  width: 28px;\n  height: 28px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: #fff;\n  animation: _ngcontent-%COMP%_bounce-right 0.6s ease-in-out infinite alternate;\n}\n.flecha-seleccion[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 18px;\n  width: 18px;\n  height: 18px;\n}\n@keyframes _ngcontent-%COMP%_bounce-right {\n  from {\n    right: -4px;\n  }\n  to {\n    right: -10px;\n  }\n}\n.overlay-feedback[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background: rgba(255, 255, 255, 0.55);\n  border-radius: 17px;\n}\n.correcta[_ngcontent-%COMP%]   .overlay-feedback[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 56px;\n  width: 56px;\n  height: 56px;\n  color: #16a34a;\n  font-weight: 900;\n}\n.incorrecta[_ngcontent-%COMP%]   .overlay-feedback[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 56px;\n  width: 56px;\n  height: 56px;\n  color: #dc2626;\n}\n.pantalla-fin[_ngcontent-%COMP%] {\n  justify-content: center;\n}\n.fin-card[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n  background: var(--ariadna-surface);\n  border: 3px solid #22c55e;\n  border-radius: 24px;\n  padding: 40px 48px;\n  box-shadow: 0 8px 32px rgba(34, 197, 94, 0.15);\n  animation: _ngcontent-%COMP%_pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);\n}\n@keyframes _ngcontent-%COMP%_pop-in {\n  from {\n    transform: scale(0.7);\n    opacity: 0;\n  }\n  to {\n    transform: scale(1);\n    opacity: 1;\n  }\n}\n.fin-icono[_ngcontent-%COMP%] {\n  font-size: 72px;\n  line-height: 1;\n}\n.fin-titulo[_ngcontent-%COMP%] {\n  font-size: 2rem;\n  font-weight: 800;\n  color: #16a34a;\n  margin: 0;\n}\n.fin-subtitulo[_ngcontent-%COMP%] {\n  font-size: 1.1rem;\n  color: var(--ariadna-text);\n  margin: 0;\n}\n.fin-botones[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  flex-wrap: wrap;\n  justify-content: center;\n  margin-top: 8px;\n}\n.btn-accion[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  border: none;\n  border-radius: 12px;\n  padding: 14px 28px;\n  font-size: 1rem;\n  font-weight: 700;\n  font-family: "Nunito", sans-serif;\n  cursor: pointer;\n  transition: background-color 0.2s, transform 0.15s;\n}\n.btn-reiniciar[_ngcontent-%COMP%] {\n  background-color: var(--ariadna-primary);\n  color: #fff;\n}\n.btn-reiniciar[_ngcontent-%COMP%]:hover {\n  background-color: var(--ariadna-primary-dark);\n  transform: scale(1.03);\n}\n.btn-otro-juego[_ngcontent-%COMP%] {\n  background-color: #f0fdf4;\n  color: #16a34a;\n  border: 2px solid #22c55e;\n}\n.btn-otro-juego[_ngcontent-%COMP%]:hover {\n  background-color: #dcfce7;\n  transform: scale(1.03);\n}\n.credito-arasaac[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  padding: 8px 16px;\n  border-top: 1px solid var(--ariadna-border);\n}\n.credito-arasaac__logo[_ngcontent-%COMP%] {\n  height: 24px;\n  object-fit: contain;\n}\n.credito-arasaac__texto[_ngcontent-%COMP%] {\n  font-size: 0.75rem;\n  color: var(--ariadna-text-muted, #888);\n}\n/*# sourceMappingURL=juego-accion-objeto.css.map */'] });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(JuegoAccionObjetoComponent, [{
+    type: Component,
+    args: [{ selector: "app-juego-accion-objeto", imports: [MatIconModule, NgClass, NgIf, NgForOf], template: `<!-- Juego Acci\xF3n-Objeto \u2014 columna izquierda | columna derecha -->
+<div class="juego-layout">
+
+  <!-- Cabecera -->
+  <header class="header">
+    <button class="btn-circle" (click)="volver()" aria-label="Volver">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="header-titulo">Une cada acci\xF3n con su objeto</span>
+    <div class="header-acertados">
+      <button class="btn-sonido" (click)="sonidoService.toggle()"
+        [title]="sonidoService.activo ? 'Desactivar sonido' : 'Activar sonido'">
+        <mat-icon>{{ sonidoService.activo ? 'volume_up' : 'volume_off' }}</mat-icon>
+      </button>
+      <mat-icon class="icono-check">check_circle</mat-icon>
+      <span>{{ parejasCorrectas() }} / {{ TOTAL_PAREJAS }}</span>
+    </div>
+  </header>
+
+  <!-- Estado: cargando -->
+  <main class="main-content" *ngIf="cargando()">
+    <div class="estado-mensaje">
+      <mat-icon class="icono-carga">hourglass_top</mat-icon>
+      <p>Cargando juego...</p>
+    </div>
+  </main>
+
+  <!-- Estado: error -->
+  <main class="main-content" *ngIf="error() && !cargando()">
+    <div class="estado-mensaje estado-error">
+      <mat-icon>error_outline</mat-icon>
+      <p>No se pudo conectar con el servidor.</p>
+    </div>
+  </main>
+
+  <!-- Juego activo -->
+  <main class="main-content" *ngIf="!cargando() && !error() && !juegoTerminado()">
+
+    <p class="instruccion">
+      <span *ngIf="!seleccionadaAccion">Toca una imagen de la izquierda</span>
+      <span *ngIf="seleccionadaAccion" class="instruccion-activa">Ahora toca el objeto de la derecha</span>
+    </p>
+
+    <div class="zona-juego">
+
+      <!-- Columna IZQUIERDA: Acciones -->
+      <div class="columna">
+        <div
+          *ngFor="let tarjeta of acciones()"
+          class="tarjeta"
+          [ngClass]="{
+            'seleccionada':  tarjeta.estado === 'seleccionada',
+            'correcta':      tarjeta.estado === 'correcta',
+            'incorrecta':    tarjeta.estado === 'incorrecta'
+          }"
+          (click)="seleccionarAccion(tarjeta)"
+        >
+          <img [src]="'/acciones-objeto/' + tarjeta.imagen"
+               [alt]="tarjeta.imagen.replace('.png','')" />
+          <div class="overlay-feedback" *ngIf="tarjeta.estado === 'correcta' || tarjeta.estado === 'incorrecta'">
+            <mat-icon *ngIf="tarjeta.estado === 'correcta'">check</mat-icon>
+            <mat-icon *ngIf="tarjeta.estado === 'incorrecta'">close</mat-icon>
+          </div>
+          <!-- Flecha indicadora de que est\xE1 seleccionada -->
+          <div class="flecha-seleccion" *ngIf="tarjeta.estado === 'seleccionada'">
+            <mat-icon>arrow_forward</mat-icon>
+          </div>
+        </div>
+      </div>
+
+      <!-- Separador visual -->
+      <div class="separador">
+        <div class="linea-vertical"></div>
+      </div>
+
+      <!-- Columna DERECHA: Objetos -->
+      <div class="columna">
+        <div
+          *ngFor="let tarjeta of objetos()"
+          class="tarjeta"
+          [ngClass]="{
+            'correcta':    tarjeta.estado === 'correcta',
+            'incorrecta':  tarjeta.estado === 'incorrecta',
+            'destacada':   !!seleccionadaAccion && tarjeta.estado === 'neutro'
+          }"
+          (click)="seleccionarObjeto(tarjeta)"
+        >
+          <img [src]="'/acciones-objeto/' + tarjeta.imagen"
+               [alt]="tarjeta.imagen.replace('.png','')" />
+          <div class="overlay-feedback" *ngIf="tarjeta.estado === 'correcta' || tarjeta.estado === 'incorrecta'">
+            <mat-icon *ngIf="tarjeta.estado === 'correcta'">check</mat-icon>
+            <mat-icon *ngIf="tarjeta.estado === 'incorrecta'">close</mat-icon>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Pantalla de victoria -->
+  <main class="main-content pantalla-fin" *ngIf="juegoTerminado()">
+    <div class="fin-card">
+      <div class="fin-icono">\u{1F389}</div>
+      <h2 class="fin-titulo">\xA1Muy bien!</h2>
+      <p class="fin-subtitulo">Has unido todas las parejas correctamente</p>
+      <div class="fin-botones">
+        <button class="btn-accion btn-reiniciar" (click)="iniciarRonda()">
+          <mat-icon>replay</mat-icon>
+          Volver a jugar
+        </button>
+        <button class="btn-accion btn-otro-juego" (click)="irAJuegoActividades()">
+          <mat-icon>swap_horiz</mat-icon>
+          Otro juego
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Cr\xE9dito ARASAAC -->
+  <div class="credito-arasaac">
+    <img src="/imagenes/arasaac-logo.png" alt="Logo ARASAAC" class="credito-arasaac__logo">
+    <span class="credito-arasaac__texto">Pictogramas propiedad de Arasaac</span>
+  </div>
+
+</div>
+`, styles: ['/* src/app/funcionalidades/juegos/juego-accion-objeto/componentes/juego-accion-objeto/juego-accion-objeto.css */\n:host {\n  display: block;\n  min-height: 100vh;\n  background-color: var(--ariadna-bg);\n  font-family:\n    "Nunito",\n    "Segoe UI",\n    sans-serif;\n}\n.juego-layout {\n  min-height: 100vh;\n  display: flex;\n  flex-direction: column;\n  background-color: var(--ariadna-bg);\n}\n.header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0 24px;\n  height: var(--ariadna-header-height, 64px);\n  background: var(--ariadna-surface);\n  border-bottom: 2px solid var(--ariadna-border);\n  gap: 12px;\n}\n.header-titulo {\n  font-size: 1.15rem;\n  font-weight: 700;\n  color: var(--ariadna-text);\n  flex: 1;\n  text-align: center;\n}\n.header-acertados {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 1.1rem;\n  font-weight: 700;\n  color: var(--ariadna-primary);\n}\n.icono-check {\n  color: #22c55e;\n}\n.btn-circle,\n.btn-sonido {\n  background: var(--ariadna-surface);\n  border: 2px solid var(--ariadna-border);\n  border-radius: 50%;\n  width: 48px;\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  color: var(--ariadna-text);\n  padding: 0;\n  flex-shrink: 0;\n  transition:\n    background-color 0.2s,\n    border-color 0.2s,\n    color 0.2s;\n}\n.btn-circle:hover,\n.btn-sonido:hover {\n  background-color: var(--ariadna-primary-light);\n  border-color: var(--ariadna-primary);\n  color: var(--ariadna-primary);\n}\n.main-content {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 16px 24px;\n  gap: 16px;\n}\n.instruccion {\n  font-size: 1.05rem;\n  font-weight: 600;\n  color: var(--ariadna-text-muted, #666);\n  margin: 0;\n  text-align: center;\n  min-height: 1.5em;\n}\n.instruccion-activa {\n  color: var(--ariadna-primary);\n  font-weight: 700;\n}\n.estado-mensaje {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 12px;\n  color: var(--ariadna-text-muted, #888);\n  font-size: 1.1rem;\n}\n.estado-mensaje mat-icon {\n  font-size: 48px;\n  width: 48px;\n  height: 48px;\n}\n.estado-error {\n  color: #ef4444;\n}\n.zona-juego {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0;\n  width: 100%;\n  max-width: 740px;\n}\n.columna {\n  display: flex;\n  flex-direction: column;\n  gap: 16px;\n  flex: 1;\n  align-items: center;\n}\n.separador {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0 24px;\n  align-self: stretch;\n}\n.linea-vertical {\n  width: 3px;\n  height: 100%;\n  min-height: 300px;\n  background:\n    linear-gradient(\n      to bottom,\n      transparent 0%,\n      var(--ariadna-border) 15%,\n      var(--ariadna-border) 85%,\n      transparent 100%);\n  border-radius: 2px;\n}\n.tarjeta {\n  position: relative;\n  width: 140px;\n  height: 140px;\n  background: var(--ariadna-surface);\n  border: 3px solid var(--ariadna-border);\n  border-radius: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  overflow: hidden;\n  transition:\n    transform 0.15s,\n    border-color 0.2s,\n    box-shadow 0.2s;\n}\n.tarjeta img {\n  width: 78%;\n  height: 78%;\n  object-fit: contain;\n}\n.tarjeta:hover:not(.correcta) {\n  transform: scale(1.06);\n  border-color: var(--ariadna-primary);\n  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);\n}\n.tarjeta.seleccionada {\n  border-color: var(--ariadna-primary);\n  background: var(--ariadna-primary-light, #ede9fe);\n  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.25);\n  transform: scale(1.08);\n}\n.tarjeta.destacada {\n  border-color: #f59e0b;\n  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);\n  animation: pulse-disponible 1.2s ease-in-out infinite;\n}\n@keyframes pulse-disponible {\n  0%, 100% {\n    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);\n  }\n  50% {\n    box-shadow: 0 0 0 6px rgba(245, 158, 11, 0.35);\n  }\n}\n.tarjeta.correcta {\n  border-color: #22c55e;\n  background: #f0fdf4;\n  cursor: default;\n}\n.tarjeta.correcta:hover {\n  transform: none;\n  box-shadow: none;\n}\n.tarjeta.incorrecta {\n  border-color: #ef4444;\n  background: #fff1f2;\n  animation: shake 0.45s ease;\n}\n@keyframes shake {\n  0%, 100% {\n    transform: translateX(0);\n  }\n  20% {\n    transform: translateX(-7px);\n  }\n  40% {\n    transform: translateX(7px);\n  }\n  60% {\n    transform: translateX(-4px);\n  }\n  80% {\n    transform: translateX(4px);\n  }\n}\n.flecha-seleccion {\n  position: absolute;\n  right: -4px;\n  top: 50%;\n  transform: translateY(-50%);\n  background: var(--ariadna-primary);\n  border-radius: 50%;\n  width: 28px;\n  height: 28px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: #fff;\n  animation: bounce-right 0.6s ease-in-out infinite alternate;\n}\n.flecha-seleccion mat-icon {\n  font-size: 18px;\n  width: 18px;\n  height: 18px;\n}\n@keyframes bounce-right {\n  from {\n    right: -4px;\n  }\n  to {\n    right: -10px;\n  }\n}\n.overlay-feedback {\n  position: absolute;\n  inset: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background: rgba(255, 255, 255, 0.55);\n  border-radius: 17px;\n}\n.correcta .overlay-feedback mat-icon {\n  font-size: 56px;\n  width: 56px;\n  height: 56px;\n  color: #16a34a;\n  font-weight: 900;\n}\n.incorrecta .overlay-feedback mat-icon {\n  font-size: 56px;\n  width: 56px;\n  height: 56px;\n  color: #dc2626;\n}\n.pantalla-fin {\n  justify-content: center;\n}\n.fin-card {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n  background: var(--ariadna-surface);\n  border: 3px solid #22c55e;\n  border-radius: 24px;\n  padding: 40px 48px;\n  box-shadow: 0 8px 32px rgba(34, 197, 94, 0.15);\n  animation: pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);\n}\n@keyframes pop-in {\n  from {\n    transform: scale(0.7);\n    opacity: 0;\n  }\n  to {\n    transform: scale(1);\n    opacity: 1;\n  }\n}\n.fin-icono {\n  font-size: 72px;\n  line-height: 1;\n}\n.fin-titulo {\n  font-size: 2rem;\n  font-weight: 800;\n  color: #16a34a;\n  margin: 0;\n}\n.fin-subtitulo {\n  font-size: 1.1rem;\n  color: var(--ariadna-text);\n  margin: 0;\n}\n.fin-botones {\n  display: flex;\n  gap: 12px;\n  flex-wrap: wrap;\n  justify-content: center;\n  margin-top: 8px;\n}\n.btn-accion {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  border: none;\n  border-radius: 12px;\n  padding: 14px 28px;\n  font-size: 1rem;\n  font-weight: 700;\n  font-family: "Nunito", sans-serif;\n  cursor: pointer;\n  transition: background-color 0.2s, transform 0.15s;\n}\n.btn-reiniciar {\n  background-color: var(--ariadna-primary);\n  color: #fff;\n}\n.btn-reiniciar:hover {\n  background-color: var(--ariadna-primary-dark);\n  transform: scale(1.03);\n}\n.btn-otro-juego {\n  background-color: #f0fdf4;\n  color: #16a34a;\n  border: 2px solid #22c55e;\n}\n.btn-otro-juego:hover {\n  background-color: #dcfce7;\n  transform: scale(1.03);\n}\n.credito-arasaac {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 8px;\n  padding: 8px 16px;\n  border-top: 1px solid var(--ariadna-border);\n}\n.credito-arasaac__logo {\n  height: 24px;\n  object-fit: contain;\n}\n.credito-arasaac__texto {\n  font-size: 0.75rem;\n  color: var(--ariadna-text-muted, #888);\n}\n/*# sourceMappingURL=juego-accion-objeto.css.map */\n'] }]
+  }], null, null);
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(JuegoAccionObjetoComponent, { className: "JuegoAccionObjetoComponent", filePath: "src/app/funcionalidades/juegos/juego-accion-objeto/componentes/juego-accion-objeto/juego-accion-objeto.ts", lineNumber: 15 });
+})();
+
+// src/app/funcionalidades/juegos/juego-accion-objeto/paginas/juego-accion-objeto-page/juego-accion-objeto-page.ts
+var JuegoAccionObjetoPageComponent = class _JuegoAccionObjetoPageComponent {
+  static \u0275fac = function JuegoAccionObjetoPageComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _JuegoAccionObjetoPageComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _JuegoAccionObjetoPageComponent, selectors: [["app-juego-accion-objeto-page"]], decls: 1, vars: 0, template: function JuegoAccionObjetoPageComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      \u0275\u0275element(0, "app-juego-accion-objeto");
+    }
+  }, dependencies: [JuegoAccionObjetoComponent], encapsulation: 2 });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(JuegoAccionObjetoPageComponent, [{
+    type: Component,
+    args: [{
+      selector: "app-juego-accion-objeto-page",
+      standalone: true,
+      imports: [JuegoAccionObjetoComponent],
+      template: `<app-juego-accion-objeto></app-juego-accion-objeto>`
+    }]
+  }], null, null);
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(JuegoAccionObjetoPageComponent, { className: "JuegoAccionObjetoPageComponent", filePath: "src/app/funcionalidades/juegos/juego-accion-objeto/paginas/juego-accion-objeto-page/juego-accion-objeto-page.ts", lineNumber: 10 });
 })();
 
 // src/app/main/perfiles/componentes/perfiles.component.ts
@@ -19909,8 +20546,8 @@ var _RecycleViewRepeaterStrategy = class {
 };
 
 // node_modules/@angular/cdk/fesm2022/scrolling.mjs
-var _c03 = ["contentWrapper"];
-var _c1 = ["*"];
+var _c04 = ["contentWrapper"];
+var _c12 = ["*"];
 var VIRTUAL_SCROLL_STRATEGY = new InjectionToken("VIRTUAL_SCROLL_STRATEGY");
 var FixedSizeVirtualScrollStrategy = class {
   _scrolledIndexChange = new Subject();
@@ -20702,7 +21339,7 @@ var CdkVirtualScrollViewport = class _CdkVirtualScrollViewport extends CdkVirtua
     selectors: [["cdk-virtual-scroll-viewport"]],
     viewQuery: function CdkVirtualScrollViewport_Query(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275viewQuery(_c03, 7);
+        \u0275\u0275viewQuery(_c04, 7);
       }
       if (rf & 2) {
         let _t;
@@ -20732,7 +21369,7 @@ var CdkVirtualScrollViewport = class _CdkVirtualScrollViewport extends CdkVirtua
       provide: CDK_VIRTUAL_SCROLL_VIEWPORT,
       useExisting: _CdkVirtualScrollViewport
     }]), \u0275\u0275InheritDefinitionFeature],
-    ngContentSelectors: _c1,
+    ngContentSelectors: _c12,
     decls: 4,
     vars: 4,
     consts: [["contentWrapper", ""], [1, "cdk-virtual-scroll-content-wrapper"], [1, "cdk-virtual-scroll-spacer"]],
@@ -26245,8 +26882,8 @@ var _StructuralStylesLoader = class __StructuralStylesLoader {
 })();
 
 // node_modules/@angular/material/fesm2022/_icon-button-chunk.mjs
-var _c04 = ["mat-icon-button", ""];
-var _c12 = ["*"];
+var _c05 = ["mat-icon-button", ""];
+var _c13 = ["*"];
 var MAT_BUTTON_CONFIG = new InjectionToken("MAT_BUTTON_CONFIG");
 function transformTabIndex(value) {
   return value == null ? void 0 : numberAttribute(value);
@@ -26445,8 +27082,8 @@ var MatIconButton = class _MatIconButton extends MatButtonBase {
     hostAttrs: [1, "mdc-icon-button", "mat-mdc-icon-button"],
     exportAs: ["matButton", "matAnchor"],
     features: [\u0275\u0275InheritDefinitionFeature],
-    attrs: _c04,
-    ngContentSelectors: _c12,
+    attrs: _c05,
+    ngContentSelectors: _c13,
     decls: 4,
     vars: 0,
     consts: [[1, "mat-mdc-button-persistent-ripple", "mdc-icon-button__ripple"], [1, "mat-focus-indicator"], [1, "mat-mdc-button-touch-target"]],
@@ -26516,8 +27153,8 @@ var MatRippleModule = class _MatRippleModule {
 })();
 
 // node_modules/@angular/material/fesm2022/button.mjs
-var _c05 = ["matButton", ""];
-var _c13 = [[["", 8, "material-icons", 3, "iconPositionEnd", ""], ["mat-icon", 3, "iconPositionEnd", ""], ["", "matButtonIcon", "", 3, "iconPositionEnd", ""]], "*", [["", "iconPositionEnd", "", 8, "material-icons"], ["mat-icon", "iconPositionEnd", ""], ["", "matButtonIcon", "", "iconPositionEnd", ""]]];
+var _c06 = ["matButton", ""];
+var _c14 = [[["", 8, "material-icons", 3, "iconPositionEnd", ""], ["mat-icon", 3, "iconPositionEnd", ""], ["", "matButtonIcon", "", 3, "iconPositionEnd", ""]], "*", [["", "iconPositionEnd", "", 8, "material-icons"], ["mat-icon", "iconPositionEnd", ""], ["", "matButtonIcon", "", "iconPositionEnd", ""]]];
 var _c2 = [".material-icons:not([iconPositionEnd]), mat-icon:not([iconPositionEnd]), [matButtonIcon]:not([iconPositionEnd])", "*", ".material-icons[iconPositionEnd], mat-icon[iconPositionEnd], [matButtonIcon][iconPositionEnd]"];
 var _c3 = ["mat-fab", ""];
 var _c4 = ["mat-mini-fab", ""];
@@ -26566,14 +27203,14 @@ var MatButton = class _MatButton extends MatButtonBase {
     },
     exportAs: ["matButton", "matAnchor"],
     features: [\u0275\u0275InheritDefinitionFeature],
-    attrs: _c05,
+    attrs: _c06,
     ngContentSelectors: _c2,
     decls: 7,
     vars: 4,
     consts: [[1, "mat-mdc-button-persistent-ripple"], [1, "mdc-button__label"], [1, "mat-focus-indicator"], [1, "mat-mdc-button-touch-target"]],
     template: function MatButton_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275projectionDef(_c13);
+        \u0275\u0275projectionDef(_c14);
         \u0275\u0275domElement(0, "span", 0);
         \u0275\u0275projection(1);
         \u0275\u0275domElementStart(2, "span", 1);
@@ -26694,7 +27331,7 @@ var MatFabButton = class _MatFabButton extends MatButtonBase {
     consts: [[1, "mat-mdc-button-persistent-ripple"], [1, "mdc-button__label"], [1, "mat-focus-indicator"], [1, "mat-mdc-button-touch-target"]],
     template: function MatFabButton_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275projectionDef(_c13);
+        \u0275\u0275projectionDef(_c14);
         \u0275\u0275domElement(0, "span", 0);
         \u0275\u0275projection(1);
         \u0275\u0275domElementStart(2, "span", 1);
@@ -26783,7 +27420,7 @@ var MatMiniFabButton = class _MatMiniFabButton extends MatButtonBase {
     consts: [[1, "mat-mdc-button-persistent-ripple"], [1, "mdc-button__label"], [1, "mat-focus-indicator"], [1, "mat-mdc-button-touch-target"]],
     template: function MatMiniFabButton_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275projectionDef(_c13);
+        \u0275\u0275projectionDef(_c14);
         \u0275\u0275domElement(0, "span", 0);
         \u0275\u0275projection(1);
         \u0275\u0275domElementStart(2, "span", 1);
@@ -26879,7 +27516,7 @@ function SimpleSnackBar_Conditional_2_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", ctx_r1.data.action, " ");
   }
 }
-var _c06 = ["label"];
+var _c07 = ["label"];
 function MatSnackBarContainer_ng_template_4_Template(rf, ctx) {
 }
 var MAX_TIMEOUT = Math.pow(2, 31) - 1;
@@ -27290,7 +27927,7 @@ var MatSnackBarContainer = class _MatSnackBarContainer extends BasePortalOutlet 
     selectors: [["mat-snack-bar-container"]],
     viewQuery: function MatSnackBarContainer_Query(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275viewQuery(CdkPortalOutlet, 7)(_c06, 7);
+        \u0275\u0275viewQuery(CdkPortalOutlet, 7)(_c07, 7);
       }
       if (rf & 2) {
         let _t;
@@ -32317,8 +32954,8 @@ var SharedResizeObserver = class _SharedResizeObserver {
 })();
 
 // node_modules/@angular/material/fesm2022/_form-field-chunk.mjs
-var _c07 = ["notch"];
-var _c14 = ["matFormFieldNotchedOutline", ""];
+var _c08 = ["notch"];
+var _c15 = ["matFormFieldNotchedOutline", ""];
 var _c22 = ["*"];
 var _c32 = ["iconPrefixContainer"];
 var _c42 = ["textPrefixContainer"];
@@ -32844,7 +33481,7 @@ var MatFormFieldNotchedOutline = class _MatFormFieldNotchedOutline {
     selectors: [["div", "matFormFieldNotchedOutline", ""]],
     viewQuery: function MatFormFieldNotchedOutline_Query(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275viewQuery(_c07, 5);
+        \u0275\u0275viewQuery(_c08, 5);
       }
       if (rf & 2) {
         let _t;
@@ -32861,7 +33498,7 @@ var MatFormFieldNotchedOutline = class _MatFormFieldNotchedOutline {
     inputs: {
       open: [0, "matFormFieldNotchedOutlineOpen", "open"]
     },
-    attrs: _c14,
+    attrs: _c15,
     ngContentSelectors: _c22,
     decls: 5,
     vars: 0,
@@ -34653,7 +35290,7 @@ var DateAdapter = class {
 var MAT_DATE_FORMATS = new InjectionToken("mat-date-formats");
 
 // node_modules/@angular/material/fesm2022/_tooltip-chunk.mjs
-var _c08 = ["tooltip"];
+var _c09 = ["tooltip"];
 var SCROLL_THROTTLE_MS = 20;
 function getMatTooltipInvalidPositionError(position) {
   return Error(`Tooltip position "${position}" is invalid.`);
@@ -35408,7 +36045,7 @@ var TooltipComponent = class _TooltipComponent {
     selectors: [["mat-tooltip-component"]],
     viewQuery: function TooltipComponent_Query(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275viewQuery(_c08, 7);
+        \u0275\u0275viewQuery(_c09, 7);
       }
       if (rf & 2) {
         let _t;
@@ -35473,7 +36110,7 @@ var TooltipComponent = class _TooltipComponent {
 })();
 
 // node_modules/@angular/material/fesm2022/datepicker.mjs
-var _c09 = ["mat-calendar-body", ""];
+var _c010 = ["mat-calendar-body", ""];
 function _forTrack0($index, $item) {
   return this._trackRow($item);
 }
@@ -35578,7 +36215,7 @@ function MatMonthView_For_4_Template(rf, ctx) {
     \u0275\u0275textInterpolate(day_r1.narrow);
   }
 }
-var _c15 = ["*"];
+var _c16 = ["*"];
 function MatCalendar_ng_template_0_Template(rf, ctx) {
 }
 function MatCalendar_Case_2_Template(rf, ctx) {
@@ -36097,7 +36734,7 @@ var MatCalendarBody = class _MatCalendarBody {
     },
     exportAs: ["matCalendarBody"],
     features: [\u0275\u0275NgOnChangesFeature],
-    attrs: _c09,
+    attrs: _c010,
     decls: 11,
     vars: 11,
     consts: [["aria-hidden", "true"], ["role", "row"], [1, "mat-calendar-body-hidden-label", 3, "id"], [1, "mat-calendar-body-label"], [1, "mat-calendar-body-label", 3, "paddingTop", "paddingBottom"], ["role", "gridcell", 1, "mat-calendar-body-cell-container", 3, "width", "paddingTop", "paddingBottom"], ["role", "gridcell", 1, "mat-calendar-body-cell-container"], ["type", "button", 1, "mat-calendar-body-cell", 3, "click", "focus", "tabindex"], [1, "mat-calendar-body-cell-content", "mat-focus-indicator"], ["aria-hidden", "true", 1, "mat-calendar-body-cell-preview"]],
@@ -37863,7 +38500,7 @@ var MatCalendarHeader = class _MatCalendarHeader {
     type: _MatCalendarHeader,
     selectors: [["mat-calendar-header"]],
     exportAs: ["matCalendarHeader"],
-    ngContentSelectors: _c15,
+    ngContentSelectors: _c16,
     decls: 17,
     vars: 13,
     consts: [[1, "mat-calendar-header"], [1, "mat-calendar-controls"], ["aria-live", "polite", 1, "cdk-visually-hidden", 3, "id"], ["matButton", "", "type", "button", 1, "mat-calendar-period-button", 3, "click"], ["aria-hidden", "true"], ["viewBox", "0 0 10 5", "focusable", "false", "aria-hidden", "true", 1, "mat-calendar-arrow"], ["points", "0,0 5,5 10,0"], [1, "mat-calendar-spacer"], ["matIconButton", "", "type", "button", "disabledInteractive", "", 1, "mat-calendar-previous-button", 3, "click", "disabled", "matTooltip"], ["viewBox", "0 0 24 24", "focusable", "false", "aria-hidden", "true"], ["d", "M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"], ["matIconButton", "", "type", "button", "disabledInteractive", "", 1, "mat-calendar-next-button", 3, "click", "disabled", "matTooltip"], ["d", "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"]],
@@ -40696,7 +41333,7 @@ var MatDatepickerActions = class _MatDatepickerActions {
         \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._template = _t.first);
       }
     },
-    ngContentSelectors: _c15,
+    ngContentSelectors: _c16,
     decls: 1,
     vars: 0,
     consts: [[1, "mat-datepicker-actions"]],
@@ -40760,8 +41397,8 @@ var MatDatepickerModule = class _MatDatepickerModule {
 })();
 
 // node_modules/@angular/material/fesm2022/_internal-form-field-chunk.mjs
-var _c010 = ["mat-internal-form-field", ""];
-var _c16 = ["*"];
+var _c011 = ["mat-internal-form-field", ""];
+var _c17 = ["*"];
 var _MatInternalFormField = class __MatInternalFormField {
   labelPosition = "after";
   static \u0275fac = function _MatInternalFormField_Factory(__ngFactoryType__) {
@@ -40780,8 +41417,8 @@ var _MatInternalFormField = class __MatInternalFormField {
     inputs: {
       labelPosition: "labelPosition"
     },
-    attrs: _c010,
-    ngContentSelectors: _c16,
+    attrs: _c011,
+    ngContentSelectors: _c17,
     decls: 1,
     vars: 0,
     template: function _MatInternalFormField_Template(rf, ctx) {
@@ -40911,8 +41548,8 @@ var MatPseudoCheckboxModule = class _MatPseudoCheckboxModule {
 })();
 
 // node_modules/@angular/material/fesm2022/_option-chunk.mjs
-var _c011 = ["*", [["mat-option"], ["ng-container"]]];
-var _c17 = ["*", "mat-option, ng-container"];
+var _c012 = ["*", [["mat-option"], ["ng-container"]]];
+var _c18 = ["*", "mat-option, ng-container"];
 var _c24 = ["text"];
 var _c34 = [[["mat-icon"]], "*"];
 var _c44 = ["mat-icon", "*"];
@@ -40981,13 +41618,13 @@ var MatOptgroup = class _MatOptgroup {
       provide: MAT_OPTGROUP,
       useExisting: _MatOptgroup
     }])],
-    ngContentSelectors: _c17,
+    ngContentSelectors: _c18,
     decls: 5,
     vars: 4,
     consts: [["role", "presentation", 1, "mat-mdc-optgroup-label", 3, "id"], [1, "mdc-list-item__primary-text"]],
     template: function MatOptgroup_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275projectionDef(_c011);
+        \u0275\u0275projectionDef(_c012);
         \u0275\u0275domElementStart(0, "span", 0)(1, "span", 1);
         \u0275\u0275text(2);
         \u0275\u0275projection(3);
@@ -41710,8 +42347,8 @@ function provideNativeDateAdapter(formats = MAT_NATIVE_DATE_FORMATS) {
 }
 
 // node_modules/@angular/material/fesm2022/checkbox.mjs
-var _c012 = ["input"];
-var _c18 = ["label"];
+var _c013 = ["input"];
+var _c19 = ["label"];
 var _c25 = ["*"];
 var checkboxDefaults = {
   color: "accent",
@@ -41983,7 +42620,7 @@ var MatCheckbox = class _MatCheckbox {
     selectors: [["mat-checkbox"]],
     viewQuery: function MatCheckbox_Query(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275viewQuery(_c012, 5)(_c18, 5);
+        \u0275\u0275viewQuery(_c013, 5)(_c19, 5);
       }
       if (rf & 2) {
         let _t;
@@ -42603,8 +43240,8 @@ function getMultipleValuesInSingleSelectionError() {
 }
 
 // node_modules/@angular/material/fesm2022/select.mjs
-var _c013 = ["trigger"];
-var _c19 = ["panel"];
+var _c014 = ["trigger"];
+var _c110 = ["panel"];
 var _c26 = [[["mat-select-trigger"]], "*"];
 var _c35 = ["mat-select-trigger", "*"];
 function MatSelect_Conditional_4_Template(rf, ctx) {
@@ -43440,7 +44077,7 @@ var MatSelect = class _MatSelect {
     },
     viewQuery: function MatSelect_Query(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275viewQuery(_c013, 5)(_c19, 5)(CdkConnectedOverlay, 5);
+        \u0275\u0275viewQuery(_c014, 5)(_c110, 5)(CdkConnectedOverlay, 5);
       }
       if (rf & 2) {
         let _t;
@@ -48243,7 +48880,7 @@ var AgendaCrearPageComponent = class _AgendaCrearPageComponent {
       \u0275\u0275advance(6);
       \u0275\u0275property("ngIf", ctx.toast);
     }
-  }, dependencies: [CommonModule, NgClass, NgForOf, NgIf, MatIconModule, MatIcon, DragDropModule, CdkDropList, CdkDrag, CdkDragPreview, AsyncPipe], styles: ['\n\n[_nghost-%COMP%] {\n  display: block;\n  min-height: 100vh;\n  background-color: var(--ariadna-bg);\n  font-family:\n    "Nunito",\n    "Segoe UI",\n    sans-serif;\n}\n.agenda-crear-layout[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n}\n.header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 24px 32px;\n  height: 90px;\n}\n.btn-circle[_ngcontent-%COMP%] {\n  background: var(--ariadna-surface);\n  border: 2px solid var(--ariadna-text);\n  border-radius: 50%;\n  width: 48px;\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  color: var(--ariadna-text);\n  transition: background-color 0.2s;\n}\n.title[_ngcontent-%COMP%] {\n  font-size: 1.8rem;\n  font-weight: 600;\n  color: var(--ariadna-text);\n  margin: 0;\n}\n.btn-inicio[_ngcontent-%COMP%] {\n  background: transparent;\n  border: none;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  cursor: pointer;\n  color: var(--ariadna-text);\n}\n.icon-large[_ngcontent-%COMP%] {\n  font-size: 36px;\n  width: 36px;\n  height: 36px;\n}\n.btn-inicio[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  font-size: 0.8rem;\n  font-weight: 600;\n  margin-top: 4px;\n}\n.main-content[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 0 var(--ariadna-spacing-lg) var(--ariadna-spacing-lg);\n}\n.slots-container[_ngcontent-%COMP%] {\n  background-color: #D6D6D6;\n  width: 100%;\n  max-width: 1300px;\n  padding: 32px;\n  display: flex;\n  justify-content: space-around;\n  gap: 16px;\n  align-items: center;\n  flex-wrap: wrap;\n}\n.slot-wrapper[_ngcontent-%COMP%] {\n  width: 220px;\n  height: 220px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.slot-empty[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  background-color: #FFFFFF;\n  border: 2px dashed #999;\n  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);\n}\n.slot-filled[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  background-color: #FFFFFF;\n  border: 2px solid var(--ariadna-border);\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n  position: relative;\n  cursor: grab;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 12px;\n  box-sizing: border-box;\n}\n.slot-filled[_ngcontent-%COMP%]:active {\n  cursor: grabbing;\n}\n.slot-img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.btn-remove[_ngcontent-%COMP%] {\n  position: absolute;\n  top: -10px;\n  right: -10px;\n  background: #d32f2f;\n  color: white;\n  border: 2px solid white;\n  border-radius: 50%;\n  width: 32px;\n  height: 32px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  z-index: 10;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n}\n.arrow-divider[_ngcontent-%COMP%] {\n  margin: 16px 0;\n  color: var(--ariadna-text);\n}\n.arrow-divider[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 48px;\n  width: 48px;\n  height: 48px;\n}\n.cosas-hacer-container[_ngcontent-%COMP%] {\n  background-color: #D6D6D6;\n  border: 4px solid var(--ariadna-primary);\n  width: 100%;\n  max-width: 1300px;\n  padding: 24px 32px;\n  display: flex;\n  flex-direction: column;\n}\n.cosas-hacer-container[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 1.4rem;\n  font-weight: 600;\n  text-align: center;\n  margin: 0 0 24px 0;\n  color: var(--ariadna-text);\n}\n.items-grid[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 24px;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  min-height: 140px;\n  max-height: 350px;\n  overflow-y: auto;\n  padding-right: 16px;\n}\n.items-grid[_ngcontent-%COMP%]::-webkit-scrollbar {\n  width: 8px;\n}\n.items-grid[_ngcontent-%COMP%]::-webkit-scrollbar-track {\n  background: var(--ariadna-surface);\n  border-radius: 4px;\n}\n.items-grid[_ngcontent-%COMP%]::-webkit-scrollbar-thumb {\n  background: var(--ariadna-primary);\n  border-radius: 4px;\n}\n.item-card[_ngcontent-%COMP%] {\n  width: 140px;\n  height: 140px;\n  background-color: #8C8C8C;\n  cursor: pointer;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 12px;\n  box-sizing: border-box;\n  transition: transform 0.2s, background-color 0.2s;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);\n}\n.item-card[_ngcontent-%COMP%]:hover {\n  transform: translateY(-4px);\n  background-color: #9c9c9c;\n}\n.item-card[_ngcontent-%COMP%]:active {\n  cursor: grabbing;\n}\n.item-card[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.item-nombre[_ngcontent-%COMP%] {\n  display: none;\n}\n.footer[_ngcontent-%COMP%] {\n  width: 100%;\n  max-width: 1300px;\n  display: flex;\n  justify-content: flex-end;\n  margin-top: 24px;\n}\n.btn-resultado[_ngcontent-%COMP%] {\n  background-color: #D6D6D6;\n  color: var(--ariadna-text);\n  border: none;\n  padding: 16px 40px;\n  font-size: 1.2rem;\n  font-weight: 600;\n  font-family: "Nunito", sans-serif;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n.btn-resultado[_ngcontent-%COMP%]:hover {\n  background-color: #C0C0C0;\n}\n.drag-preview-img[_ngcontent-%COMP%] {\n  width: 140px;\n  height: 140px;\n  background-color: white;\n  padding: 12px;\n  box-sizing: border-box;\n  border: 2px solid var(--ariadna-primary);\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);\n  z-index: 9999 !important;\n}\n.drag-preview-img[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.cdk-drag-placeholder[_ngcontent-%COMP%] {\n  opacity: 0;\n}\n.toast[_ngcontent-%COMP%] {\n  position: fixed;\n  bottom: 40px;\n  left: 50%;\n  transform: translateX(-50%);\n  padding: 16px 36px;\n  border-radius: 12px;\n  font-size: 1.1rem;\n  font-weight: 700;\n  font-family: "Nunito", sans-serif;\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);\n  z-index: 9999;\n  animation: _ngcontent-%COMP%_slideUp 0.3s ease;\n  white-space: nowrap;\n}\n.toast.exito[_ngcontent-%COMP%] {\n  background-color: #2e7d32;\n  color: #ffffff;\n}\n.toast.error[_ngcontent-%COMP%] {\n  background-color: #c62828;\n  color: #ffffff;\n}\n@keyframes _ngcontent-%COMP%_slideUp {\n  from {\n    opacity: 0;\n    transform: translateX(-50%) translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateX(-50%) translateY(0);\n  }\n}\n/*# sourceMappingURL=agenda-crear-page.component.css.map */'] });
+  }, dependencies: [CommonModule, NgClass, NgForOf, NgIf, MatIconModule, MatIcon, DragDropModule, CdkDropList, CdkDrag, CdkDragPreview, AsyncPipe], styles: ['\n\n[_nghost-%COMP%] {\n  display: block;\n  min-height: 100vh;\n  background-color: var(--ariadna-bg);\n  font-family:\n    "Nunito",\n    "Segoe UI",\n    sans-serif;\n}\n.agenda-crear-layout[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n}\n.header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 24px 32px;\n  height: 90px;\n}\n.btn-circle[_ngcontent-%COMP%] {\n  background: var(--ariadna-surface);\n  border: 2px solid var(--ariadna-text);\n  border-radius: 50%;\n  width: 48px;\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  color: var(--ariadna-text);\n  transition: background-color 0.2s;\n}\n.title[_ngcontent-%COMP%] {\n  font-size: 1.8rem;\n  font-weight: 600;\n  color: var(--ariadna-text);\n  margin: 0;\n}\n.btn-inicio[_ngcontent-%COMP%] {\n  background: transparent;\n  border: none;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  cursor: pointer;\n  color: var(--ariadna-text);\n}\n.icon-large[_ngcontent-%COMP%] {\n  font-size: 36px;\n  width: 36px;\n  height: 36px;\n}\n.btn-inicio[_ngcontent-%COMP%]   span[_ngcontent-%COMP%] {\n  font-size: 0.8rem;\n  font-weight: 600;\n  margin-top: 4px;\n}\n.main-content[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 0 var(--ariadna-spacing-lg) var(--ariadna-spacing-lg);\n}\n.slots-container[_ngcontent-%COMP%] {\n  background-color: #D6D6D6;\n  width: 100%;\n  max-width: 1300px;\n  padding: 32px;\n  display: flex;\n  justify-content: space-around;\n  gap: 16px;\n  align-items: center;\n  flex-wrap: wrap;\n}\n.slot-wrapper[_ngcontent-%COMP%] {\n  width: 220px;\n  height: 220px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.slot-empty[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  background-color: #FFFFFF;\n  border: 2px dashed #999;\n  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);\n}\n.slot-filled[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  background-color: #FFFFFF;\n  border: 2px solid var(--ariadna-border);\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n  position: relative;\n  cursor: grab;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 12px;\n  box-sizing: border-box;\n}\n.slot-filled[_ngcontent-%COMP%]:active {\n  cursor: grabbing;\n}\n.slot-img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.btn-remove[_ngcontent-%COMP%] {\n  position: absolute;\n  top: -10px;\n  right: -10px;\n  background: #d32f2f;\n  color: white;\n  border: 2px solid white;\n  border-radius: 50%;\n  width: 32px;\n  height: 32px;\n  padding: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  z-index: 10;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n  line-height: 1;\n}\n.btn-remove[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 18px;\n  width: 18px;\n  height: 18px;\n  line-height: 1;\n}\n.arrow-divider[_ngcontent-%COMP%] {\n  margin: 16px 0;\n  color: var(--ariadna-text);\n}\n.arrow-divider[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 48px;\n  width: 48px;\n  height: 48px;\n}\n.cosas-hacer-container[_ngcontent-%COMP%] {\n  background-color: #D6D6D6;\n  border: 4px solid var(--ariadna-primary);\n  width: 100%;\n  max-width: 1300px;\n  padding: 24px 32px;\n  display: flex;\n  flex-direction: column;\n}\n.cosas-hacer-container[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 1.4rem;\n  font-weight: 600;\n  text-align: center;\n  margin: 0 0 24px 0;\n  color: var(--ariadna-text);\n}\n.items-grid[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 24px;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  min-height: 140px;\n  max-height: 350px;\n  overflow-y: auto;\n  padding-right: 16px;\n}\n.items-grid[_ngcontent-%COMP%]::-webkit-scrollbar {\n  width: 8px;\n}\n.items-grid[_ngcontent-%COMP%]::-webkit-scrollbar-track {\n  background: var(--ariadna-surface);\n  border-radius: 4px;\n}\n.items-grid[_ngcontent-%COMP%]::-webkit-scrollbar-thumb {\n  background: var(--ariadna-primary);\n  border-radius: 4px;\n}\n.item-card[_ngcontent-%COMP%] {\n  width: 140px;\n  height: 140px;\n  background-color: #8C8C8C;\n  cursor: pointer;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 12px;\n  box-sizing: border-box;\n  transition: transform 0.2s, background-color 0.2s;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);\n}\n.item-card[_ngcontent-%COMP%]:hover {\n  transform: translateY(-4px);\n  background-color: #9c9c9c;\n}\n.item-card[_ngcontent-%COMP%]:active {\n  cursor: grabbing;\n}\n.item-card[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.item-nombre[_ngcontent-%COMP%] {\n  display: none;\n}\n.footer[_ngcontent-%COMP%] {\n  width: 100%;\n  max-width: 1300px;\n  display: flex;\n  justify-content: flex-end;\n  margin-top: 24px;\n}\n.btn-resultado[_ngcontent-%COMP%] {\n  background-color: #D6D6D6;\n  color: var(--ariadna-text);\n  border: none;\n  padding: 16px 40px;\n  font-size: 1.2rem;\n  font-weight: 600;\n  font-family: "Nunito", sans-serif;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n.btn-resultado[_ngcontent-%COMP%]:hover {\n  background-color: #C0C0C0;\n}\n.drag-preview-img[_ngcontent-%COMP%] {\n  width: 140px;\n  height: 140px;\n  background-color: white;\n  padding: 12px;\n  box-sizing: border-box;\n  border: 2px solid var(--ariadna-primary);\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);\n  z-index: 9999 !important;\n}\n.drag-preview-img[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.cdk-drag-placeholder[_ngcontent-%COMP%] {\n  opacity: 0;\n}\n.toast[_ngcontent-%COMP%] {\n  position: fixed;\n  bottom: 40px;\n  left: 50%;\n  transform: translateX(-50%);\n  padding: 16px 36px;\n  border-radius: 12px;\n  font-size: 1.1rem;\n  font-weight: 700;\n  font-family: "Nunito", sans-serif;\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);\n  z-index: 9999;\n  animation: _ngcontent-%COMP%_slideUp 0.3s ease;\n  white-space: nowrap;\n}\n.toast.exito[_ngcontent-%COMP%] {\n  background-color: #2e7d32;\n  color: #ffffff;\n}\n.toast.error[_ngcontent-%COMP%] {\n  background-color: #c62828;\n  color: #ffffff;\n}\n@keyframes _ngcontent-%COMP%_slideUp {\n  from {\n    opacity: 0;\n    transform: translateX(-50%) translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateX(-50%) translateY(0);\n  }\n}\n/*# sourceMappingURL=agenda-crear-page.component.css.map */'] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AgendaCrearPageComponent, [{
@@ -48353,7 +48990,7 @@ var AgendaCrearPageComponent = class _AgendaCrearPageComponent {
   </div>
 
 </div>
-`, styles: ['/* src/app/funcionalidades/agenda/paginas/agenda-crear-page/agenda-crear-page.component.css */\n:host {\n  display: block;\n  min-height: 100vh;\n  background-color: var(--ariadna-bg);\n  font-family:\n    "Nunito",\n    "Segoe UI",\n    sans-serif;\n}\n.agenda-crear-layout {\n  min-height: 100vh;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n}\n.header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 24px 32px;\n  height: 90px;\n}\n.btn-circle {\n  background: var(--ariadna-surface);\n  border: 2px solid var(--ariadna-text);\n  border-radius: 50%;\n  width: 48px;\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  color: var(--ariadna-text);\n  transition: background-color 0.2s;\n}\n.title {\n  font-size: 1.8rem;\n  font-weight: 600;\n  color: var(--ariadna-text);\n  margin: 0;\n}\n.btn-inicio {\n  background: transparent;\n  border: none;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  cursor: pointer;\n  color: var(--ariadna-text);\n}\n.icon-large {\n  font-size: 36px;\n  width: 36px;\n  height: 36px;\n}\n.btn-inicio span {\n  font-size: 0.8rem;\n  font-weight: 600;\n  margin-top: 4px;\n}\n.main-content {\n  flex-grow: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 0 var(--ariadna-spacing-lg) var(--ariadna-spacing-lg);\n}\n.slots-container {\n  background-color: #D6D6D6;\n  width: 100%;\n  max-width: 1300px;\n  padding: 32px;\n  display: flex;\n  justify-content: space-around;\n  gap: 16px;\n  align-items: center;\n  flex-wrap: wrap;\n}\n.slot-wrapper {\n  width: 220px;\n  height: 220px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.slot-empty {\n  width: 100%;\n  height: 100%;\n  background-color: #FFFFFF;\n  border: 2px dashed #999;\n  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);\n}\n.slot-filled {\n  width: 100%;\n  height: 100%;\n  background-color: #FFFFFF;\n  border: 2px solid var(--ariadna-border);\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n  position: relative;\n  cursor: grab;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 12px;\n  box-sizing: border-box;\n}\n.slot-filled:active {\n  cursor: grabbing;\n}\n.slot-img {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.btn-remove {\n  position: absolute;\n  top: -10px;\n  right: -10px;\n  background: #d32f2f;\n  color: white;\n  border: 2px solid white;\n  border-radius: 50%;\n  width: 32px;\n  height: 32px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  z-index: 10;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n}\n.arrow-divider {\n  margin: 16px 0;\n  color: var(--ariadna-text);\n}\n.arrow-divider mat-icon {\n  font-size: 48px;\n  width: 48px;\n  height: 48px;\n}\n.cosas-hacer-container {\n  background-color: #D6D6D6;\n  border: 4px solid var(--ariadna-primary);\n  width: 100%;\n  max-width: 1300px;\n  padding: 24px 32px;\n  display: flex;\n  flex-direction: column;\n}\n.cosas-hacer-container h2 {\n  font-size: 1.4rem;\n  font-weight: 600;\n  text-align: center;\n  margin: 0 0 24px 0;\n  color: var(--ariadna-text);\n}\n.items-grid {\n  display: flex;\n  gap: 24px;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  min-height: 140px;\n  max-height: 350px;\n  overflow-y: auto;\n  padding-right: 16px;\n}\n.items-grid::-webkit-scrollbar {\n  width: 8px;\n}\n.items-grid::-webkit-scrollbar-track {\n  background: var(--ariadna-surface);\n  border-radius: 4px;\n}\n.items-grid::-webkit-scrollbar-thumb {\n  background: var(--ariadna-primary);\n  border-radius: 4px;\n}\n.item-card {\n  width: 140px;\n  height: 140px;\n  background-color: #8C8C8C;\n  cursor: pointer;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 12px;\n  box-sizing: border-box;\n  transition: transform 0.2s, background-color 0.2s;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);\n}\n.item-card:hover {\n  transform: translateY(-4px);\n  background-color: #9c9c9c;\n}\n.item-card:active {\n  cursor: grabbing;\n}\n.item-card img {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.item-nombre {\n  display: none;\n}\n.footer {\n  width: 100%;\n  max-width: 1300px;\n  display: flex;\n  justify-content: flex-end;\n  margin-top: 24px;\n}\n.btn-resultado {\n  background-color: #D6D6D6;\n  color: var(--ariadna-text);\n  border: none;\n  padding: 16px 40px;\n  font-size: 1.2rem;\n  font-weight: 600;\n  font-family: "Nunito", sans-serif;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n.btn-resultado:hover {\n  background-color: #C0C0C0;\n}\n.drag-preview-img {\n  width: 140px;\n  height: 140px;\n  background-color: white;\n  padding: 12px;\n  box-sizing: border-box;\n  border: 2px solid var(--ariadna-primary);\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);\n  z-index: 9999 !important;\n}\n.drag-preview-img img {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.cdk-drag-placeholder {\n  opacity: 0;\n}\n.toast {\n  position: fixed;\n  bottom: 40px;\n  left: 50%;\n  transform: translateX(-50%);\n  padding: 16px 36px;\n  border-radius: 12px;\n  font-size: 1.1rem;\n  font-weight: 700;\n  font-family: "Nunito", sans-serif;\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);\n  z-index: 9999;\n  animation: slideUp 0.3s ease;\n  white-space: nowrap;\n}\n.toast.exito {\n  background-color: #2e7d32;\n  color: #ffffff;\n}\n.toast.error {\n  background-color: #c62828;\n  color: #ffffff;\n}\n@keyframes slideUp {\n  from {\n    opacity: 0;\n    transform: translateX(-50%) translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateX(-50%) translateY(0);\n  }\n}\n/*# sourceMappingURL=agenda-crear-page.component.css.map */\n'] }]
+`, styles: ['/* src/app/funcionalidades/agenda/paginas/agenda-crear-page/agenda-crear-page.component.css */\n:host {\n  display: block;\n  min-height: 100vh;\n  background-color: var(--ariadna-bg);\n  font-family:\n    "Nunito",\n    "Segoe UI",\n    sans-serif;\n}\n.agenda-crear-layout {\n  min-height: 100vh;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n}\n.header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 24px 32px;\n  height: 90px;\n}\n.btn-circle {\n  background: var(--ariadna-surface);\n  border: 2px solid var(--ariadna-text);\n  border-radius: 50%;\n  width: 48px;\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  color: var(--ariadna-text);\n  transition: background-color 0.2s;\n}\n.title {\n  font-size: 1.8rem;\n  font-weight: 600;\n  color: var(--ariadna-text);\n  margin: 0;\n}\n.btn-inicio {\n  background: transparent;\n  border: none;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  cursor: pointer;\n  color: var(--ariadna-text);\n}\n.icon-large {\n  font-size: 36px;\n  width: 36px;\n  height: 36px;\n}\n.btn-inicio span {\n  font-size: 0.8rem;\n  font-weight: 600;\n  margin-top: 4px;\n}\n.main-content {\n  flex-grow: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 0 var(--ariadna-spacing-lg) var(--ariadna-spacing-lg);\n}\n.slots-container {\n  background-color: #D6D6D6;\n  width: 100%;\n  max-width: 1300px;\n  padding: 32px;\n  display: flex;\n  justify-content: space-around;\n  gap: 16px;\n  align-items: center;\n  flex-wrap: wrap;\n}\n.slot-wrapper {\n  width: 220px;\n  height: 220px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.slot-empty {\n  width: 100%;\n  height: 100%;\n  background-color: #FFFFFF;\n  border: 2px dashed #999;\n  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);\n}\n.slot-filled {\n  width: 100%;\n  height: 100%;\n  background-color: #FFFFFF;\n  border: 2px solid var(--ariadna-border);\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n  position: relative;\n  cursor: grab;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 12px;\n  box-sizing: border-box;\n}\n.slot-filled:active {\n  cursor: grabbing;\n}\n.slot-img {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.btn-remove {\n  position: absolute;\n  top: -10px;\n  right: -10px;\n  background: #d32f2f;\n  color: white;\n  border: 2px solid white;\n  border-radius: 50%;\n  width: 32px;\n  height: 32px;\n  padding: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  z-index: 10;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n  line-height: 1;\n}\n.btn-remove mat-icon {\n  font-size: 18px;\n  width: 18px;\n  height: 18px;\n  line-height: 1;\n}\n.arrow-divider {\n  margin: 16px 0;\n  color: var(--ariadna-text);\n}\n.arrow-divider mat-icon {\n  font-size: 48px;\n  width: 48px;\n  height: 48px;\n}\n.cosas-hacer-container {\n  background-color: #D6D6D6;\n  border: 4px solid var(--ariadna-primary);\n  width: 100%;\n  max-width: 1300px;\n  padding: 24px 32px;\n  display: flex;\n  flex-direction: column;\n}\n.cosas-hacer-container h2 {\n  font-size: 1.4rem;\n  font-weight: 600;\n  text-align: center;\n  margin: 0 0 24px 0;\n  color: var(--ariadna-text);\n}\n.items-grid {\n  display: flex;\n  gap: 24px;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  min-height: 140px;\n  max-height: 350px;\n  overflow-y: auto;\n  padding-right: 16px;\n}\n.items-grid::-webkit-scrollbar {\n  width: 8px;\n}\n.items-grid::-webkit-scrollbar-track {\n  background: var(--ariadna-surface);\n  border-radius: 4px;\n}\n.items-grid::-webkit-scrollbar-thumb {\n  background: var(--ariadna-primary);\n  border-radius: 4px;\n}\n.item-card {\n  width: 140px;\n  height: 140px;\n  background-color: #8C8C8C;\n  cursor: pointer;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 12px;\n  box-sizing: border-box;\n  transition: transform 0.2s, background-color 0.2s;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);\n}\n.item-card:hover {\n  transform: translateY(-4px);\n  background-color: #9c9c9c;\n}\n.item-card:active {\n  cursor: grabbing;\n}\n.item-card img {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.item-nombre {\n  display: none;\n}\n.footer {\n  width: 100%;\n  max-width: 1300px;\n  display: flex;\n  justify-content: flex-end;\n  margin-top: 24px;\n}\n.btn-resultado {\n  background-color: #D6D6D6;\n  color: var(--ariadna-text);\n  border: none;\n  padding: 16px 40px;\n  font-size: 1.2rem;\n  font-weight: 600;\n  font-family: "Nunito", sans-serif;\n  cursor: pointer;\n  transition: background-color 0.2s;\n}\n.btn-resultado:hover {\n  background-color: #C0C0C0;\n}\n.drag-preview-img {\n  width: 140px;\n  height: 140px;\n  background-color: white;\n  padding: 12px;\n  box-sizing: border-box;\n  border: 2px solid var(--ariadna-primary);\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);\n  z-index: 9999 !important;\n}\n.drag-preview-img img {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.cdk-drag-placeholder {\n  opacity: 0;\n}\n.toast {\n  position: fixed;\n  bottom: 40px;\n  left: 50%;\n  transform: translateX(-50%);\n  padding: 16px 36px;\n  border-radius: 12px;\n  font-size: 1.1rem;\n  font-weight: 700;\n  font-family: "Nunito", sans-serif;\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);\n  z-index: 9999;\n  animation: slideUp 0.3s ease;\n  white-space: nowrap;\n}\n.toast.exito {\n  background-color: #2e7d32;\n  color: #ffffff;\n}\n.toast.error {\n  background-color: #c62828;\n  color: #ffffff;\n}\n@keyframes slideUp {\n  from {\n    opacity: 0;\n    transform: translateX(-50%) translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateX(-50%) translateY(0);\n  }\n}\n/*# sourceMappingURL=agenda-crear-page.component.css.map */\n'] }]
   }], null, null);
 })();
 (() => {
@@ -48714,7 +49351,7 @@ var AgendaDetallePageComponent = class _AgendaDetallePageComponent {
       \u0275\u0275advance(3);
       \u0275\u0275property("ngIf", ctx.toast);
     }
-  }, dependencies: [CommonModule, NgClass, NgForOf, NgIf, MatIconModule, MatIcon, DragDropModule, CdkDropList, CdkDrag, CdkDragPreview, AsyncPipe], styles: ['\n\n[_nghost-%COMP%] {\n  display: block;\n  min-height: 100vh;\n  background-color: var(--ariadna-bg);\n  font-family:\n    "Nunito",\n    "Segoe UI",\n    sans-serif;\n}\n.agenda-detalle-layout[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n}\n.header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 24px 32px;\n  height: 90px;\n}\n.btn-circle[_ngcontent-%COMP%] {\n  background: var(--ariadna-surface);\n  border: 2px solid var(--ariadna-text);\n  border-radius: 50%;\n  width: 48px;\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  color: var(--ariadna-text);\n  transition: background-color 0.2s;\n  flex-shrink: 0;\n}\n.title[_ngcontent-%COMP%] {\n  font-size: 1.8rem;\n  font-weight: 700;\n  color: var(--ariadna-text);\n  margin: 0;\n  flex: 1;\n  text-align: center;\n}\n.header-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  flex-shrink: 0;\n}\n.btn-eliminar[_ngcontent-%COMP%] {\n  background: #c62828;\n  color: white;\n  border: none;\n  border-radius: 8px;\n  padding: 10px 20px;\n  font-size: 1rem;\n  font-weight: 600;\n  font-family: "Nunito", sans-serif;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  transition: background-color 0.2s;\n}\n.btn-eliminar[_ngcontent-%COMP%]:hover {\n  background: #b71c1c;\n}\n.btn-guardar[_ngcontent-%COMP%] {\n  background: #2e7d32;\n  color: white;\n  border: none;\n  border-radius: 8px;\n  padding: 10px 20px;\n  font-size: 1rem;\n  font-weight: 600;\n  font-family: "Nunito", sans-serif;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  transition: background-color 0.2s;\n}\n.btn-guardar[_ngcontent-%COMP%]:hover {\n  background: #1b5e20;\n}\n.main-content[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 0 var(--ariadna-spacing-lg) var(--ariadna-spacing-lg);\n}\n.slots-container[_ngcontent-%COMP%] {\n  background-color: #D6D6D6;\n  width: 100%;\n  max-width: 1300px;\n  padding: 32px;\n  display: flex;\n  justify-content: space-around;\n  gap: 16px;\n  align-items: center;\n  flex-wrap: wrap;\n}\n.slot-wrapper[_ngcontent-%COMP%] {\n  width: 220px;\n  height: 220px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.slot-empty[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  background-color: #FFFFFF;\n  border: 2px dashed #999;\n  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);\n}\n.slot-filled[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  background-color: #FFFFFF;\n  border: 2px solid var(--ariadna-border);\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n  position: relative;\n  cursor: grab;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 12px;\n  box-sizing: border-box;\n}\n.slot-filled[_ngcontent-%COMP%]:active {\n  cursor: grabbing;\n}\n.slot-img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.btn-remove[_ngcontent-%COMP%] {\n  position: absolute;\n  top: -10px;\n  right: -10px;\n  background: #d32f2f;\n  color: white;\n  border: 2px solid white;\n  border-radius: 50%;\n  width: 32px;\n  height: 32px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  z-index: 10;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n}\n.arrow-divider[_ngcontent-%COMP%] {\n  margin: 16px 0;\n  color: var(--ariadna-text);\n}\n.arrow-divider[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 48px;\n  width: 48px;\n  height: 48px;\n}\n.cosas-hacer-container[_ngcontent-%COMP%] {\n  background-color: #D6D6D6;\n  border: 4px solid var(--ariadna-primary);\n  width: 100%;\n  max-width: 1300px;\n  padding: 24px 32px;\n  display: flex;\n  flex-direction: column;\n}\n.cosas-hacer-container[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 1.4rem;\n  font-weight: 600;\n  text-align: center;\n  margin: 0 0 24px 0;\n  color: var(--ariadna-text);\n}\n.items-grid[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 24px;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  min-height: 140px;\n  max-height: 350px;\n  overflow-y: auto;\n  padding-right: 16px;\n}\n.items-grid[_ngcontent-%COMP%]::-webkit-scrollbar {\n  width: 8px;\n}\n.items-grid[_ngcontent-%COMP%]::-webkit-scrollbar-track {\n  background: var(--ariadna-surface);\n  border-radius: 4px;\n}\n.items-grid[_ngcontent-%COMP%]::-webkit-scrollbar-thumb {\n  background: var(--ariadna-primary);\n  border-radius: 4px;\n}\n.item-card[_ngcontent-%COMP%] {\n  width: 140px;\n  height: 140px;\n  background-color: #8C8C8C;\n  cursor: pointer;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 12px;\n  box-sizing: border-box;\n  transition: transform 0.2s, background-color 0.2s;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);\n}\n.item-card[_ngcontent-%COMP%]:hover {\n  transform: translateY(-4px);\n  background-color: #9c9c9c;\n}\n.item-card[_ngcontent-%COMP%]:active {\n  cursor: grabbing;\n}\n.item-card[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.item-nombre[_ngcontent-%COMP%] {\n  display: none;\n}\n.drag-preview-img[_ngcontent-%COMP%] {\n  width: 140px;\n  height: 140px;\n  background-color: white;\n  padding: 12px;\n  box-sizing: border-box;\n  border: 2px solid var(--ariadna-primary);\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);\n  z-index: 9999 !important;\n}\n.drag-preview-img[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.cdk-drag-placeholder[_ngcontent-%COMP%] {\n  opacity: 0;\n}\n.loading[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-size: 1.4rem;\n  color: var(--ariadna-text-muted);\n}\n.toast[_ngcontent-%COMP%] {\n  position: fixed;\n  bottom: 40px;\n  left: 50%;\n  transform: translateX(-50%);\n  padding: 16px 36px;\n  border-radius: 12px;\n  font-size: 1.1rem;\n  font-weight: 700;\n  font-family: "Nunito", sans-serif;\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);\n  z-index: 9999;\n  animation: _ngcontent-%COMP%_slideUp 0.3s ease;\n  white-space: nowrap;\n}\n.toast.exito[_ngcontent-%COMP%] {\n  background-color: #2e7d32;\n  color: #ffffff;\n}\n.toast.error[_ngcontent-%COMP%] {\n  background-color: #c62828;\n  color: #ffffff;\n}\n@keyframes _ngcontent-%COMP%_slideUp {\n  from {\n    opacity: 0;\n    transform: translateX(-50%) translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateX(-50%) translateY(0);\n  }\n}\n/*# sourceMappingURL=agenda-detalle-page.component.css.map */'] });
+  }, dependencies: [CommonModule, NgClass, NgForOf, NgIf, MatIconModule, MatIcon, DragDropModule, CdkDropList, CdkDrag, CdkDragPreview, AsyncPipe], styles: ['\n\n[_nghost-%COMP%] {\n  display: block;\n  min-height: 100vh;\n  background-color: var(--ariadna-bg);\n  font-family:\n    "Nunito",\n    "Segoe UI",\n    sans-serif;\n}\n.agenda-detalle-layout[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n}\n.header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 24px 32px;\n  height: 90px;\n}\n.btn-circle[_ngcontent-%COMP%] {\n  background: var(--ariadna-surface);\n  border: 2px solid var(--ariadna-text);\n  border-radius: 50%;\n  width: 48px;\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  color: var(--ariadna-text);\n  transition: background-color 0.2s;\n  flex-shrink: 0;\n}\n.title[_ngcontent-%COMP%] {\n  font-size: 1.8rem;\n  font-weight: 700;\n  color: var(--ariadna-text);\n  margin: 0;\n  flex: 1;\n  text-align: center;\n}\n.header-actions[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  flex-shrink: 0;\n}\n.btn-eliminar[_ngcontent-%COMP%] {\n  background: #c62828;\n  color: white;\n  border: none;\n  border-radius: 8px;\n  padding: 10px 20px;\n  font-size: 1rem;\n  font-weight: 600;\n  font-family: "Nunito", sans-serif;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  transition: background-color 0.2s;\n}\n.btn-eliminar[_ngcontent-%COMP%]:hover {\n  background: #b71c1c;\n}\n.btn-guardar[_ngcontent-%COMP%] {\n  background: #2e7d32;\n  color: white;\n  border: none;\n  border-radius: 8px;\n  padding: 10px 20px;\n  font-size: 1rem;\n  font-weight: 600;\n  font-family: "Nunito", sans-serif;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  transition: background-color 0.2s;\n}\n.btn-guardar[_ngcontent-%COMP%]:hover {\n  background: #1b5e20;\n}\n.main-content[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 0 var(--ariadna-spacing-lg) var(--ariadna-spacing-lg);\n}\n.slots-container[_ngcontent-%COMP%] {\n  background-color: #D6D6D6;\n  width: 100%;\n  max-width: 1300px;\n  padding: 32px;\n  display: flex;\n  justify-content: space-around;\n  gap: 16px;\n  align-items: center;\n  flex-wrap: wrap;\n}\n.slot-wrapper[_ngcontent-%COMP%] {\n  width: 220px;\n  height: 220px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.slot-empty[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  background-color: #FFFFFF;\n  border: 2px dashed #999;\n  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);\n}\n.slot-filled[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  background-color: #FFFFFF;\n  border: 2px solid var(--ariadna-border);\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n  position: relative;\n  cursor: grab;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 12px;\n  box-sizing: border-box;\n}\n.slot-filled[_ngcontent-%COMP%]:active {\n  cursor: grabbing;\n}\n.slot-img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.btn-remove[_ngcontent-%COMP%] {\n  position: absolute;\n  top: -10px;\n  right: -10px;\n  background: #d32f2f;\n  color: white;\n  border: 2px solid white;\n  border-radius: 50%;\n  width: 32px;\n  height: 32px;\n  padding: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  z-index: 10;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n  line-height: 1;\n}\n.btn-remove[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 18px;\n  width: 18px;\n  height: 18px;\n  line-height: 1;\n}\n.arrow-divider[_ngcontent-%COMP%] {\n  margin: 16px 0;\n  color: var(--ariadna-text);\n}\n.arrow-divider[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 48px;\n  width: 48px;\n  height: 48px;\n}\n.cosas-hacer-container[_ngcontent-%COMP%] {\n  background-color: #D6D6D6;\n  border: 4px solid var(--ariadna-primary);\n  width: 100%;\n  max-width: 1300px;\n  padding: 24px 32px;\n  display: flex;\n  flex-direction: column;\n}\n.cosas-hacer-container[_ngcontent-%COMP%]   h2[_ngcontent-%COMP%] {\n  font-size: 1.4rem;\n  font-weight: 600;\n  text-align: center;\n  margin: 0 0 24px 0;\n  color: var(--ariadna-text);\n}\n.items-grid[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 24px;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  min-height: 140px;\n  max-height: 350px;\n  overflow-y: auto;\n  padding-right: 16px;\n}\n.items-grid[_ngcontent-%COMP%]::-webkit-scrollbar {\n  width: 8px;\n}\n.items-grid[_ngcontent-%COMP%]::-webkit-scrollbar-track {\n  background: var(--ariadna-surface);\n  border-radius: 4px;\n}\n.items-grid[_ngcontent-%COMP%]::-webkit-scrollbar-thumb {\n  background: var(--ariadna-primary);\n  border-radius: 4px;\n}\n.item-card[_ngcontent-%COMP%] {\n  width: 140px;\n  height: 140px;\n  background-color: #8C8C8C;\n  cursor: pointer;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 12px;\n  box-sizing: border-box;\n  transition: transform 0.2s, background-color 0.2s;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);\n}\n.item-card[_ngcontent-%COMP%]:hover {\n  transform: translateY(-4px);\n  background-color: #9c9c9c;\n}\n.item-card[_ngcontent-%COMP%]:active {\n  cursor: grabbing;\n}\n.item-card[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.item-nombre[_ngcontent-%COMP%] {\n  display: none;\n}\n.drag-preview-img[_ngcontent-%COMP%] {\n  width: 140px;\n  height: 140px;\n  background-color: white;\n  padding: 12px;\n  box-sizing: border-box;\n  border: 2px solid var(--ariadna-primary);\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);\n  z-index: 9999 !important;\n}\n.drag-preview-img[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.cdk-drag-placeholder[_ngcontent-%COMP%] {\n  opacity: 0;\n}\n.loading[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-size: 1.4rem;\n  color: var(--ariadna-text-muted);\n}\n.toast[_ngcontent-%COMP%] {\n  position: fixed;\n  bottom: 40px;\n  left: 50%;\n  transform: translateX(-50%);\n  padding: 16px 36px;\n  border-radius: 12px;\n  font-size: 1.1rem;\n  font-weight: 700;\n  font-family: "Nunito", sans-serif;\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);\n  z-index: 9999;\n  animation: _ngcontent-%COMP%_slideUp 0.3s ease;\n  white-space: nowrap;\n}\n.toast.exito[_ngcontent-%COMP%] {\n  background-color: #2e7d32;\n  color: #ffffff;\n}\n.toast.error[_ngcontent-%COMP%] {\n  background-color: #c62828;\n  color: #ffffff;\n}\n@keyframes _ngcontent-%COMP%_slideUp {\n  from {\n    opacity: 0;\n    transform: translateX(-50%) translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateX(-50%) translateY(0);\n  }\n}\n/*# sourceMappingURL=agenda-detalle-page.component.css.map */'] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AgendaDetallePageComponent, [{
@@ -48812,7 +49449,7 @@ var AgendaDetallePageComponent = class _AgendaDetallePageComponent {
     {{ toast.mensaje }}
   </div>
 </div>
-`, styles: ['/* src/app/funcionalidades/agenda/paginas/agenda-detalle-page/agenda-detalle-page.component.css */\n:host {\n  display: block;\n  min-height: 100vh;\n  background-color: var(--ariadna-bg);\n  font-family:\n    "Nunito",\n    "Segoe UI",\n    sans-serif;\n}\n.agenda-detalle-layout {\n  min-height: 100vh;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n}\n.header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 24px 32px;\n  height: 90px;\n}\n.btn-circle {\n  background: var(--ariadna-surface);\n  border: 2px solid var(--ariadna-text);\n  border-radius: 50%;\n  width: 48px;\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  color: var(--ariadna-text);\n  transition: background-color 0.2s;\n  flex-shrink: 0;\n}\n.title {\n  font-size: 1.8rem;\n  font-weight: 700;\n  color: var(--ariadna-text);\n  margin: 0;\n  flex: 1;\n  text-align: center;\n}\n.header-actions {\n  display: flex;\n  gap: 12px;\n  flex-shrink: 0;\n}\n.btn-eliminar {\n  background: #c62828;\n  color: white;\n  border: none;\n  border-radius: 8px;\n  padding: 10px 20px;\n  font-size: 1rem;\n  font-weight: 600;\n  font-family: "Nunito", sans-serif;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  transition: background-color 0.2s;\n}\n.btn-eliminar:hover {\n  background: #b71c1c;\n}\n.btn-guardar {\n  background: #2e7d32;\n  color: white;\n  border: none;\n  border-radius: 8px;\n  padding: 10px 20px;\n  font-size: 1rem;\n  font-weight: 600;\n  font-family: "Nunito", sans-serif;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  transition: background-color 0.2s;\n}\n.btn-guardar:hover {\n  background: #1b5e20;\n}\n.main-content {\n  flex-grow: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 0 var(--ariadna-spacing-lg) var(--ariadna-spacing-lg);\n}\n.slots-container {\n  background-color: #D6D6D6;\n  width: 100%;\n  max-width: 1300px;\n  padding: 32px;\n  display: flex;\n  justify-content: space-around;\n  gap: 16px;\n  align-items: center;\n  flex-wrap: wrap;\n}\n.slot-wrapper {\n  width: 220px;\n  height: 220px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.slot-empty {\n  width: 100%;\n  height: 100%;\n  background-color: #FFFFFF;\n  border: 2px dashed #999;\n  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);\n}\n.slot-filled {\n  width: 100%;\n  height: 100%;\n  background-color: #FFFFFF;\n  border: 2px solid var(--ariadna-border);\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n  position: relative;\n  cursor: grab;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 12px;\n  box-sizing: border-box;\n}\n.slot-filled:active {\n  cursor: grabbing;\n}\n.slot-img {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.btn-remove {\n  position: absolute;\n  top: -10px;\n  right: -10px;\n  background: #d32f2f;\n  color: white;\n  border: 2px solid white;\n  border-radius: 50%;\n  width: 32px;\n  height: 32px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  z-index: 10;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n}\n.arrow-divider {\n  margin: 16px 0;\n  color: var(--ariadna-text);\n}\n.arrow-divider mat-icon {\n  font-size: 48px;\n  width: 48px;\n  height: 48px;\n}\n.cosas-hacer-container {\n  background-color: #D6D6D6;\n  border: 4px solid var(--ariadna-primary);\n  width: 100%;\n  max-width: 1300px;\n  padding: 24px 32px;\n  display: flex;\n  flex-direction: column;\n}\n.cosas-hacer-container h2 {\n  font-size: 1.4rem;\n  font-weight: 600;\n  text-align: center;\n  margin: 0 0 24px 0;\n  color: var(--ariadna-text);\n}\n.items-grid {\n  display: flex;\n  gap: 24px;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  min-height: 140px;\n  max-height: 350px;\n  overflow-y: auto;\n  padding-right: 16px;\n}\n.items-grid::-webkit-scrollbar {\n  width: 8px;\n}\n.items-grid::-webkit-scrollbar-track {\n  background: var(--ariadna-surface);\n  border-radius: 4px;\n}\n.items-grid::-webkit-scrollbar-thumb {\n  background: var(--ariadna-primary);\n  border-radius: 4px;\n}\n.item-card {\n  width: 140px;\n  height: 140px;\n  background-color: #8C8C8C;\n  cursor: pointer;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 12px;\n  box-sizing: border-box;\n  transition: transform 0.2s, background-color 0.2s;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);\n}\n.item-card:hover {\n  transform: translateY(-4px);\n  background-color: #9c9c9c;\n}\n.item-card:active {\n  cursor: grabbing;\n}\n.item-card img {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.item-nombre {\n  display: none;\n}\n.drag-preview-img {\n  width: 140px;\n  height: 140px;\n  background-color: white;\n  padding: 12px;\n  box-sizing: border-box;\n  border: 2px solid var(--ariadna-primary);\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);\n  z-index: 9999 !important;\n}\n.drag-preview-img img {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.cdk-drag-placeholder {\n  opacity: 0;\n}\n.loading {\n  flex-grow: 1;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-size: 1.4rem;\n  color: var(--ariadna-text-muted);\n}\n.toast {\n  position: fixed;\n  bottom: 40px;\n  left: 50%;\n  transform: translateX(-50%);\n  padding: 16px 36px;\n  border-radius: 12px;\n  font-size: 1.1rem;\n  font-weight: 700;\n  font-family: "Nunito", sans-serif;\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);\n  z-index: 9999;\n  animation: slideUp 0.3s ease;\n  white-space: nowrap;\n}\n.toast.exito {\n  background-color: #2e7d32;\n  color: #ffffff;\n}\n.toast.error {\n  background-color: #c62828;\n  color: #ffffff;\n}\n@keyframes slideUp {\n  from {\n    opacity: 0;\n    transform: translateX(-50%) translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateX(-50%) translateY(0);\n  }\n}\n/*# sourceMappingURL=agenda-detalle-page.component.css.map */\n'] }]
+`, styles: ['/* src/app/funcionalidades/agenda/paginas/agenda-detalle-page/agenda-detalle-page.component.css */\n:host {\n  display: block;\n  min-height: 100vh;\n  background-color: var(--ariadna-bg);\n  font-family:\n    "Nunito",\n    "Segoe UI",\n    sans-serif;\n}\n.agenda-detalle-layout {\n  min-height: 100vh;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n}\n.header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 24px 32px;\n  height: 90px;\n}\n.btn-circle {\n  background: var(--ariadna-surface);\n  border: 2px solid var(--ariadna-text);\n  border-radius: 50%;\n  width: 48px;\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  color: var(--ariadna-text);\n  transition: background-color 0.2s;\n  flex-shrink: 0;\n}\n.title {\n  font-size: 1.8rem;\n  font-weight: 700;\n  color: var(--ariadna-text);\n  margin: 0;\n  flex: 1;\n  text-align: center;\n}\n.header-actions {\n  display: flex;\n  gap: 12px;\n  flex-shrink: 0;\n}\n.btn-eliminar {\n  background: #c62828;\n  color: white;\n  border: none;\n  border-radius: 8px;\n  padding: 10px 20px;\n  font-size: 1rem;\n  font-weight: 600;\n  font-family: "Nunito", sans-serif;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  transition: background-color 0.2s;\n}\n.btn-eliminar:hover {\n  background: #b71c1c;\n}\n.btn-guardar {\n  background: #2e7d32;\n  color: white;\n  border: none;\n  border-radius: 8px;\n  padding: 10px 20px;\n  font-size: 1rem;\n  font-weight: 600;\n  font-family: "Nunito", sans-serif;\n  cursor: pointer;\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  transition: background-color 0.2s;\n}\n.btn-guardar:hover {\n  background: #1b5e20;\n}\n.main-content {\n  flex-grow: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  padding: 0 var(--ariadna-spacing-lg) var(--ariadna-spacing-lg);\n}\n.slots-container {\n  background-color: #D6D6D6;\n  width: 100%;\n  max-width: 1300px;\n  padding: 32px;\n  display: flex;\n  justify-content: space-around;\n  gap: 16px;\n  align-items: center;\n  flex-wrap: wrap;\n}\n.slot-wrapper {\n  width: 220px;\n  height: 220px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.slot-empty {\n  width: 100%;\n  height: 100%;\n  background-color: #FFFFFF;\n  border: 2px dashed #999;\n  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);\n}\n.slot-filled {\n  width: 100%;\n  height: 100%;\n  background-color: #FFFFFF;\n  border: 2px solid var(--ariadna-border);\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n  position: relative;\n  cursor: grab;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 12px;\n  box-sizing: border-box;\n}\n.slot-filled:active {\n  cursor: grabbing;\n}\n.slot-img {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.btn-remove {\n  position: absolute;\n  top: -10px;\n  right: -10px;\n  background: #d32f2f;\n  color: white;\n  border: 2px solid white;\n  border-radius: 50%;\n  width: 32px;\n  height: 32px;\n  padding: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  z-index: 10;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n  line-height: 1;\n}\n.btn-remove mat-icon {\n  font-size: 18px;\n  width: 18px;\n  height: 18px;\n  line-height: 1;\n}\n.arrow-divider {\n  margin: 16px 0;\n  color: var(--ariadna-text);\n}\n.arrow-divider mat-icon {\n  font-size: 48px;\n  width: 48px;\n  height: 48px;\n}\n.cosas-hacer-container {\n  background-color: #D6D6D6;\n  border: 4px solid var(--ariadna-primary);\n  width: 100%;\n  max-width: 1300px;\n  padding: 24px 32px;\n  display: flex;\n  flex-direction: column;\n}\n.cosas-hacer-container h2 {\n  font-size: 1.4rem;\n  font-weight: 600;\n  text-align: center;\n  margin: 0 0 24px 0;\n  color: var(--ariadna-text);\n}\n.items-grid {\n  display: flex;\n  gap: 24px;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  min-height: 140px;\n  max-height: 350px;\n  overflow-y: auto;\n  padding-right: 16px;\n}\n.items-grid::-webkit-scrollbar {\n  width: 8px;\n}\n.items-grid::-webkit-scrollbar-track {\n  background: var(--ariadna-surface);\n  border-radius: 4px;\n}\n.items-grid::-webkit-scrollbar-thumb {\n  background: var(--ariadna-primary);\n  border-radius: 4px;\n}\n.item-card {\n  width: 140px;\n  height: 140px;\n  background-color: #8C8C8C;\n  cursor: pointer;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 12px;\n  box-sizing: border-box;\n  transition: transform 0.2s, background-color 0.2s;\n  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);\n}\n.item-card:hover {\n  transform: translateY(-4px);\n  background-color: #9c9c9c;\n}\n.item-card:active {\n  cursor: grabbing;\n}\n.item-card img {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.item-nombre {\n  display: none;\n}\n.drag-preview-img {\n  width: 140px;\n  height: 140px;\n  background-color: white;\n  padding: 12px;\n  box-sizing: border-box;\n  border: 2px solid var(--ariadna-primary);\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);\n  z-index: 9999 !important;\n}\n.drag-preview-img img {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n}\n.cdk-drag-placeholder {\n  opacity: 0;\n}\n.loading {\n  flex-grow: 1;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-size: 1.4rem;\n  color: var(--ariadna-text-muted);\n}\n.toast {\n  position: fixed;\n  bottom: 40px;\n  left: 50%;\n  transform: translateX(-50%);\n  padding: 16px 36px;\n  border-radius: 12px;\n  font-size: 1.1rem;\n  font-weight: 700;\n  font-family: "Nunito", sans-serif;\n  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);\n  z-index: 9999;\n  animation: slideUp 0.3s ease;\n  white-space: nowrap;\n}\n.toast.exito {\n  background-color: #2e7d32;\n  color: #ffffff;\n}\n.toast.error {\n  background-color: #c62828;\n  color: #ffffff;\n}\n@keyframes slideUp {\n  from {\n    opacity: 0;\n    transform: translateX(-50%) translateY(20px);\n  }\n  to {\n    opacity: 1;\n    transform: translateX(-50%) translateY(0);\n  }\n}\n/*# sourceMappingURL=agenda-detalle-page.component.css.map */\n'] }]
   }], null, null);
 })();
 (() => {
@@ -48827,6 +49464,7 @@ var routes = [
   { path: "juegos-mente", component: JuegosMentePageComponent },
   { path: "hablar-escribir", component: HablarEscribirPageComponent },
   { path: "actividades-diarias/juego1-actividades-diarias", component: Juego1ActividadesDiariasPageComponent },
+  { path: "actividades-diarias/juego-accion-objeto", component: JuegoAccionObjetoPageComponent },
   { path: "hablar-escribir/juego1-hablar-escribir", component: Juego1HablarEscribirPageComponent },
   { path: "juegos-mente/juego-memoria", component: JuegoMemoriaPageComponent },
   { path: "juegos-mente/juego-intrusos", component: JuegoIntrusosPageComponent },
