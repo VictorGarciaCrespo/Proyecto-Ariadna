@@ -1,16 +1,16 @@
 import {
   MatRippleModule
-} from "./chunk-S6AEZ45C.js";
+} from "./chunk-Z273DWFW.js";
 import {
   MatRipple,
   _StructuralStylesLoader
-} from "./chunk-ZLUPJYE5.js";
+} from "./chunk-ATV6Z2HB.js";
 import {
   ENTER,
   SPACE,
   _animationsDisabled,
   hasModifierKey
-} from "./chunk-3ENIXNBN.js";
+} from "./chunk-N6PLEYSO.js";
 import {
   _VisuallyHiddenLoader
 } from "./chunk-OBEYUG27.js";
@@ -135,6 +135,30 @@ var MatPseudoCheckbox = class _MatPseudoCheckbox {
       type: Input
     }]
   });
+})();
+
+// node_modules/@angular/material/fesm2022/_pseudo-checkbox-module-chunk.mjs
+var MatPseudoCheckboxModule = class _MatPseudoCheckboxModule {
+  static ɵfac = function MatPseudoCheckboxModule_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _MatPseudoCheckboxModule)();
+  };
+  static ɵmod = ɵɵdefineNgModule({
+    type: _MatPseudoCheckboxModule,
+    imports: [MatPseudoCheckbox],
+    exports: [MatPseudoCheckbox, BidiModule]
+  });
+  static ɵinj = ɵɵdefineInjector({
+    imports: [BidiModule]
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatPseudoCheckboxModule, [{
+    type: NgModule,
+    args: [{
+      imports: [MatPseudoCheckbox],
+      exports: [MatPseudoCheckbox, BidiModule]
+    }]
+  }], null, null);
 })();
 
 // node_modules/@angular/material/fesm2022/_option-chunk.mjs
@@ -579,30 +603,6 @@ function _getOptionScrollPosition(optionOffset, optionHeight, currentScrollPosit
   return currentScrollPosition;
 }
 
-// node_modules/@angular/material/fesm2022/_pseudo-checkbox-module-chunk.mjs
-var MatPseudoCheckboxModule = class _MatPseudoCheckboxModule {
-  static ɵfac = function MatPseudoCheckboxModule_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || _MatPseudoCheckboxModule)();
-  };
-  static ɵmod = ɵɵdefineNgModule({
-    type: _MatPseudoCheckboxModule,
-    imports: [MatPseudoCheckbox],
-    exports: [MatPseudoCheckbox, BidiModule]
-  });
-  static ɵinj = ɵɵdefineInjector({
-    imports: [BidiModule]
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatPseudoCheckboxModule, [{
-    type: NgModule,
-    args: [{
-      imports: [MatPseudoCheckbox],
-      exports: [MatPseudoCheckbox, BidiModule]
-    }]
-  }], null, null);
-})();
-
 // node_modules/@angular/material/fesm2022/_option-module-chunk.mjs
 var MatOptionModule = class _MatOptionModule {
   static ɵfac = function MatOptionModule_Factory(__ngFactoryType__) {
@@ -629,6 +629,7 @@ var MatOptionModule = class _MatOptionModule {
 
 export {
   MatPseudoCheckbox,
+  MatPseudoCheckboxModule,
   MAT_OPTION_PARENT_COMPONENT,
   MAT_OPTGROUP,
   MatOptgroup,
@@ -636,7 +637,6 @@ export {
   MatOption,
   _countGroupLabelsBeforeOption,
   _getOptionScrollPosition,
-  MatPseudoCheckboxModule,
   MatOptionModule
 };
-//# sourceMappingURL=chunk-CKGE7VAZ.js.map
+//# sourceMappingURL=chunk-QM4E3V27.js.map

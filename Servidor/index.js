@@ -30,6 +30,10 @@ palabrasVocalesAPI(app)
 agendaAPI(app)
 rutinasAPI(app)
 actividadesDiariasAPI(app)
-app.listen(PORT, () => {
+app.listen(PORT, (err) => {
+    if (err) {
+        console.error(`Error al iniciar el servidor en el puerto ${PORT}:`, err.message);
+        process.exit(1);
+    }
     console.log(`Servidor de node corriendo en http://localhost:${PORT}`);
 });

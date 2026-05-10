@@ -20,7 +20,7 @@ import {
   Platform,
   coerceElement,
   coerceNumberProperty
-} from "./chunk-GLXQMOTX.js";
+} from "./chunk-227ZHUYT.js";
 import {
   ANIMATION_MODULE_TYPE,
   APP_ID,
@@ -2640,13 +2640,13 @@ export {
   addAriaReferencedId,
   removeAriaReferencedId,
   AriaDescriber,
+  _isTestEnvironment,
   Breakpoints,
   MATERIAL_ANIMATIONS,
   _getAnimationsState,
   _animationsDisabled,
-  _isTestEnvironment,
   coerceCssPixelValue,
   coerceBooleanProperty,
   coerceStringArray
 };
-//# sourceMappingURL=chunk-3ENIXNBN.js.map
+//# sourceMappingURL=chunk-N6PLEYSO.js.map

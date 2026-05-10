@@ -1,7 +1,7 @@
 import {
   _animationsDisabled,
   normalizePassiveListenerOptions
-} from "./chunk-3ENIXNBN.js";
+} from "./chunk-N6PLEYSO.js";
 import {
   _getEventTarget,
   isFakeMousedownFromScreenReader,
@@ -13,7 +13,7 @@ import {
 import {
   Platform,
   coerceElement
-} from "./chunk-GLXQMOTX.js";
+} from "./chunk-227ZHUYT.js";
 import {
   ChangeDetectionStrategy,
   Component,
@@ -33,36 +33,6 @@ import {
 import {
   __spreadValues
 } from "./chunk-U7EDC2PH.js";
-
-// node_modules/@angular/material/fesm2022/_structural-styles-chunk.mjs
-var _StructuralStylesLoader = class __StructuralStylesLoader {
-  static ɵfac = function _StructuralStylesLoader_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || __StructuralStylesLoader)();
-  };
-  static ɵcmp = ɵɵdefineComponent({
-    type: __StructuralStylesLoader,
-    selectors: [["structural-styles"]],
-    decls: 0,
-    vars: 0,
-    template: function _StructuralStylesLoader_Template(rf, ctx) {
-    },
-    styles: ['.mat-focus-indicator{position:relative}.mat-focus-indicator::before{top:0;left:0;right:0;bottom:0;position:absolute;box-sizing:border-box;pointer-events:none;display:var(--mat-focus-indicator-display, none);border-width:var(--mat-focus-indicator-border-width, 3px);border-style:var(--mat-focus-indicator-border-style, solid);border-color:var(--mat-focus-indicator-border-color, transparent);border-radius:var(--mat-focus-indicator-border-radius, 4px)}.mat-focus-indicator:focus-visible::before{content:""}@media(forced-colors: active){html{--mat-focus-indicator-display: block}}\n'],
-    encapsulation: 2,
-    changeDetection: 0
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(_StructuralStylesLoader, [{
-    type: Component,
-    args: [{
-      selector: "structural-styles",
-      encapsulation: ViewEncapsulation.None,
-      template: "",
-      changeDetection: ChangeDetectionStrategy.OnPush,
-      styles: ['.mat-focus-indicator{position:relative}.mat-focus-indicator::before{top:0;left:0;right:0;bottom:0;position:absolute;box-sizing:border-box;pointer-events:none;display:var(--mat-focus-indicator-display, none);border-width:var(--mat-focus-indicator-border-width, 3px);border-style:var(--mat-focus-indicator-border-style, solid);border-color:var(--mat-focus-indicator-border-color, transparent);border-radius:var(--mat-focus-indicator-border-radius, 4px)}.mat-focus-indicator:focus-visible::before{content:""}@media(forced-colors: active){html{--mat-focus-indicator-display: block}}\n']
-    }]
-  }], null, null);
-})();
 
 // node_modules/@angular/material/fesm2022/_ripple-chunk.mjs
 var RippleState;
@@ -551,13 +521,43 @@ var MatRipple = class _MatRipple {
   });
 })();
 
+// node_modules/@angular/material/fesm2022/_structural-styles-chunk.mjs
+var _StructuralStylesLoader = class __StructuralStylesLoader {
+  static ɵfac = function _StructuralStylesLoader_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || __StructuralStylesLoader)();
+  };
+  static ɵcmp = ɵɵdefineComponent({
+    type: __StructuralStylesLoader,
+    selectors: [["structural-styles"]],
+    decls: 0,
+    vars: 0,
+    template: function _StructuralStylesLoader_Template(rf, ctx) {
+    },
+    styles: ['.mat-focus-indicator{position:relative}.mat-focus-indicator::before{top:0;left:0;right:0;bottom:0;position:absolute;box-sizing:border-box;pointer-events:none;display:var(--mat-focus-indicator-display, none);border-width:var(--mat-focus-indicator-border-width, 3px);border-style:var(--mat-focus-indicator-border-style, solid);border-color:var(--mat-focus-indicator-border-color, transparent);border-radius:var(--mat-focus-indicator-border-radius, 4px)}.mat-focus-indicator:focus-visible::before{content:""}@media(forced-colors: active){html{--mat-focus-indicator-display: block}}\n'],
+    encapsulation: 2,
+    changeDetection: 0
+  });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(_StructuralStylesLoader, [{
+    type: Component,
+    args: [{
+      selector: "structural-styles",
+      encapsulation: ViewEncapsulation.None,
+      template: "",
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      styles: ['.mat-focus-indicator{position:relative}.mat-focus-indicator::before{top:0;left:0;right:0;bottom:0;position:absolute;box-sizing:border-box;pointer-events:none;display:var(--mat-focus-indicator-display, none);border-width:var(--mat-focus-indicator-border-width, 3px);border-style:var(--mat-focus-indicator-border-style, solid);border-color:var(--mat-focus-indicator-border-color, transparent);border-radius:var(--mat-focus-indicator-border-radius, 4px)}.mat-focus-indicator:focus-visible::before{content:""}@media(forced-colors: active){html{--mat-focus-indicator-display: block}}\n']
+    }]
+  }], null, null);
+})();
+
 export {
-  _StructuralStylesLoader,
   RippleState,
   RippleRef,
   defaultRippleAnimationConfig,
   RippleRenderer,
   MAT_RIPPLE_GLOBAL_OPTIONS,
-  MatRipple
+  MatRipple,
+  _StructuralStylesLoader
 };
-//# sourceMappingURL=chunk-ZLUPJYE5.js.map
+//# sourceMappingURL=chunk-ATV6Z2HB.js.map
