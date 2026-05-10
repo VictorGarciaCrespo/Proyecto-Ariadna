@@ -1,7 +1,7 @@
 import {
   _animationsDisabled,
   normalizePassiveListenerOptions
-} from "./chunk-MGTRJZSR.js";
+} from "./chunk-MWHOBOJB.js";
 import {
   _getEventTarget,
   isFakeMousedownFromScreenReader,
@@ -560,4 +560,4 @@ export {
   MAT_RIPPLE_GLOBAL_OPTIONS,
   MatRipple
 };
-//# sourceMappingURL=chunk-2XLLCP42.js.map
+//# sourceMappingURL=chunk-ZG5GXLI7.js.map
