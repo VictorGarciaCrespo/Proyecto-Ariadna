@@ -8,12 +8,17 @@
     </button>
     <span class="header-titulo">Une cada acción con su objeto</span>
     <div class="header-acertados">
+      <div class="marcador">
+        <mat-icon class="icono-check">check_circle</mat-icon>
+        <span>{{ parejasCorrectas() }} / {{ TOTAL_PAREJAS }}</span>
+      </div>
       <button class="btn-sonido" (click)="sonidoService.toggle()"
         [title]="sonidoService.activo ? 'Desactivar sonido' : 'Activar sonido'">
         <mat-icon>{{ sonidoService.activo ? 'volume_up' : 'volume_off' }}</mat-icon>
       </button>
-      <mat-icon class="icono-check">check_circle</mat-icon>
-      <span>{{ parejasCorrectas() }} / {{ TOTAL_PAREJAS }}</span>
+      <button class="btn-sonido" routerLink="/menu-principal" title="Volver al menú principal">
+        <mat-icon>home</mat-icon>
+      </button>
     </div>
   </header>
 

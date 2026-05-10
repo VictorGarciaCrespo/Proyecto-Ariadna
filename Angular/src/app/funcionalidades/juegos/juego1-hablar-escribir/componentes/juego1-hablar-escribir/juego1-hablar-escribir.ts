@@ -1,15 +1,16 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Location, CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { VocalJuegoService } from '../../servicios/vocal-juego.service';
 import { CartaVocal } from '../../interfaces/vocal-juego.interface';
 import { MatIconModule } from '@angular/material/icon';
 import { SonidoService } from '../../../../../shared/servicios/sonido.service';
+import { JuegoNavService } from '../../../../../shared/servicios/juego-nav.service';
 
 @Component({
   selector: 'app-juego1-hablar-escribir',
   standalone: true,
-  imports: [CommonModule, MatIconModule],
+  imports: [CommonModule, MatIconModule, RouterLink],
   templateUrl: './juego1-hablar-escribir.html',
   styleUrl: './juego1-hablar-escribir.css',
 })
@@ -17,6 +18,7 @@ export class Juego1HablarEscribir implements OnInit {
   private location = inject(Location);
   private router = inject(Router);
   private vocalService = inject(VocalJuegoService);
+  private juegoNavService = inject(JuegoNavService);
   sonidoService = inject(SonidoService);
 
   vocalSeleccionada: string | null = null;
@@ -70,10 +72,10 @@ export class Juego1HablarEscribir implements OnInit {
   }
 
   volver(): void {
-    this.location.back();
+    this.router.navigate(['/hablar-escribir']);
   }
 
   siguiente(): void {
-    this.router.navigate(['/hablar-escribir/juego-silabas']);
+    this.juegoNavService.siguienteJuego('hablar-escribir');
   }
 }

@@ -20,7 +20,7 @@ import {
   Platform,
   coerceElement,
   coerceNumberProperty
-} from "./chunk-GLXQMOTX.js";
+} from "./chunk-227ZHUYT.js";
 import {
   ANIMATION_MODULE_TYPE,
   APP_ID,
@@ -2649,4 +2649,4 @@ export {
   coerceBooleanProperty,
   coerceStringArray
 };
-//# sourceMappingURL=chunk-TCI2IKCJ.js.map
+//# sourceMappingURL=chunk-N6PLEYSO.js.map

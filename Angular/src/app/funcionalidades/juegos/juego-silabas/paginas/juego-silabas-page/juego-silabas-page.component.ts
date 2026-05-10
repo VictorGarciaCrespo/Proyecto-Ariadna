@@ -1,10 +1,10 @@
 import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { AsyncPipe } from '@angular/common';
 import { SonidoService } from '../../../../../shared/servicios/sonido.service';
+import { JuegoNavService } from '../../../../../shared/servicios/juego-nav.service';
 
 export interface PalabraMusica {
   id: number;
@@ -16,7 +16,7 @@ export interface PalabraMusica {
 @Component({
   selector: 'app-juego-silabas-page',
   standalone: true,
-  imports: [CommonModule, RouterModule, MatIconModule, AsyncPipe],
+  imports: [CommonModule, RouterLink, MatIconModule, AsyncPipe],
   templateUrl: './juego-silabas-page.component.html',
   styleUrls: ['./juego-silabas-page.component.css']
 })
@@ -25,6 +25,13 @@ export class JuegoSilabasPageComponent implements OnInit {
   sonidoService = inject(SonidoService);
   private router = inject(Router);
   private cdRef = inject(ChangeDetectorRef);
+  private juegoNavService = inject(JuegoNavService);
+
+  siguienteJuego(): void { this.juegoNavService.siguienteJuego('hablar-escribir'); }
+
+  volver(): void {
+    this.router.navigate(['/hablar-escribir']);
+  }
 
   readonly TOTAL_POR_RONDA = 4;
 

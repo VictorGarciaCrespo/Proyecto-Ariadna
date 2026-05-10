@@ -1,6 +1,7 @@
 import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule, AsyncPipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { JuegoNavService } from '../../../../../shared/servicios/juego-nav.service';
 import { MatIconModule } from '@angular/material/icon';
 import { SonidoService } from '../../../../../shared/servicios/sonido.service';
 
@@ -20,7 +21,7 @@ export interface RondaIntruso {
 @Component({
   selector: 'app-juego-intrusos-page',
   standalone: true,
-  imports: [CommonModule, RouterModule, MatIconModule, AsyncPipe],
+  imports: [CommonModule, RouterModule, MatIconModule],
   templateUrl: './juego-intrusos-page.component.html',
   styleUrls: ['./juego-intrusos-page.component.css']
 })
@@ -28,6 +29,7 @@ export class JuegoIntrusosPageComponent implements OnInit {
 
   private cdRef = inject(ChangeDetectorRef);
   sonidoService = inject(SonidoService);
+  private juegoNavService = inject(JuegoNavService);
 
   rondasNivel3: RondaIntruso[] = [
     {
@@ -201,6 +203,8 @@ export class JuegoIntrusosPageComponent implements OnInit {
       this.juegoTerminado = true;
     }
   }
+
+  siguienteJuego(): void { this.juegoNavService.siguienteJuego('estimulacion-cognitiva'); }
 
   reiniciarJuego(): void {
     this.rondaActualIndex = 0;

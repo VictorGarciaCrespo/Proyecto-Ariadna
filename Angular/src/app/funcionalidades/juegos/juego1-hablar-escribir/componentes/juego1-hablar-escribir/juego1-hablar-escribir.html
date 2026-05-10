@@ -7,11 +7,15 @@
       <h1>Palabras que empiecen por {{ vocalSeleccionada }}-</h1>
     </div>
     <div style="display:flex; gap:8px;">
+      <div class="marcador">
+        <mat-icon class="icono-check">check_circle</mat-icon>
+        <span>{{ aciertos }} / 5</span>
+      </div>
       <button class="btn-icono redondo" (click)="sonidoService.toggle()" [title]="(sonidoService.activo$ | async) ? 'Desactivar sonido' : 'Activar sonido'">
         <mat-icon>{{ (sonidoService.activo$ | async) ? 'volume_up' : 'volume_off' }}</mat-icon>
       </button>
-      <button class="btn-icono redondo">
-        <mat-icon>help</mat-icon>
+      <button class="btn-icono redondo" routerLink="/menu-principal" title="Volver al menú principal">
+        <mat-icon>home</mat-icon>
       </button>
     </div>
   </div>
@@ -33,16 +37,28 @@
       </div>
     </div>
 
-    <div *ngIf="juegoTerminado" class="mensaje-victoria">
-      <h2>¡Muy bien! Has encontrado todas las palabras con {{ vocalSeleccionada }}</h2>
-      <button class="boton-jugar-de-nuevo" (click)="volverAJugar()">
-        <mat-icon>refresh</mat-icon>
-        Volver a jugar
-      </button>
+    <!-- PANTALLA VICTORIA -->
+    <div *ngIf="juegoTerminado" class="pantalla-victoria">
+      <div class="victoria-card">
+        <div class="victoria-emoji">🎉</div>
+        <h2 class="victoria-titulo">¡Muy bien!</h2>
+        <p class="victoria-subtitulo">Has encontrado todas las palabras con {{ vocalSeleccionada }}</p>
+        <div class="victoria-botones">
+          <button class="btn-volver-jugar" (click)="volverAJugar()">
+            <mat-icon>refresh</mat-icon>
+            Volver a jugar
+          </button>
+          <button class="btn-otro-juego" (click)="siguiente()">
+            Siguiente juego
+            <mat-icon>arrow_forward</mat-icon>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="pie-pagina">
+  <!-- Botón Siguiente (esquina inferior derecha) -->
+  <div class="pie-pagina" *ngIf="!juegoTerminado">
     <button class="boton-siguiente" (click)="siguiente()">
       Siguiente
       <mat-icon>arrow_forward</mat-icon>

@@ -14,7 +14,7 @@ export class ActividadesDiarias {
   private location = inject(Location);
 
   volver(): void {
-    this.location.back();
+    this.router.navigate(['/menu-principal']);
   }
 
   iniciarJuego(): void {

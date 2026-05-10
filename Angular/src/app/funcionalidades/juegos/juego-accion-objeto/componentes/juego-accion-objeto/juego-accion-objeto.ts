@@ -1,6 +1,6 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { Location, NgClass, NgIf, NgFor } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { JuegoAccionObjetoService } from '../../servicios/juego-accion-objeto.service';
 import { ParejasAccionObjeto, TarjetaJuego } from '../../interfaces/juego-accion-objeto.interface';
@@ -8,7 +8,7 @@ import { SonidoService } from '../../../../../shared/servicios/sonido.service';
 
 @Component({
   selector: 'app-juego-accion-objeto',
-  imports: [MatIconModule, NgClass, NgIf, NgFor],
+  imports: [MatIconModule, NgClass, NgIf, NgFor, RouterLink],
   templateUrl: './juego-accion-objeto.html',
   styleUrl: './juego-accion-objeto.css',
 })
@@ -145,7 +145,7 @@ export class JuegoAccionObjetoComponent implements OnInit {
   }
 
   volver(): void {
-    this.location.back();
+    this.router.navigate(['/actividades-diarias']);
   }
 
   private actualizarAccion(id: number, estado: TarjetaJuego['estado']) {

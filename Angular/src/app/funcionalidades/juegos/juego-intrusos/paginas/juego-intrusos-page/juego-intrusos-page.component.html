@@ -10,8 +10,8 @@
         [title]="(sonidoService.activo$ | async) ? 'Desactivar sonido' : 'Activar sonido'">
         <mat-icon>{{ (sonidoService.activo$ | async) ? 'volume_up' : 'volume_off' }}</mat-icon>
       </button>
-      <button class="btn-icono redondo">
-        <mat-icon>help</mat-icon>
+      <button class="btn-icono redondo" routerLink="/menu-principal" title="Volver al menú principal">
+        <mat-icon>home</mat-icon>
       </button>
     </div>
   </div>
@@ -56,24 +56,32 @@
       </div>
     </div>
 
-  </div>
-
-  <!-- PANTALLA DE VICTORIA -->
-  <div *ngIf="juegoTerminado" class="mensaje-victoria">
-    <div class="victoria-icono">
-      <mat-icon>emoji_events</mat-icon>
-    </div>
-    <h2>¡Felicidades!</h2>
-    <p>Has encontrado todos los intrusos correctamente.</p>
-    <div class="victoria-acciones">
-      <button class="btn-accion btn-secundario" (click)="reiniciarJuego()">
-        <mat-icon>refresh</mat-icon>
-        Jugar de Nuevo
-      </button>
-      <button class="btn-accion" routerLink="/menu-principal">
-        Terminar
+    <!-- BOTÓN SIGUIENTE (esquina inferior derecha) -->
+    <div class="pie-pagina">
+      <button class="btn-siguiente" (click)="siguienteJuego()">
+        Siguiente
         <mat-icon>arrow_forward</mat-icon>
       </button>
+    </div>
+
+  </div>
+
+  <!-- PANTALLA VICTORIA -->
+  <div *ngIf="juegoTerminado" class="contenedor-juego pantalla-victoria">
+    <div class="victoria-card">
+      <div class="victoria-emoji">🎉</div>
+      <h2 class="victoria-titulo">¡Lo has conseguido!</h2>
+      <p class="victoria-subtitulo">Has encontrado todos los intrusos</p>
+      <div class="victoria-botones">
+        <button class="btn-volver-jugar" (click)="reiniciarJuego()">
+          <mat-icon>refresh</mat-icon>
+          Jugar de Nuevo
+        </button>
+        <button class="btn-otro-juego" (click)="siguienteJuego()">
+          Siguiente juego
+          <mat-icon>arrow_forward</mat-icon>
+        </button>
+      </div>
     </div>
   </div>
 

@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef, inject } from '@angular/core';
 import { CommonModule, AsyncPipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { JuegoNavService } from '../../../../../shared/servicios/juego-nav.service';
 import { JuegoMemoriaComponent } from '../../componentes/juego-memoria/juego-memoria.component';
 import { JuegoMemoriaService } from '../../servicios/juego-memoria.service';
 import { CartaMemoria, ElementoMemoria } from '../../interfaces/juego-memoria.interface';
@@ -23,6 +24,9 @@ export class JuegoMemoriaPageComponent implements OnInit {
     private juegoMemoriaService = inject(JuegoMemoriaService);
     private cdRef = inject(ChangeDetectorRef);
     sonidoService = inject(SonidoService);
+    private juegoNavService = inject(JuegoNavService);
+
+    siguienteJuego(): void { this.juegoNavService.siguienteJuego('estimulacion-cognitiva'); }
 
     ngOnInit(): void {
         this.iniciarJuego();

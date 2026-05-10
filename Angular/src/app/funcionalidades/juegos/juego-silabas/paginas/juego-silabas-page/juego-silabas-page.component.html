@@ -2,17 +2,22 @@
 
   <!-- CABECERA -->
   <header class="header">
-    <button class="btn-circle" routerLink="/hablar-escribir" aria-label="Volver">
+    <button class="btn-circle" (click)="volver()" aria-label="Volver">
       <mat-icon>arrow_back</mat-icon>
     </button>
     <span class="header-titulo">Completa las palabras eligiendo una sílaba</span>
     <div class="header-acertados">
+      <div class="marcador">
+        <mat-icon class="icono-check">check_circle</mat-icon>
+        <span>{{ aciertos }} / {{ TOTAL_POR_RONDA }}</span>
+      </div>
       <button class="btn-sonido" (click)="sonidoService.toggle()"
         [title]="(sonidoService.activo$ | async) ? 'Desactivar sonido' : 'Activar sonido'">
         <mat-icon>{{ (sonidoService.activo$ | async) ? 'volume_up' : 'volume_off' }}</mat-icon>
       </button>
-      <mat-icon class="icono-check">check_circle</mat-icon>
-      <span>{{ aciertos }} / {{ TOTAL_POR_RONDA }}</span>
+      <button class="btn-sonido" routerLink="/menu-principal" title="Volver al menú principal">
+        <mat-icon>home</mat-icon>
+      </button>
     </div>
   </header>
 
@@ -83,24 +88,31 @@
     </div>
   </main>
 
-  <!-- PANTALLA DE VICTORIA -->
-  <main class="main-content pantalla-fin" *ngIf="juegoTerminado">
-    <div class="fin-card">
-      <div class="fin-icono">🎉</div>
-      <h2 class="fin-titulo">¡Muy bien!</h2>
-      <p class="fin-subtitulo">Has completado todas las palabras correctamente</p>
-      <div class="fin-botones">
-        <button class="btn-accion btn-reiniciar" (click)="volverAJugar()">
-          <mat-icon>replay</mat-icon>
-          Volver a jugar
+  <!-- PANTALLA VICTORIA -->
+  <main class="main-content pantalla-victoria" *ngIf="juegoTerminado">
+    <div class="victoria-card">
+      <div class="victoria-emoji">🎉</div>
+      <h2 class="victoria-titulo">¡Lo has conseguido!</h2>
+      <p class="victoria-subtitulo">Has completado todas las palabras correctamente</p>
+      
+      <div class="victoria-botones">
+        <button class="btn-volver-jugar" (click)="volverAJugar()">
+          <mat-icon>replay</mat-icon> Volver a jugar
         </button>
-        <button class="btn-accion btn-finalizar" (click)="finalizar()">
-          <mat-icon>home</mat-icon>
-          Finalizar
+        <button class="btn-otro-juego" (click)="siguienteJuego()">
+          Siguiente juego <mat-icon>arrow_forward</mat-icon>
         </button>
       </div>
     </div>
   </main>
+
+  <!-- Botón Siguiente (esquina inferior derecha) -->
+  <div class="pie-pagina" *ngIf="!juegoTerminado">
+    <button class="btn-siguiente" (click)="siguienteJuego()">
+      Siguiente
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+  </div>
 
   <!-- CRÉDITO -->
   <div class="credito-soyvisual">
