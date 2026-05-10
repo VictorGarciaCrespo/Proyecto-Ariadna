@@ -1,14 +1,15 @@
 import { Component, inject, OnInit, signal, computed } from '@angular/core';
 import { Location, NgClass, NgIf, NgFor, AsyncPipe } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { Juego1ActividadesDiariasService } from '../../servicios/juego1-actividades-diarias.service';
 import { ActividadDiaria, PictogramaJuego } from '../../interfaces/juego1-actividades-diarias.interface';
 import { SonidoService } from '../../../../../shared/servicios/sonido.service';
+import { JuegoNavService } from '../../../../../shared/servicios/juego-nav.service';
 
 @Component({
   selector: 'app-juego1-actividades-diarias',
-  imports: [MatIconModule, NgClass, NgIf, NgFor, AsyncPipe],
+  imports: [MatIconModule, NgClass, NgIf, NgFor, AsyncPipe, RouterLink],
   templateUrl: './juego1-actividades-diarias.html',
   styleUrl: './juego1-actividades-diarias.css',
 })
@@ -16,7 +17,10 @@ export class Juego1ActividadesDiarias implements OnInit {
   private location = inject(Location);
   private router = inject(Router);
   private service = inject(Juego1ActividadesDiariasService);
+  private juegoNavService = inject(JuegoNavService);
   sonidoService = inject(SonidoService);
+
+  siguienteJuego(): void { this.juegoNavService.siguienteJuego('actividades-diarias'); }
 
   // Estado del juego
   actividades: ActividadDiaria[] = [];
