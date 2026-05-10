@@ -2,6 +2,10 @@ import {
   _MatInternalFormField
 } from "./chunk-BIN37PBI.js";
 import {
+  NG_VALIDATORS,
+  NG_VALUE_ACCESSOR
+} from "./chunk-OCJZ6HWU.js";
+import {
   MatRipple,
   _StructuralStylesLoader
 } from "./chunk-ATV6Z2HB.js";
@@ -23,10 +27,6 @@ import "./chunk-227ZHUYT.js";
 import {
   BidiModule
 } from "./chunk-OTE6P6ZA.js";
-import {
-  NG_VALIDATORS,
-  NG_VALUE_ACCESSOR
-} from "./chunk-OCJZ6HWU.js";
 import "./chunk-BMLCO7J4.js";
 import "./chunk-WG2FERVC.js";
 import "./chunk-K4KZQNAF.js";
