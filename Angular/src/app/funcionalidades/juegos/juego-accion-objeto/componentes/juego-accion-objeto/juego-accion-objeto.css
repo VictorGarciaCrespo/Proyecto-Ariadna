@@ -1,0 +1,348 @@
+/* ============================================================
+   Juego Acción-Objeto — Layout dos columnas
+   ============================================================ */
+
+:host {
+  display: block;
+  min-height: 100vh;
+  background-color: var(--ariadna-bg);
+  font-family: 'Nunito', 'Segoe UI', sans-serif;
+}
+
+.juego-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--ariadna-bg);
+}
+
+/* ---- Cabecera ---- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  height: var(--ariadna-header-height, 64px);
+  background: var(--ariadna-surface);
+  border-bottom: 2px solid var(--ariadna-border);
+  gap: 12px;
+}
+
+.header-titulo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ariadna-text);
+  flex: 1;
+  text-align: center;
+}
+
+.header-acertados {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ariadna-primary);
+}
+
+.icono-check { color: #22c55e; }
+
+.btn-circle,
+.btn-sonido {
+  background: var(--ariadna-surface);
+  border: 2px solid var(--ariadna-border);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: var(--ariadna-text);
+  padding: 0;
+  flex-shrink: 0;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+.btn-circle:hover,
+.btn-sonido:hover {
+  background-color: var(--ariadna-primary-light);
+  border-color: var(--ariadna-primary);
+  color: var(--ariadna-primary);
+}
+
+/* ---- Contenido principal ---- */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  gap: 16px;
+}
+
+/* ---- Instrucción ---- */
+.instruccion {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ariadna-text-muted, #666);
+  margin: 0;
+  text-align: center;
+  min-height: 1.5em;
+}
+.instruccion-activa {
+  color: var(--ariadna-primary);
+  font-weight: 700;
+}
+
+/* ---- Estado cargando / error ---- */
+.estado-mensaje {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: var(--ariadna-text-muted, #888);
+  font-size: 1.1rem;
+}
+.estado-mensaje mat-icon {
+  font-size: 48px;
+  width: 48px;
+  height: 48px;
+}
+.estado-error { color: #ef4444; }
+
+/* ---- Zona del juego (2 columnas + separador) ---- */
+.zona-juego {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+  max-width: 740px;
+}
+
+/* ---- Columna ---- */
+.columna {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  align-items: center;
+}
+
+/* ---- Separador central ---- */
+.separador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  align-self: stretch;
+}
+
+.linea-vertical {
+  width: 3px;
+  height: 100%;
+  min-height: 300px;
+  background: linear-gradient(to bottom,
+    transparent 0%,
+    var(--ariadna-border) 15%,
+    var(--ariadna-border) 85%,
+    transparent 100%
+  );
+  border-radius: 2px;
+}
+
+/* ---- Tarjeta ---- */
+.tarjeta {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  background: var(--ariadna-surface);
+  border: 3px solid var(--ariadna-border);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.15s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta img {
+  width: 78%;
+  height: 78%;
+  object-fit: contain;
+}
+
+.tarjeta:hover:not(.correcta) {
+  transform: scale(1.06);
+  border-color: var(--ariadna-primary);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);
+}
+
+/* ---- Estado: seleccionada (columna izquierda) ---- */
+.tarjeta.seleccionada {
+  border-color: var(--ariadna-primary);
+  background: var(--ariadna-primary-light, #ede9fe);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.25);
+  transform: scale(1.08);
+}
+
+/* ---- Estado: destacada (objetos disponibles cuando hay acción seleccionada) ---- */
+.tarjeta.destacada {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+  animation: pulse-disponible 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse-disponible {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2); }
+  50%       { box-shadow: 0 0 0 6px rgba(245, 158, 11, 0.35); }
+}
+
+/* ---- Estado: correcta ---- */
+.tarjeta.correcta {
+  border-color: #22c55e;
+  background: #f0fdf4;
+  cursor: default;
+}
+.tarjeta.correcta:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* ---- Estado: incorrecta ---- */
+.tarjeta.incorrecta {
+  border-color: #ef4444;
+  background: #fff1f2;
+  animation: shake 0.45s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-7px); }
+  40%       { transform: translateX(7px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+
+/* ---- Flecha de "seleccionada" ---- */
+.flecha-seleccion {
+  position: absolute;
+  right: -4px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--ariadna-primary);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  animation: bounce-right 0.6s ease-in-out infinite alternate;
+}
+.flecha-seleccion mat-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+
+@keyframes bounce-right {
+  from { right: -4px; }
+  to   { right: -10px; }
+}
+
+/* ---- Overlay feedback ---- */
+.overlay-feedback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 17px;
+}
+.correcta .overlay-feedback mat-icon {
+  font-size: 56px;
+  width: 56px;
+  height: 56px;
+  color: #16a34a;
+  font-weight: 900;
+}
+.incorrecta .overlay-feedback mat-icon {
+  font-size: 56px;
+  width: 56px;
+  height: 56px;
+  color: #dc2626;
+}
+
+/* ---- Pantalla de victoria ---- */
+.pantalla-fin { justify-content: center; }
+
+.fin-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: var(--ariadna-surface);
+  border: 3px solid #22c55e;
+  border-radius: 24px;
+  padding: 40px 48px;
+  box-shadow: 0 8px 32px rgba(34, 197, 94, 0.15);
+  animation: pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes pop-in {
+  from { transform: scale(0.7); opacity: 0; }
+  to   { transform: scale(1);   opacity: 1; }
+}
+
+.fin-icono   { font-size: 72px; line-height: 1; }
+.fin-titulo  { font-size: 2rem; font-weight: 800; color: #16a34a; margin: 0; }
+.fin-subtitulo { font-size: 1.1rem; color: var(--ariadna-text); margin: 0; }
+
+.fin-botones {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.btn-accion {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.15s;
+}
+.btn-reiniciar {
+  background-color: var(--ariadna-primary);
+  color: #fff;
+}
+.btn-reiniciar:hover { background-color: var(--ariadna-primary-dark); transform: scale(1.03); }
+.btn-otro-juego {
+  background-color: #f0fdf4;
+  color: #16a34a;
+  border: 2px solid #22c55e;
+}
+.btn-otro-juego:hover { background-color: #dcfce7; transform: scale(1.03); }
+
+/* ---- Crédito ARASAAC ---- */
+.credito-arasaac {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-top: 1px solid var(--ariadna-border);
+}
+.credito-arasaac__logo   { height: 24px; object-fit: contain; }
+.credito-arasaac__texto  { font-size: 0.75rem; color: var(--ariadna-text-muted, #888); }
