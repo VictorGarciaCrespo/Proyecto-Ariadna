@@ -23,6 +23,7 @@ const palabrasVocalesAPI = require('./rutas/palabrasVocales')
 const agendaAPI = require('./rutas/agenda')
 const rutinasAPI = require('./rutas/rutinas')
 const actividadesDiariasAPI = require('./rutas/actividadesDiarias')
+const accionesObjetosAPI = require('./rutas/accionesObjetos')
 const intrusosAPI = require('./rutas/intrusos')
 
 perfilesAPI(app)
@@ -31,6 +32,7 @@ palabrasVocalesAPI(app)
 agendaAPI(app)
 rutinasAPI(app)
 actividadesDiariasAPI(app)
+accionesObjetosAPI(app)
 intrusosAPI(app)
 app.listen(PORT, (err) => {
     if (err) {
