@@ -3,7 +3,6 @@ import { CommonModule, AsyncPipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { SonidoService } from '../../../../../shared/servicios/sonido.service';
-import { JuegoNavService } from '../../../../../shared/servicios/juego-nav.service';
 
 export interface ImagenIntruso {
   nombre: string;
@@ -28,10 +27,7 @@ export interface RondaIntruso {
 export class JuegoIntrusosPageComponent implements OnInit {
 
   private cdRef = inject(ChangeDetectorRef);
-  private juegoNavService = inject(JuegoNavService);
   sonidoService = inject(SonidoService);
-
-  siguienteJuego(): void { this.juegoNavService.siguienteJuego('estimulacion-cognitiva'); }
 
   rondasNivel3: RondaIntruso[] = [
     {

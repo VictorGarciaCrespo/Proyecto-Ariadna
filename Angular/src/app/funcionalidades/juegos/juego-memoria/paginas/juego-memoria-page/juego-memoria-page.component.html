@@ -1,5 +1,4 @@
 <div class="pagina-juego">
-    <!-- CABECERA -->
     <div class="cabecera">
         <button class="btn-icono redondo" routerLink="/juegos-mente">
             <mat-icon>arrow_back</mat-icon>
@@ -9,46 +8,30 @@
             <button class="btn-icono redondo" (click)="sonidoService.toggle()" [title]="(sonidoService.activo$ | async) ? 'Desactivar sonido' : 'Activar sonido'">
                 <mat-icon>{{ (sonidoService.activo$ | async) ? 'volume_up' : 'volume_off' }}</mat-icon>
             </button>
-            <button class="btn-icono redondo" routerLink="/menu-principal" title="Volver al menú principal">
-                <mat-icon>home</mat-icon>
+            <button class="btn-icono redondo">
+                <mat-icon>help</mat-icon>
             </button>
         </div>
     </div>
 
-    <!-- JUEGO ACTIVO -->
-    <div *ngIf="!juegoTerminado" class="contenedor-juego">
-        <app-juego-memoria [cartas]="cartas" (cartaClickeada)="manejarCartaClickeada($event)">
-        </app-juego-memoria>
-
-        <!-- BOTÓN SIGUIENTE (esquina inferior derecha) -->
-        <div class="pie-pagina">
-            <button class="btn-siguiente" (click)="siguienteJuego()">
-                Siguiente
-                <mat-icon>arrow_forward</mat-icon>
-            </button>
-        </div>
+    <div *ngIf="juegoTerminado" class="mensaje-victoria">
+        <h2>¡Felicidades! Has encontrado todas las parejas.</h2>
+        <button class="btn-accion btn-centrado" (click)="iniciarJuego()">
+            <mat-icon>refresh</mat-icon>
+            Jugar de Nuevo
+        </button>
     </div>
 
-    <!-- PANTALLA DE VICTORIA ESTÁNDAR -->
-    <div *ngIf="juegoTerminado" class="pantalla-victoria">
-        <div class="victoria-card">
-            <div class="victoria-emoji">🎉</div>
-            <h2 class="victoria-titulo">¡Muy bien!</h2>
-            <p class="victoria-subtitulo">Has encontrado todas las parejas correctamente</p>
-            <div class="victoria-botones">
-                <button class="btn-volver-jugar" (click)="iniciarJuego()">
-                    <mat-icon>replay</mat-icon>
-                    Volver a jugar
-                </button>
-                <button class="btn-otro-juego" (click)="siguienteJuego()">
-                    <mat-icon>swap_horiz</mat-icon>
-                    Otro juego
-                </button>
-            </div>
-        </div>
+    <app-juego-memoria [cartas]="cartas" (cartaClickeada)="manejarCartaClickeada($event)">
+    </app-juego-memoria>
+
+    <div class="pie-pagina">
+        <button class="btn-accion" routerLink="/juegos-mente/juego-intrusos">
+            Siguiente
+            <mat-icon>arrow_forward</mat-icon>
+        </button>
     </div>
 
-    <!-- CRÉDITO -->
     <div class="credito-arasaac">
         <img src="/imagenes/arasaac-logo.png" alt="Logo ARASAAC" class="credito-arasaac__logo">
         <span class="credito-arasaac__texto">Pictogramas propiedad de Arasaac</span>

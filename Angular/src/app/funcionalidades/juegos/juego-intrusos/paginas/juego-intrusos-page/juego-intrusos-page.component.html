@@ -10,8 +10,8 @@
         [title]="(sonidoService.activo$ | async) ? 'Desactivar sonido' : 'Activar sonido'">
         <mat-icon>{{ (sonidoService.activo$ | async) ? 'volume_up' : 'volume_off' }}</mat-icon>
       </button>
-      <button class="btn-icono redondo" routerLink="/menu-principal" title="Volver al menú principal">
-        <mat-icon>home</mat-icon>
+      <button class="btn-icono redondo">
+        <mat-icon>help</mat-icon>
       </button>
     </div>
   </div>
@@ -41,9 +41,13 @@
 
         <div class="carta-imagen__marco">
           <img [src]="imagen.ruta" [alt]="imagen.nombre" class="carta-imagen__img" />
+
+          <!-- Marca correcto: ✅ centrada sobre la imagen -->
           <div *ngIf="imagenSeleccionadaIndex === i && estadoSeleccion === 'correcto'" class="marca-correcta">
             <span class="tick-text">✅</span>
           </div>
+
+          <!-- Marca incorrecto: ❌ centrada sobre la imagen -->
           <div *ngIf="imagenSeleccionadaIndex === i && estadoSeleccion === 'incorrecto'" class="marca-incorrecta">
             <span class="cross-text">❌</span>
           </div>
@@ -52,37 +56,29 @@
       </div>
     </div>
 
-    <!-- BOTÓN SIGUIENTE (esquina inferior derecha) -->
-    <div class="pie-pagina">
-      <button class="btn-siguiente" (click)="siguienteJuego()">
-        Siguiente
+  </div>
+
+  <!-- PANTALLA DE VICTORIA -->
+  <div *ngIf="juegoTerminado" class="mensaje-victoria">
+    <div class="victoria-icono">
+      <mat-icon>emoji_events</mat-icon>
+    </div>
+    <h2>¡Felicidades!</h2>
+    <p>Has encontrado todos los intrusos correctamente.</p>
+    <div class="victoria-acciones">
+      <button class="btn-accion btn-secundario" (click)="reiniciarJuego()">
+        <mat-icon>refresh</mat-icon>
+        Jugar de Nuevo
+      </button>
+      <button class="btn-accion" routerLink="/menu-principal">
+        Terminar
         <mat-icon>arrow_forward</mat-icon>
       </button>
     </div>
-
   </div>
 
-  <!-- PANTALLA DE VICTORIA ESTÁNDAR -->
-  <div *ngIf="juegoTerminado" class="pantalla-victoria">
-    <div class="victoria-card">
-      <div class="victoria-emoji">🎉</div>
-      <h2 class="victoria-titulo">¡Muy bien!</h2>
-      <p class="victoria-subtitulo">Has encontrado todos los intrusos correctamente</p>
-      <div class="victoria-botones">
-        <button class="btn-volver-jugar" (click)="reiniciarJuego()">
-          <mat-icon>replay</mat-icon>
-          Volver a jugar
-        </button>
-        <button class="btn-otro-juego" (click)="siguienteJuego()">
-          <mat-icon>swap_horiz</mat-icon>
-          Otro juego
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- CRÉDITO -->
+  <!-- PIE DE PÁGINA -->
   <div class="credito-soyvisual">
-    <span>Pictogramas propiedad de Soy Visual</span>
+    <span class="credito-soyvisual">Pictogramas propiedad de Soy Visual</span>
   </div>
 </div>

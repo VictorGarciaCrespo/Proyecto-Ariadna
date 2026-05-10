@@ -6,7 +6,6 @@ import { JuegoMemoriaService } from '../../servicios/juego-memoria.service';
 import { CartaMemoria, ElementoMemoria } from '../../interfaces/juego-memoria.interface';
 import { MatIconModule } from '@angular/material/icon';
 import { SonidoService } from '../../../../../shared/servicios/sonido.service';
-import { JuegoNavService } from '../../../../../shared/servicios/juego-nav.service';
 
 @Component({
     selector: 'app-juego-memoria-page',
@@ -23,10 +22,7 @@ export class JuegoMemoriaPageComponent implements OnInit {
 
     private juegoMemoriaService = inject(JuegoMemoriaService);
     private cdRef = inject(ChangeDetectorRef);
-    private juegoNavService = inject(JuegoNavService);
     sonidoService = inject(SonidoService);
-
-    siguienteJuego(): void { this.juegoNavService.siguienteJuego('estimulacion-cognitiva'); }
 
     ngOnInit(): void {
         this.iniciarJuego();

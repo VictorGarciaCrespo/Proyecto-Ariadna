@@ -8,17 +8,12 @@
     </button>
     <span class="header-titulo">Une cada acción con su objeto</span>
     <div class="header-acertados">
-      <div class="marcador">
-        <mat-icon class="icono-check">check_circle</mat-icon>
-        <span>{{ parejasCorrectas() }} / {{ TOTAL_PAREJAS }}</span>
-      </div>
       <button class="btn-sonido" (click)="sonidoService.toggle()"
         [title]="sonidoService.activo ? 'Desactivar sonido' : 'Activar sonido'">
         <mat-icon>{{ sonidoService.activo ? 'volume_up' : 'volume_off' }}</mat-icon>
       </button>
-      <button class="btn-sonido" routerLink="/menu-principal" title="Volver al menú principal">
-        <mat-icon>home</mat-icon>
-      </button>
+      <mat-icon class="icono-check">check_circle</mat-icon>
+      <span>{{ parejasCorrectas() }} / {{ TOTAL_PAREJAS }}</span>
     </div>
   </header>
 
@@ -100,29 +95,20 @@
       </div>
 
     </div>
-
-    <!-- BOTÓN SIGUIENTE (esquina inferior derecha) -->
-    <div class="pie-pagina">
-      <button class="btn-siguiente" (click)="siguienteJuego()">
-        Siguiente
-        <mat-icon>arrow_forward</mat-icon>
-      </button>
-    </div>
-
   </main>
 
-  <!-- PANTALLA DE VICTORIA ESTÁNDAR -->
-  <main class="main-content pantalla-victoria" *ngIf="juegoTerminado()">
-    <div class="victoria-card">
-      <div class="victoria-emoji">🎉</div>
-      <h2 class="victoria-titulo">¡Muy bien!</h2>
-      <p class="victoria-subtitulo">Has unido todas las parejas correctamente</p>
-      <div class="victoria-botones">
-        <button class="btn-volver-jugar" (click)="iniciarRonda()">
+  <!-- Pantalla de victoria -->
+  <main class="main-content pantalla-fin" *ngIf="juegoTerminado()">
+    <div class="fin-card">
+      <div class="fin-icono">🎉</div>
+      <h2 class="fin-titulo">¡Muy bien!</h2>
+      <p class="fin-subtitulo">Has unido todas las parejas correctamente</p>
+      <div class="fin-botones">
+        <button class="btn-accion btn-reiniciar" (click)="iniciarRonda()">
           <mat-icon>replay</mat-icon>
           Volver a jugar
         </button>
-        <button class="btn-otro-juego" (click)="siguienteJuego()">
+        <button class="btn-accion btn-otro-juego" (click)="irAJuegoActividades()">
           <mat-icon>swap_horiz</mat-icon>
           Otro juego
         </button>

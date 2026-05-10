@@ -8,16 +8,11 @@
     </button>
     <span class="header-titulo">¿Qué necesitas para esta actividad?</span>
     <div class="header-acertados">
-      <div class="marcador">
-        <mat-icon class="icono-check">check_circle</mat-icon>
-        <span>{{ acertados() }} / 3</span>
-      </div>
       <button class="btn-sonido" (click)="sonidoService.toggle()" [title]="(sonidoService.activo$ | async) ? 'Desactivar sonido' : 'Activar sonido'">
         <mat-icon>{{ (sonidoService.activo$ | async) ? 'volume_up' : 'volume_off' }}</mat-icon>
       </button>
-      <button class="btn-sonido" routerLink="/menu-principal" title="Volver al menú principal">
-        <mat-icon>home</mat-icon>
-      </button>
+      <mat-icon class="icono-check">check_circle</mat-icon>
+      <span>{{ acertados() }} / 3</span>
     </div>
   </header>
 
@@ -92,32 +87,18 @@
       </div>
     </div>
 
-    <!-- BOTÓN SIGUIENTE (esquina inferior derecha) -->
-    <div class="pie-pagina">
-      <button class="btn-siguiente" (click)="siguienteJuego()">
-        Siguiente
-        <mat-icon>arrow_forward</mat-icon>
-      </button>
-    </div>
-
   </main>
 
-  <!-- PANTALLA DE VICTORIA ESTÁNDAR -->
-  <main class="main-content pantalla-victoria" *ngIf="juegoTerminado()">
-    <div class="victoria-card">
-      <div class="victoria-emoji">🎉</div>
-      <h2 class="victoria-titulo">¡Muy bien!</h2>
-      <p class="victoria-subtitulo">Has encontrado los 3 objetos correctos</p>
-      <div class="victoria-botones">
-        <button class="btn-volver-jugar" (click)="reiniciar()">
-          <mat-icon>replay</mat-icon>
-          Volver a jugar
-        </button>
-        <button class="btn-otro-juego" (click)="siguienteJuego()">
-          <mat-icon>swap_horiz</mat-icon>
-          Otro juego
-        </button>
-      </div>
+  <!-- Pantalla de victoria -->
+  <main class="main-content pantalla-fin" *ngIf="juegoTerminado()">
+    <div class="fin-card">
+      <div class="fin-icono">🎉</div>
+      <h2 class="fin-titulo">¡Lo has conseguido!</h2>
+      <p class="fin-subtitulo">Has encontrado los 3 objetos correctos</p>
+      <button class="btn-reiniciar" (click)="reiniciar()">
+        <mat-icon>replay</mat-icon>
+        Volver a jugar
+      </button>
     </div>
   </main>
 
