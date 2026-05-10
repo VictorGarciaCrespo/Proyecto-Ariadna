@@ -16136,7 +16136,7 @@ var JuegosMente = class _JuegosMente {
       \u0275\u0275text(4, "arrow_back");
       \u0275\u0275elementEnd()()();
       \u0275\u0275elementStart(5, "main", 3)(6, "h1", 4);
-      \u0275\u0275text(7, "Juegos de la Mente");
+      \u0275\u0275text(7, "Estimulaci\xF3n Cognitiva");
       \u0275\u0275elementEnd();
       \u0275\u0275elementStart(8, "div", 5)(9, "button", 6);
       \u0275\u0275listener("click", function JuegosMente_Template_button_click_9_listener() {
@@ -16150,7 +16150,7 @@ var JuegosMente = class _JuegosMente {
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(JuegosMente, [{
     type: Component,
-    args: [{ selector: "app-juegos-mente", imports: [MatIconModule], template: '<!-- Juegos de la Mente \u2014 Patr\xF3n Ariadna TEA -->\n<div class="actividades-container">\n  <header class="header">\n    <button class="btn-back" (click)="volver()" aria-label="Volver">\n      <mat-icon>arrow_back</mat-icon>\n    </button>\n  </header>\n\n  <main class="main-content">\n    <h1 class="title">Juegos de la Mente</h1>\n\n    <div class="juego-container">\n      <button class="btn-juego" (click)="iniciarJuego()">\n        Iniciar juego\n      </button>\n    </div>\n  </main>\n</div>', styles: ['/* src/app/funcionalidades/actividades/juegos-mente/componentes/juegos-mente/juegos-mente.css */\n:host {\n  display: block;\n  min-height: 100vh;\n  background-color: var(--ariadna-bg);\n  font-family:\n    "Nunito",\n    "Segoe UI",\n    sans-serif;\n}\n.actividades-container {\n  min-height: 100vh;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  background-color: var(--ariadna-bg);\n}\n.header {\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  padding: 0 32px;\n  height: var(--ariadna-header-height);\n  background: var(--ariadna-surface);\n  border-bottom: 2px solid var(--ariadna-border);\n}\n.btn-back {\n  background: var(--ariadna-surface);\n  border: 2px solid var(--ariadna-border);\n  border-radius: 50%;\n  width: 48px;\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  color: var(--ariadna-text);\n  padding: 0;\n  transition:\n    background-color 0.2s,\n    border-color 0.2s,\n    color 0.2s;\n}\n.btn-back:hover {\n  background-color: var(--ariadna-primary-light);\n  border-color: var(--ariadna-primary);\n  color: var(--ariadna-primary);\n}\n.main-content {\n  flex-grow: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: var(--ariadna-spacing-lg);\n  gap: var(--ariadna-spacing-lg);\n}\n.title {\n  font-size: 2.2rem;\n  font-weight: 700;\n  color: var(--ariadna-text);\n  margin: 0;\n  text-align: center;\n  font-family: "Nunito", sans-serif;\n}\n.juego-container {\n  display: flex;\n  justify-content: center;\n  width: 100%;\n}\n.btn-juego {\n  background-color: var(--ariadna-primary);\n  color: #ffffff;\n  border: none;\n  border-radius: var(--ariadna-radius-md);\n  width: 320px;\n  height: 120px;\n  font-size: 1.4rem;\n  font-weight: 700;\n  font-family: "Nunito", sans-serif;\n  cursor: pointer;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  box-shadow: var(--ariadna-shadow);\n  transition: background-color 0.2s, transform 0.18s;\n}\n.btn-juego:hover {\n  background-color: var(--ariadna-primary-dark);\n  transform: translateY(-2px);\n}\n/*# sourceMappingURL=juegos-mente.css.map */\n'] }]
+    args: [{ selector: "app-juegos-mente", imports: [MatIconModule], template: '<!-- Juegos de la Mente \u2014 Patr\xF3n Ariadna TEA -->\n<div class="actividades-container">\n  <header class="header">\n    <button class="btn-back" (click)="volver()" aria-label="Volver">\n      <mat-icon>arrow_back</mat-icon>\n    </button>\n  </header>\n\n  <main class="main-content">\n    <h1 class="title">Estimulaci\xF3n Cognitiva</h1>\n\n    <div class="juego-container">\n      <button class="btn-juego" (click)="iniciarJuego()">\n        Iniciar juego\n      </button>\n    </div>\n  </main>\n</div>', styles: ['/* src/app/funcionalidades/actividades/juegos-mente/componentes/juegos-mente/juegos-mente.css */\n:host {\n  display: block;\n  min-height: 100vh;\n  background-color: var(--ariadna-bg);\n  font-family:\n    "Nunito",\n    "Segoe UI",\n    sans-serif;\n}\n.actividades-container {\n  min-height: 100vh;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  background-color: var(--ariadna-bg);\n}\n.header {\n  display: flex;\n  justify-content: flex-start;\n  align-items: center;\n  padding: 0 32px;\n  height: var(--ariadna-header-height);\n  background: var(--ariadna-surface);\n  border-bottom: 2px solid var(--ariadna-border);\n}\n.btn-back {\n  background: var(--ariadna-surface);\n  border: 2px solid var(--ariadna-border);\n  border-radius: 50%;\n  width: 48px;\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  color: var(--ariadna-text);\n  padding: 0;\n  transition:\n    background-color 0.2s,\n    border-color 0.2s,\n    color 0.2s;\n}\n.btn-back:hover {\n  background-color: var(--ariadna-primary-light);\n  border-color: var(--ariadna-primary);\n  color: var(--ariadna-primary);\n}\n.main-content {\n  flex-grow: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: var(--ariadna-spacing-lg);\n  gap: var(--ariadna-spacing-lg);\n}\n.title {\n  font-size: 2.2rem;\n  font-weight: 700;\n  color: var(--ariadna-text);\n  margin: 0;\n  text-align: center;\n  font-family: "Nunito", sans-serif;\n}\n.juego-container {\n  display: flex;\n  justify-content: center;\n  width: 100%;\n}\n.btn-juego {\n  background-color: var(--ariadna-primary);\n  color: #ffffff;\n  border: none;\n  border-radius: var(--ariadna-radius-md);\n  width: 320px;\n  height: 120px;\n  font-size: 1.4rem;\n  font-weight: 700;\n  font-family: "Nunito", sans-serif;\n  cursor: pointer;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  box-shadow: var(--ariadna-shadow);\n  transition: background-color 0.2s, transform 0.18s;\n}\n.btn-juego:hover {\n  background-color: var(--ariadna-primary-dark);\n  transform: translateY(-2px);\n}\n/*# sourceMappingURL=juegos-mente.css.map */\n'] }]
   }], null, null);
 })();
 (() => {
@@ -16188,6 +16188,9 @@ var HablarEscribir = class _HablarEscribir {
   iniciarJuego() {
     this.router.navigate(["/hablar-escribir/juego1-hablar-escribir"]);
   }
+  iniciarJuegoSilabas() {
+    this.router.navigate(["/hablar-escribir/juego-silabas"]);
+  }
   static \u0275fac = function HablarEscribir_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _HablarEscribir)();
   };
@@ -16214,16 +16217,16 @@ var HablarEscribir = class _HablarEscribir {
       \u0275\u0275text(14, " Iniciar juego ");
       \u0275\u0275elementEnd()()()();
     }
-  }, dependencies: [MatIconModule, MatIcon], styles: ['\n\n[_nghost-%COMP%] {\n  display: block;\n  min-height: 100vh;\n  background-color: var(--ariadna-bg);\n  font-family:\n    "Nunito",\n    "Segoe UI",\n    sans-serif;\n}\n.actividades-container[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  background-color: var(--ariadna-bg);\n}\n.cabecera[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0 32px;\n  height: var(--ariadna-header-height);\n  background: var(--ariadna-surface);\n  border-bottom: 2px solid var(--ariadna-border);\n}\n.titulo-container[_ngcontent-%COMP%] {\n  flex-grow: 1;\n}\n.btn-icono[_ngcontent-%COMP%] {\n  background: var(--ariadna-surface);\n  border: 2px solid var(--ariadna-border);\n  cursor: pointer;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0;\n  transition:\n    background-color 0.2s,\n    border-color 0.2s,\n    color 0.2s;\n  color: var(--ariadna-text);\n  font-family: "Nunito", sans-serif;\n}\n.btn-icono.redondo[_ngcontent-%COMP%] {\n  border-radius: 50%;\n  width: 48px;\n  height: 48px;\n}\n.btn-icono[_ngcontent-%COMP%]:hover {\n  background-color: var(--ariadna-primary-light);\n  border-color: var(--ariadna-primary);\n  color: var(--ariadna-primary);\n}\n.icono-flecha[_ngcontent-%COMP%], \n.icono-ayuda[_ngcontent-%COMP%] {\n  font-size: 1.5rem;\n  line-height: 1;\n}\n.main-content[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: var(--ariadna-spacing-lg);\n  gap: var(--ariadna-spacing-lg);\n}\n.title[_ngcontent-%COMP%] {\n  font-size: 2.2rem;\n  font-weight: 700;\n  color: var(--ariadna-text);\n  margin: 0;\n  text-align: center;\n  font-family: "Nunito", sans-serif;\n}\n.juego-container[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  width: 100%;\n}\n.btn-juego[_ngcontent-%COMP%] {\n  background-color: var(--ariadna-primary);\n  color: #ffffff;\n  border: none;\n  border-radius: var(--ariadna-radius-md);\n  width: 320px;\n  height: 120px;\n  font-size: 1.4rem;\n  font-weight: 700;\n  font-family: "Nunito", sans-serif;\n  cursor: pointer;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  box-shadow: var(--ariadna-shadow);\n  transition: background-color 0.2s, transform 0.18s;\n}\n.btn-juego[_ngcontent-%COMP%]:hover {\n  background-color: var(--ariadna-primary-dark);\n  transform: translateY(-2px);\n}\n/*# sourceMappingURL=hablar-escribir.css.map */'] });
+  }, dependencies: [MatIconModule, MatIcon, RouterModule], styles: ['\n\n[_nghost-%COMP%] {\n  display: block;\n  min-height: 100vh;\n  background-color: var(--ariadna-bg);\n  font-family:\n    "Nunito",\n    "Segoe UI",\n    sans-serif;\n}\n.actividades-container[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  background-color: var(--ariadna-bg);\n}\n.cabecera[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0 32px;\n  height: var(--ariadna-header-height);\n  background: var(--ariadna-surface);\n  border-bottom: 2px solid var(--ariadna-border);\n}\n.titulo-container[_ngcontent-%COMP%] {\n  flex-grow: 1;\n}\n.btn-icono[_ngcontent-%COMP%] {\n  background: var(--ariadna-surface);\n  border: 2px solid var(--ariadna-border);\n  cursor: pointer;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0;\n  transition:\n    background-color 0.2s,\n    border-color 0.2s,\n    color 0.2s;\n  color: var(--ariadna-text);\n  font-family: "Nunito", sans-serif;\n}\n.btn-icono.redondo[_ngcontent-%COMP%] {\n  border-radius: 50%;\n  width: 48px;\n  height: 48px;\n}\n.btn-icono[_ngcontent-%COMP%]:hover {\n  background-color: var(--ariadna-primary-light);\n  border-color: var(--ariadna-primary);\n  color: var(--ariadna-primary);\n}\n.icono-flecha[_ngcontent-%COMP%], \n.icono-ayuda[_ngcontent-%COMP%] {\n  font-size: 1.5rem;\n  line-height: 1;\n}\n.main-content[_ngcontent-%COMP%] {\n  flex-grow: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: var(--ariadna-spacing-lg);\n  gap: var(--ariadna-spacing-lg);\n}\n.title[_ngcontent-%COMP%] {\n  font-size: 2.2rem;\n  font-weight: 700;\n  color: var(--ariadna-text);\n  margin: 0;\n  text-align: center;\n  font-family: "Nunito", sans-serif;\n}\n.juego-container[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  width: 100%;\n}\n.btn-juego[_ngcontent-%COMP%] {\n  background-color: var(--ariadna-primary);\n  color: #ffffff;\n  border: none;\n  border-radius: var(--ariadna-radius-md);\n  width: 320px;\n  height: 120px;\n  font-size: 1.4rem;\n  font-weight: 700;\n  font-family: "Nunito", sans-serif;\n  cursor: pointer;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  box-shadow: var(--ariadna-shadow);\n  transition: background-color 0.2s, transform 0.18s;\n}\n.btn-juego[_ngcontent-%COMP%]:hover {\n  background-color: var(--ariadna-primary-dark);\n  transform: translateY(-2px);\n}\n/*# sourceMappingURL=hablar-escribir.css.map */'] });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(HablarEscribir, [{
     type: Component,
-    args: [{ selector: "app-hablar-escribir", imports: [MatIconModule], template: '<!-- Hablar y Escribir \u2014 Patr\xF3n Ariadna TEA -->\n<div class="actividades-container">\n  <div class="cabecera">\n    <button class="btn-icono redondo" (click)="volver()" aria-label="Volver">\n      <mat-icon>arrow_back</mat-icon>\n    </button>\n    <div class="titulo-container"></div>\n    <button class="btn-icono redondo" aria-label="Ayuda">\n      <mat-icon>help_outline</mat-icon>\n    </button>\n  </div>\n\n  <main class="main-content">\n    <h1 class="title">Hablar y Escribir</h1>\n    <div class="juego-container">\n      <button class="btn-juego" (click)="iniciarJuego()">\n        Iniciar juego\n      </button>\n    </div>\n  </main>\n</div>', styles: ['/* src/app/funcionalidades/actividades/hablar-escribir/componentes/hablar-escribir/hablar-escribir.css */\n:host {\n  display: block;\n  min-height: 100vh;\n  background-color: var(--ariadna-bg);\n  font-family:\n    "Nunito",\n    "Segoe UI",\n    sans-serif;\n}\n.actividades-container {\n  min-height: 100vh;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  background-color: var(--ariadna-bg);\n}\n.cabecera {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0 32px;\n  height: var(--ariadna-header-height);\n  background: var(--ariadna-surface);\n  border-bottom: 2px solid var(--ariadna-border);\n}\n.titulo-container {\n  flex-grow: 1;\n}\n.btn-icono {\n  background: var(--ariadna-surface);\n  border: 2px solid var(--ariadna-border);\n  cursor: pointer;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0;\n  transition:\n    background-color 0.2s,\n    border-color 0.2s,\n    color 0.2s;\n  color: var(--ariadna-text);\n  font-family: "Nunito", sans-serif;\n}\n.btn-icono.redondo {\n  border-radius: 50%;\n  width: 48px;\n  height: 48px;\n}\n.btn-icono:hover {\n  background-color: var(--ariadna-primary-light);\n  border-color: var(--ariadna-primary);\n  color: var(--ariadna-primary);\n}\n.icono-flecha,\n.icono-ayuda {\n  font-size: 1.5rem;\n  line-height: 1;\n}\n.main-content {\n  flex-grow: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: var(--ariadna-spacing-lg);\n  gap: var(--ariadna-spacing-lg);\n}\n.title {\n  font-size: 2.2rem;\n  font-weight: 700;\n  color: var(--ariadna-text);\n  margin: 0;\n  text-align: center;\n  font-family: "Nunito", sans-serif;\n}\n.juego-container {\n  display: flex;\n  justify-content: center;\n  width: 100%;\n}\n.btn-juego {\n  background-color: var(--ariadna-primary);\n  color: #ffffff;\n  border: none;\n  border-radius: var(--ariadna-radius-md);\n  width: 320px;\n  height: 120px;\n  font-size: 1.4rem;\n  font-weight: 700;\n  font-family: "Nunito", sans-serif;\n  cursor: pointer;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  box-shadow: var(--ariadna-shadow);\n  transition: background-color 0.2s, transform 0.18s;\n}\n.btn-juego:hover {\n  background-color: var(--ariadna-primary-dark);\n  transform: translateY(-2px);\n}\n/*# sourceMappingURL=hablar-escribir.css.map */\n'] }]
+    args: [{ selector: "app-hablar-escribir", imports: [MatIconModule, RouterModule], template: '<!-- Hablar y Escribir \u2014 Patr\xF3n Ariadna TEA -->\n<div class="actividades-container">\n  <div class="cabecera">\n    <button class="btn-icono redondo" (click)="volver()" aria-label="Volver">\n      <mat-icon>arrow_back</mat-icon>\n    </button>\n    <div class="titulo-container"></div>\n    <button class="btn-icono redondo" aria-label="Ayuda">\n      <mat-icon>help_outline</mat-icon>\n    </button>\n  </div>\n\n  <main class="main-content">\n    <h1 class="title">Hablar y Escribir</h1>\n    <div class="juego-container">\n      <button class="btn-juego" (click)="iniciarJuego()">\n        Iniciar juego\n      </button>\n    </div>\n  </main>\n</div>', styles: ['/* src/app/funcionalidades/actividades/hablar-escribir/componentes/hablar-escribir/hablar-escribir.css */\n:host {\n  display: block;\n  min-height: 100vh;\n  background-color: var(--ariadna-bg);\n  font-family:\n    "Nunito",\n    "Segoe UI",\n    sans-serif;\n}\n.actividades-container {\n  min-height: 100vh;\n  box-sizing: border-box;\n  display: flex;\n  flex-direction: column;\n  background-color: var(--ariadna-bg);\n}\n.cabecera {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0 32px;\n  height: var(--ariadna-header-height);\n  background: var(--ariadna-surface);\n  border-bottom: 2px solid var(--ariadna-border);\n}\n.titulo-container {\n  flex-grow: 1;\n}\n.btn-icono {\n  background: var(--ariadna-surface);\n  border: 2px solid var(--ariadna-border);\n  cursor: pointer;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 0;\n  transition:\n    background-color 0.2s,\n    border-color 0.2s,\n    color 0.2s;\n  color: var(--ariadna-text);\n  font-family: "Nunito", sans-serif;\n}\n.btn-icono.redondo {\n  border-radius: 50%;\n  width: 48px;\n  height: 48px;\n}\n.btn-icono:hover {\n  background-color: var(--ariadna-primary-light);\n  border-color: var(--ariadna-primary);\n  color: var(--ariadna-primary);\n}\n.icono-flecha,\n.icono-ayuda {\n  font-size: 1.5rem;\n  line-height: 1;\n}\n.main-content {\n  flex-grow: 1;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  justify-content: center;\n  padding: var(--ariadna-spacing-lg);\n  gap: var(--ariadna-spacing-lg);\n}\n.title {\n  font-size: 2.2rem;\n  font-weight: 700;\n  color: var(--ariadna-text);\n  margin: 0;\n  text-align: center;\n  font-family: "Nunito", sans-serif;\n}\n.juego-container {\n  display: flex;\n  justify-content: center;\n  width: 100%;\n}\n.btn-juego {\n  background-color: var(--ariadna-primary);\n  color: #ffffff;\n  border: none;\n  border-radius: var(--ariadna-radius-md);\n  width: 320px;\n  height: 120px;\n  font-size: 1.4rem;\n  font-weight: 700;\n  font-family: "Nunito", sans-serif;\n  cursor: pointer;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  box-shadow: var(--ariadna-shadow);\n  transition: background-color 0.2s, transform 0.18s;\n}\n.btn-juego:hover {\n  background-color: var(--ariadna-primary-dark);\n  transform: translateY(-2px);\n}\n/*# sourceMappingURL=hablar-escribir.css.map */\n'] }]
   }], null, null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HablarEscribir, { className: "HablarEscribir", filePath: "src/app/funcionalidades/actividades/hablar-escribir/componentes/hablar-escribir/hablar-escribir.ts", lineNumber: 12 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(HablarEscribir, { className: "HablarEscribir", filePath: "src/app/funcionalidades/actividades/hablar-escribir/componentes/hablar-escribir/hablar-escribir.ts", lineNumber: 13 });
 })();
 
 // src/app/funcionalidades/actividades/hablar-escribir/paginas/hablar-escribir-page/hablar-escribir-page.ts
@@ -16442,7 +16445,7 @@ var Juego1HablarEscribir = class _Juego1HablarEscribir {
     this.location.back();
   }
   siguiente() {
-    this.router.navigate(["/menu-principal"]);
+    this.router.navigate(["/hablar-escribir/juego-silabas"]);
   }
   static \u0275fac = function Juego1HablarEscribir_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _Juego1HablarEscribir)();
@@ -17951,6 +17954,506 @@ var JuegoAccionObjetoPageComponent = class _JuegoAccionObjetoPageComponent {
 })();
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(JuegoAccionObjetoPageComponent, { className: "JuegoAccionObjetoPageComponent", filePath: "src/app/funcionalidades/juegos/juego-accion-objeto/paginas/juego-accion-objeto-page/juego-accion-objeto-page.ts", lineNumber: 10 });
+})();
+
+// src/app/funcionalidades/juegos/juego-silabas/paginas/juego-silabas-page/juego-silabas-page.component.ts
+var _c04 = (a0, a1, a2) => ({ "seleccionada": a0, "correcta": a1, "incorrecta": a2 });
+var _c12 = (a0, a1, a2) => ({ "correcta": a0, "incorrecta": a1, "destacada": a2 });
+function JuegoSilabasPageComponent_main_17_span_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span");
+    \u0275\u0275text(1, "Toca una s\xEDlaba de la izquierda");
+    \u0275\u0275elementEnd();
+  }
+}
+function JuegoSilabasPageComponent_main_17_span_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "span", 21);
+    \u0275\u0275text(1, "Ahora toca el instrumento de la derecha");
+    \u0275\u0275elementEnd();
+  }
+}
+function JuegoSilabasPageComponent_main_17_div_6_div_3_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 26)(1, "mat-icon");
+    \u0275\u0275text(2, "arrow_forward");
+    \u0275\u0275elementEnd()();
+  }
+}
+function JuegoSilabasPageComponent_main_17_div_6_div_4_mat_icon_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-icon");
+    \u0275\u0275text(1, "check");
+    \u0275\u0275elementEnd();
+  }
+}
+function JuegoSilabasPageComponent_main_17_div_6_div_4_mat_icon_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-icon");
+    \u0275\u0275text(1, "close");
+    \u0275\u0275elementEnd();
+  }
+}
+function JuegoSilabasPageComponent_main_17_div_6_div_4_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 27);
+    \u0275\u0275template(1, JuegoSilabasPageComponent_main_17_div_6_div_4_mat_icon_1_Template, 2, 0, "mat-icon", 12)(2, JuegoSilabasPageComponent_main_17_div_6_div_4_mat_icon_2_Template, 2, 0, "mat-icon", 12);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const s_r2 = \u0275\u0275nextContext().$implicit;
+    const ctx_r2 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r2.getEstadoTarjeta(s_r2.id) === "correcta");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r2.getEstadoTarjeta(s_r2.id) === "incorrecta");
+  }
+}
+function JuegoSilabasPageComponent_main_17_div_6_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r1 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 22);
+    \u0275\u0275listener("click", function JuegoSilabasPageComponent_main_17_div_6_Template_div_click_0_listener() {
+      const s_r2 = \u0275\u0275restoreView(_r1).$implicit;
+      const ctx_r2 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r2.seleccionarSilaba(s_r2));
+    });
+    \u0275\u0275elementStart(1, "span", 23);
+    \u0275\u0275text(2);
+    \u0275\u0275elementEnd();
+    \u0275\u0275template(3, JuegoSilabasPageComponent_main_17_div_6_div_3_Template, 3, 0, "div", 24)(4, JuegoSilabasPageComponent_main_17_div_6_div_4_Template, 3, 2, "div", 25);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const s_r2 = ctx.$implicit;
+    const ctx_r2 = \u0275\u0275nextContext(2);
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction3(4, _c04, ctx_r2.getEstadoTarjeta(s_r2.id) === "seleccionada", ctx_r2.getEstadoTarjeta(s_r2.id) === "correcta", ctx_r2.getEstadoTarjeta(s_r2.id) === "incorrecta"));
+    \u0275\u0275advance(2);
+    \u0275\u0275textInterpolate(s_r2.silaba);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r2.getEstadoTarjeta(s_r2.id) === "seleccionada");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r2.getEstadoTarjeta(s_r2.id) === "correcta" || ctx_r2.getEstadoTarjeta(s_r2.id) === "incorrecta");
+  }
+}
+function JuegoSilabasPageComponent_main_17_div_10_div_2_mat_icon_1_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-icon");
+    \u0275\u0275text(1, "check");
+    \u0275\u0275elementEnd();
+  }
+}
+function JuegoSilabasPageComponent_main_17_div_10_div_2_mat_icon_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "mat-icon");
+    \u0275\u0275text(1, "close");
+    \u0275\u0275elementEnd();
+  }
+}
+function JuegoSilabasPageComponent_main_17_div_10_div_2_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "div", 27);
+    \u0275\u0275template(1, JuegoSilabasPageComponent_main_17_div_10_div_2_mat_icon_1_Template, 2, 0, "mat-icon", 12)(2, JuegoSilabasPageComponent_main_17_div_10_div_2_mat_icon_2_Template, 2, 0, "mat-icon", 12);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const p_r5 = \u0275\u0275nextContext().$implicit;
+    const ctx_r2 = \u0275\u0275nextContext(2);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r2.getEstadoImagen(p_r5.id) === "correcta");
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r2.getEstadoImagen(p_r5.id) === "incorrecta");
+  }
+}
+function JuegoSilabasPageComponent_main_17_div_10_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r4 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "div", 28);
+    \u0275\u0275listener("click", function JuegoSilabasPageComponent_main_17_div_10_Template_div_click_0_listener() {
+      const p_r5 = \u0275\u0275restoreView(_r4).$implicit;
+      const ctx_r2 = \u0275\u0275nextContext(2);
+      return \u0275\u0275resetView(ctx_r2.seleccionarImagen(p_r5));
+    });
+    \u0275\u0275element(1, "img", 29);
+    \u0275\u0275template(2, JuegoSilabasPageComponent_main_17_div_10_div_2_Template, 3, 2, "div", 25);
+    \u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const p_r5 = ctx.$implicit;
+    const ctx_r2 = \u0275\u0275nextContext(2);
+    \u0275\u0275property("ngClass", \u0275\u0275pureFunction3(4, _c12, ctx_r2.getEstadoImagen(p_r5.id) === "correcta", ctx_r2.getEstadoImagen(p_r5.id) === "incorrecta", ctx_r2.getEstadoImagen(p_r5.id) === "destacada"));
+    \u0275\u0275advance();
+    \u0275\u0275property("src", p_r5.imagen, \u0275\u0275sanitizeUrl)("alt", p_r5.palabra);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r2.getEstadoImagen(p_r5.id) === "correcta" || ctx_r2.getEstadoImagen(p_r5.id) === "incorrecta");
+  }
+}
+function JuegoSilabasPageComponent_main_17_Template(rf, ctx) {
+  if (rf & 1) {
+    \u0275\u0275elementStart(0, "main", 10)(1, "p", 11);
+    \u0275\u0275template(2, JuegoSilabasPageComponent_main_17_span_2_Template, 2, 0, "span", 12)(3, JuegoSilabasPageComponent_main_17_span_3_Template, 2, 0, "span", 13);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "div", 14)(5, "div", 15);
+    \u0275\u0275template(6, JuegoSilabasPageComponent_main_17_div_6_Template, 5, 8, "div", 16);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(7, "div", 17);
+    \u0275\u0275element(8, "div", 18);
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(9, "div", 19);
+    \u0275\u0275template(10, JuegoSilabasPageComponent_main_17_div_10_Template, 3, 8, "div", 20);
+    \u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const ctx_r2 = \u0275\u0275nextContext();
+    \u0275\u0275advance(2);
+    \u0275\u0275property("ngIf", !ctx_r2.silabaSeleccionada);
+    \u0275\u0275advance();
+    \u0275\u0275property("ngIf", ctx_r2.silabaSeleccionada);
+    \u0275\u0275advance(3);
+    \u0275\u0275property("ngForOf", ctx_r2.silabasRonda);
+    \u0275\u0275advance(4);
+    \u0275\u0275property("ngForOf", ctx_r2.palabrasRonda);
+  }
+}
+function JuegoSilabasPageComponent_main_18_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r6 = \u0275\u0275getCurrentView();
+    \u0275\u0275elementStart(0, "main", 30)(1, "div", 31)(2, "div", 32);
+    \u0275\u0275text(3, "\u{1F389}");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(4, "h2", 33);
+    \u0275\u0275text(5, "\xA1Muy bien!");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(6, "p", 34);
+    \u0275\u0275text(7, "Has completado todas las palabras correctamente");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(8, "div", 35)(9, "button", 36);
+    \u0275\u0275listener("click", function JuegoSilabasPageComponent_main_18_Template_button_click_9_listener() {
+      \u0275\u0275restoreView(_r6);
+      const ctx_r2 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r2.volverAJugar());
+    });
+    \u0275\u0275elementStart(10, "mat-icon");
+    \u0275\u0275text(11, "replay");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(12, " Volver a jugar ");
+    \u0275\u0275elementEnd();
+    \u0275\u0275elementStart(13, "button", 37);
+    \u0275\u0275listener("click", function JuegoSilabasPageComponent_main_18_Template_button_click_13_listener() {
+      \u0275\u0275restoreView(_r6);
+      const ctx_r2 = \u0275\u0275nextContext();
+      return \u0275\u0275resetView(ctx_r2.finalizar());
+    });
+    \u0275\u0275elementStart(14, "mat-icon");
+    \u0275\u0275text(15, "home");
+    \u0275\u0275elementEnd();
+    \u0275\u0275text(16, " Finalizar ");
+    \u0275\u0275elementEnd()()()();
+  }
+}
+var JuegoSilabasPageComponent = class _JuegoSilabasPageComponent {
+  sonidoService = inject(SonidoService);
+  router = inject(Router);
+  cdRef = inject(ChangeDetectorRef);
+  TOTAL_POR_RONDA = 4;
+  // Base de datos de todas las palabras
+  todasLasPalabras = [
+    { palabra: "acorde\xF3n", imagen: "/hablar-escribir/musica/acordeon.png", silaba: "cor" },
+    { palabra: "arm\xF3nica", imagen: "/hablar-escribir/musica/armonica.png", silaba: "ca" },
+    { palabra: "bajo", imagen: "/hablar-escribir/musica/bajo.png", silaba: "ba" },
+    { palabra: "flauta", imagen: "/hablar-escribir/musica/flauta.png", silaba: "ta" },
+    { palabra: "guitarra", imagen: "/hablar-escribir/musica/guitarra.png", silaba: "rra" },
+    { palabra: "contrabajo", imagen: "/hablar-escribir/musica/contrabajo.png", silaba: "jo" },
+    { palabra: "pandereta", imagen: "/hablar-escribir/musica/pandereta.png", silaba: "pan" },
+    { palabra: "piano", imagen: "/hablar-escribir/musica/piano.png", silaba: "no" },
+    { palabra: "saxof\xF3n", imagen: "/hablar-escribir/musica/saxofon.png", silaba: "fon" },
+    { palabra: "tambor", imagen: "/hablar-escribir/musica/tambor.png", silaba: "tam" },
+    { palabra: "teclado", imagen: "/hablar-escribir/musica/teclado.png", silaba: "cla" },
+    { palabra: "tri\xE1ngulo", imagen: "/hablar-escribir/musica/triangulo.png", silaba: "lo" },
+    { palabra: "trompeta", imagen: "/hablar-escribir/musica/trompeta.png", silaba: "pe" },
+    { palabra: "viol\xEDn", imagen: "/hablar-escribir/musica/violin.png", silaba: "vi" },
+    { palabra: "xil\xF3fono", imagen: "/hablar-escribir/musica/xilofono.png", silaba: "no" }
+  ];
+  // Estado del juego
+  palabrasRonda = [];
+  silabasRonda = [];
+  // sílabas barajadas por separado
+  silabaSeleccionada = null;
+  conexiones = /* @__PURE__ */ new Map();
+  // silabaId -> imagenId
+  estadoTarjetas = /* @__PURE__ */ new Map();
+  estadoImagenes = /* @__PURE__ */ new Map();
+  aciertos = 0;
+  juegoTerminado = false;
+  procesando = false;
+  ngOnInit() {
+    this.iniciarRonda();
+  }
+  iniciarRonda() {
+    const mezcladas = [...this.todasLasPalabras].sort(() => Math.random() - 0.5).slice(0, this.TOTAL_POR_RONDA).map((p, i) => __spreadProps(__spreadValues({}, p), { id: i }));
+    this.palabrasRonda = mezcladas;
+    this.silabasRonda = [...mezcladas].sort(() => Math.random() - 0.5);
+    this.estadoTarjetas = new Map(mezcladas.map((p) => [p.id, "neutro"]));
+    this.estadoImagenes = new Map(mezcladas.map((p) => [p.id, "neutro"]));
+    this.conexiones = /* @__PURE__ */ new Map();
+    this.silabaSeleccionada = null;
+    this.aciertos = 0;
+    this.juegoTerminado = false;
+    this.procesando = false;
+    this.cdRef.detectChanges();
+  }
+  seleccionarSilaba(palabra) {
+    if (this.procesando)
+      return;
+    if (this.estadoTarjetas.get(palabra.id) === "correcta")
+      return;
+    this.sonidoService.hablar(palabra.silaba);
+    if (this.silabaSeleccionada?.id === palabra.id) {
+      this.setEstadoTarjeta(palabra.id, "neutro");
+      this.silabaSeleccionada = null;
+      this.actualizarDestacadoImagenes(false);
+      return;
+    }
+    if (this.silabaSeleccionada) {
+      this.setEstadoTarjeta(this.silabaSeleccionada.id, "neutro");
+    }
+    this.setEstadoTarjeta(palabra.id, "seleccionada");
+    this.silabaSeleccionada = palabra;
+    this.actualizarDestacadoImagenes(true);
+  }
+  seleccionarImagen(palabra) {
+    if (!this.silabaSeleccionada || this.procesando)
+      return;
+    if (this.estadoImagenes.get(palabra.id) === "correcta")
+      return;
+    this.procesando = true;
+    const silaba = this.silabaSeleccionada;
+    if (silaba.id === palabra.id) {
+      setTimeout(() => {
+        this.sonidoService.hablar(palabra.palabra);
+        this.setEstadoTarjeta(silaba.id, "correcta");
+        this.setEstadoImagen(palabra.id, "correcta");
+        const mapa = new Map(this.conexiones);
+        mapa.set(silaba.id, palabra.id);
+        this.conexiones = mapa;
+        this.aciertos++;
+        this.silabaSeleccionada = null;
+        this.actualizarDestacadoImagenes(false);
+        this.procesando = false;
+        this.cdRef.detectChanges();
+        if (this.aciertos >= this.TOTAL_POR_RONDA) {
+          setTimeout(() => {
+            this.juegoTerminado = true;
+            this.cdRef.detectChanges();
+          }, 500);
+        }
+      }, 200);
+    } else {
+      this.setEstadoTarjeta(silaba.id, "incorrecta");
+      this.setEstadoImagen(palabra.id, "incorrecta");
+      setTimeout(() => {
+        this.setEstadoTarjeta(silaba.id, "neutro");
+        this.setEstadoImagen(palabra.id, "neutro");
+        this.silabaSeleccionada = null;
+        this.actualizarDestacadoImagenes(false);
+        this.procesando = false;
+        this.cdRef.detectChanges();
+      }, 800);
+    }
+  }
+  volverAJugar() {
+    this.iniciarRonda();
+  }
+  finalizar() {
+    this.router.navigate(["/hablar-escribir"]);
+  }
+  // ── Helpers ──────────────────────────────────────────
+  getEstadoTarjeta(id) {
+    return this.estadoTarjetas.get(id) ?? "neutro";
+  }
+  getEstadoImagen(id) {
+    return this.estadoImagenes.get(id) ?? "neutro";
+  }
+  setEstadoTarjeta(id, estado) {
+    this.estadoTarjetas = new Map(this.estadoTarjetas);
+    this.estadoTarjetas.set(id, estado);
+  }
+  setEstadoImagen(id, estado) {
+    this.estadoImagenes = new Map(this.estadoImagenes);
+    this.estadoImagenes.set(id, estado);
+  }
+  actualizarDestacadoImagenes(destacar) {
+    const nuevo = new Map(this.estadoImagenes);
+    this.palabrasRonda.forEach((p) => {
+      if (nuevo.get(p.id) !== "correcta") {
+        nuevo.set(p.id, destacar ? "destacada" : "neutro");
+      }
+    });
+    this.estadoImagenes = nuevo;
+  }
+  static \u0275fac = function JuegoSilabasPageComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _JuegoSilabasPageComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _JuegoSilabasPageComponent, selectors: [["app-juego-silabas-page"]], decls: 22, vars: 10, consts: [[1, "juego-layout"], [1, "header"], ["routerLink", "/hablar-escribir", "aria-label", "Volver", 1, "btn-circle"], [1, "header-titulo"], [1, "header-acertados"], [1, "btn-sonido", 3, "click", "title"], [1, "icono-check"], ["class", "main-content", 4, "ngIf"], ["class", "main-content pantalla-fin", 4, "ngIf"], [1, "credito-soyvisual"], [1, "main-content"], [1, "instruccion"], [4, "ngIf"], ["class", "instruccion-activa", 4, "ngIf"], [1, "zona-juego"], [1, "columna", "columna-silabas"], ["class", "tarjeta tarjeta-silaba", 3, "ngClass", "click", 4, "ngFor", "ngForOf"], [1, "separador"], [1, "linea-vertical"], [1, "columna", "columna-imagenes"], ["class", "tarjeta tarjeta-imagen", 3, "ngClass", "click", 4, "ngFor", "ngForOf"], [1, "instruccion-activa"], [1, "tarjeta", "tarjeta-silaba", 3, "click", "ngClass"], [1, "texto-silaba"], ["class", "flecha-seleccion", 4, "ngIf"], ["class", "overlay-feedback", 4, "ngIf"], [1, "flecha-seleccion"], [1, "overlay-feedback"], [1, "tarjeta", "tarjeta-imagen", 3, "click", "ngClass"], [3, "src", "alt"], [1, "main-content", "pantalla-fin"], [1, "fin-card"], [1, "fin-icono"], [1, "fin-titulo"], [1, "fin-subtitulo"], [1, "fin-botones"], [1, "btn-accion", "btn-reiniciar", 3, "click"], [1, "btn-accion", "btn-finalizar", 3, "click"]], template: function JuegoSilabasPageComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      \u0275\u0275elementStart(0, "div", 0)(1, "header", 1)(2, "button", 2)(3, "mat-icon");
+      \u0275\u0275text(4, "arrow_back");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(5, "span", 3);
+      \u0275\u0275text(6, "Completa las palabras eligiendo una s\xEDlaba");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(7, "div", 4)(8, "button", 5);
+      \u0275\u0275pipe(9, "async");
+      \u0275\u0275listener("click", function JuegoSilabasPageComponent_Template_button_click_8_listener() {
+        return ctx.sonidoService.toggle();
+      });
+      \u0275\u0275elementStart(10, "mat-icon");
+      \u0275\u0275text(11);
+      \u0275\u0275pipe(12, "async");
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(13, "mat-icon", 6);
+      \u0275\u0275text(14, "check_circle");
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(15, "span");
+      \u0275\u0275text(16);
+      \u0275\u0275elementEnd()()();
+      \u0275\u0275template(17, JuegoSilabasPageComponent_main_17_Template, 11, 4, "main", 7)(18, JuegoSilabasPageComponent_main_18_Template, 17, 0, "main", 8);
+      \u0275\u0275elementStart(19, "div", 9)(20, "span");
+      \u0275\u0275text(21, "Pictogramas propiedad de Soy Visual");
+      \u0275\u0275elementEnd()()();
+    }
+    if (rf & 2) {
+      \u0275\u0275advance(8);
+      \u0275\u0275property("title", \u0275\u0275pipeBind1(9, 6, ctx.sonidoService.activo$) ? "Desactivar sonido" : "Activar sonido");
+      \u0275\u0275advance(3);
+      \u0275\u0275textInterpolate(\u0275\u0275pipeBind1(12, 8, ctx.sonidoService.activo$) ? "volume_up" : "volume_off");
+      \u0275\u0275advance(5);
+      \u0275\u0275textInterpolate2("", ctx.aciertos, " / ", ctx.TOTAL_POR_RONDA);
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", !ctx.juegoTerminado);
+      \u0275\u0275advance();
+      \u0275\u0275property("ngIf", ctx.juegoTerminado);
+    }
+  }, dependencies: [CommonModule, NgClass, NgForOf, NgIf, RouterModule, RouterLink, MatIconModule, MatIcon, AsyncPipe], styles: ['\n\n.juego-layout[_ngcontent-%COMP%] {\n  min-height: 100vh;\n  display: flex;\n  flex-direction: column;\n  background-color: #fff;\n  font-family:\n    "Nunito",\n    "Segoe UI",\n    Arial,\n    sans-serif;\n}\n.header[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0 24px;\n  height: 64px;\n  background: #fff;\n  border-bottom: 2px solid #e5e7eb;\n  gap: 12px;\n  flex-shrink: 0;\n}\n.header-titulo[_ngcontent-%COMP%] {\n  font-size: 1.05rem;\n  font-weight: 700;\n  color: #333;\n  flex: 1;\n  text-align: center;\n}\n.header-acertados[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 1.1rem;\n  font-weight: 700;\n  color: #4f46e5;\n}\n.icono-check[_ngcontent-%COMP%] {\n  color: #22c55e;\n}\n.btn-circle[_ngcontent-%COMP%], \n.btn-sonido[_ngcontent-%COMP%] {\n  background: #fff;\n  border: 2px solid #e5e7eb;\n  border-radius: 50%;\n  width: 48px;\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  color: #333;\n  padding: 0;\n  flex-shrink: 0;\n  transition: background-color 0.2s, border-color 0.2s;\n}\n.btn-circle[_ngcontent-%COMP%]:hover, \n.btn-sonido[_ngcontent-%COMP%]:hover {\n  background-color: #ede9fe;\n  border-color: #4f46e5;\n  color: #4f46e5;\n}\n.main-content[_ngcontent-%COMP%] {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 20px 24px;\n  gap: 20px;\n}\n.instruccion[_ngcontent-%COMP%] {\n  font-size: 1rem;\n  font-weight: 600;\n  color: #6b7280;\n  margin: 0;\n  text-align: center;\n  min-height: 1.5em;\n}\n.instruccion-activa[_ngcontent-%COMP%] {\n  color: #4f46e5;\n  font-weight: 700;\n}\n.zona-juego[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0;\n  width: 100%;\n  max-width: 760px;\n}\n.columna[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  gap: 18px;\n  flex: 1;\n  align-items: center;\n}\n.separador[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0 28px;\n  align-self: stretch;\n}\n.linea-vertical[_ngcontent-%COMP%] {\n  width: 3px;\n  height: 100%;\n  min-height: 320px;\n  background:\n    linear-gradient(\n      to bottom,\n      transparent 0%,\n      #d1d5db 15%,\n      #d1d5db 85%,\n      transparent 100%);\n  border-radius: 2px;\n}\n.tarjeta[_ngcontent-%COMP%] {\n  position: relative;\n  border-radius: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  overflow: hidden;\n  transition:\n    transform 0.15s,\n    border-color 0.2s,\n    box-shadow 0.2s;\n  background: #fafafa;\n  border: 3px solid #e5e7eb;\n}\n.tarjeta[_ngcontent-%COMP%]:hover:not(.correcta) {\n  transform: scale(1.06);\n  border-color: #4f46e5;\n  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);\n}\n.tarjeta-silaba[_ngcontent-%COMP%] {\n  width: 110px;\n  height: 110px;\n}\n.texto-silaba[_ngcontent-%COMP%] {\n  font-size: 2.4rem;\n  font-weight: 800;\n  color: #333;\n  letter-spacing: 1px;\n  -webkit-user-select: none;\n  user-select: none;\n}\n.tarjeta-imagen[_ngcontent-%COMP%] {\n  width: 140px;\n  height: 140px;\n}\n.tarjeta-imagen[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  width: 82%;\n  height: 82%;\n  object-fit: contain;\n}\n.tarjeta.seleccionada[_ngcontent-%COMP%] {\n  border-color: #4f46e5;\n  background: #ede9fe;\n  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.22);\n  transform: scale(1.08);\n}\n.tarjeta.correcta[_ngcontent-%COMP%] {\n  border-color: #22c55e;\n  background: #f0fdf4;\n  cursor: default;\n}\n.tarjeta.correcta[_ngcontent-%COMP%]:hover {\n  transform: none;\n  box-shadow: none;\n}\n.tarjeta.incorrecta[_ngcontent-%COMP%] {\n  border-color: #ef4444;\n  background: #fff1f2;\n  animation: _ngcontent-%COMP%_shake 0.45s ease;\n}\n.tarjeta.destacada[_ngcontent-%COMP%] {\n  border-color: #f59e0b;\n  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.22);\n  animation: _ngcontent-%COMP%_pulse-disponible 1.2s ease-in-out infinite;\n}\n@keyframes _ngcontent-%COMP%_pulse-disponible {\n  0%, 100% {\n    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);\n  }\n  50% {\n    box-shadow: 0 0 0 7px rgba(245, 158, 11, 0.35);\n  }\n}\n@keyframes _ngcontent-%COMP%_shake {\n  0%, 100% {\n    transform: translateX(0);\n  }\n  20% {\n    transform: translateX(-7px);\n  }\n  40% {\n    transform: translateX(7px);\n  }\n  60% {\n    transform: translateX(-4px);\n  }\n  80% {\n    transform: translateX(4px);\n  }\n}\n.flecha-seleccion[_ngcontent-%COMP%] {\n  position: absolute;\n  right: -4px;\n  top: 50%;\n  transform: translateY(-50%);\n  background: #4f46e5;\n  border-radius: 50%;\n  width: 28px;\n  height: 28px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: #fff;\n  animation: _ngcontent-%COMP%_bounce-right 0.6s ease-in-out infinite alternate;\n  z-index: 2;\n}\n.flecha-seleccion[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 18px;\n  width: 18px;\n  height: 18px;\n}\n@keyframes _ngcontent-%COMP%_bounce-right {\n  from {\n    right: -4px;\n  }\n  to {\n    right: -12px;\n  }\n}\n.overlay-feedback[_ngcontent-%COMP%] {\n  position: absolute;\n  inset: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background: rgba(255, 255, 255, 0.55);\n  border-radius: 17px;\n}\n.correcta[_ngcontent-%COMP%]   .overlay-feedback[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 52px;\n  width: 52px;\n  height: 52px;\n  color: #16a34a;\n  font-weight: 900;\n}\n.incorrecta[_ngcontent-%COMP%]   .overlay-feedback[_ngcontent-%COMP%]   mat-icon[_ngcontent-%COMP%] {\n  font-size: 52px;\n  width: 52px;\n  height: 52px;\n  color: #dc2626;\n}\n.pantalla-fin[_ngcontent-%COMP%] {\n  justify-content: center;\n}\n.fin-card[_ngcontent-%COMP%] {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n  background: #fff;\n  border: 3px solid #22c55e;\n  border-radius: 24px;\n  padding: 40px 48px;\n  box-shadow: 0 8px 32px rgba(34, 197, 94, 0.15);\n  animation: _ngcontent-%COMP%_pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);\n}\n@keyframes _ngcontent-%COMP%_pop-in {\n  from {\n    transform: scale(0.7);\n    opacity: 0;\n  }\n  to {\n    transform: scale(1);\n    opacity: 1;\n  }\n}\n.fin-icono[_ngcontent-%COMP%] {\n  font-size: 72px;\n  line-height: 1;\n}\n.fin-titulo[_ngcontent-%COMP%] {\n  font-size: 2rem;\n  font-weight: 800;\n  color: #16a34a;\n  margin: 0;\n}\n.fin-subtitulo[_ngcontent-%COMP%] {\n  font-size: 1.05rem;\n  color: #555;\n  margin: 0;\n}\n.fin-botones[_ngcontent-%COMP%] {\n  display: flex;\n  gap: 12px;\n  flex-wrap: wrap;\n  justify-content: center;\n  margin-top: 8px;\n}\n.btn-accion[_ngcontent-%COMP%] {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  border: none;\n  border-radius: 12px;\n  padding: 14px 28px;\n  font-size: 1rem;\n  font-weight: 700;\n  cursor: pointer;\n  transition: background-color 0.2s, transform 0.15s;\n}\n.btn-reiniciar[_ngcontent-%COMP%] {\n  background-color: #4f46e5;\n  color: #fff;\n}\n.btn-reiniciar[_ngcontent-%COMP%]:hover {\n  background-color: #4338ca;\n  transform: scale(1.03);\n}\n.btn-finalizar[_ngcontent-%COMP%] {\n  background-color: #f0fdf4;\n  color: #16a34a;\n  border: 2px solid #22c55e;\n}\n.btn-finalizar[_ngcontent-%COMP%]:hover {\n  background-color: #dcfce7;\n  transform: scale(1.03);\n}\n.credito-soyvisual[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 10px 16px;\n  font-size: 0.78rem;\n  color: #999;\n  border-top: 1px solid #e5e7eb;\n}\n/*# sourceMappingURL=juego-silabas-page.component.css.map */'] });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(JuegoSilabasPageComponent, [{
+    type: Component,
+    args: [{ selector: "app-juego-silabas-page", standalone: true, imports: [CommonModule, RouterModule, MatIconModule, AsyncPipe], template: `<div class="juego-layout">
+
+  <!-- CABECERA -->
+  <header class="header">
+    <button class="btn-circle" routerLink="/hablar-escribir" aria-label="Volver">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="header-titulo">Completa las palabras eligiendo una s\xEDlaba</span>
+    <div class="header-acertados">
+      <button class="btn-sonido" (click)="sonidoService.toggle()"
+        [title]="(sonidoService.activo$ | async) ? 'Desactivar sonido' : 'Activar sonido'">
+        <mat-icon>{{ (sonidoService.activo$ | async) ? 'volume_up' : 'volume_off' }}</mat-icon>
+      </button>
+      <mat-icon class="icono-check">check_circle</mat-icon>
+      <span>{{ aciertos }} / {{ TOTAL_POR_RONDA }}</span>
+    </div>
+  </header>
+
+  <!-- JUEGO ACTIVO -->
+  <main class="main-content" *ngIf="!juegoTerminado">
+
+    <p class="instruccion">
+      <span *ngIf="!silabaSeleccionada">Toca una s\xEDlaba de la izquierda</span>
+      <span *ngIf="silabaSeleccionada" class="instruccion-activa">Ahora toca el instrumento de la derecha</span>
+    </p>
+
+    <div class="zona-juego">
+
+      <!-- COLUMNA IZQUIERDA: S\xEDlabas -->
+      <div class="columna columna-silabas">
+        <div
+          *ngFor="let s of silabasRonda"
+          class="tarjeta tarjeta-silaba"
+          [ngClass]="{
+            'seleccionada': getEstadoTarjeta(s.id) === 'seleccionada',
+            'correcta':     getEstadoTarjeta(s.id) === 'correcta',
+            'incorrecta':   getEstadoTarjeta(s.id) === 'incorrecta'
+          }"
+          (click)="seleccionarSilaba(s)">
+
+          <span class="texto-silaba">{{ s.silaba }}</span>
+
+          <!-- Flecha animada cuando est\xE1 seleccionada -->
+          <div class="flecha-seleccion" *ngIf="getEstadoTarjeta(s.id) === 'seleccionada'">
+            <mat-icon>arrow_forward</mat-icon>
+          </div>
+
+          <!-- Feedback overlay -->
+          <div class="overlay-feedback" *ngIf="getEstadoTarjeta(s.id) === 'correcta' || getEstadoTarjeta(s.id) === 'incorrecta'">
+            <mat-icon *ngIf="getEstadoTarjeta(s.id) === 'correcta'">check</mat-icon>
+            <mat-icon *ngIf="getEstadoTarjeta(s.id) === 'incorrecta'">close</mat-icon>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEPARADOR CENTRAL -->
+      <div class="separador">
+        <div class="linea-vertical"></div>
+      </div>
+
+      <!-- COLUMNA DERECHA: Im\xE1genes -->
+      <div class="columna columna-imagenes">
+        <div
+          *ngFor="let p of palabrasRonda"
+          class="tarjeta tarjeta-imagen"
+          [ngClass]="{
+            'correcta':   getEstadoImagen(p.id) === 'correcta',
+            'incorrecta': getEstadoImagen(p.id) === 'incorrecta',
+            'destacada':  getEstadoImagen(p.id) === 'destacada'
+          }"
+          (click)="seleccionarImagen(p)">
+
+          <img [src]="p.imagen" [alt]="p.palabra" />
+
+          <!-- Feedback overlay -->
+          <div class="overlay-feedback" *ngIf="getEstadoImagen(p.id) === 'correcta' || getEstadoImagen(p.id) === 'incorrecta'">
+            <mat-icon *ngIf="getEstadoImagen(p.id) === 'correcta'">check</mat-icon>
+            <mat-icon *ngIf="getEstadoImagen(p.id) === 'incorrecta'">close</mat-icon>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- PANTALLA DE VICTORIA -->
+  <main class="main-content pantalla-fin" *ngIf="juegoTerminado">
+    <div class="fin-card">
+      <div class="fin-icono">\u{1F389}</div>
+      <h2 class="fin-titulo">\xA1Muy bien!</h2>
+      <p class="fin-subtitulo">Has completado todas las palabras correctamente</p>
+      <div class="fin-botones">
+        <button class="btn-accion btn-reiniciar" (click)="volverAJugar()">
+          <mat-icon>replay</mat-icon>
+          Volver a jugar
+        </button>
+        <button class="btn-accion btn-finalizar" (click)="finalizar()">
+          <mat-icon>home</mat-icon>
+          Finalizar
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <!-- CR\xC9DITO -->
+  <div class="credito-soyvisual">
+    <span>Pictogramas propiedad de Soy Visual</span>
+  </div>
+
+</div>
+`, styles: ['/* src/app/funcionalidades/juegos/juego-silabas/paginas/juego-silabas-page/juego-silabas-page.component.css */\n.juego-layout {\n  min-height: 100vh;\n  display: flex;\n  flex-direction: column;\n  background-color: #fff;\n  font-family:\n    "Nunito",\n    "Segoe UI",\n    Arial,\n    sans-serif;\n}\n.header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0 24px;\n  height: 64px;\n  background: #fff;\n  border-bottom: 2px solid #e5e7eb;\n  gap: 12px;\n  flex-shrink: 0;\n}\n.header-titulo {\n  font-size: 1.05rem;\n  font-weight: 700;\n  color: #333;\n  flex: 1;\n  text-align: center;\n}\n.header-acertados {\n  display: flex;\n  align-items: center;\n  gap: 6px;\n  font-size: 1.1rem;\n  font-weight: 700;\n  color: #4f46e5;\n}\n.icono-check {\n  color: #22c55e;\n}\n.btn-circle,\n.btn-sonido {\n  background: #fff;\n  border: 2px solid #e5e7eb;\n  border-radius: 50%;\n  width: 48px;\n  height: 48px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  color: #333;\n  padding: 0;\n  flex-shrink: 0;\n  transition: background-color 0.2s, border-color 0.2s;\n}\n.btn-circle:hover,\n.btn-sonido:hover {\n  background-color: #ede9fe;\n  border-color: #4f46e5;\n  color: #4f46e5;\n}\n.main-content {\n  flex: 1;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  padding: 20px 24px;\n  gap: 20px;\n}\n.instruccion {\n  font-size: 1rem;\n  font-weight: 600;\n  color: #6b7280;\n  margin: 0;\n  text-align: center;\n  min-height: 1.5em;\n}\n.instruccion-activa {\n  color: #4f46e5;\n  font-weight: 700;\n}\n.zona-juego {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 0;\n  width: 100%;\n  max-width: 760px;\n}\n.columna {\n  display: flex;\n  flex-direction: column;\n  gap: 18px;\n  flex: 1;\n  align-items: center;\n}\n.separador {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: 0 28px;\n  align-self: stretch;\n}\n.linea-vertical {\n  width: 3px;\n  height: 100%;\n  min-height: 320px;\n  background:\n    linear-gradient(\n      to bottom,\n      transparent 0%,\n      #d1d5db 15%,\n      #d1d5db 85%,\n      transparent 100%);\n  border-radius: 2px;\n}\n.tarjeta {\n  position: relative;\n  border-radius: 20px;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  cursor: pointer;\n  overflow: hidden;\n  transition:\n    transform 0.15s,\n    border-color 0.2s,\n    box-shadow 0.2s;\n  background: #fafafa;\n  border: 3px solid #e5e7eb;\n}\n.tarjeta:hover:not(.correcta) {\n  transform: scale(1.06);\n  border-color: #4f46e5;\n  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);\n}\n.tarjeta-silaba {\n  width: 110px;\n  height: 110px;\n}\n.texto-silaba {\n  font-size: 2.4rem;\n  font-weight: 800;\n  color: #333;\n  letter-spacing: 1px;\n  -webkit-user-select: none;\n  user-select: none;\n}\n.tarjeta-imagen {\n  width: 140px;\n  height: 140px;\n}\n.tarjeta-imagen img {\n  width: 82%;\n  height: 82%;\n  object-fit: contain;\n}\n.tarjeta.seleccionada {\n  border-color: #4f46e5;\n  background: #ede9fe;\n  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.22);\n  transform: scale(1.08);\n}\n.tarjeta.correcta {\n  border-color: #22c55e;\n  background: #f0fdf4;\n  cursor: default;\n}\n.tarjeta.correcta:hover {\n  transform: none;\n  box-shadow: none;\n}\n.tarjeta.incorrecta {\n  border-color: #ef4444;\n  background: #fff1f2;\n  animation: shake 0.45s ease;\n}\n.tarjeta.destacada {\n  border-color: #f59e0b;\n  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.22);\n  animation: pulse-disponible 1.2s ease-in-out infinite;\n}\n@keyframes pulse-disponible {\n  0%, 100% {\n    box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);\n  }\n  50% {\n    box-shadow: 0 0 0 7px rgba(245, 158, 11, 0.35);\n  }\n}\n@keyframes shake {\n  0%, 100% {\n    transform: translateX(0);\n  }\n  20% {\n    transform: translateX(-7px);\n  }\n  40% {\n    transform: translateX(7px);\n  }\n  60% {\n    transform: translateX(-4px);\n  }\n  80% {\n    transform: translateX(4px);\n  }\n}\n.flecha-seleccion {\n  position: absolute;\n  right: -4px;\n  top: 50%;\n  transform: translateY(-50%);\n  background: #4f46e5;\n  border-radius: 50%;\n  width: 28px;\n  height: 28px;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  color: #fff;\n  animation: bounce-right 0.6s ease-in-out infinite alternate;\n  z-index: 2;\n}\n.flecha-seleccion mat-icon {\n  font-size: 18px;\n  width: 18px;\n  height: 18px;\n}\n@keyframes bounce-right {\n  from {\n    right: -4px;\n  }\n  to {\n    right: -12px;\n  }\n}\n.overlay-feedback {\n  position: absolute;\n  inset: 0;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background: rgba(255, 255, 255, 0.55);\n  border-radius: 17px;\n}\n.correcta .overlay-feedback mat-icon {\n  font-size: 52px;\n  width: 52px;\n  height: 52px;\n  color: #16a34a;\n  font-weight: 900;\n}\n.incorrecta .overlay-feedback mat-icon {\n  font-size: 52px;\n  width: 52px;\n  height: 52px;\n  color: #dc2626;\n}\n.pantalla-fin {\n  justify-content: center;\n}\n.fin-card {\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n  gap: 16px;\n  background: #fff;\n  border: 3px solid #22c55e;\n  border-radius: 24px;\n  padding: 40px 48px;\n  box-shadow: 0 8px 32px rgba(34, 197, 94, 0.15);\n  animation: pop-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);\n}\n@keyframes pop-in {\n  from {\n    transform: scale(0.7);\n    opacity: 0;\n  }\n  to {\n    transform: scale(1);\n    opacity: 1;\n  }\n}\n.fin-icono {\n  font-size: 72px;\n  line-height: 1;\n}\n.fin-titulo {\n  font-size: 2rem;\n  font-weight: 800;\n  color: #16a34a;\n  margin: 0;\n}\n.fin-subtitulo {\n  font-size: 1.05rem;\n  color: #555;\n  margin: 0;\n}\n.fin-botones {\n  display: flex;\n  gap: 12px;\n  flex-wrap: wrap;\n  justify-content: center;\n  margin-top: 8px;\n}\n.btn-accion {\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  border: none;\n  border-radius: 12px;\n  padding: 14px 28px;\n  font-size: 1rem;\n  font-weight: 700;\n  cursor: pointer;\n  transition: background-color 0.2s, transform 0.15s;\n}\n.btn-reiniciar {\n  background-color: #4f46e5;\n  color: #fff;\n}\n.btn-reiniciar:hover {\n  background-color: #4338ca;\n  transform: scale(1.03);\n}\n.btn-finalizar {\n  background-color: #f0fdf4;\n  color: #16a34a;\n  border: 2px solid #22c55e;\n}\n.btn-finalizar:hover {\n  background-color: #dcfce7;\n  transform: scale(1.03);\n}\n.credito-soyvisual {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding: 10px 16px;\n  font-size: 0.78rem;\n  color: #999;\n  border-top: 1px solid #e5e7eb;\n}\n/*# sourceMappingURL=juego-silabas-page.component.css.map */\n'] }]
+  }], null, null);
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(JuegoSilabasPageComponent, { className: "JuegoSilabasPageComponent", filePath: "src/app/funcionalidades/juegos/juego-silabas/paginas/juego-silabas-page/juego-silabas-page.component.ts", lineNumber: 23 });
 })();
 
 // src/app/main/perfiles/componentes/perfiles.component.ts
@@ -20546,8 +21049,8 @@ var _RecycleViewRepeaterStrategy = class {
 };
 
 // node_modules/@angular/cdk/fesm2022/scrolling.mjs
-var _c04 = ["contentWrapper"];
-var _c12 = ["*"];
+var _c05 = ["contentWrapper"];
+var _c13 = ["*"];
 var VIRTUAL_SCROLL_STRATEGY = new InjectionToken("VIRTUAL_SCROLL_STRATEGY");
 var FixedSizeVirtualScrollStrategy = class {
   _scrolledIndexChange = new Subject();
@@ -21339,7 +21842,7 @@ var CdkVirtualScrollViewport = class _CdkVirtualScrollViewport extends CdkVirtua
     selectors: [["cdk-virtual-scroll-viewport"]],
     viewQuery: function CdkVirtualScrollViewport_Query(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275viewQuery(_c04, 7);
+        \u0275\u0275viewQuery(_c05, 7);
       }
       if (rf & 2) {
         let _t;
@@ -21369,7 +21872,7 @@ var CdkVirtualScrollViewport = class _CdkVirtualScrollViewport extends CdkVirtua
       provide: CDK_VIRTUAL_SCROLL_VIEWPORT,
       useExisting: _CdkVirtualScrollViewport
     }]), \u0275\u0275InheritDefinitionFeature],
-    ngContentSelectors: _c12,
+    ngContentSelectors: _c13,
     decls: 4,
     vars: 4,
     consts: [["contentWrapper", ""], [1, "cdk-virtual-scroll-content-wrapper"], [1, "cdk-virtual-scroll-spacer"]],
@@ -26882,8 +27385,8 @@ var _StructuralStylesLoader = class __StructuralStylesLoader {
 })();
 
 // node_modules/@angular/material/fesm2022/_icon-button-chunk.mjs
-var _c05 = ["mat-icon-button", ""];
-var _c13 = ["*"];
+var _c06 = ["mat-icon-button", ""];
+var _c14 = ["*"];
 var MAT_BUTTON_CONFIG = new InjectionToken("MAT_BUTTON_CONFIG");
 function transformTabIndex(value) {
   return value == null ? void 0 : numberAttribute(value);
@@ -27082,8 +27585,8 @@ var MatIconButton = class _MatIconButton extends MatButtonBase {
     hostAttrs: [1, "mdc-icon-button", "mat-mdc-icon-button"],
     exportAs: ["matButton", "matAnchor"],
     features: [\u0275\u0275InheritDefinitionFeature],
-    attrs: _c05,
-    ngContentSelectors: _c13,
+    attrs: _c06,
+    ngContentSelectors: _c14,
     decls: 4,
     vars: 0,
     consts: [[1, "mat-mdc-button-persistent-ripple", "mdc-icon-button__ripple"], [1, "mat-focus-indicator"], [1, "mat-mdc-button-touch-target"]],
@@ -27153,8 +27656,8 @@ var MatRippleModule = class _MatRippleModule {
 })();
 
 // node_modules/@angular/material/fesm2022/button.mjs
-var _c06 = ["matButton", ""];
-var _c14 = [[["", 8, "material-icons", 3, "iconPositionEnd", ""], ["mat-icon", 3, "iconPositionEnd", ""], ["", "matButtonIcon", "", 3, "iconPositionEnd", ""]], "*", [["", "iconPositionEnd", "", 8, "material-icons"], ["mat-icon", "iconPositionEnd", ""], ["", "matButtonIcon", "", "iconPositionEnd", ""]]];
+var _c07 = ["matButton", ""];
+var _c15 = [[["", 8, "material-icons", 3, "iconPositionEnd", ""], ["mat-icon", 3, "iconPositionEnd", ""], ["", "matButtonIcon", "", 3, "iconPositionEnd", ""]], "*", [["", "iconPositionEnd", "", 8, "material-icons"], ["mat-icon", "iconPositionEnd", ""], ["", "matButtonIcon", "", "iconPositionEnd", ""]]];
 var _c2 = [".material-icons:not([iconPositionEnd]), mat-icon:not([iconPositionEnd]), [matButtonIcon]:not([iconPositionEnd])", "*", ".material-icons[iconPositionEnd], mat-icon[iconPositionEnd], [matButtonIcon][iconPositionEnd]"];
 var _c3 = ["mat-fab", ""];
 var _c4 = ["mat-mini-fab", ""];
@@ -27203,14 +27706,14 @@ var MatButton = class _MatButton extends MatButtonBase {
     },
     exportAs: ["matButton", "matAnchor"],
     features: [\u0275\u0275InheritDefinitionFeature],
-    attrs: _c06,
+    attrs: _c07,
     ngContentSelectors: _c2,
     decls: 7,
     vars: 4,
     consts: [[1, "mat-mdc-button-persistent-ripple"], [1, "mdc-button__label"], [1, "mat-focus-indicator"], [1, "mat-mdc-button-touch-target"]],
     template: function MatButton_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275projectionDef(_c14);
+        \u0275\u0275projectionDef(_c15);
         \u0275\u0275domElement(0, "span", 0);
         \u0275\u0275projection(1);
         \u0275\u0275domElementStart(2, "span", 1);
@@ -27331,7 +27834,7 @@ var MatFabButton = class _MatFabButton extends MatButtonBase {
     consts: [[1, "mat-mdc-button-persistent-ripple"], [1, "mdc-button__label"], [1, "mat-focus-indicator"], [1, "mat-mdc-button-touch-target"]],
     template: function MatFabButton_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275projectionDef(_c14);
+        \u0275\u0275projectionDef(_c15);
         \u0275\u0275domElement(0, "span", 0);
         \u0275\u0275projection(1);
         \u0275\u0275domElementStart(2, "span", 1);
@@ -27420,7 +27923,7 @@ var MatMiniFabButton = class _MatMiniFabButton extends MatButtonBase {
     consts: [[1, "mat-mdc-button-persistent-ripple"], [1, "mdc-button__label"], [1, "mat-focus-indicator"], [1, "mat-mdc-button-touch-target"]],
     template: function MatMiniFabButton_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275projectionDef(_c14);
+        \u0275\u0275projectionDef(_c15);
         \u0275\u0275domElement(0, "span", 0);
         \u0275\u0275projection(1);
         \u0275\u0275domElementStart(2, "span", 1);
@@ -27516,7 +28019,7 @@ function SimpleSnackBar_Conditional_2_Template(rf, ctx) {
     \u0275\u0275textInterpolate1(" ", ctx_r1.data.action, " ");
   }
 }
-var _c07 = ["label"];
+var _c08 = ["label"];
 function MatSnackBarContainer_ng_template_4_Template(rf, ctx) {
 }
 var MAX_TIMEOUT = Math.pow(2, 31) - 1;
@@ -27927,7 +28430,7 @@ var MatSnackBarContainer = class _MatSnackBarContainer extends BasePortalOutlet 
     selectors: [["mat-snack-bar-container"]],
     viewQuery: function MatSnackBarContainer_Query(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275viewQuery(CdkPortalOutlet, 7)(_c07, 7);
+        \u0275\u0275viewQuery(CdkPortalOutlet, 7)(_c08, 7);
       }
       if (rf & 2) {
         let _t;
@@ -32954,8 +33457,8 @@ var SharedResizeObserver = class _SharedResizeObserver {
 })();
 
 // node_modules/@angular/material/fesm2022/_form-field-chunk.mjs
-var _c08 = ["notch"];
-var _c15 = ["matFormFieldNotchedOutline", ""];
+var _c09 = ["notch"];
+var _c16 = ["matFormFieldNotchedOutline", ""];
 var _c22 = ["*"];
 var _c32 = ["iconPrefixContainer"];
 var _c42 = ["textPrefixContainer"];
@@ -33481,7 +33984,7 @@ var MatFormFieldNotchedOutline = class _MatFormFieldNotchedOutline {
     selectors: [["div", "matFormFieldNotchedOutline", ""]],
     viewQuery: function MatFormFieldNotchedOutline_Query(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275viewQuery(_c08, 5);
+        \u0275\u0275viewQuery(_c09, 5);
       }
       if (rf & 2) {
         let _t;
@@ -33498,7 +34001,7 @@ var MatFormFieldNotchedOutline = class _MatFormFieldNotchedOutline {
     inputs: {
       open: [0, "matFormFieldNotchedOutlineOpen", "open"]
     },
-    attrs: _c15,
+    attrs: _c16,
     ngContentSelectors: _c22,
     decls: 5,
     vars: 0,
@@ -35290,7 +35793,7 @@ var DateAdapter = class {
 var MAT_DATE_FORMATS = new InjectionToken("mat-date-formats");
 
 // node_modules/@angular/material/fesm2022/_tooltip-chunk.mjs
-var _c09 = ["tooltip"];
+var _c010 = ["tooltip"];
 var SCROLL_THROTTLE_MS = 20;
 function getMatTooltipInvalidPositionError(position) {
   return Error(`Tooltip position "${position}" is invalid.`);
@@ -36045,7 +36548,7 @@ var TooltipComponent = class _TooltipComponent {
     selectors: [["mat-tooltip-component"]],
     viewQuery: function TooltipComponent_Query(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275viewQuery(_c09, 7);
+        \u0275\u0275viewQuery(_c010, 7);
       }
       if (rf & 2) {
         let _t;
@@ -36110,7 +36613,7 @@ var TooltipComponent = class _TooltipComponent {
 })();
 
 // node_modules/@angular/material/fesm2022/datepicker.mjs
-var _c010 = ["mat-calendar-body", ""];
+var _c011 = ["mat-calendar-body", ""];
 function _forTrack0($index, $item) {
   return this._trackRow($item);
 }
@@ -36215,7 +36718,7 @@ function MatMonthView_For_4_Template(rf, ctx) {
     \u0275\u0275textInterpolate(day_r1.narrow);
   }
 }
-var _c16 = ["*"];
+var _c17 = ["*"];
 function MatCalendar_ng_template_0_Template(rf, ctx) {
 }
 function MatCalendar_Case_2_Template(rf, ctx) {
@@ -36734,7 +37237,7 @@ var MatCalendarBody = class _MatCalendarBody {
     },
     exportAs: ["matCalendarBody"],
     features: [\u0275\u0275NgOnChangesFeature],
-    attrs: _c010,
+    attrs: _c011,
     decls: 11,
     vars: 11,
     consts: [["aria-hidden", "true"], ["role", "row"], [1, "mat-calendar-body-hidden-label", 3, "id"], [1, "mat-calendar-body-label"], [1, "mat-calendar-body-label", 3, "paddingTop", "paddingBottom"], ["role", "gridcell", 1, "mat-calendar-body-cell-container", 3, "width", "paddingTop", "paddingBottom"], ["role", "gridcell", 1, "mat-calendar-body-cell-container"], ["type", "button", 1, "mat-calendar-body-cell", 3, "click", "focus", "tabindex"], [1, "mat-calendar-body-cell-content", "mat-focus-indicator"], ["aria-hidden", "true", 1, "mat-calendar-body-cell-preview"]],
@@ -38500,7 +39003,7 @@ var MatCalendarHeader = class _MatCalendarHeader {
     type: _MatCalendarHeader,
     selectors: [["mat-calendar-header"]],
     exportAs: ["matCalendarHeader"],
-    ngContentSelectors: _c16,
+    ngContentSelectors: _c17,
     decls: 17,
     vars: 13,
     consts: [[1, "mat-calendar-header"], [1, "mat-calendar-controls"], ["aria-live", "polite", 1, "cdk-visually-hidden", 3, "id"], ["matButton", "", "type", "button", 1, "mat-calendar-period-button", 3, "click"], ["aria-hidden", "true"], ["viewBox", "0 0 10 5", "focusable", "false", "aria-hidden", "true", 1, "mat-calendar-arrow"], ["points", "0,0 5,5 10,0"], [1, "mat-calendar-spacer"], ["matIconButton", "", "type", "button", "disabledInteractive", "", 1, "mat-calendar-previous-button", 3, "click", "disabled", "matTooltip"], ["viewBox", "0 0 24 24", "focusable", "false", "aria-hidden", "true"], ["d", "M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"], ["matIconButton", "", "type", "button", "disabledInteractive", "", 1, "mat-calendar-next-button", 3, "click", "disabled", "matTooltip"], ["d", "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"]],
@@ -41333,7 +41836,7 @@ var MatDatepickerActions = class _MatDatepickerActions {
         \u0275\u0275queryRefresh(_t = \u0275\u0275loadQuery()) && (ctx._template = _t.first);
       }
     },
-    ngContentSelectors: _c16,
+    ngContentSelectors: _c17,
     decls: 1,
     vars: 0,
     consts: [[1, "mat-datepicker-actions"]],
@@ -41397,8 +41900,8 @@ var MatDatepickerModule = class _MatDatepickerModule {
 })();
 
 // node_modules/@angular/material/fesm2022/_internal-form-field-chunk.mjs
-var _c011 = ["mat-internal-form-field", ""];
-var _c17 = ["*"];
+var _c012 = ["mat-internal-form-field", ""];
+var _c18 = ["*"];
 var _MatInternalFormField = class __MatInternalFormField {
   labelPosition = "after";
   static \u0275fac = function _MatInternalFormField_Factory(__ngFactoryType__) {
@@ -41417,8 +41920,8 @@ var _MatInternalFormField = class __MatInternalFormField {
     inputs: {
       labelPosition: "labelPosition"
     },
-    attrs: _c011,
-    ngContentSelectors: _c17,
+    attrs: _c012,
+    ngContentSelectors: _c18,
     decls: 1,
     vars: 0,
     template: function _MatInternalFormField_Template(rf, ctx) {
@@ -41548,8 +42051,8 @@ var MatPseudoCheckboxModule = class _MatPseudoCheckboxModule {
 })();
 
 // node_modules/@angular/material/fesm2022/_option-chunk.mjs
-var _c012 = ["*", [["mat-option"], ["ng-container"]]];
-var _c18 = ["*", "mat-option, ng-container"];
+var _c013 = ["*", [["mat-option"], ["ng-container"]]];
+var _c19 = ["*", "mat-option, ng-container"];
 var _c24 = ["text"];
 var _c34 = [[["mat-icon"]], "*"];
 var _c44 = ["mat-icon", "*"];
@@ -41618,13 +42121,13 @@ var MatOptgroup = class _MatOptgroup {
       provide: MAT_OPTGROUP,
       useExisting: _MatOptgroup
     }])],
-    ngContentSelectors: _c18,
+    ngContentSelectors: _c19,
     decls: 5,
     vars: 4,
     consts: [["role", "presentation", 1, "mat-mdc-optgroup-label", 3, "id"], [1, "mdc-list-item__primary-text"]],
     template: function MatOptgroup_Template(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275projectionDef(_c012);
+        \u0275\u0275projectionDef(_c013);
         \u0275\u0275domElementStart(0, "span", 0)(1, "span", 1);
         \u0275\u0275text(2);
         \u0275\u0275projection(3);
@@ -42347,8 +42850,8 @@ function provideNativeDateAdapter(formats = MAT_NATIVE_DATE_FORMATS) {
 }
 
 // node_modules/@angular/material/fesm2022/checkbox.mjs
-var _c013 = ["input"];
-var _c19 = ["label"];
+var _c014 = ["input"];
+var _c110 = ["label"];
 var _c25 = ["*"];
 var checkboxDefaults = {
   color: "accent",
@@ -42620,7 +43123,7 @@ var MatCheckbox = class _MatCheckbox {
     selectors: [["mat-checkbox"]],
     viewQuery: function MatCheckbox_Query(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275viewQuery(_c013, 5)(_c19, 5);
+        \u0275\u0275viewQuery(_c014, 5)(_c110, 5);
       }
       if (rf & 2) {
         let _t;
@@ -43240,8 +43743,8 @@ function getMultipleValuesInSingleSelectionError() {
 }
 
 // node_modules/@angular/material/fesm2022/select.mjs
-var _c014 = ["trigger"];
-var _c110 = ["panel"];
+var _c015 = ["trigger"];
+var _c111 = ["panel"];
 var _c26 = [[["mat-select-trigger"]], "*"];
 var _c35 = ["mat-select-trigger", "*"];
 function MatSelect_Conditional_4_Template(rf, ctx) {
@@ -44077,7 +44580,7 @@ var MatSelect = class _MatSelect {
     },
     viewQuery: function MatSelect_Query(rf, ctx) {
       if (rf & 1) {
-        \u0275\u0275viewQuery(_c014, 5)(_c110, 5)(CdkConnectedOverlay, 5);
+        \u0275\u0275viewQuery(_c015, 5)(_c111, 5)(CdkConnectedOverlay, 5);
       }
       if (rf & 2) {
         let _t;
@@ -49466,6 +49969,7 @@ var routes = [
   { path: "actividades-diarias/juego1-actividades-diarias", component: Juego1ActividadesDiariasPageComponent },
   { path: "actividades-diarias/juego-accion-objeto", component: JuegoAccionObjetoPageComponent },
   { path: "hablar-escribir/juego1-hablar-escribir", component: Juego1HablarEscribirPageComponent },
+  { path: "hablar-escribir/juego-silabas", component: JuegoSilabasPageComponent },
   { path: "juegos-mente/juego-memoria", component: JuegoMemoriaPageComponent },
   { path: "juegos-mente/juego-intrusos", component: JuegoIntrusosPageComponent },
   { path: "administrador", component: AdministradorPageComponent },
