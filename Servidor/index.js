@@ -23,6 +23,7 @@ const palabrasVocalesAPI = require('./rutas/palabrasVocales')
 const agendaAPI = require('./rutas/agenda')
 const rutinasAPI = require('./rutas/rutinas')
 const actividadesDiariasAPI = require('./rutas/actividadesDiarias')
+const intrusosAPI = require('./rutas/intrusos')
 
 perfilesAPI(app)
 elementosMemoriaAPI(app)
@@ -30,6 +31,7 @@ palabrasVocalesAPI(app)
 agendaAPI(app)
 rutinasAPI(app)
 actividadesDiariasAPI(app)
+intrusosAPI(app)
 app.listen(PORT, (err) => {
     if (err) {
         console.error(`Error al iniciar el servidor en el puerto ${PORT}:`, err.message);

@@ -1,4 +1,10 @@
 import {
+  CdkScrollable,
+  CdkScrollableModule,
+  ScrollDispatcher,
+  ViewportRuler
+} from "./chunk-PYHR4ROU.js";
+import {
   _IdGenerator,
   _getEventTarget,
   _getShadowRoot,
@@ -9,12 +15,6 @@ import {
 import {
   _CdkPrivateStyleLoader
 } from "./chunk-CNCIPFBW.js";
-import {
-  CdkScrollable,
-  CdkScrollableModule,
-  ScrollDispatcher,
-  ViewportRuler
-} from "./chunk-PYHR4ROU.js";
 import "./chunk-GUGIMSVJ.js";
 import {
   coerceElement,

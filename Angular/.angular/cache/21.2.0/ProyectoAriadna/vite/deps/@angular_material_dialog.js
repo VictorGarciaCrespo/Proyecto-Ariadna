@@ -11,7 +11,10 @@ import {
   createBlockScrollStrategy,
   createGlobalPositionStrategy,
   createOverlayRef
-} from "./chunk-SSS4TZXP.js";
+} from "./chunk-H6BGFYPA.js";
+import {
+  CdkScrollable
+} from "./chunk-PYHR4ROU.js";
 import {
   A11yModule,
   ESCAPE,
@@ -29,9 +32,6 @@ import {
   _getFocusedElementPierceShadowDom
 } from "./chunk-P4S6KIUF.js";
 import "./chunk-CNCIPFBW.js";
-import {
-  CdkScrollable
-} from "./chunk-PYHR4ROU.js";
 import "./chunk-GUGIMSVJ.js";
 import {
   Platform,

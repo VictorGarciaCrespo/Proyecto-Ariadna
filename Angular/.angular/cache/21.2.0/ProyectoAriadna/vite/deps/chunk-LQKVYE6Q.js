@@ -4,6 +4,35 @@ import {
   ɵɵdefineInjectable
 } from "./chunk-YPGDO6BA.js";
 
+// node_modules/@angular/material/fesm2022/_error-state-chunk.mjs
+var _ErrorStateTracker = class {
+  _defaultMatcher;
+  ngControl;
+  _parentFormGroup;
+  _parentForm;
+  _stateChanges;
+  errorState = false;
+  matcher;
+  constructor(_defaultMatcher, ngControl, _parentFormGroup, _parentForm, _stateChanges) {
+    this._defaultMatcher = _defaultMatcher;
+    this.ngControl = ngControl;
+    this._parentFormGroup = _parentFormGroup;
+    this._parentForm = _parentForm;
+    this._stateChanges = _stateChanges;
+  }
+  updateErrorState() {
+    const oldState = this.errorState;
+    const parent = this._parentFormGroup || this._parentForm;
+    const matcher = this.matcher || this._defaultMatcher;
+    const control = this.ngControl ? this.ngControl.control : null;
+    const newState = matcher?.isErrorState(control, parent) ?? false;
+    if (newState !== oldState) {
+      this.errorState = newState;
+      this._stateChanges.next();
+    }
+  }
+};
+
 // node_modules/@angular/material/fesm2022/_error-options-chunk.mjs
 var ShowOnDirtyErrorStateMatcher = class _ShowOnDirtyErrorStateMatcher {
   isErrorState(control, form) {
@@ -44,38 +73,9 @@ var ErrorStateMatcher = class _ErrorStateMatcher {
   }], null, null);
 })();
 
-// node_modules/@angular/material/fesm2022/_error-state-chunk.mjs
-var _ErrorStateTracker = class {
-  _defaultMatcher;
-  ngControl;
-  _parentFormGroup;
-  _parentForm;
-  _stateChanges;
-  errorState = false;
-  matcher;
-  constructor(_defaultMatcher, ngControl, _parentFormGroup, _parentForm, _stateChanges) {
-    this._defaultMatcher = _defaultMatcher;
-    this.ngControl = ngControl;
-    this._parentFormGroup = _parentFormGroup;
-    this._parentForm = _parentForm;
-    this._stateChanges = _stateChanges;
-  }
-  updateErrorState() {
-    const oldState = this.errorState;
-    const parent = this._parentFormGroup || this._parentForm;
-    const matcher = this.matcher || this._defaultMatcher;
-    const control = this.ngControl ? this.ngControl.control : null;
-    const newState = matcher?.isErrorState(control, parent) ?? false;
-    if (newState !== oldState) {
-      this.errorState = newState;
-      this._stateChanges.next();
-    }
-  }
-};
-
 export {
+  _ErrorStateTracker,
   ShowOnDirtyErrorStateMatcher,
-  ErrorStateMatcher,
-  _ErrorStateTracker
+  ErrorStateMatcher
 };
-//# sourceMappingURL=chunk-CXHL27KH.js.map
+//# sourceMappingURL=chunk-LQKVYE6Q.js.map
