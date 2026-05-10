@@ -139,12 +139,21 @@
   border-radius: 50%;
   width: 32px;
   height: 32px;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   z-index: 10;
   box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  line-height: 1;
+}
+
+.btn-remove mat-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  line-height: 1;
 }
 
 .arrow-divider {

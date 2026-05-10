@@ -5,10 +5,10 @@ import {
   MatLabel,
   MatPrefix,
   MatSuffix
-} from "./chunk-W2VZYGRK.js";
+} from "./chunk-ETBY3KXH.js";
 import {
   ObserversModule
-} from "./chunk-N6PLEYSO.js";
+} from "./chunk-4AIWFVXY.js";
 import {
   BidiModule
 } from "./chunk-OTE6P6ZA.js";
@@ -46,4 +46,4 @@ var MatFormFieldModule = class _MatFormFieldModule {
 export {
   MatFormFieldModule
 };
-//# sourceMappingURL=chunk-4XSMZZCM.js.map
+//# sourceMappingURL=chunk-ZM2FWZ35.js.map

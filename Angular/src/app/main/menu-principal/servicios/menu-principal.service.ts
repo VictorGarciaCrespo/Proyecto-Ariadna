@@ -10,7 +10,7 @@ export class MenuPrincipalService {
     obtenerOpcionesPrincipales(): OpcionMenu[] {
         return [
             { titulo: 'Actividades Diarias', ruta: '/actividades-diarias' },
-            { titulo: 'Juegos de la Mente', ruta: '/juegos-mente' },
+            { titulo: 'Estimulación Cognitiva', ruta: '/juegos-mente' },
             { titulo: 'Hablar y Escribir', ruta: '/hablar-escribir' }
         ];
     }
