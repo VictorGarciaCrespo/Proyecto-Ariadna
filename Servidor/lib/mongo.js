@@ -1,5 +1,5 @@
 const { MongoClient, ObjectId } = require('mongodb');
-// Apuntamos a la base de datos en la nube (Atlas) en lugar de localhost:3000
+
 const MONGO_URI = 'mongodb+srv://Aarongomezve:123Ariadna@cluster0.han3f1i.mongodb.net/?appName=Cluster0';
 const DB_NAME = 'Ariadna';
 class MongoLib {
@@ -18,8 +18,8 @@ class MongoLib {
         }
     }
 
-    // Al recibir 'collection' por parámetro, este mismo método te sirve para 
-    // 'perfiles', 'elementos_memoria' y 'palabras_vocales'
+    
+    
     async getDocumentos(collection) {
         try {
             let db = await this.connect();
@@ -46,7 +46,7 @@ class MongoLib {
         let mensaje = '';
         try {
             let db = await this.connect();
-            // Asegurarse de que el ID se pasa a formato ObjectId que usa Mongo
+            
             let result = await db.collection(collection).deleteOne({ _id: ObjectId.createFromHexString(id) });
 
             if (result.deletedCount === 1) {
@@ -64,7 +64,7 @@ class MongoLib {
     async updateDocumento(collection, id, data) {
         try {
             let db = await this.connect();
-            // Evitamos modificar el _id internamente si viene en data
+            
             const { _id, ...updateData } = data;
             
             let result = await db.collection(collection).updateOne(

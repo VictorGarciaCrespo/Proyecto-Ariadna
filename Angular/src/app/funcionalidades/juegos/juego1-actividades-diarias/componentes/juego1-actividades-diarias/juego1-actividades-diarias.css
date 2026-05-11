@@ -1,7 +1,4 @@
-/* ============================================================
-   Juego 1 - Actividades Diarias
-   Layout: cabecera | zona-principal (pictograma grande) | zona-opciones (izq + centro + der)
-   ============================================================ */
+
 
 :host {
   display: block;
@@ -17,7 +14,7 @@
   background-color: var(--ariadna-bg);
 }
 
-/* ---- Cabecera ---- */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -57,7 +54,7 @@
   color: #22c55e;
 }
 
-/* ---- Botón circular ---- */
+
 .btn-circle,
 .btn-sonido {
   background: var(--ariadna-surface);
@@ -82,7 +79,7 @@
   color: var(--ariadna-primary);
 }
 
-/* ---- Contenido principal ---- */
+
 .main-content {
   flex: 1;
   display: flex;
@@ -93,7 +90,7 @@
   gap: 24px;
 }
 
-/* ---- Estado cargando / error ---- */
+
 .estado-mensaje {
   display: flex;
   flex-direction: column;
@@ -113,7 +110,7 @@
   color: #ef4444;
 }
 
-/* ---- Layout del Juego en Fila (Izq - Centro - Der) ---- */
+
 .zona-juego {
   display: flex;
   align-items: center;
@@ -123,7 +120,7 @@
   max-width: 1000px;
 }
 
-/* ---- Centro: Pictograma principal ---- */
+
 .zona-central {
   display: flex;
   justify-content: center;
@@ -160,14 +157,14 @@
   padding: 40px;
 }
 
-/* ---- Columnas de opciones ---- */
+
 .columna-opciones {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-/* ---- Cada pictograma opción ---- */
+
 .pictograma-opcion {
   position: relative;
   width: 110px;
@@ -195,14 +192,14 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
-/* ---- Feedback correcto ---- */
+
 .pictograma-opcion.estado-correcto {
   border-color: #22c55e;
   background: #f0fdf4;
   cursor: default;
 }
 
-/* ---- Feedback incorrecto ---- */
+
 .pictograma-opcion.estado-incorrecto {
   border-color: #ef4444;
   background: #fff1f2;
@@ -217,7 +214,7 @@
   80%       { transform: translateX(4px); }
 }
 
-/* ---- Overlay con ✓ o ✗ ---- */
+
 .overlay-feedback {
   position: absolute;
   inset: 0;
@@ -245,7 +242,7 @@
 
 
 
-/* ---- Botón Siguiente ---- */
+
 .pie-pagina {
   position: fixed;
   bottom: 64px;
@@ -269,7 +266,7 @@
 }
 .btn-siguiente:hover { background-color: #c0c0c0; transform: scale(1.03); }
 
-/* ---- Pantalla de victoria estándar ---- */
+
 .pantalla-victoria { justify-content: center; }
 
 .victoria-card {
@@ -331,7 +328,7 @@
 }
 .btn-otro-juego:hover { background-color: #dcfce7; transform: scale(1.03); }
 
-/* ---- Pantalla de victoria ---- */
+
 .pantalla-fin {
   justify-content: center;
 }
@@ -394,7 +391,7 @@
   transform: scale(1.03);
 }
 
-/* ---- Crédito ARASAAC ---- */
+
 .credito-arasaac {
   display: flex;
   align-items: center;

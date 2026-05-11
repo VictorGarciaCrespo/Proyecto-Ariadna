@@ -14,7 +14,7 @@ export class SonidoService {
     this.activoSubject.next(!this.activoSubject.value);
   }
 
-  // Diccionario de correcciones: nombre de archivo normalizado → texto correcto para pronunciar
+  
   private readonly correcciones: Record<string, string> = {
     'cumpleanos':  'cumpleaños',
     'cana':        'caña',
@@ -27,7 +27,7 @@ export class SonidoService {
     'bano':        'baño',
   };
 
-  /** Reemplaza palabras cuya ñ fue eliminada en el nombre de archivo */
+  
   private normalizarTexto(texto: string): string {
     return texto
       .split(' ')
@@ -39,10 +39,10 @@ export class SonidoService {
     if (!this.activo || !texto) return;
     if (!('speechSynthesis' in window)) return;
 
-    // Precargar voces (útil para Chrome que las carga de forma asíncrona)
+    
     let voices = window.speechSynthesis.getVoices();
 
-    // Limpiar atascos en Chrome (si está hablando o tiene algo pendiente)
+    
     if (window.speechSynthesis.speaking || window.speechSynthesis.pending) {
       window.speechSynthesis.cancel();
     }
@@ -54,7 +54,7 @@ export class SonidoService {
       utterance.rate = 0.9;
       utterance.pitch = 1.1;
 
-      // Volver a obtener las voces (por si Chrome ya las ha cargado)
+      
       voices = window.speechSynthesis.getVoices();
       const spanishVoice = voices.find(v => v.lang.startsWith('es'));
       if (spanishVoice) {
@@ -63,8 +63,8 @@ export class SonidoService {
 
       window.speechSynthesis.speak(utterance);
 
-      // Parche específico para otro bug de Chrome:
-      // A veces Chrome necesita un 'resume' para destrabarse después de un 'speak'
+      
+      
       if (window.speechSynthesis.paused) {
         window.speechSynthesis.resume();
       }

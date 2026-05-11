@@ -44,7 +44,7 @@ export class AdministradorComponent {
   }
 
   abrirDialogoEliminar(): void {
-    // Primero obtenemos los perfiles asíncronamente
+    
     this.perfilService.obtenerPerfiles().subscribe(perfiles => {
       const dialogRef = this.dialog.open(EliminarAlumnoDialog, {
         width: '400px',
@@ -71,7 +71,7 @@ export class AdministradorComponent {
   }
 
   abrirDialogoActualizar(): void {
-    // Primero obtenemos los perfiles asíncronamente
+    
     this.perfilService.obtenerPerfiles().subscribe(perfiles => {
       const dialogRef = this.dialog.open(ActualizarAlumnoDialog, {
         width: '500px',

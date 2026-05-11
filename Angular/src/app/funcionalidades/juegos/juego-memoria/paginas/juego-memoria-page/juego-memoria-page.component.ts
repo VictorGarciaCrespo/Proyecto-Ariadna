@@ -22,7 +22,7 @@ export class JuegoMemoriaPageComponent implements OnInit {
     primeraCarta: CartaMemoria | null = null;
     bloquearTablero: boolean = false;
     juegoTerminado: boolean = false;
-    tieneTextoAlternativo: boolean = true; // Por defecto asumimos que sí
+    tieneTextoAlternativo: boolean = true; 
 
     private juegoMemoriaService = inject(JuegoMemoriaService);
     private cdRef = inject(ChangeDetectorRef);
@@ -43,7 +43,7 @@ export class JuegoMemoriaPageComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        // Verificar capacidades del perfil activo
+        
         const perfilActivo = this.perfilService.getPerfil();
         if (perfilActivo && perfilActivo.capacidades) {
             this.tieneTextoAlternativo = perfilActivo.capacidades.includes('texto_explicativo');
@@ -81,7 +81,7 @@ export class JuegoMemoriaPageComponent implements OnInit {
         let cartasGeneradas: CartaMemoria[] = [];
 
         elementos.forEach((elemento, index) => {
-            // Siempre agregamos la primera carta como imagen
+            
             cartasGeneradas.push({
                 id: `img1-${index}`,
                 elementoId: elemento.id,
@@ -91,9 +91,9 @@ export class JuegoMemoriaPageComponent implements OnInit {
                 emparejada: false
             });
             
-            // La segunda carta depende de las capacidades del usuario
+            
             if (this.tieneTextoAlternativo) {
-                // Usuario con texto alternativo: Empareja Imagen con Texto
+                
                 cartasGeneradas.push({
                     id: `txt-${index}`,
                     elementoId: elemento.id,
@@ -103,7 +103,7 @@ export class JuegoMemoriaPageComponent implements OnInit {
                     emparejada: false
                 });
             } else {
-                // Usuario sin texto alternativo (solo pictogramas): Empareja Imagen con Imagen idéntica
+                
                 cartasGeneradas.push({
                     id: `img2-${index}`,
                     elementoId: elemento.id,
@@ -115,7 +115,7 @@ export class JuegoMemoriaPageComponent implements OnInit {
             }
         });
 
-        // Barajar las cartas
+        
         for (let i = cartasGeneradas.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [cartasGeneradas[i], cartasGeneradas[j]] = [cartasGeneradas[j], cartasGeneradas[i]];
@@ -131,12 +131,12 @@ export class JuegoMemoriaPageComponent implements OnInit {
 
         carta.volteada = true;
 
-        // Pronunciar el nombre (buscamos el nombre original en los elementos si no es texto)
+        
         let nombre = '';
         if (carta.tipo === 'texto') {
             nombre = carta.contenido;
         } else {
-            // Buscar el elemento original por ID en el componente
+            
             const elementoOriginal = this.elementos.find(e => e.id === carta.elementoId);
             nombre = elementoOriginal ? elementoOriginal.nombre : '';
         }
@@ -154,9 +154,9 @@ export class JuegoMemoriaPageComponent implements OnInit {
     }
 
     verificarPareja(carta1: CartaMemoria, carta2: CartaMemoria): void {
-        // La condición de éxito es simplemente que compartan el mismo elementoId.
-        // Como 'manejarCartaClickeada' evita hacer click en la misma carta física,
-        // no hace falta comprobar si son diferentes.
+        
+        
+        
         const esPareja = carta1.elementoId === carta2.elementoId;
 
         if (esPareja) {

@@ -1,5 +1,5 @@
 <div class="pagina-juego">
-    <!-- CABECERA -->
+    
     <div class="cabecera">
         <button class="btn-icono redondo" routerLink="/juegos-mente">
             <mat-icon>arrow_back</mat-icon>
@@ -20,7 +20,7 @@
         </app-juego-memoria>
     </div>
     
-    <!-- BOTÓN SIGUIENTE (esquina inferior derecha) -->
+    
     <div class="pie-pagina">
         <button class="btn-siguiente" (click)="siguienteJuego()">
             {{ esUltimo ? 'Finalizar' : 'Siguiente' }}
@@ -28,7 +28,7 @@
         </button>
     </div>
 
-    <!-- PANTALLA VICTORIA -->
+    
     <div *ngIf="juegoTerminado" class="contenedor-juego pantalla-victoria">
         <div class="victoria-card">
             <div class="victoria-emoji">🎉</div>
@@ -47,7 +47,7 @@
         </div>
     </div>
 
-    <!-- CRÉDITO -->
+    
     <div class="credito-arasaac">
         <img src="/imagenes/arasaac-logo.png" alt="Logo ARASAAC" class="credito-arasaac__logo">
         <span class="credito-arasaac__texto">Pictogramas propiedad de Arasaac</span>

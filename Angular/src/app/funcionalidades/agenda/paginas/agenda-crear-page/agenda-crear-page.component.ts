@@ -19,11 +19,11 @@ import { SonidoService } from '../../../../shared/servicios/sonido.service';
 })
 export class AgendaCrearPageComponent implements OnInit {
   itemsDisponibles: AgendaItem[] = [];
-  pasosRutina: (AgendaItem | null)[] = [null, null, null, null, null, null, null, null, null, null]; // 10 espacios fijos
+  pasosRutina: (AgendaItem | null)[] = [null, null, null, null, null, null, null, null, null, null]; 
   perfilActual: Perfil | null = null;
   private perfilSub?: Subscription;
 
-  // Toast de notificación
+  
   toast: { mensaje: string; tipo: 'exito' | 'error' } | null = null;
   private toastTimeout: any;
 
@@ -31,7 +31,7 @@ export class AgendaCrearPageComponent implements OnInit {
   private rutinasService = inject(RutinasService);
   private perfilService = inject(PerfilService);
   private router = inject(Router);
-  private cdr = inject(ChangeDetectorRef); // <-- Para forzar la actualización de la pantalla
+  private cdr = inject(ChangeDetectorRef); 
   sonidoService = inject(SonidoService);
 
   ngOnInit(): void {
@@ -53,7 +53,7 @@ export class AgendaCrearPageComponent implements OnInit {
     this.agendaService.getAgendaItems().subscribe({
       next: (res) => {
         this.itemsDisponibles = res.data;
-        this.cdr.detectChanges(); // <-- Soluciona que no aparezcan hasta tocar la pantalla
+        this.cdr.detectChanges(); 
       },
       error: (err) => console.error('Error cargando items de agenda', err)
     });
@@ -73,7 +73,7 @@ export class AgendaCrearPageComponent implements OnInit {
   }
 
   agregarPasoClick(item: AgendaItem) {
-    // Busca el primer espacio vacío
+    
     const index = this.pasosRutina.findIndex(p => p === null);
     if (index !== -1) {
       this.pasosRutina[index] = { ...item };
@@ -82,20 +82,20 @@ export class AgendaCrearPageComponent implements OnInit {
   }
 
   dropInSlot(event: CdkDragDrop<any>) {
-    // Si viene de la lista de abajo (Cosas para hacer)
+    
     if (event.previousContainer.id === 'listaDisponibles') {
       const item = event.item.data as AgendaItem;
       const targetIndex = event.container.data as number;
       
-      // Coloca el pictograma en ese espacio específico
+      
       this.pasosRutina[targetIndex] = { ...item };
     } 
-    // Si viene de otro espacio de arriba (reordenando)
+    
     else if (event.previousContainer.id.startsWith('slot-')) {
       const sourceIndex = event.previousContainer.data as number;
       const targetIndex = event.container.data as number;
       
-      // Intercambia las posiciones
+      
       const temp = this.pasosRutina[targetIndex];
       this.pasosRutina[targetIndex] = this.pasosRutina[sourceIndex];
       this.pasosRutina[sourceIndex] = temp;
@@ -115,7 +115,7 @@ export class AgendaCrearPageComponent implements OnInit {
   }
 
   guardarResultado() {
-    // Filtra los espacios vacíos
+    
     const pasosLlenos = this.pasosRutina.filter(p => p !== null) as AgendaItem[];
 
     if (pasosLlenos.length === 0) {
@@ -126,7 +126,7 @@ export class AgendaCrearPageComponent implements OnInit {
 
     const idPerfil = this.perfilActual!._id!;
 
-    // Consulta cuántas rutinas tiene ya el perfil para generar el nombre
+    
     this.rutinasService.contRutinasByPerfil(idPerfil).subscribe({
       next: ({ count }) => {
         const nombreAuto = `Rutina ${count + 1}`;

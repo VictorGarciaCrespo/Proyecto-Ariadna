@@ -47,14 +47,12 @@ export class JuegoSilabasPageComponent implements OnInit {
 
   readonly TOTAL_POR_RONDA = 4;
 
-  // Base de datos de todas las palabras (ahora desde el servicio)
   todasLasPalabras: PalabraMusica[] = [];
 
-  // Estado del juego
   palabrasRonda: PalabraMusica[] = [];
-  silabasRonda: PalabraMusica[] = []; // sílabas barajadas por separado
+  silabasRonda: PalabraMusica[] = []; 
   silabaSeleccionada: PalabraMusica | null = null;
-  conexiones = new Map<number, number>(); // silabaId -> imagenId
+  conexiones = new Map<number, number>(); 
   estadoTarjetas = new Map<number, 'seleccionada' | 'correcta' | 'incorrecta' | 'neutro'>();
   estadoImagenes = new Map<number, 'correcta' | 'incorrecta' | 'destacada' | 'neutro'>();
   aciertos = 0;
@@ -74,17 +72,14 @@ export class JuegoSilabasPageComponent implements OnInit {
   }
 
   iniciarRonda(): void {
-    // Barajar y coger 4 palabras aleatorias
     const mezcladas = [...this.todasLasPalabras]
       .sort(() => Math.random() - 0.5)
       .slice(0, this.TOTAL_POR_RONDA)
       .map((p, i) => ({ ...p, id: i }));
 
     this.palabrasRonda = mezcladas;
-    // Barajar las sílabas por separado (copia con el mismo id)
     this.silabasRonda = [...mezcladas].sort(() => Math.random() - 0.5);
 
-    // Inicializar mapas de estado
     this.estadoTarjetas = new Map(mezcladas.map(p => [p.id, 'neutro']));
     this.estadoImagenes = new Map(mezcladas.map(p => [p.id, 'neutro']));
     this.conexiones = new Map();
@@ -99,10 +94,8 @@ export class JuegoSilabasPageComponent implements OnInit {
     if (this.procesando) return;
     if (this.estadoTarjetas.get(palabra.id) === 'correcta') return;
 
-    // Pronunciar la sílaba
     this.sonidoService.hablar(palabra.silaba);
 
-    // Si ya estaba seleccionada, deseleccionar
     if (this.silabaSeleccionada?.id === palabra.id) {
       this.setEstadoTarjeta(palabra.id, 'neutro');
       this.silabaSeleccionada = null;
@@ -110,7 +103,6 @@ export class JuegoSilabasPageComponent implements OnInit {
       return;
     }
 
-    // Deseleccionar anterior
     if (this.silabaSeleccionada) {
       this.setEstadoTarjeta(this.silabaSeleccionada.id, 'neutro');
     }
@@ -128,7 +120,6 @@ export class JuegoSilabasPageComponent implements OnInit {
     const silaba = this.silabaSeleccionada;
 
     if (silaba.id === palabra.id) {
-      // ✅ Correcto: pronunciar la palabra completa
       setTimeout(() => {
         this.sonidoService.hablar(palabra.palabra);
         this.setEstadoTarjeta(silaba.id, 'correcta');
@@ -143,17 +134,16 @@ export class JuegoSilabasPageComponent implements OnInit {
         this.actualizarDestacadoImagenes(false);
         this.procesando = false;
 
-        this.cdRef.detectChanges(); // Forzar actualización visual del tick
+        this.cdRef.detectChanges(); 
 
         if (this.aciertos >= this.TOTAL_POR_RONDA) {
           setTimeout(() => { 
             this.juegoTerminado = true; 
-            this.cdRef.detectChanges(); // Forzar actualización a la pantalla de victoria
+            this.cdRef.detectChanges(); 
           }, 500);
         }
       }, 200);
     } else {
-      // ❌ Incorrecto
       this.setEstadoTarjeta(silaba.id, 'incorrecta');
       this.setEstadoImagen(palabra.id, 'incorrecta');
       setTimeout(() => {
@@ -175,7 +165,6 @@ export class JuegoSilabasPageComponent implements OnInit {
     this.juegoNavService.irAlMenuPrincipal();
   }
 
-  // ── Helpers ──────────────────────────────────────────
   getEstadoTarjeta(id: number): string {
     return this.estadoTarjetas.get(id) ?? 'neutro';
   }

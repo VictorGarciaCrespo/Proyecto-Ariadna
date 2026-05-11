@@ -1,7 +1,4 @@
-/* ============================================================
-   Juego de Memoria — Patrón Ariadna TEA
-   Tablero de cartas: fondos suaves, flip limpio, sin ruido visual
-   ============================================================ */
+
 
 :host {
   display: block;
@@ -56,7 +53,7 @@
   cursor: default;
 }
 
-/* --- Cara de la carta (reverso) --- */
+
 .carta-frente,
 .carta-dorso {
   position: absolute;
@@ -73,7 +70,7 @@
   border: 2px solid var(--ariadna-primary-dark);
 }
 
-/* --- Cara frontal con la imagen/texto --- */
+
 .carta-dorso {
   transform: rotateY(180deg);
   background-color: var(--ariadna-surface);

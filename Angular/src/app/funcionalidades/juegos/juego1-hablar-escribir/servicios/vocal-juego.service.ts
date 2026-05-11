@@ -29,7 +29,6 @@ export class VocalJuegoService {
         console.log('Generando partida para vocal:', objetivo);
         console.log('Banco de palabras disponible:', bancoPalabras.length);
 
-        // Filtro robusto que acepta vocalInicial o vocalinicial (por si acaso)
         let palabrasObjetivo = bancoPalabras.filter(p => {
             const v = (p.vocalInicial || (p as any).vocalinicial || '').toString().trim().toUpperCase();
             return v === objetivo;

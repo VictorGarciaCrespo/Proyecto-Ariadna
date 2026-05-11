@@ -136,9 +136,9 @@ export class JuegoIntrusosPageComponent implements OnInit {
   }
 
   seleccionarNivel(): void {
-    // Escoger aleatoriamente entre nivel 3 (3 imágenes) y nivel 4 (4 imágenes)
+    
     this.nivelActual = Math.random() < 0.5 ? 3 : 4;
-    // Hacemos una copia profunda (o al menos un map) para no mutar los originales al barajar
+    
     const rondasFuente = this.nivelActual === 3 ? this.rondasNivel3 : this.rondasNivel4;
     
     this.rondas = rondasFuente.map(ronda => ({
@@ -148,12 +148,12 @@ export class JuegoIntrusosPageComponent implements OnInit {
   }
 
   mezclarRondas(): void {
-    // Mezclar el orden de las rondas
+    
     for (let i = this.rondas.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [this.rondas[i], this.rondas[j]] = [this.rondas[j], this.rondas[i]];
     }
-    // Mezclar también el orden de las imágenes dentro de cada ronda
+    
     this.rondas.forEach(ronda => {
       for (let i = ronda.imagenes.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -169,14 +169,14 @@ export class JuegoIntrusosPageComponent implements OnInit {
   }
 
   seleccionarImagen(imagen: ImagenIntruso, index: number): void {
-    // Bloquear solo si ya se acertó y se está avanzando de ronda
+    
     if (this.bloqueado && this.estadoSeleccion === 'correcto') return;
 
     this.imagenSeleccionadaIndex = index;
     this.sonidoService.hablar(imagen.nombre);
 
     if (imagen.esIntrusa) {
-      // Correcto: mostrar ✅ 500ms y avanzar
+      
       this.estadoSeleccion = 'correcto';
       this.bloqueado = true;
       this.cdRef.detectChanges();
@@ -185,7 +185,7 @@ export class JuegoIntrusosPageComponent implements OnInit {
         this.cdRef.detectChanges();
       }, 500);
     } else {
-      // Incorrecto: mostrar ❌ 500ms y dejar reintentar
+      
       this.estadoSeleccion = 'incorrecto';
       this.cdRef.detectChanges();
       setTimeout(() => {

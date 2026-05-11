@@ -68,7 +68,7 @@
 }
 
 .rutinas-container {
-  background-color: #D6D6D6; /* As per wireframe grey background */
+  background-color: #D6D6D6; 
   border-radius: var(--ariadna-radius-md);
   width: 100%;
   max-width: 1000px;

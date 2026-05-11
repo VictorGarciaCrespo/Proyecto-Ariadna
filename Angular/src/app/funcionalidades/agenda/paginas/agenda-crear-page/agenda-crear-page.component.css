@@ -78,9 +78,9 @@
   padding: 0 var(--ariadna-spacing-lg) var(--ariadna-spacing-lg);
 }
 
-/* ZONA SUPERIOR: LOS 6 ESPACIOS */
+
 .slots-container {
-  background-color: #D6D6D6; /* Fondo gris igual al diseño */
+  background-color: #D6D6D6; 
   width: 100%;
   max-width: 1300px;
   padding: 32px;
@@ -92,7 +92,7 @@
   margin-top: 40px;
 }
 
-/* Cada DropList es un contenedor del tamaño exacto de la tarjeta */
+
 .slot-wrapper {
   width: 220px;
   height: 220px;
@@ -101,16 +101,16 @@
   align-items: center;
 }
 
-/* El cuadro blanco vacío */
+
 .slot-empty {
   width: 100%;
   height: 100%;
-  background-color: #FFFFFF; /* Blanco puro muy visible */
-  border: 2px dashed #999; /* Borde punteado para indicar que va algo aquí */
+  background-color: #FFFFFF; 
+  border: 2px dashed #999; 
   box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* El cuadro cuando tiene un pictograma */
+
 .slot-filled {
   width: 100%;
   height: 100%;
@@ -136,7 +136,7 @@
   object-fit: contain;
 }
 
-/* Botón de borrar grande y claro */
+
 .btn-remove {
   position: absolute;
   top: -10px;
@@ -175,10 +175,10 @@
   height: 48px;
 }
 
-/* ZONA INFERIOR: PICTOGRAMAS DISPONIBLES */
+
 .cosas-hacer-container {
-  background-color: #D6D6D6; /* Fondo gris igual al diseño */
-  border: 4px solid var(--ariadna-primary); /* Borde azul */
+  background-color: #D6D6D6; 
+  border: 4px solid var(--ariadna-primary); 
   width: 100%;
   max-width: 1300px;
   padding: 24px 32px;
@@ -205,7 +205,7 @@
   padding-right: 16px;
 }
 
-/* Scrollbar styling for better look */
+
 .items-grid::-webkit-scrollbar {
   width: 8px;
 }
@@ -221,8 +221,8 @@
 .item-card {
   width: 140px;
   height: 140px;
-  background-color: #8C8C8C; /* Fondo gris oscuro */
-  cursor: pointer; /* Pointer porque se puede arrastrar O hacer click */
+  background-color: #8C8C8C; 
+  cursor: pointer; 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -252,7 +252,7 @@
   display: none;
 }
 
-/* Botón resultado */
+
 .footer {
   display: none;
 }
@@ -276,7 +276,7 @@
   transform: translateY(-2px);
 }
 
-/* Estilos para el drag & drop preview */
+
 .drag-preview-img {
   width: 140px;
   height: 140px;
@@ -295,10 +295,10 @@
 }
 
 .cdk-drag-placeholder {
-  opacity: 0; /* Oculta el hueco original mientras arrastras */
+  opacity: 0; 
 }
 
-/* ====== TOAST DE NOTIFICACIÓN ====== */
+
 .toast {
   position: fixed;
   bottom: 40px;

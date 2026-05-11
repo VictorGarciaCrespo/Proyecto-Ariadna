@@ -30,7 +30,7 @@ export class AgendaPageComponent implements OnInit {
         this.perfilActual = perfil;
         this.cargarRutinas();
       } else {
-        // Si no hay perfil, volver a inicio
+        
         this.router.navigate(['/']);
       }
     });

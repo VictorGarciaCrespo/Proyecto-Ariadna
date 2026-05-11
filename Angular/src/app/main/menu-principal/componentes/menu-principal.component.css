@@ -1,7 +1,4 @@
-/* ============================================================
-   Menú Principal - Pantalla de inicio con las 3 opciones
-   Patrón: header fijo + grid de tarjetas navegables
-   ============================================================ */
+
 
 :host {
   display: block;
@@ -10,7 +7,7 @@
   font-family: 'Nunito', 'Segoe UI', sans-serif;
 }
 
-/* --- Cabecera principal --- */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -48,7 +45,7 @@
   font-family: 'Nunito', sans-serif;
 }
 
-/* --- Zona de acciones del header --- */
+
 .actions {
   display: flex;
   justify-content: flex-end;
@@ -84,7 +81,7 @@
   font-family: 'Nunito', sans-serif;
 }
 
-/* --- Botones de acción del header --- */
+
 .btn-agenda {
   background-color: var(--ariadna-primary);
   color: white;
@@ -126,7 +123,7 @@
   color: #fff;
 }
 
-/* --- Contenido principal --- */
+
 .main-content {
   display: flex;
   justify-content: center;
@@ -135,7 +132,7 @@
   padding: var(--ariadna-spacing-lg) var(--ariadna-spacing-lg);
 }
 
-/* --- Grid de tarjetas de navegación --- */
+
 .cards-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -145,7 +142,7 @@
   width: 100%;
 }
 
-/* --- Tarjeta de navegación --- */
+
 .card {
   display: flex;
   flex-direction: column;

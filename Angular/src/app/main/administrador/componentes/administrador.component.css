@@ -1,7 +1,4 @@
-/* ============================================================
-   Administrador - Panel de gestión de alumnos
-   Patrón: contenedor centrado + botones de acción grandes y claros
-   ============================================================ */
+
 
 :host {
   display: block;
@@ -19,7 +16,7 @@
   gap: var(--ariadna-spacing-lg);
 }
 
-/* --- Título del panel --- */
+
 .administrador-container h1 {
   font-size: 2.2rem;
   font-weight: 700;
@@ -29,7 +26,7 @@
   font-family: 'Nunito', sans-serif;
 }
 
-/* --- Área de acciones --- */
+
 .actions-section {
   display: flex;
   flex-direction: column;
@@ -38,9 +35,7 @@
   max-width: 420px;
 }
 
-/* --- Botones de acción del administrador ---
-   Sobreescriben los estilos de Material para que queden
-   coherentes con el resto del diseño Ariadna.           */
+
 .actions-section button[mat-raised-button] {
   width: 100% !important;
   height: var(--ariadna-btn-height) !important;

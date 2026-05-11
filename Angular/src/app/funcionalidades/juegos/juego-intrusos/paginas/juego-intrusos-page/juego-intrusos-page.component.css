@@ -7,7 +7,7 @@
   padding: 0;
 }
 
-/* ── CABECERA ── */
+
 .cabecera {
   display: flex;
   justify-content: space-between;
@@ -47,7 +47,7 @@
   transform: scale(1.05);
 }
 
-/* ── CONTENEDOR JUEGO ── */
+
 .contenedor-juego {
   display: flex;
   flex-direction: column;
@@ -57,7 +57,7 @@
   padding: 0 40px 40px 40px;
 }
 
-/* ── PROGRESO ── */
+
 .progreso {
   width: 100%;
   max-width: 600px;
@@ -88,7 +88,7 @@
   transition: width 0.5s ease;
 }
 
-/* ── INSTRUCCIÓN ── */
+
 .instruccion {
   font-size: 1.2rem;
   color: #444;
@@ -96,7 +96,7 @@
   margin: 0;
 }
 
-/* ── GRID DE IMÁGENES ── */
+
 .grid-imagenes {
   display: flex;
   flex-wrap: wrap;
@@ -105,7 +105,7 @@
   padding: 10px 0 30px;
 }
 
-/* ── CARTA DE IMAGEN ── */
+
 .carta-imagen {
   display: flex;
   flex-direction: column;
@@ -139,7 +139,7 @@
   position: relative;
 }
 
-/* Ocultar el signo '+' que traen incrustado las imágenes de Arasaac en la esquina superior derecha */
+
 .carta-imagen__marco::after {
   content: '';
   position: absolute;
@@ -165,7 +165,7 @@
   text-align: center;
 }
 
-/* ── ESTADOS DE SELECCIÓN (borde de la carta) ── */
+
 .imagen-correcta .carta-imagen__marco {
   border-color: #4caf50;
   box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
@@ -192,7 +192,7 @@
   80%       { transform: translateX(6px); }
 }
 
-/* ── MARCAS CORRECTO / INCORRECTO (como juego vocal) ── */
+
 .marca-correcta,
 .marca-incorrecta {
   position: absolute;
@@ -211,7 +211,7 @@
 .tick-text { font-size: 5rem; }
 .cross-text { font-size: 5rem; }
 
-/* ── CRÉDITO SOY VISUAL ── */
+
 .credito-soyvisual {
   display: flex;
   justify-content: center;
@@ -226,7 +226,7 @@
   color: var(--ariadna-text-muted, #888);
 }
 
-/* ── BOTÓN SIGUIENTE ── */
+
 .pie-pagina {
   position: fixed;
   bottom: 64px;
@@ -254,7 +254,7 @@
   transform: scale(1.03);
 }
 
-/* ── PANTALLA VICTORIA (Estándar) ── */
+
 .pantalla-victoria {
   justify-content: center;
   align-items: center;

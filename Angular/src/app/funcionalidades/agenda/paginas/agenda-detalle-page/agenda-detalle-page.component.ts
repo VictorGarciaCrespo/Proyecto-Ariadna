@@ -22,7 +22,7 @@ export class AgendaDetallePageComponent implements OnInit {
   itemsDisponibles: AgendaItem[] = [];
   pasosRutina: (AgendaItem | null)[] = Array(10).fill(null);
 
-  // Toast
+  
   toast: { mensaje: string; tipo: 'exito' | 'error' } | null = null;
   private toastTimeout: any;
 
@@ -38,11 +38,11 @@ export class AgendaDetallePageComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     if (!id) { this.router.navigate(['/agenda']); return; }
 
-    // Cargar la rutina y los pictogramas disponibles en paralelo
+    
     this.rutinasService.getRutinaById(id).subscribe({
       next: (res) => {
         this.rutina = res.data;
-        // Copiar los pasos actuales a los slots
+        
         const pasos = res.data.pasos ?? [];
         for (let i = 0; i < 10; i++) {
           this.pasosRutina[i] = pasos[i] ?? null;

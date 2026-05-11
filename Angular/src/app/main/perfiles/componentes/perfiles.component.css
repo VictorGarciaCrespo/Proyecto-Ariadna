@@ -1,7 +1,4 @@
-/* ============================================================
-   Perfiles - Selección de usuario
-   Patrón: fondo crema suave, tarjetas claras, sin ruido visual
-   ============================================================ */
+
 
 :host {
   display: block;
@@ -10,7 +7,7 @@
   font-family: 'Nunito', 'Segoe UI', sans-serif;
 }
 
-/* --- Cabecera con botón invitado --- */
+
 .header-actions {
   position: fixed;
   top: 20px;
@@ -37,7 +34,7 @@
   color: var(--ariadna-primary-dark);
 }
 
-/* --- Contenedor principal --- */
+
 .perfiles-container {
   display: flex;
   flex-direction: column;
@@ -48,7 +45,7 @@
   gap: var(--ariadna-spacing-lg);
 }
 
-/* --- Título de la página --- */
+
 .titulo {
   font-size: 2.4rem;
   font-weight: 700;
@@ -58,14 +55,14 @@
   text-align: center;
 }
 
-/* --- Grid de perfiles --- */
+
 .botones-grid {
   gap: 28px 32px;
   max-width: 900px;
   width: 100%;
 }
 
-/* --- Tarjeta de perfil --- */
+
 .btn-perfil {
   display: flex;
   flex-direction: column;
@@ -108,7 +105,7 @@
   letter-spacing: 0.3px;
 }
 
-/* --- Clases dinámicas de disposición --- */
+
 .disposicion-fila {
   display: flex;
   flex-direction: row;
@@ -142,7 +139,7 @@
   border-radius: 4px;
 }
 
-/* --- Botón Añadir perfil --- */
+
 .btn-imagen-add {
   display: flex;
   align-items: center;

@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 export interface Perfil {
-    _id?: string; // IMPORTANTE: Agregado el ID de Mongo
+    _id?: string; 
     nombre: string;
     apellidos: string;
     fechaNacimiento: Date | string;

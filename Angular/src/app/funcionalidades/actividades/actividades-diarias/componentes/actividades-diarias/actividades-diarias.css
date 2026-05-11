@@ -1,7 +1,4 @@
-/* ============================================================
-   Actividades Diarias - Pantalla de actividad
-   Patrón: botón volver + título centrado + botón de acción grande
-   ============================================================ */
+
 
 :host {
   display: block;
@@ -18,7 +15,7 @@
   background-color: var(--ariadna-bg);
 }
 
-/* --- Cabecera con botón volver --- */
+
 .header {
   display: flex;
   justify-content: flex-start;
@@ -50,7 +47,7 @@
   color: var(--ariadna-primary);
 }
 
-/* --- Contenido principal --- */
+
 .main-content {
   flex-grow: 1;
   display: flex;
@@ -61,7 +58,7 @@
   gap: var(--ariadna-spacing-lg);
 }
 
-/* --- Título --- */
+
 .title {
   font-size: 2.2rem;
   font-weight: 700;
@@ -71,14 +68,14 @@
   font-family: 'Nunito', sans-serif;
 }
 
-/* --- Contenedor del botón de acción --- */
+
 .juego-container {
   display: flex;
   justify-content: center;
   width: 100%;
 }
 
-/* --- Botón principal de acción (grande, visible, claro) --- */
+
 .btn-juego {
   background-color: var(--ariadna-primary);
   color: #ffffff;

@@ -19,9 +19,9 @@ class RutinasService {
     async getRutinasByPerfil(idPerfil) {
         try {
             const db = await this.mongoDB.connect();
-            // Comparar idPerfil como string (por si en BD está como ObjectId o string)
+            
             const rutinas = await db.collection(this.coleccion).find({ idPerfil: String(idPerfil) }).toArray();
-            // Normalizar _id a string en cada rutina
+            
             return rutinas.map(r => ({ ...r, _id: r._id ? r._id.toString() : r._id }));
         } catch (error) {
             console.log('error recuperando rutinas por perfil', error);

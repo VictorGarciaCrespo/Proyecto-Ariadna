@@ -5,9 +5,9 @@ export interface ParejasAccionObjeto {
 }
 
 export interface TarjetaJuego {
-  id: number;          // identificador único en el tablero
-  imagen: string;      // nombre del archivo (ej: "llave.png")
+  id: number;          
+  imagen: string;      
   tipo: 'objeto' | 'accion';
-  parejaId: number;    // las dos tarjetas con el mismo parejaId son pareja
+  parejaId: number;    
   estado: 'neutro' | 'seleccionada' | 'correcta' | 'incorrecta';
 }

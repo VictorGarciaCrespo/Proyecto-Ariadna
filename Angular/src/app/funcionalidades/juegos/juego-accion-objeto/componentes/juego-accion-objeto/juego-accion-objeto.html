@@ -1,7 +1,7 @@
-<!-- Juego Acción-Objeto — columna izquierda | columna derecha -->
+
 <div class="juego-layout">
 
-  <!-- Cabecera -->
+  
   <header class="header">
     <button class="btn-circle" (click)="volver()" aria-label="Volver">
       <mat-icon>arrow_back</mat-icon>
@@ -22,7 +22,7 @@
     </div>
   </header>
 
-  <!-- Estado: cargando -->
+  
   <main class="main-content" *ngIf="cargando()">
     <div class="estado-mensaje">
       <mat-icon class="icono-carga">hourglass_top</mat-icon>
@@ -30,7 +30,7 @@
     </div>
   </main>
 
-  <!-- Estado: error -->
+  
   <main class="main-content" *ngIf="error() && !cargando()">
     <div class="estado-mensaje estado-error">
       <mat-icon>error_outline</mat-icon>
@@ -38,7 +38,7 @@
     </div>
   </main>
 
-  <!-- Juego activo -->
+  
   <main class="main-content" *ngIf="!cargando() && !error() && !juegoTerminado()">
 
     <p class="instruccion">
@@ -48,7 +48,7 @@
 
     <div class="zona-juego">
 
-      <!-- Columna IZQUIERDA: Acciones -->
+      
       <div class="columna">
         <div
           *ngFor="let tarjeta of acciones()"
@@ -66,19 +66,19 @@
             <mat-icon *ngIf="tarjeta.estado === 'correcta'">check</mat-icon>
             <mat-icon *ngIf="tarjeta.estado === 'incorrecta'">close</mat-icon>
           </div>
-          <!-- Flecha indicadora de que está seleccionada -->
+          
           <div class="flecha-seleccion" *ngIf="tarjeta.estado === 'seleccionada'">
             <mat-icon>arrow_forward</mat-icon>
           </div>
         </div>
       </div>
 
-      <!-- Separador visual -->
+      
       <div class="separador">
         <div class="linea-vertical"></div>
       </div>
 
-      <!-- Columna DERECHA: Objetos -->
+      
       <div class="columna">
         <div
           *ngFor="let tarjeta of objetos()"
@@ -102,7 +102,7 @@
     </div>
   </main>
 
-  <!-- Pantalla de victoria -->
+  
   <main class="main-content pantalla-fin" *ngIf="juegoTerminado()">
     <div class="fin-card">
       <div class="fin-icono">🎉</div>
@@ -121,7 +121,7 @@
     </div>
   </main>
 
-  <!-- Botón Siguiente/Finalizar (esquina inferior derecha) -->
+  
   <div class="pie-pagina">
     <button class="btn-siguiente" (click)="irAJuegoActividades()">
       {{ esUltimo ? 'Finalizar' : 'Siguiente' }}
@@ -129,7 +129,7 @@
     </button>
   </div>
 
-  <!-- Crédito ARASAAC -->
+  
   <div class="credito-arasaac">
     <img src="/imagenes/arasaac-logo.png" alt="Logo ARASAAC" class="credito-arasaac__logo">
     <span class="credito-arasaac__texto">Pictogramas propiedad de Arasaac</span>

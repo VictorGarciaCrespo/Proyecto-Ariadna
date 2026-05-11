@@ -46,7 +46,7 @@
     transform: scale(1.05);
 }
 
-/* ── CONTENEDOR JUEGO ── */
+
 .contenedor-juego {
     display: flex;
     flex-direction: column;
@@ -54,7 +54,7 @@
     padding: 0 40px 40px 40px;
 }
 
-/* ── BOTÓN SIGUIENTE ── */
+
 .pie-pagina {
     position: fixed;
     bottom: 64px;
@@ -82,7 +82,7 @@
     transform: scale(1.03);
 }
 
-/* ── PANTALLA VICTORIA (Estándar) ── */
+
 .pantalla-victoria {
     justify-content: center;
     align-items: center;
@@ -152,7 +152,7 @@
     100% { transform: scale(1); opacity: 1; }
 }
 
-/* ── CRÉDITO ── */
+
 .credito-arasaac {
     display: flex;
     align-items: center;

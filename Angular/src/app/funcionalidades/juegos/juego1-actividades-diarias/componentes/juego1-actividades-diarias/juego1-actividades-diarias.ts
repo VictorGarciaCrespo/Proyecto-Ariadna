@@ -34,7 +34,7 @@ export class Juego1ActividadesDiarias implements OnInit {
     return this.juegoNavService.esUltimoJuego('actividades-diarias');
   }
 
-  // Estado del juego
+  
   actividades: ActividadDiaria[] = [];
   actividadActual = signal<ActividadDiaria | null>(null);
   pictogramasJuego = signal<PictogramaJuego[]>([]);
@@ -42,10 +42,10 @@ export class Juego1ActividadesDiarias implements OnInit {
   juegoTerminado = signal(false);
   cargando = signal(true);
   error = signal(false);
-  tieneTextoAlternativo = signal<boolean>(true); // Por defecto asumimos que sí
+  tieneTextoAlternativo = signal<boolean>(true); 
 
   ngOnInit() {
-    // Determinar capacidades del perfil actual
+    
     const perfilActivo = this.perfilService.getPerfil();
     if (perfilActivo && perfilActivo.capacidades) {
       this.tieneTextoAlternativo.set(perfilActivo.capacidades.includes('texto_explicativo'));
@@ -67,14 +67,14 @@ export class Juego1ActividadesDiarias implements OnInit {
   iniciarRonda() {
     if (this.actividades.length === 0) return;
 
-    // Elegir actividad aleatoria
+    
     const idx = Math.floor(Math.random() * this.actividades.length);
     const actividad = this.actividades[idx];
     this.actividadActual.set(actividad);
     this.acertados.set(0);
     this.juegoTerminado.set(false);
 
-    // Mezclar objetos correctos + distractores y elegir 6 en total (3 correctos + 3 distractores aleatorios)
+    
     const correctos = this.mezclar([...actividad.objetosCorrectos]).slice(0, 3);
     const distractoresDisponibles = this.mezclar([...actividad.distractores]);
     const distractores = distractoresDisponibles.slice(0, 3);
@@ -91,10 +91,10 @@ export class Juego1ActividadesDiarias implements OnInit {
     const lista = [...this.pictogramasJuego()];
     const item = lista[index];
 
-    // Ignorar si ya fue seleccionado
+    
     if (item.estado !== 'neutro') return;
 
-    // Extraer nombre de la ruta y pronunciarlo
+    
     const nombreArchivo = item.ruta.split('/').pop()?.replace('.png', '').replace(/_/g, ' ') ?? '';
     this.sonidoService.hablar(nombreArchivo);
 
@@ -105,14 +105,14 @@ export class Juego1ActividadesDiarias implements OnInit {
       this.acertados.set(nuevosAcertados);
 
       if (nuevosAcertados >= 3) {
-        // Pequeña pausa para mostrar el último tick antes del mensaje de fin
+        
         setTimeout(() => this.juegoTerminado.set(true), 600);
       }
     } else {
       lista[index] = { ...item, estado: 'incorrecto' };
       this.pictogramasJuego.set(lista);
 
-      // Restablecer el incorrecto después de 1 segundo
+      
       setTimeout(() => {
         const l = [...this.pictogramasJuego()];
         l[index] = { ...l[index], estado: 'neutro' };

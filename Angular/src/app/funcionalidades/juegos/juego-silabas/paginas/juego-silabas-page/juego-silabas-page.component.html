@@ -1,6 +1,6 @@
 <div class="juego-layout">
 
-  <!-- CABECERA -->
+  
   <header class="header">
     <button class="btn-circle" (click)="volver()" aria-label="Volver">
       <mat-icon>arrow_back</mat-icon>
@@ -21,7 +21,7 @@
     </div>
   </header>
 
-  <!-- JUEGO ACTIVO -->
+  
   <main class="main-content" *ngIf="!juegoTerminado">
 
     <p class="instruccion">
@@ -31,7 +31,7 @@
 
     <div class="zona-juego">
 
-      <!-- COLUMNA IZQUIERDA: Sílabas -->
+      
       <div class="columna columna-silabas">
         <div
           *ngFor="let s of silabasRonda"
@@ -45,12 +45,12 @@
 
           <span class="texto-silaba">{{ s.silaba }}</span>
 
-          <!-- Flecha animada cuando está seleccionada -->
+          
           <div class="flecha-seleccion" *ngIf="getEstadoTarjeta(s.id) === 'seleccionada'">
             <mat-icon>arrow_forward</mat-icon>
           </div>
 
-          <!-- Feedback overlay -->
+          
           <div class="overlay-feedback" *ngIf="getEstadoTarjeta(s.id) === 'correcta' || getEstadoTarjeta(s.id) === 'incorrecta'">
             <mat-icon *ngIf="getEstadoTarjeta(s.id) === 'correcta'">check</mat-icon>
             <mat-icon *ngIf="getEstadoTarjeta(s.id) === 'incorrecta'">close</mat-icon>
@@ -58,12 +58,12 @@
         </div>
       </div>
 
-      <!-- SEPARADOR CENTRAL -->
+      
       <div class="separador">
         <div class="linea-vertical"></div>
       </div>
 
-      <!-- COLUMNA DERECHA: Imágenes -->
+      
       <div class="columna columna-imagenes">
         <div
           *ngFor="let p of palabrasRonda"
@@ -77,7 +77,7 @@
 
           <img [src]="p.imagen" [alt]="p.palabra" />
 
-          <!-- Feedback overlay -->
+          
           <div class="overlay-feedback" *ngIf="getEstadoImagen(p.id) === 'correcta' || getEstadoImagen(p.id) === 'incorrecta'">
             <mat-icon *ngIf="getEstadoImagen(p.id) === 'correcta'">check</mat-icon>
             <mat-icon *ngIf="getEstadoImagen(p.id) === 'incorrecta'">close</mat-icon>
@@ -88,7 +88,7 @@
     </div>
   </main>
 
-  <!-- PANTALLA VICTORIA -->
+  
   <main class="main-content pantalla-victoria" *ngIf="juegoTerminado">
     <div class="victoria-card">
       <div class="victoria-emoji">🎉</div>
@@ -107,7 +107,7 @@
     </div>
   </main>
 
-  <!-- Botón Siguiente (esquina inferior derecha) -->
+  
   <div class="pie-pagina">
     <button class="btn-siguiente" (click)="siguienteJuego()">
       {{ esUltimo ? 'Finalizar' : 'Siguiente' }}
@@ -115,7 +115,7 @@
     </button>
   </div>
 
-  <!-- CRÉDITO -->
+  
   <div class="credito-soyvisual">
     <span>Pictogramas propiedad de Soy Visual</span>
   </div>

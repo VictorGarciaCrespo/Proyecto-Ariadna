@@ -1,5 +1,5 @@
 <div class="pagina-juego">
-  <!-- CABECERA -->
+  
   <div class="cabecera">
     <button class="btn-icono redondo" routerLink="/juegos-mente">
       <mat-icon>arrow_back</mat-icon>
@@ -16,10 +16,10 @@
     </div>
   </div>
 
-  <!-- JUEGO ACTIVO -->
+  
   <div *ngIf="!juegoTerminado" class="contenedor-juego">
 
-    <!-- PROGRESO -->
+    
     <div class="progreso">
       <span class="progreso-texto">Ronda {{ rondaActualIndex + 1 }} de {{ totalRondas }}</span>
       <div class="barra-progreso">
@@ -28,10 +28,10 @@
       </div>
     </div>
 
-    <!-- INSTRUCCIÓN -->
+    
     <p class="instruccion">¿Cuál de estas imágenes <strong>no pertenece</strong> al grupo?</p>
 
-    <!-- GRID DE IMÁGENES -->
+    
     <div class="grid-imagenes">
       <div
         *ngFor="let imagen of rondaActual.imagenes; let i = index"
@@ -42,12 +42,12 @@
         <div class="carta-imagen__marco">
           <img [src]="imagen.ruta" [alt]="imagen.nombre" class="carta-imagen__img" />
 
-          <!-- Marca correcto: ✅ centrada sobre la imagen -->
+          
           <div *ngIf="imagenSeleccionadaIndex === i && estadoSeleccion === 'correcto'" class="marca-correcta">
             <span class="tick-text">✅</span>
           </div>
 
-          <!-- Marca incorrecto: ❌ centrada sobre la imagen -->
+          
           <div *ngIf="imagenSeleccionadaIndex === i && estadoSeleccion === 'incorrecto'" class="marca-incorrecta">
             <span class="cross-text">❌</span>
           </div>
@@ -58,7 +58,7 @@
 
   </div>
 
-  <!-- BOTÓN SIGUIENTE (esquina inferior derecha) -->
+  
   <div class="pie-pagina">
     <button class="btn-siguiente" (click)="siguienteJuego()">
       {{ esUltimo ? 'Finalizar' : 'Siguiente' }}
@@ -66,7 +66,7 @@
     </button>
   </div>
 
-  <!-- PANTALLA VICTORIA -->
+  
   <div *ngIf="juegoTerminado" class="contenedor-juego pantalla-victoria">
     <div class="victoria-card">
       <div class="victoria-emoji">🎉</div>
@@ -85,7 +85,7 @@
     </div>
   </div>
 
-  <!-- PIE DE PÁGINA -->
+  
   <div class="credito-soyvisual">
     <span class="credito-soyvisual">Pictogramas propiedad de Soy Visual</span>
   </div>

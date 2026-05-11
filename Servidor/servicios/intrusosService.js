@@ -9,7 +9,7 @@ class IntrusosService {
     async getIntrusos() {
         try {
             const intrusos = await this.mongoDB.getDocumentos(this.coleccion);
-            // Ordenar por número de ronda
+            
             intrusos.sort((a, b) => a.ronda - b.ronda);
             return intrusos;
         } catch (error) {

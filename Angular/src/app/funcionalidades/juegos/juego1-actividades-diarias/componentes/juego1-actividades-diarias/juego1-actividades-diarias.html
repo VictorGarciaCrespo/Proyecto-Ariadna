@@ -1,7 +1,7 @@
-<!-- Juego 1 - Actividades Diarias — Patrón Ariadna TEA -->
+
 <div class="juego-layout">
 
-  <!-- Cabecera -->
+  
   <header class="header">
     <button class="btn-circle" (click)="volver()" aria-label="Volver">
       <mat-icon>arrow_back</mat-icon>
@@ -21,7 +21,7 @@
     </div>
   </header>
 
-  <!-- Estado: cargando -->
+  
   <main class="main-content" *ngIf="cargando()">
     <div class="estado-mensaje">
       <mat-icon class="icono-carga">hourglass_top</mat-icon>
@@ -29,7 +29,7 @@
     </div>
   </main>
 
-  <!-- Estado: error -->
+  
   <main class="main-content" *ngIf="error() && !cargando()">
     <div class="estado-mensaje estado-error">
       <mat-icon>error_outline</mat-icon>
@@ -37,11 +37,11 @@
     </div>
   </main>
 
-  <!-- Juego activo -->
+  
   <main class="main-content" *ngIf="!cargando() && !error() && actividadActual() && !juegoTerminado()">
 
     <div class="zona-juego">
-      <!-- Columna izquierda: 3 primeros -->
+      
       <div class="columna-opciones">
         <div
           *ngFor="let pic of pictogramasJuego().slice(0, 3); let i = index"
@@ -60,16 +60,16 @@
         </div>
       </div>
 
-      <!-- Centro: Pictograma principal y nombre -->
+      
       <div class="zona-central">
         <div class="pictograma-principal-wrapper">
-          <!-- Si NO tiene texto explicativo, mostramos el pictograma -->
+          
           <img *ngIf="!tieneTextoAlternativo()" 
                [src]="actividadActual()!.pictogramaPrincipal + '.png'" 
                alt="Actividad" 
                class="pictograma-principal" />
           
-          <!-- Siempre mostramos el texto, pero con clase especial si va solo -->
+          
           <span class="etiqueta-actividad" 
                 [ngClass]="{ 'solo-texto': tieneTextoAlternativo() }">
             {{ actividadActual()!.actividad }}
@@ -77,7 +77,7 @@
         </div>
       </div>
 
-      <!-- Columna derecha: 3 últimos -->
+      
       <div class="columna-opciones">
         <div
           *ngFor="let pic of pictogramasJuego().slice(3, 6); let i = index"
@@ -99,7 +99,7 @@
 
   </main>
 
-  <!-- Pantalla de victoria -->
+  
   <main class="main-content pantalla-victoria" *ngIf="juegoTerminado()">
     <div class="victoria-card">
       <div class="victoria-emoji">🎉</div>
@@ -118,7 +118,7 @@
     </div>
   </main>
 
-  <!-- Botón Siguiente (esquina inferior derecha) -->
+  
   <div class="pie-pagina">
     <button class="btn-siguiente" (click)="siguienteJuego()">
       {{ esUltimo ? 'Finalizar' : 'Siguiente' }}
@@ -126,7 +126,7 @@
     </button>
   </div>
 
-  <!-- Crédito ARASAAC -->
+  
   <div class="credito-arasaac">
     <img src="/imagenes/arasaac-logo.png" alt="Logo ARASAAC" class="credito-arasaac__logo">
     <span class="credito-arasaac__texto">Pictogramas propiedad de Arasaac</span>

@@ -23,7 +23,7 @@ export class PerfilesComponent implements OnInit {
             next: (datos) => {
                 console.log('Perfiles recibidos en Angular:', datos);
                 this.perfiles = datos;
-                this.cdr.detectChanges(); // Forzar actualización de la vista
+                this.cdr.detectChanges(); 
             },
             error: (err) => {
                 console.error('Error al cargar perfiles en Angular:', err);

@@ -21,7 +21,7 @@
 
   <main class="main-content" *ngIf="rutina; else cargando">
 
-    <!-- Zona de slots de la rutina -->
+    
     <div class="slots-container">
       <div class="slot-wrapper" *ngFor="let paso of pasosRutina; let i = index"
            cdkDropList
@@ -30,10 +30,10 @@
            [cdkDropListConnectedTo]="allSlotIds"
            (cdkDropListDropped)="dropInSlot($event)">
 
-        <!-- ESPACIO VACÍO -->
+        
         <div class="slot-empty" *ngIf="!paso"></div>
 
-        <!-- ESPACIO LLENO -->
+        
         <div class="slot-filled" *ngIf="paso" cdkDrag [cdkDragData]="paso" (mousedown)="sonidoService.hablar(paso.nombre)">
           <div *cdkDragPreview class="drag-preview-img">
             <img [src]="paso?.url" [alt]="paso?.nombre">
@@ -46,12 +46,12 @@
       </div>
     </div>
 
-    <!-- Flecha decorativa -->
+    
     <div class="arrow-divider">
       <mat-icon>keyboard_double_arrow_up</mat-icon>
     </div>
 
-    <!-- Pictogramas disponibles -->
+    
     <div class="cosas-hacer-container">
       <h2>Cosas para Hacer</h2>
       <div class="items-grid"
@@ -86,7 +86,7 @@
     <div class="loading">Cargando rutina...</div>
   </ng-template>
 
-  <!-- Toast de notificación -->
+  
   <div class="toast" *ngIf="toast" [ngClass]="toast.tipo">
     {{ toast.mensaje }}
   </div>

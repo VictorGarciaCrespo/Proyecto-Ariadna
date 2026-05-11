@@ -1,6 +1,4 @@
-/* ============================================================
-   Juego Acción-Objeto — Layout dos columnas
-   ============================================================ */
+
 
 :host {
   display: block;
@@ -16,7 +14,7 @@
   background-color: var(--ariadna-bg);
 }
 
-/* ---- Cabecera ---- */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -70,7 +68,7 @@
   color: var(--ariadna-primary);
 }
 
-/* ---- Contenido principal ---- */
+
 .main-content {
   flex: 1;
   display: flex;
@@ -81,7 +79,7 @@
   gap: 16px;
 }
 
-/* ---- Instrucción ---- */
+
 .instruccion {
   font-size: 1.05rem;
   font-weight: 600;
@@ -95,7 +93,7 @@
   font-weight: 700;
 }
 
-/* ---- Estado cargando / error ---- */
+
 .estado-mensaje {
   display: flex;
   flex-direction: column;
@@ -111,7 +109,7 @@
 }
 .estado-error { color: #ef4444; }
 
-/* ---- Zona del juego (2 columnas + separador) ---- */
+
 .zona-juego {
   display: flex;
   align-items: center;
@@ -121,7 +119,7 @@
   max-width: 740px;
 }
 
-/* ---- Columna ---- */
+
 .columna {
   display: flex;
   flex-direction: column;
@@ -130,7 +128,7 @@
   align-items: center;
 }
 
-/* ---- Separador central ---- */
+
 .separador {
   display: flex;
   align-items: center;
@@ -152,7 +150,7 @@
   border-radius: 2px;
 }
 
-/* ---- Tarjeta ---- */
+
 .tarjeta {
   position: relative;
   width: 140px;
@@ -180,7 +178,7 @@
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.13);
 }
 
-/* ---- Estado: seleccionada (columna izquierda) ---- */
+
 .tarjeta.seleccionada {
   border-color: var(--ariadna-primary);
   background: var(--ariadna-primary-light, #ede9fe);
@@ -188,7 +186,7 @@
   transform: scale(1.08);
 }
 
-/* ---- Estado: destacada (objetos disponibles cuando hay acción seleccionada) ---- */
+
 .tarjeta.destacada {
   border-color: #f59e0b;
   box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
@@ -200,7 +198,7 @@
   50%       { box-shadow: 0 0 0 6px rgba(245, 158, 11, 0.35); }
 }
 
-/* ---- Estado: correcta ---- */
+
 .tarjeta.correcta {
   border-color: #22c55e;
   background: #f0fdf4;
@@ -211,7 +209,7 @@
   box-shadow: none;
 }
 
-/* ---- Estado: incorrecta ---- */
+
 .tarjeta.incorrecta {
   border-color: #ef4444;
   background: #fff1f2;
@@ -226,7 +224,7 @@
   80%       { transform: translateX(4px); }
 }
 
-/* ---- Flecha de "seleccionada" ---- */
+
 .flecha-seleccion {
   position: absolute;
   right: -4px;
@@ -253,7 +251,7 @@
   to   { right: -10px; }
 }
 
-/* ---- Overlay feedback ---- */
+
 .overlay-feedback {
   position: absolute;
   inset: 0;
@@ -277,7 +275,7 @@
   color: #dc2626;
 }
 
-/* ---- Pantalla de victoria ---- */
+
 .pantalla-fin { justify-content: center; }
 
 .fin-card {
@@ -335,7 +333,7 @@
 }
 .btn-otro-juego:hover { background-color: #dcfce7; transform: scale(1.03); }
 
-/* ---- Crédito ARASAAC ---- */
+
 .credito-arasaac {
   display: flex;
   align-items: center;
@@ -347,7 +345,7 @@
 .credito-arasaac__logo   { height: 24px; object-fit: contain; }
 .credito-arasaac__texto  { font-size: 0.75rem; color: var(--ariadna-text-muted, #888); }
 
-/* ── BOTÓN SIGUIENTE ── */
+
 .pie-pagina {
   position: fixed;
   bottom: 64px;

@@ -20,7 +20,7 @@ export class JuegoAccionObjetoComponent implements OnInit {
   private juegoNavService = inject(JuegoNavService);
   sonidoService = inject(SonidoService);
 
-  // Estado
+  
   cargando = signal(true);
   error = signal(false);
   juegoTerminado = signal(false);
@@ -30,7 +30,7 @@ export class JuegoAccionObjetoComponent implements OnInit {
   parejasCorrectas = signal(0);
   readonly TOTAL_PAREJAS = 4;
 
-  // Conexiones confirmadas: { accionId -> objetoId }
+  
   conexiones = signal<Map<number, number>>(new Map());
 
   seleccionadaAccion: TarjetaJuego | null = null;
@@ -71,21 +71,21 @@ export class JuegoAccionObjetoComponent implements OnInit {
     this.procesando = false;
   }
 
-  /** El usuario toca una tarjeta de la columna IZQUIERDA (acción) */
+  
   seleccionarAccion(tarjeta: TarjetaJuego) {
     if (tarjeta.estado === 'correcta') return;
 
     const nombre = tarjeta.imagen.replace('.png', '').replace(/-/g, ' ');
     this.sonidoService.hablar(nombre);
 
-    // Deseleccionar si se toca la misma
+    
     if (this.seleccionadaAccion?.id === tarjeta.id) {
       this.actualizarAccion(tarjeta.id, 'neutro');
       this.seleccionadaAccion = null;
       return;
     }
 
-    // Deseleccionar la anterior si la había
+    
     if (this.seleccionadaAccion) {
       this.actualizarAccion(this.seleccionadaAccion.id, 'neutro');
     }
@@ -94,7 +94,7 @@ export class JuegoAccionObjetoComponent implements OnInit {
     this.seleccionadaAccion = tarjeta;
   }
 
-  /** El usuario toca una tarjeta de la columna DERECHA (objeto) */
+  
   seleccionarObjeto(tarjeta: TarjetaJuego) {
     if (!this.seleccionadaAccion || this.procesando) return;
     if (tarjeta.estado === 'correcta') return;
@@ -106,12 +106,12 @@ export class JuegoAccionObjetoComponent implements OnInit {
     const accion = this.seleccionadaAccion;
 
     if (accion.parejaId === tarjeta.parejaId) {
-      // ✅ Correcto
+      
       setTimeout(() => {
         this.actualizarAccion(accion.id, 'correcta');
         this.actualizarObjeto(tarjeta.id, 'correcta');
 
-        // Guardar conexión confirmada
+        
         const mapa = new Map(this.conexiones());
         mapa.set(accion.id, tarjeta.id);
         this.conexiones.set(mapa);
@@ -126,7 +126,7 @@ export class JuegoAccionObjetoComponent implements OnInit {
         }
       }, 300);
     } else {
-      // ❌ Incorrecto
+      
       this.actualizarAccion(accion.id, 'incorrecta');
       this.actualizarObjeto(tarjeta.id, 'incorrecta');
       setTimeout(() => {
