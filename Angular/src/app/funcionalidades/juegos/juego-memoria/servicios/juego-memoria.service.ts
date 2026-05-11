@@ -4,12 +4,14 @@ import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { ElementoMemoria } from '../interfaces/juego-memoria.interface';
 
+import { environment } from '../../../../../environments/environment';
+
 @Injectable({
     providedIn: 'root'
 })
 export class JuegoMemoriaService {
     private http = inject(HttpClient);
-    private apiUrl = 'http://localhost:3000/api/elementos-memoria';
+    private apiUrl = `${environment.apiUrl}/elementos-memoria`;
 
     obtenerElementos(): Observable<ElementoMemoria[]> {
         return this.http.get<{ data: ElementoMemoria[] }>(this.apiUrl).pipe(

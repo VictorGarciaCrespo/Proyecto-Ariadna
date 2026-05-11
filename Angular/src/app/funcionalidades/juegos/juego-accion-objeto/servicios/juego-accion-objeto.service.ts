@@ -1,3 +1,4 @@
+import { environment } from '../../../../../environments/environment';
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -9,7 +10,7 @@ import { ParejasAccionObjeto } from '../interfaces/juego-accion-objeto.interface
 })
 export class JuegoAccionObjetoService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:3000/api/acciones-objetos';
+  private apiUrl = `${environment.apiUrl}/acciones-objetos`;
 
   getParejas(): Observable<ParejasAccionObjeto[]> {
     return this.http.get<{ data: ParejasAccionObjeto[] }>(this.apiUrl).pipe(

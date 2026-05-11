@@ -1,3 +1,4 @@
+import { environment } from '../../../../environments/environment';
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -7,7 +8,7 @@ import { Rutina } from '../interfaces/rutina.interface';
   providedIn: 'root'
 })
 export class RutinasService {
-  private apiUrl = 'http://localhost:3000/api/rutinas';
+  private apiUrl = `${environment.apiUrl}/rutinas`;
   private http = inject(HttpClient);
 
   getRutinas(): Observable<{ data: Rutina[], message: string }> {

@@ -2,6 +2,7 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { environment } from '../../../../../environments/environment';
 
 export interface PalabraMusica {
   id: number;
@@ -15,7 +16,7 @@ export interface PalabraMusica {
 })
 export class JuegoSilabasService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:3000/api/palabras-silabas';
+  private apiUrl = `${environment.apiUrl}/palabras-silabas`;
 
   getPalabras(): Observable<PalabraMusica[]> {
     return this.http.get<{ data: PalabraMusica[] }>(this.apiUrl).pipe(

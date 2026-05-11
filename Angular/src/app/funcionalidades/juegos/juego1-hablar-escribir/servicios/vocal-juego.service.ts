@@ -4,12 +4,14 @@ import { Observable, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { CartaVocal } from '../interfaces/vocal-juego.interface';
 
+import { environment } from '../../../../../environments/environment';
+
 @Injectable({
     providedIn: 'root'
 })
 export class VocalJuegoService {
     private http = inject(HttpClient);
-    private apiUrl = 'http://localhost:3000/api/palabras-vocales';
+    private apiUrl = `${environment.apiUrl}/palabras-vocales`;
 
     getPalabras(): Observable<CartaVocal[]> {
         return this.http.get<{ data: CartaVocal[] }>(this.apiUrl).pipe(

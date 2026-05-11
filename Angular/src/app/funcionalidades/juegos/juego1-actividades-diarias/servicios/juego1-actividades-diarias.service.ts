@@ -1,3 +1,4 @@
+import { environment } from '../../../../../environments/environment';
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -9,7 +10,7 @@ import { ActividadDiaria } from '../interfaces/juego1-actividades-diarias.interf
 })
 export class Juego1ActividadesDiariasService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:3000/api/actividades-diarias';
+  private apiUrl = `${environment.apiUrl}/actividades-diarias`;
 
   getActividades(): Observable<ActividadDiaria[]> {
     return this.http.get<{ data: ActividadDiaria[] }>(this.apiUrl).pipe(

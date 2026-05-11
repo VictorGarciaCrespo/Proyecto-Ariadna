@@ -1,3 +1,4 @@
+import { environment } from '../../../../environments/environment';
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -7,7 +8,7 @@ import { AgendaItem } from '../interfaces/agenda.interface';
   providedIn: 'root'
 })
 export class AgendaService {
-  private apiUrl = 'http://localhost:3000/api/agenda';
+  private apiUrl = `${environment.apiUrl}/agenda`;
   private http = inject(HttpClient);
 
   getAgendaItems(): Observable<{ data: AgendaItem[], message: string }> {

@@ -1,3 +1,4 @@
+import { environment } from '../../../../environments/environment';
 import { Injectable, inject } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -17,7 +18,7 @@ export interface Perfil {
 })
 export class PerfilService {
     private http = inject(HttpClient);
-    private apiUrl = 'http://localhost:3000/api/perfiles';
+    private apiUrl = `${environment.apiUrl}/perfiles`;
 
     private perfilActualSubject = new BehaviorSubject<Perfil | null>(null);
     perfilActual$ = this.perfilActualSubject.asObservable();

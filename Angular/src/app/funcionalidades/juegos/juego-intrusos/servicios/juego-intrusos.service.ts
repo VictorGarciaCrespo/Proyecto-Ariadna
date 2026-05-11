@@ -1,3 +1,4 @@
+import { environment } from '../../../../../environments/environment';
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -7,7 +8,7 @@ import { RondaIntruso } from '../paginas/juego-intrusos-page/juego-intrusos-page
   providedIn: 'root'
 })
 export class JuegoIntrusosService {
-  private apiUrl = 'http://localhost:3000/api/intrusos';
+  private apiUrl = `${environment.apiUrl}/intrusos`;
   private http = inject(HttpClient);
 
   getIntrusos(): Observable<{ data: RondaIntruso[], message: string }> {
