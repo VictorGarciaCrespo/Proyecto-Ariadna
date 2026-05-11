@@ -114,12 +114,20 @@
           Volver a jugar
         </button>
         <button class="btn-accion btn-otro-juego" (click)="irAJuegoActividades()">
-          <mat-icon>swap_horiz</mat-icon>
-          Otro juego
+          <mat-icon *ngIf="!esUltimo">swap_horiz</mat-icon>
+          {{ esUltimo ? 'Finalizar' : 'Siguiente juego' }}
         </button>
       </div>
     </div>
   </main>
+
+  <!-- Botón Siguiente/Finalizar (esquina inferior derecha) -->
+  <div class="pie-pagina">
+    <button class="btn-siguiente" (click)="irAJuegoActividades()">
+      {{ esUltimo ? 'Finalizar' : 'Siguiente' }}
+      <mat-icon *ngIf="!esUltimo">arrow_forward</mat-icon>
+    </button>
+  </div>
 
   <!-- Crédito ARASAAC -->
   <div class="credito-arasaac">

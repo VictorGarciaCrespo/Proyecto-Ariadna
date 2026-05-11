@@ -27,7 +27,17 @@ export class JuegoSilabasPageComponent implements OnInit {
   private cdRef = inject(ChangeDetectorRef);
   private juegoNavService = inject(JuegoNavService);
 
-  siguienteJuego(): void { this.juegoNavService.siguienteJuego('hablar-escribir'); }
+  siguienteJuego(): void { 
+    if (this.juegoNavService.esUltimoJuego('hablar-escribir')) {
+      this.juegoNavService.irAlMenuPrincipal();
+    } else {
+      this.juegoNavService.siguienteJuego('hablar-escribir'); 
+    }
+  }
+
+  get esUltimo(): boolean {
+    return this.juegoNavService.esUltimoJuego('hablar-escribir');
+  }
 
   volver(): void {
     this.router.navigate(['/hablar-escribir']);
@@ -168,7 +178,7 @@ export class JuegoSilabasPageComponent implements OnInit {
   }
 
   finalizar(): void {
-    this.router.navigate(['/menu-principal']);
+    this.juegoNavService.irAlMenuPrincipal();
   }
 
   // ── Helpers ──────────────────────────────────────────

@@ -63,7 +63,17 @@
       <!-- Centro: Pictograma principal y nombre -->
       <div class="zona-central">
         <div class="pictograma-principal-wrapper">
-          <span class="etiqueta-actividad solo-texto">{{ actividadActual()!.actividad }}</span>
+          <!-- Si NO tiene texto explicativo, mostramos el pictograma -->
+          <img *ngIf="!tieneTextoAlternativo()" 
+               [src]="actividadActual()!.pictogramaPrincipal + '.png'" 
+               alt="Actividad" 
+               class="pictograma-principal" />
+          
+          <!-- Siempre mostramos el texto, pero con clase especial si va solo -->
+          <span class="etiqueta-actividad" 
+                [ngClass]="{ 'solo-texto': tieneTextoAlternativo() }">
+            {{ actividadActual()!.actividad }}
+          </span>
         </div>
       </div>
 
@@ -101,17 +111,18 @@
           <mat-icon>replay</mat-icon> Volver a jugar
         </button>
         <button class="btn-otro-juego" (click)="siguienteJuego()">
-          Siguiente juego <mat-icon>arrow_forward</mat-icon>
+          {{ esUltimo ? 'Finalizar' : 'Siguiente juego' }}
+          <mat-icon *ngIf="!esUltimo">arrow_forward</mat-icon>
         </button>
       </div>
     </div>
   </main>
 
   <!-- Botón Siguiente (esquina inferior derecha) -->
-  <div class="pie-pagina" *ngIf="!juegoTerminado()">
+  <div class="pie-pagina">
     <button class="btn-siguiente" (click)="siguienteJuego()">
-      Siguiente
-      <mat-icon>arrow_forward</mat-icon>
+      {{ esUltimo ? 'Finalizar' : 'Siguiente' }}
+      <mat-icon *ngIf="!esUltimo">arrow_forward</mat-icon>
     </button>
   </div>
 

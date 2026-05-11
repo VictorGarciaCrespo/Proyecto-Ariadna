@@ -29,13 +29,23 @@ export class JuegoMemoriaPageComponent implements OnInit {
     private juegoNavService = inject(JuegoNavService);
     private perfilService = inject(PerfilService);
 
-    siguienteJuego(): void { this.juegoNavService.siguienteJuego('estimulacion-cognitiva'); }
+    siguienteJuego(): void { 
+        if (this.juegoNavService.esUltimoJuego('estimulacion-cognitiva')) {
+            this.juegoNavService.irAlMenuPrincipal();
+        } else {
+            this.juegoNavService.siguienteJuego('estimulacion-cognitiva'); 
+        }
+    }
+
+    get esUltimo(): boolean {
+        return this.juegoNavService.esUltimoJuego('estimulacion-cognitiva');
+    }
 
     ngOnInit(): void {
         // Verificar capacidades del perfil activo
         const perfilActivo = this.perfilService.getPerfil();
         if (perfilActivo && perfilActivo.capacidades) {
-            this.tieneTextoAlternativo = perfilActivo.capacidades.includes('texto_alternativo');
+            this.tieneTextoAlternativo = perfilActivo.capacidades.includes('texto_explicativo');
         }
         
         this.iniciarJuego();

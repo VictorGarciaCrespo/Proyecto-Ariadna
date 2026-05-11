@@ -49,8 +49,8 @@
             Volver a jugar
           </button>
           <button class="btn-otro-juego" (click)="siguiente()">
-            Siguiente juego
-            <mat-icon>arrow_forward</mat-icon>
+            {{ esUltimo ? 'Finalizar' : 'Siguiente juego' }}
+            <mat-icon *ngIf="!esUltimo">arrow_forward</mat-icon>
           </button>
         </div>
       </div>
@@ -58,10 +58,10 @@
   </div>
 
   <!-- Botón Siguiente (esquina inferior derecha) -->
-  <div class="pie-pagina" *ngIf="!juegoTerminado">
+  <div class="pie-pagina">
     <button class="boton-siguiente" (click)="siguiente()">
-      Siguiente
-      <mat-icon>arrow_forward</mat-icon>
+      {{ esUltimo ? 'Finalizar' : 'Siguiente' }}
+      <mat-icon *ngIf="!esUltimo">arrow_forward</mat-icon>
     </button>
   </div>
 

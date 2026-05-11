@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { JuegoAccionObjetoService } from '../../servicios/juego-accion-objeto.service';
 import { ParejasAccionObjeto, TarjetaJuego } from '../../interfaces/juego-accion-objeto.interface';
 import { SonidoService } from '../../../../../shared/servicios/sonido.service';
+import { JuegoNavService } from '../../../../../shared/servicios/juego-nav.service';
 
 @Component({
   selector: 'app-juego-accion-objeto',
@@ -16,6 +17,7 @@ export class JuegoAccionObjetoComponent implements OnInit {
   private location = inject(Location);
   private router = inject(Router);
   private service = inject(JuegoAccionObjetoService);
+  private juegoNavService = inject(JuegoNavService);
   sonidoService = inject(SonidoService);
 
   // Estado
@@ -141,7 +143,15 @@ export class JuegoAccionObjetoComponent implements OnInit {
   }
 
   irAJuegoActividades() {
-    this.router.navigate(['/actividades-diarias/juego1-actividades-diarias']);
+    if (this.juegoNavService.esUltimoJuego('actividades-diarias')) {
+      this.juegoNavService.irAlMenuPrincipal();
+    } else {
+      this.juegoNavService.siguienteJuego('actividades-diarias');
+    }
+  }
+
+  get esUltimo(): boolean {
+    return this.juegoNavService.esUltimoJuego('actividades-diarias');
   }
 
   volver(): void {

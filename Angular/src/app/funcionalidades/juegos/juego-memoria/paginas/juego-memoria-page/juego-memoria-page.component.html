@@ -15,18 +15,17 @@
         </div>
     </div>
 
-    <!-- JUEGO ACTIVO -->
     <div *ngIf="!juegoTerminado" class="contenedor-juego">
         <app-juego-memoria [cartas]="cartas" (cartaClickeada)="manejarCartaClickeada($event)">
         </app-juego-memoria>
-
-        <!-- BOTÓN SIGUIENTE (esquina inferior derecha) -->
-        <div class="pie-pagina">
-            <button class="btn-siguiente" (click)="siguienteJuego()">
-                Siguiente
-                <mat-icon>arrow_forward</mat-icon>
-            </button>
-        </div>
+    </div>
+    
+    <!-- BOTÓN SIGUIENTE (esquina inferior derecha) -->
+    <div class="pie-pagina">
+        <button class="btn-siguiente" (click)="siguienteJuego()">
+            {{ esUltimo ? 'Finalizar' : 'Siguiente' }}
+            <mat-icon *ngIf="!esUltimo">arrow_forward</mat-icon>
+        </button>
     </div>
 
     <!-- PANTALLA VICTORIA -->
@@ -41,8 +40,8 @@
                     Jugar de Nuevo
                 </button>
                 <button class="btn-otro-juego" (click)="siguienteJuego()">
-                    Siguiente juego
-                    <mat-icon>arrow_forward</mat-icon>
+                    {{ esUltimo ? 'Finalizar' : 'Siguiente juego' }}
+                    <mat-icon *ngIf="!esUltimo">arrow_forward</mat-icon>
                 </button>
             </div>
         </div>

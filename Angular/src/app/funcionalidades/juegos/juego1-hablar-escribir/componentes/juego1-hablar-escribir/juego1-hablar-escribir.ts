@@ -76,6 +76,14 @@ export class Juego1HablarEscribir implements OnInit {
   }
 
   siguiente(): void {
-    this.juegoNavService.siguienteJuego('hablar-escribir');
+    if (this.juegoNavService.esUltimoJuego('hablar-escribir')) {
+      this.juegoNavService.irAlMenuPrincipal();
+    } else {
+      this.juegoNavService.siguienteJuego('hablar-escribir');
+    }
+  }
+
+  get esUltimo(): boolean {
+    return this.juegoNavService.esUltimoJuego('hablar-escribir');
   }
 }

@@ -24,27 +24,37 @@ export class JuegoNavService {
   };
 
   /**
+   * Navega al menú principal
+   */
+  irAlMenuPrincipal(): void {
+    this.router.navigate(['/menu-principal']);
+  }
+
+  /**
+   * Determina si el juego actual es el último de su categoría
+   */
+  esUltimoJuego(categoria: string): boolean {
+    const juegos = this.RUTAS[categoria];
+    if (!juegos) return false;
+    const rutaActual = this.router.url.split('?')[0];
+    return juegos[juegos.length - 1] === rutaActual;
+  }
+
+  /**
    * Navega a un juego aleatorio dentro de la misma categoría,
    * asegurándose de no repetir el juego actual.
    */
   siguienteJuego(categoria: 'estimulacion-cognitiva' | 'actividades-diarias' | 'hablar-escribir'): void {
-    const juegosDisponibles = this.RUTAS[categoria];
-    if (!juegosDisponibles || juegosDisponibles.length === 0) return;
+    const juegos = this.RUTAS[categoria];
+    if (!juegos || juegos.length === 0) return;
 
-    const rutaActual = this.router.url.split('?')[0]; // Ignorar query params si los hay
-    
-    // Filtrar para no ir al mismo juego en el que estamos
-    const rutasPosibles = juegosDisponibles.filter(ruta => ruta !== rutaActual);
+    const rutaActual = this.router.url.split('?')[0];
+    const indiceActual = juegos.indexOf(rutaActual);
 
-    // Si solo hay un juego en total, ir a ese
-    if (rutasPosibles.length === 0) {
-      this.router.navigate([juegosDisponibles[0]]);
-      return;
-    }
-
-    // Elegir uno aleatorio de los posibles
-    const indiceAleatorio = Math.floor(Math.random() * rutasPosibles.length);
-    const rutaDestino = rutasPosibles[indiceAleatorio];
+    // Si no se encuentra el juego actual o es el último, ir al primero (o al menú principal si se prefiere)
+    // Pero como esUltimoJuego se usa antes, aquí simplemente buscamos el siguiente.
+    const siguienteIndice = (indiceActual + 1) % juegos.length;
+    const rutaDestino = juegos[siguienteIndice];
 
     // Navegar de forma forzada reutilizando el componente si es necesario
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {

@@ -204,7 +204,17 @@ export class JuegoIntrusosPageComponent implements OnInit {
     }
   }
 
-  siguienteJuego(): void { this.juegoNavService.siguienteJuego('estimulacion-cognitiva'); }
+  siguienteJuego(): void { 
+    if (this.juegoNavService.esUltimoJuego('estimulacion-cognitiva')) {
+      this.juegoNavService.irAlMenuPrincipal();
+    } else {
+      this.juegoNavService.siguienteJuego('estimulacion-cognitiva'); 
+    }
+  }
+
+  get esUltimo(): boolean {
+    return this.juegoNavService.esUltimoJuego('estimulacion-cognitiva');
+  }
 
   reiniciarJuego(): void {
     this.rondaActualIndex = 0;

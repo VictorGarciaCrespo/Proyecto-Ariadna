@@ -18,12 +18,6 @@ export class ActividadesDiarias {
   }
 
   iniciarJuego(): void {
-    // Elegir aleatoriamente entre los dos juegos de actividades diarias
-    const juegos = [
-      '/actividades-diarias/juego1-actividades-diarias',
-      '/actividades-diarias/juego-accion-objeto'
-    ];
-    const ruta = juegos[Math.floor(Math.random() * juegos.length)];
-    this.router.navigate([ruta]);
+    this.router.navigate(['/actividades-diarias/juego1-actividades-diarias']);
   }
 }

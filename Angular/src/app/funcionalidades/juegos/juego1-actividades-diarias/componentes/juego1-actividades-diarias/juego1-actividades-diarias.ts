@@ -22,7 +22,17 @@ export class Juego1ActividadesDiarias implements OnInit {
   private perfilService = inject(PerfilService);
   sonidoService = inject(SonidoService);
 
-  siguienteJuego(): void { this.juegoNavService.siguienteJuego('actividades-diarias'); }
+  siguienteJuego(): void { 
+    if (this.juegoNavService.esUltimoJuego('actividades-diarias')) {
+      this.juegoNavService.irAlMenuPrincipal();
+    } else {
+      this.juegoNavService.siguienteJuego('actividades-diarias'); 
+    }
+  }
+
+  get esUltimo(): boolean {
+    return this.juegoNavService.esUltimoJuego('actividades-diarias');
+  }
 
   // Estado del juego
   actividades: ActividadDiaria[] = [];
@@ -38,7 +48,7 @@ export class Juego1ActividadesDiarias implements OnInit {
     // Determinar capacidades del perfil actual
     const perfilActivo = this.perfilService.getPerfil();
     if (perfilActivo && perfilActivo.capacidades) {
-      this.tieneTextoAlternativo.set(perfilActivo.capacidades.includes('texto_alternativo'));
+      this.tieneTextoAlternativo.set(perfilActivo.capacidades.includes('texto_explicativo'));
     }
 
     this.service.getActividades().subscribe({
