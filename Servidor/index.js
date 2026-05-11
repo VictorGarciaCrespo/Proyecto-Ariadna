@@ -25,6 +25,7 @@ const rutinasAPI = require('./rutas/rutinas')
 const actividadesDiariasAPI = require('./rutas/actividadesDiarias')
 const accionesObjetosAPI = require('./rutas/accionesObjetos')
 const intrusosAPI = require('./rutas/intrusos')
+const palabrasSilabasAPI = require('./rutas/palabrasSilabas')
 
 perfilesAPI(app)
 elementosMemoriaAPI(app)
@@ -34,6 +35,7 @@ rutinasAPI(app)
 actividadesDiariasAPI(app)
 accionesObjetosAPI(app)
 intrusosAPI(app)
+palabrasSilabasAPI(app)
 app.listen(PORT, (err) => {
     if (err) {
         console.error(`Error al iniciar el servidor en el puerto ${PORT}:`, err.message);

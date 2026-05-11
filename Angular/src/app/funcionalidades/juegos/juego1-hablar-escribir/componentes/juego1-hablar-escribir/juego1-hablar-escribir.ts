@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Location, CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
 import { VocalJuegoService } from '../../servicios/vocal-juego.service';
@@ -19,16 +19,29 @@ export class Juego1HablarEscribir implements OnInit {
   private router = inject(Router);
   private vocalService = inject(VocalJuegoService);
   private juegoNavService = inject(JuegoNavService);
+  private cdRef = inject(ChangeDetectorRef);
   sonidoService = inject(SonidoService);
 
   vocalSeleccionada: string | null = null;
   vocales: string[] = ['A', 'E', 'I', 'O', 'U'];
   cartas: CartaVocal[] = [];
+  bancoPalabras: CartaVocal[] = [];
   aciertos: number = 0;
   juegoTerminado: boolean = false;
 
   ngOnInit(): void {
-    this.iniciarJuegoAleatorio();
+    console.log('Iniciando Juego1HablarEscribir, pidiendo palabras...');
+    this.vocalService.getPalabras().subscribe({
+      next: (palabras) => {
+        console.log('Palabras recibidas en el componente:', palabras.length);
+        this.bancoPalabras = palabras;
+        this.iniciarJuegoAleatorio();
+        this.cdRef.detectChanges();
+      },
+      error: (err) => {
+        console.error('Error al obtener palabras vocales', err);
+      }
+    });
   }
 
   iniciarJuegoAleatorio() {
@@ -43,9 +56,12 @@ export class Juego1HablarEscribir implements OnInit {
   }
 
   iniciarJuego(vocal: string) {
-    this.cartas = this.vocalService.generarPartida(vocal);
+    this.vocalSeleccionada = vocal;
+    this.cartas = this.vocalService.generarPartida(vocal, this.bancoPalabras);
+    console.log('Cartas generadas para el juego:', this.cartas.length);
     this.aciertos = 0;
     this.juegoTerminado = false;
+    this.cdRef.detectChanges();
   }
 
   seleccionarCarta(carta: CartaVocal) {

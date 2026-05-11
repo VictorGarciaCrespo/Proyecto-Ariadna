@@ -18,6 +18,7 @@ import { PerfilService } from '../../../../../main/perfiles/servicios/perfil.ser
 })
 export class JuegoMemoriaPageComponent implements OnInit {
     cartas: CartaMemoria[] = [];
+    elementos: ElementoMemoria[] = [];
     primeraCarta: CartaMemoria | null = null;
     bloquearTablero: boolean = false;
     juegoTerminado: boolean = false;
@@ -52,12 +53,20 @@ export class JuegoMemoriaPageComponent implements OnInit {
     }
 
     iniciarJuego(): void {
-        const elementosTotales = this.juegoMemoriaService.obtenerElementos();
-        const elementosAleatorios = this.seleccionarElementosAleatorios([...elementosTotales], 4);
-        this.cartas = this.generarCartas(elementosAleatorios);
-        this.juegoTerminado = false;
-        this.primeraCarta = null;
-        this.bloquearTablero = false;
+        this.juegoMemoriaService.obtenerElementos().subscribe({
+            next: (elementosTotales) => {
+                this.elementos = elementosTotales;
+                const elementosAleatorios = this.seleccionarElementosAleatorios([...elementosTotales], 4);
+                this.cartas = this.generarCartas(elementosAleatorios);
+                this.juegoTerminado = false;
+                this.primeraCarta = null;
+                this.bloquearTablero = false;
+                this.cdRef.detectChanges();
+            },
+            error: (err) => {
+                console.error('Error al obtener elementos de memoria', err);
+            }
+        });
     }
 
     seleccionarElementosAleatorios(elementos: ElementoMemoria[], cantidad: number): ElementoMemoria[] {
@@ -127,8 +136,8 @@ export class JuegoMemoriaPageComponent implements OnInit {
         if (carta.tipo === 'texto') {
             nombre = carta.contenido;
         } else {
-            // Buscar el elemento original por ID en el servicio
-            const elementoOriginal = this.juegoMemoriaService.obtenerElementos().find(e => e.id === carta.elementoId);
+            // Buscar el elemento original por ID en el componente
+            const elementoOriginal = this.elementos.find(e => e.id === carta.elementoId);
             nombre = elementoOriginal ? elementoOriginal.nombre : '';
         }
         

@@ -3,7 +3,7 @@ import {
   CdkScrollableModule,
   ScrollDispatcher,
   ViewportRuler
-} from "./chunk-WI63XJ75.js";
+} from "./chunk-PYHR4ROU.js";
 import {
   _IdGenerator,
   _getEventTarget,
@@ -17,12 +17,12 @@ import {
 } from "./chunk-CNCIPFBW.js";
 import "./chunk-GUGIMSVJ.js";
 import {
-  Directionality
-} from "./chunk-OTE6P6ZA.js";
-import {
   coerceElement,
   coerceNumberProperty
 } from "./chunk-227ZHUYT.js";
+import {
+  Directionality
+} from "./chunk-OTE6P6ZA.js";
 import "./chunk-WG2FERVC.js";
 import "./chunk-K4KZQNAF.js";
 import {

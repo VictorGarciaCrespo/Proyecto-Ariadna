@@ -7,7 +7,7 @@ import { RondaIntruso } from '../paginas/juego-intrusos-page/juego-intrusos-page
   providedIn: 'root'
 })
 export class JuegoIntrusosService {
-  private apiUrl = 'http://localhost:3000/api/Intrusos';
+  private apiUrl = 'http://localhost:3000/api/intrusos';
   private http = inject(HttpClient);
 
   getIntrusos(): Observable<{ data: RondaIntruso[], message: string }> {

@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { AsyncPipe } from '@angular/common';
 import { SonidoService } from '../../../../../shared/servicios/sonido.service';
 import { JuegoNavService } from '../../../../../shared/servicios/juego-nav.service';
+import { JuegoSilabasService } from '../../servicios/juego-silabas.service';
 
 export interface PalabraMusica {
   id: number;
@@ -26,6 +27,7 @@ export class JuegoSilabasPageComponent implements OnInit {
   private router = inject(Router);
   private cdRef = inject(ChangeDetectorRef);
   private juegoNavService = inject(JuegoNavService);
+  private juegoSilabasService = inject(JuegoSilabasService);
 
   siguienteJuego(): void { 
     if (this.juegoNavService.esUltimoJuego('hablar-escribir')) {
@@ -45,24 +47,8 @@ export class JuegoSilabasPageComponent implements OnInit {
 
   readonly TOTAL_POR_RONDA = 4;
 
-  // Base de datos de todas las palabras
-  readonly todasLasPalabras: Omit<PalabraMusica, 'id'>[] = [
-    { palabra: 'acordeón', imagen: '/hablar-escribir/musica/acordeon.png', silaba: 'cor' },
-    { palabra: 'armónica', imagen: '/hablar-escribir/musica/armonica.png', silaba: 'ca' },
-    { palabra: 'bajo',     imagen: '/hablar-escribir/musica/bajo.png',     silaba: 'ba' },
-    { palabra: 'flauta',   imagen: '/hablar-escribir/musica/flauta.png',   silaba: 'ta' },
-    { palabra: 'guitarra', imagen: '/hablar-escribir/musica/guitarra.png', silaba: 'rra' },
-    { palabra: 'contrabajo', imagen: '/hablar-escribir/musica/contrabajo.png', silaba: 'jo' },
-    { palabra: 'pandereta', imagen: '/hablar-escribir/musica/pandereta.png', silaba: 'pan' },
-    { palabra: 'piano',    imagen: '/hablar-escribir/musica/piano.png',    silaba: 'no' },
-    { palabra: 'saxofón',  imagen: '/hablar-escribir/musica/saxofon.png',  silaba: 'fon' },
-    { palabra: 'tambor',   imagen: '/hablar-escribir/musica/tambor.png',   silaba: 'tam' },
-    { palabra: 'teclado',  imagen: '/hablar-escribir/musica/teclado.png',  silaba: 'cla' },
-    { palabra: 'triángulo', imagen: '/hablar-escribir/musica/triangulo.png', silaba: 'lo' },
-    { palabra: 'trompeta', imagen: '/hablar-escribir/musica/trompeta.png', silaba: 'pe' },
-    { palabra: 'violín',   imagen: '/hablar-escribir/musica/violin.png',   silaba: 'vi' },
-    { palabra: 'xilófono', imagen: '/hablar-escribir/musica/xilofono.png', silaba: 'no' },
-  ];
+  // Base de datos de todas las palabras (ahora desde el servicio)
+  todasLasPalabras: PalabraMusica[] = [];
 
   // Estado del juego
   palabrasRonda: PalabraMusica[] = [];
@@ -76,7 +62,15 @@ export class JuegoSilabasPageComponent implements OnInit {
   private procesando = false;
 
   ngOnInit(): void {
-    this.iniciarRonda();
+    this.juegoSilabasService.getPalabras().subscribe({
+      next: (palabras) => {
+        this.todasLasPalabras = palabras;
+        this.iniciarRonda();
+      },
+      error: (err) => {
+        console.error('Error al obtener palabras para el juego de sílabas', err);
+      }
+    });
   }
 
   iniciarRonda(): void {

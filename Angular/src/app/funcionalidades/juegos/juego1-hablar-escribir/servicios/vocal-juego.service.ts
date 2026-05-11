@@ -1,65 +1,48 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, of } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 import { CartaVocal } from '../interfaces/vocal-juego.interface';
 
 @Injectable({
     providedIn: 'root'
 })
 export class VocalJuegoService {
+    private http = inject(HttpClient);
+    private apiUrl = 'http://localhost:3000/api/palabras-vocales';
 
-    private bancoPalabras: CartaVocal[] = [
-        // A
-        { id: 'a1', palabra: 'Árbol', rutaImagen: '/hablar-escribir/a/arbol.png', vocalInicial: 'A' },
-        { id: 'a2', palabra: 'Avión', rutaImagen: '/hablar-escribir/a/avion.png', vocalInicial: 'A' },
-        { id: 'a3', palabra: 'Abeja', rutaImagen: '/hablar-escribir/a/abeja.png', vocalInicial: 'A' },
-        { id: 'a4', palabra: 'Araña', rutaImagen: '/hablar-escribir/a/arana.png', vocalInicial: 'A' },
-        { id: 'a5', palabra: 'Anillo', rutaImagen: '/hablar-escribir/a/anillo.png', vocalInicial: 'A' },
-        { id: 'a6', palabra: 'Ardilla', rutaImagen: '/hablar-escribir/a/ardilla.png', vocalInicial: 'A' },
-        { id: 'a7', palabra: 'Agua', rutaImagen: '/hablar-escribir/a/agua.png', vocalInicial: 'A' },
-        { id: 'a8', palabra: 'Azul', rutaImagen: '/hablar-escribir/a/azul.png', vocalInicial: 'A' },
-        // E
-        { id: 'e1', palabra: 'Elefante', rutaImagen: '/hablar-escribir/e/elefante.png', vocalInicial: 'E' },
-        { id: 'e2', palabra: 'Estrella', rutaImagen: '/hablar-escribir/e/estrella.png', vocalInicial: 'E' },
-        { id: 'e3', palabra: 'Espejo', rutaImagen: '/hablar-escribir/e/espejo.png', vocalInicial: 'E' },
-        { id: 'e4', palabra: 'Enchufe', rutaImagen: '/hablar-escribir/e/enchufe.png', vocalInicial: 'E' },
-        { id: 'e5', palabra: 'Escarabajo', rutaImagen: '/hablar-escribir/e/escarabajo.png', vocalInicial: 'E' },
-        { id: 'e6', palabra: 'Edificio', rutaImagen: '/hablar-escribir/e/edificio.png', vocalInicial: 'E' },
-        { id: 'e7', palabra: 'Escoba', rutaImagen: '/hablar-escribir/e/escoba.png', vocalInicial: 'E' },
-        { id: 'e8', palabra: 'Erizo', rutaImagen: '/hablar-escribir/e/erizo.png', vocalInicial: 'E' },
-        // I
-        { id: 'i1', palabra: 'Isla', rutaImagen: '/hablar-escribir/i/isla.png', vocalInicial: 'I' },
-        { id: 'i2', palabra: 'Iglú', rutaImagen: '/hablar-escribir/i/iglu.png', vocalInicial: 'I' },
-        { id: 'i3', palabra: 'Imán', rutaImagen: '/hablar-escribir/i/iman.png', vocalInicial: 'I' },
-        { id: 'i4', palabra: 'Iceberg', rutaImagen: '/hablar-escribir/i/iceberg.png', vocalInicial: 'I' },
-        { id: 'i5', palabra: 'Iglesia', rutaImagen: '/hablar-escribir/i/iglesia.png', vocalInicial: 'I' },
-        { id: 'i6', palabra: 'Iguana', rutaImagen: '/hablar-escribir/i/iguana.png', vocalInicial: 'I' },
-        { id: 'i7', palabra: 'Idea', rutaImagen: '/hablar-escribir/i/idea.png', vocalInicial: 'I' },
-        // O
-        { id: 'o1', palabra: 'Ojo', rutaImagen: '/hablar-escribir/o/ojo.png', vocalInicial: 'O' },
-        { id: 'o2', palabra: 'Oso', rutaImagen: '/hablar-escribir/o/oso.png', vocalInicial: 'O' },
-        { id: 'o3', palabra: 'Oveja', rutaImagen: '/hablar-escribir/o/oveja.png', vocalInicial: 'O' },
-        { id: 'o4', palabra: 'Oreja', rutaImagen: '/hablar-escribir/o/oreja.png', vocalInicial: 'O' },
-        { id: 'o6', palabra: 'Ocho', rutaImagen: '/hablar-escribir/o/ocho.png', vocalInicial: 'O' },
-        { id: 'o7', palabra: 'Ovni', rutaImagen: '/hablar-escribir/o/ovni.png', vocalInicial: 'O' },
-        { id: 'o8', palabra: 'Ola', rutaImagen: '/hablar-escribir/o/ola.png', vocalInicial: 'O' },
-        // U
-        { id: 'u1', palabra: 'Uva', rutaImagen: '/hablar-escribir/u/uva.png', vocalInicial: 'U' },
-        { id: 'u2', palabra: 'Uno', rutaImagen: '/hablar-escribir/u/uno.png', vocalInicial: 'U' },
-        { id: 'u3', palabra: 'Unicornio', rutaImagen: '/hablar-escribir/u/unicornio.png', vocalInicial: 'U' },
-        { id: 'u4', palabra: 'Uña', rutaImagen: '/hablar-escribir/u/una.png', vocalInicial: 'U' },
-        { id: 'u5', palabra: 'Universo', rutaImagen: '/hablar-escribir/u/universo.png', vocalInicial: 'U' }
-    ];
+    getPalabras(): Observable<CartaVocal[]> {
+        return this.http.get<{ data: CartaVocal[] }>(this.apiUrl).pipe(
+            map(res => {
+                console.log('Datos recibidos de la API (Vocales):', res.data);
+                return res.data || [];
+            }),
+            catchError(err => {
+                console.error('Error al obtener palabras vocales:', err);
+                return of([]);
+            })
+        );
+    }
 
-    constructor() { }
+    generarPartida(vocalObjetivo: string, bancoPalabras: CartaVocal[]): CartaVocal[] {
+        const objetivo = vocalObjetivo.trim().toUpperCase();
+        console.log('Generando partida para vocal:', objetivo);
+        console.log('Banco de palabras disponible:', bancoPalabras.length);
 
-    generarPartida(vocalObjetivo: string): CartaVocal[] {
-
-        let palabrasObjetivo = this.bancoPalabras.filter(p => p.vocalInicial === vocalObjetivo);
+        // Filtro robusto que acepta vocalInicial o vocalinicial (por si acaso)
+        let palabrasObjetivo = bancoPalabras.filter(p => {
+            const v = (p.vocalInicial || (p as any).vocalinicial || '').toString().trim().toUpperCase();
+            return v === objetivo;
+        });
+        console.log('Palabras encontradas para la vocal:', palabrasObjetivo.length);
 
         palabrasObjetivo = this.mezclarArreglo(palabrasObjetivo).slice(0, 5);
-
         palabrasObjetivo = palabrasObjetivo.map(p => ({ ...p, esCorrecta: true, seleccionada: false }));
 
-        let otrasPalabras = this.bancoPalabras.filter(p => p.vocalInicial !== vocalObjetivo);
+        let otrasPalabras = bancoPalabras.filter(p => {
+            const v = (p.vocalInicial || (p as any).vocalinicial || '').toString().trim().toUpperCase();
+            return v !== objetivo;
+        });
         otrasPalabras = this.mezclarArreglo(otrasPalabras).slice(0, 3);
 
         otrasPalabras = otrasPalabras.map(p => ({ ...p, esCorrecta: false, seleccionada: false }));

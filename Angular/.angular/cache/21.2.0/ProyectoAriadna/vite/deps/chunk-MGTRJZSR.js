@@ -2640,13 +2640,13 @@ export {
   addAriaReferencedId,
   removeAriaReferencedId,
   AriaDescriber,
-  _isTestEnvironment,
   Breakpoints,
   MATERIAL_ANIMATIONS,
   _getAnimationsState,
   _animationsDisabled,
+  _isTestEnvironment,
   coerceCssPixelValue,
   coerceBooleanProperty,
   coerceStringArray
 };
-//# sourceMappingURL=chunk-N6PLEYSO.js.map
+//# sourceMappingURL=chunk-MGTRJZSR.js.map
