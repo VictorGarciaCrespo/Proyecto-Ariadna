@@ -7,6 +7,7 @@ import { JuegoMemoriaService } from '../../servicios/juego-memoria.service';
 import { CartaMemoria, ElementoMemoria } from '../../interfaces/juego-memoria.interface';
 import { MatIconModule } from '@angular/material/icon';
 import { SonidoService } from '../../../../../shared/servicios/sonido.service';
+import { PerfilService } from '../../../../../main/perfiles/servicios/perfil.service';
 
 @Component({
     selector: 'app-juego-memoria-page',
@@ -20,15 +21,23 @@ export class JuegoMemoriaPageComponent implements OnInit {
     primeraCarta: CartaMemoria | null = null;
     bloquearTablero: boolean = false;
     juegoTerminado: boolean = false;
+    tieneTextoAlternativo: boolean = true; // Por defecto asumimos que sí
 
     private juegoMemoriaService = inject(JuegoMemoriaService);
     private cdRef = inject(ChangeDetectorRef);
     sonidoService = inject(SonidoService);
     private juegoNavService = inject(JuegoNavService);
+    private perfilService = inject(PerfilService);
 
     siguienteJuego(): void { this.juegoNavService.siguienteJuego('estimulacion-cognitiva'); }
 
     ngOnInit(): void {
+        // Verificar capacidades del perfil activo
+        const perfilActivo = this.perfilService.getPerfil();
+        if (perfilActivo && perfilActivo.capacidades) {
+            this.tieneTextoAlternativo = perfilActivo.capacidades.includes('texto_alternativo');
+        }
+        
         this.iniciarJuego();
     }
 
@@ -53,24 +62,41 @@ export class JuegoMemoriaPageComponent implements OnInit {
         let cartasGeneradas: CartaMemoria[] = [];
 
         elementos.forEach((elemento, index) => {
+            // Siempre agregamos la primera carta como imagen
             cartasGeneradas.push({
-                id: `img-${index}`,
+                id: `img1-${index}`,
                 elementoId: elemento.id,
                 tipo: 'imagen',
                 contenido: elemento.rutaImagen,
                 volteada: false,
                 emparejada: false
             });
-            cartasGeneradas.push({
-                id: `txt-${index}`,
-                elementoId: elemento.id,
-                tipo: 'texto',
-                contenido: elemento.nombre,
-                volteada: false,
-                emparejada: false
-            });
+            
+            // La segunda carta depende de las capacidades del usuario
+            if (this.tieneTextoAlternativo) {
+                // Usuario con texto alternativo: Empareja Imagen con Texto
+                cartasGeneradas.push({
+                    id: `txt-${index}`,
+                    elementoId: elemento.id,
+                    tipo: 'texto',
+                    contenido: elemento.nombre,
+                    volteada: false,
+                    emparejada: false
+                });
+            } else {
+                // Usuario sin texto alternativo (solo pictogramas): Empareja Imagen con Imagen idéntica
+                cartasGeneradas.push({
+                    id: `img2-${index}`,
+                    elementoId: elemento.id,
+                    tipo: 'imagen',
+                    contenido: elemento.rutaImagen,
+                    volteada: false,
+                    emparejada: false
+                });
+            }
         });
 
+        // Barajar las cartas
         for (let i = cartasGeneradas.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [cartasGeneradas[i], cartasGeneradas[j]] = [cartasGeneradas[j], cartasGeneradas[i]];
@@ -86,11 +112,19 @@ export class JuegoMemoriaPageComponent implements OnInit {
 
         carta.volteada = true;
 
-        // Pronunciar el nombre (siempre usamos el contenido de texto del elemento)
-        const nombre = carta.tipo === 'texto'
-            ? carta.contenido
-            : (this.cartas.find(c => c.elementoId === carta.elementoId && c.tipo === 'texto')?.contenido ?? '');
-        this.sonidoService.hablar(nombre);
+        // Pronunciar el nombre (buscamos el nombre original en los elementos si no es texto)
+        let nombre = '';
+        if (carta.tipo === 'texto') {
+            nombre = carta.contenido;
+        } else {
+            // Buscar el elemento original por ID en el servicio
+            const elementoOriginal = this.juegoMemoriaService.obtenerElementos().find(e => e.id === carta.elementoId);
+            nombre = elementoOriginal ? elementoOriginal.nombre : '';
+        }
+        
+        if (nombre) {
+            this.sonidoService.hablar(nombre);
+        }
 
         if (!this.primeraCarta) {
             this.primeraCarta = carta;
@@ -101,7 +135,10 @@ export class JuegoMemoriaPageComponent implements OnInit {
     }
 
     verificarPareja(carta1: CartaMemoria, carta2: CartaMemoria): void {
-        const esPareja = carta1.elementoId === carta2.elementoId && carta1.tipo !== carta2.tipo;
+        // La condición de éxito es simplemente que compartan el mismo elementoId.
+        // Como 'manejarCartaClickeada' evita hacer click en la misma carta física,
+        // no hace falta comprobar si son diferentes.
+        const esPareja = carta1.elementoId === carta2.elementoId;
 
         if (esPareja) {
             this.bloquearTablero = true;
@@ -118,7 +155,6 @@ export class JuegoMemoriaPageComponent implements OnInit {
         carta2.emparejada = true;
 
         if (this.cartas.every(carta => carta.emparejada)) {
-
             this.verificarVictoria();
         } else {
             this.resetearTablero();

@@ -155,6 +155,11 @@
   text-transform: capitalize;
 }
 
+.etiqueta-actividad.solo-texto {
+  font-size: 3rem;
+  padding: 40px;
+}
+
 /* ---- Columnas de opciones ---- */
 .columna-opciones {
   display: flex;

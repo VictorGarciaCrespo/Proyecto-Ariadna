@@ -6,6 +6,7 @@ import { Juego1ActividadesDiariasService } from '../../servicios/juego1-activida
 import { ActividadDiaria, PictogramaJuego } from '../../interfaces/juego1-actividades-diarias.interface';
 import { SonidoService } from '../../../../../shared/servicios/sonido.service';
 import { JuegoNavService } from '../../../../../shared/servicios/juego-nav.service';
+import { PerfilService } from '../../../../../main/perfiles/servicios/perfil.service';
 
 @Component({
   selector: 'app-juego1-actividades-diarias',
@@ -18,6 +19,7 @@ export class Juego1ActividadesDiarias implements OnInit {
   private router = inject(Router);
   private service = inject(Juego1ActividadesDiariasService);
   private juegoNavService = inject(JuegoNavService);
+  private perfilService = inject(PerfilService);
   sonidoService = inject(SonidoService);
 
   siguienteJuego(): void { this.juegoNavService.siguienteJuego('actividades-diarias'); }
@@ -30,8 +32,15 @@ export class Juego1ActividadesDiarias implements OnInit {
   juegoTerminado = signal(false);
   cargando = signal(true);
   error = signal(false);
+  tieneTextoAlternativo = signal<boolean>(true); // Por defecto asumimos que sí
 
   ngOnInit() {
+    // Determinar capacidades del perfil actual
+    const perfilActivo = this.perfilService.getPerfil();
+    if (perfilActivo && perfilActivo.capacidades) {
+      this.tieneTextoAlternativo.set(perfilActivo.capacidades.includes('texto_alternativo'));
+    }
+
     this.service.getActividades().subscribe({
       next: (actividades) => {
         this.actividades = actividades;

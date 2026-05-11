@@ -63,12 +63,7 @@
       <!-- Centro: Pictograma principal y nombre -->
       <div class="zona-central">
         <div class="pictograma-principal-wrapper">
-          <img
-            class="pictograma-principal"
-            [src]="actividadActual()!.pictogramaPrincipal + '.png'"
-            [alt]="actividadActual()!.actividad"
-          />
-          <span class="etiqueta-actividad">{{ actividadActual()!.actividad }}</span>
+          <span class="etiqueta-actividad solo-texto">{{ actividadActual()!.actividad }}</span>
         </div>
       </div>
 

@@ -4,14 +4,19 @@
       <mat-icon>arrow_back</mat-icon>
     </button>
     <h1 class="title">Agenda</h1>
-    <div style="display:flex; gap:16px; align-items:center;">
-      <button class="btn-circle" (click)="sonidoService.toggle()" [title]="(sonidoService.activo$ | async) ? 'Desactivar sonido' : 'Activar sonido'">
-        <mat-icon>{{ (sonidoService.activo$ | async) ? 'volume_up' : 'volume_off' }}</mat-icon>
-      </button>
-      <button class="btn-inicio" (click)="irInicio()" aria-label="Inicio">
-        <mat-icon class="icon-large">home</mat-icon>
-        <span>INICIO</span>
-      </button>
+    <div class="header-right">
+      <div style="display:flex; gap:16px; align-items:center; justify-content: flex-end;">
+        <button class="btn-circle" (click)="sonidoService.toggle()" [title]="(sonidoService.activo$ | async) ? 'Desactivar sonido' : 'Activar sonido'">
+          <mat-icon>{{ (sonidoService.activo$ | async) ? 'volume_up' : 'volume_off' }}</mat-icon>
+        </button>
+        <button class="btn-inicio" (click)="irInicio()" aria-label="Inicio">
+          <mat-icon class="icon-large">home</mat-icon>
+          <span>INICIO</span>
+        </button>
+        <button class="btn-resultado" (click)="guardarResultado()">
+          Guardar Rutina
+        </button>
+      </div>
     </div>
   </header>
 
@@ -87,13 +92,6 @@
       <ng-template #noItems>
         <p class="no-data">Cargando pictogramas...</p>
       </ng-template>
-    </div>
-
-    <!-- Botón resultado -->
-    <div class="footer">
-      <button class="btn-resultado" (click)="guardarResultado()">
-        Guardar Rutina
-      </button>
     </div>
   </main>
 

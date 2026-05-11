@@ -1,4 +1,12 @@
 import {
+  DateAdapter,
+  MAT_DATE_FORMATS,
+  MAT_DATE_LOCALE
+} from "./chunk-XVALHARF.js";
+import {
+  _MatInternalFormField
+} from "./chunk-BIN37PBI.js";
+import {
   MAT_OPTGROUP,
   MAT_OPTION_PARENT_COMPONENT,
   MatOptgroup,
@@ -10,14 +18,6 @@ import {
   _countGroupLabelsBeforeOption,
   _getOptionScrollPosition
 } from "./chunk-QM4E3V27.js";
-import {
-  _MatInternalFormField
-} from "./chunk-BIN37PBI.js";
-import {
-  DateAdapter,
-  MAT_DATE_FORMATS,
-  MAT_DATE_LOCALE
-} from "./chunk-XVALHARF.js";
 import {
   ErrorStateMatcher,
   ShowOnDirtyErrorStateMatcher,
